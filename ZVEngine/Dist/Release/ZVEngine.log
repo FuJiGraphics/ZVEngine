@@ -1,0 +1,20 @@
+﻿  EntryPoint.cpp
+  ZVapp.cpp
+d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\EntryPoint.cpp)
+d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\EntryPoint.cpp)
+d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\EntryPoint.cpp)
+d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\interface\ZVapp.cpp)
+d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\interface\ZVapp.cpp)
+d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\interface\ZVapp.cpp)
+d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\EntryPoint.cpp)
+d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\interface\ZVapp.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3234): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\EntryPoint.cpp)
+d:\dev\zvlab\zvengine\zvcore\zvcore\src\core\zvwindow.h(8): warning C4099: 'GLFWwindow': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\EntryPoint.cpp)
+  d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(1403): note: 'GLFWwindow' 선언을 참조하십시오. (소스 파일 컴파일 중 src\EntryPoint.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3234): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\interface\ZVapp.cpp)
+d:\dev\zvlab\zvengine\zvcore\zvcore\src\core\zvwindow.h(8): warning C4099: 'GLFWwindow': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\interface\ZVapp.cpp)
+  d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(1403): note: 'GLFWwindow' 선언을 참조하십시오. (소스 파일 컴파일 중 src\interface\ZVapp.cpp)
+ZVCore.lib(ZVimgui.obj) : error LNK2019: __imp_glClear 외부 기호(참조 위치: "public: static void __cdecl ZVLab::CZVimguiManager::End(class std::unique_ptr<class ZVLab::CZVwindow,struct std::default_delete<class ZVLab::CZVwindow> > &)" (?End@CZVimguiManager@ZVLab@@SAXAEAV?$unique_ptr@VCZVwindow@ZVLab@@U?$default_delete@VCZVwindow@ZVLab@@@std@@@std@@@Z) 함수)에서 확인하지 못했습니다.
+ZVCore.lib(ZVimgui.obj) : error LNK2019: __imp_glClearColor 외부 기호(참조 위치: "public: static void __cdecl ZVLab::CZVimguiManager::End(class std::unique_ptr<class ZVLab::CZVwindow,struct std::default_delete<class ZVLab::CZVwindow> > &)" (?End@CZVimguiManager@ZVLab@@SAXAEAV?$unique_ptr@VCZVwindow@ZVLab@@U?$default_delete@VCZVwindow@ZVLab@@@std@@@std@@@Z) 함수)에서 확인하지 못했습니다.
+ZVCore.lib(ZVimgui.obj) : error LNK2019: __imp_glViewport 외부 기호(참조 위치: "public: static void __cdecl ZVLab::CZVimguiManager::End(class std::unique_ptr<class ZVLab::CZVwindow,struct std::default_delete<class ZVLab::CZVwindow> > &)" (?End@CZVimguiManager@ZVLab@@SAXAEAV?$unique_ptr@VCZVwindow@ZVLab@@U?$default_delete@VCZVwindow@ZVLab@@@std@@@std@@@Z) 함수)에서 확인하지 못했습니다.
+..\Dist\ZVEngine.exe : fatal error LNK1120: 3개의 확인할 수 없는 외부 참조입니다.

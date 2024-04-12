@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Buttons">
+      <UniqueIdentifier>{F475A3F5-6055-2291-696D-AD67D5CB88F2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Buttons\Button1.h">
+      <Filter>Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI_Liberator.h" />
+    <ClInclude Include="src\ZVapp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\EntryPoint.cpp" />
+  </ItemGroup>
+</Project>
