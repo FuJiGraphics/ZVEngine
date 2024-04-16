@@ -1,4 +1,4 @@
-#include "ZVimgui.h"
+#include "ZVimguiManager.h"
 
 //imgui
 #include <stdio.h>
@@ -20,7 +20,6 @@ namespace ZVLab {
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
-
 		// Setup Dear ImGui style
 		ImGui::StyleColorsDark();
 		//ImGui::StyleColorsLight();
@@ -48,7 +47,7 @@ namespace ZVLab {
 		}
 	}
 
-	void CZVimguiManager::End(const Unique<CZVwindow>& window)
+	void CZVimguiManager::End()
 	{
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

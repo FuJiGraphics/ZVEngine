@@ -2,7 +2,7 @@
 #define __ZV_ZVEVENT_H__
 #pragma once
 
-#include "core/Core.h"
+#include "../core/Core.h"
 
 #include <string>
 #include <functional>

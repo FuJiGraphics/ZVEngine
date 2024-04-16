@@ -7,16 +7,23 @@
     <Filter Include="events">
       <UniqueIdentifier>{5A9D08FC-463F-33D2-2FFA-46261B3BBA22}</UniqueIdentifier>
     </Filter>
+    <Filter Include="export">
+      <UniqueIdentifier>{87DA32FC-737C-5DD2-5C37-71264878E422}</UniqueIdentifier>
+    </Filter>
     <Filter Include="platform">
       <UniqueIdentifier>{4A63C33C-3630-1E48-5F49-0CF04B7553D6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\imgui">
+      <UniqueIdentifier>{344023FE-200E-1704-09A2-872AF50EF368}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="platform\imgui\export">
+      <UniqueIdentifier>{E57A9FE1-51E7-5ADC-1ADB-F23986067D44}</UniqueIdentifier>
     </Filter>
     <Filter Include="platform\windows">
       <UniqueIdentifier>{A44FC440-9048-E392-B97A-C817A5D2C29E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\EntryPoint.h" />
-    <ClInclude Include="src\ZVCore.h" />
     <ClInclude Include="src\core\Core.h">
       <Filter>core</Filter>
     </ClInclude>
@@ -24,9 +31,6 @@
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="src\core\ZVassert.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\core\ZVimgui.h">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="src\core\ZVlayer.h">
@@ -56,14 +60,26 @@
     <ClInclude Include="src\events\ZVmouseEvent.h">
       <Filter>events</Filter>
     </ClInclude>
+    <ClInclude Include="src\export\EntryPoint.h">
+      <Filter>export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\export\ZVCore.h">
+      <Filter>export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\ZVimguiInterface.h">
+      <Filter>platform\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\ZVimguiManager.h">
+      <Filter>platform\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVDialog.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
     <ClInclude Include="src\platform\windows\ZVwindow_win.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\ZVimgui.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
     <ClCompile Include="src\core\ZVlayerBuffer.cpp">
       <Filter>core</Filter>
     </ClCompile>
@@ -72,6 +88,15 @@
     </ClCompile>
     <ClCompile Include="src\core\ZVwindow.cpp">
       <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\ZVimguiInterface.cpp">
+      <Filter>platform\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\ZVimguiManager.cpp">
+      <Filter>platform\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVDialog.cpp">
+      <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\windows\ZVwindow_win.cpp">
       <Filter>platform\windows</Filter>

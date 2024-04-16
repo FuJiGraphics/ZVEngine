@@ -140,12 +140,9 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\EntryPoint.h" />
-    <ClInclude Include="src\ZVCore.h" />
     <ClInclude Include="src\core\Core.h" />
     <ClInclude Include="src\core\DataTypes.h" />
     <ClInclude Include="src\core\ZVassert.h" />
-    <ClInclude Include="src\core\ZVimgui.h" />
     <ClInclude Include="src\core\ZVlayer.h" />
     <ClInclude Include="src\core\ZVlayerBuffer.h" />
     <ClInclude Include="src\core\ZVsystem.h" />
@@ -155,13 +152,20 @@
     <ClInclude Include="src\events\ZVevent.h" />
     <ClInclude Include="src\events\ZVkeyEvent.h" />
     <ClInclude Include="src\events\ZVmouseEvent.h" />
+    <ClInclude Include="src\export\EntryPoint.h" />
+    <ClInclude Include="src\export\ZVCore.h" />
+    <ClInclude Include="src\platform\imgui\ZVimguiInterface.h" />
+    <ClInclude Include="src\platform\imgui\ZVimguiManager.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVDialog.h" />
     <ClInclude Include="src\platform\windows\ZVwindow_win.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\ZVimgui.cpp" />
     <ClCompile Include="src\core\ZVlayerBuffer.cpp" />
     <ClCompile Include="src\core\ZVsystem.cpp" />
     <ClCompile Include="src\core\ZVwindow.cpp" />
+    <ClCompile Include="src\platform\imgui\ZVimguiInterface.cpp" />
+    <ClCompile Include="src\platform\imgui\ZVimguiManager.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVDialog.cpp" />
     <ClCompile Include="src\platform\windows\ZVwindow_win.cpp" />
   </ItemGroup>
   <ItemGroup>

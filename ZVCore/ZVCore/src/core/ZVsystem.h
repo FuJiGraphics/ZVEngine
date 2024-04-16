@@ -3,14 +3,16 @@
 #pragma once
 
 #include "Core.h"
-#include "ZVimgui.h"
 #include "ZVlayerBuffer.h"
+// imgui
+#include "../platform/imgui/ZVimguiManager.h"
 
 // events
-#include "events/ZVevent.h"
-#include "events/ZVappEvent.h"
-#include "events/ZVkeyEvent.h"
-#include "events/ZVmouseEvent.h"
+#include "../events/ZVevent.h"
+#include "../events/ZVappEvent.h"
+#include "../events/ZVkeyEvent.h"
+#include "../events/ZVmouseEvent.h"
+
 
 int main(int argc, char** argv);
 

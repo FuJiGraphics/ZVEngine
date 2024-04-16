@@ -76,8 +76,8 @@ namespace ZVLab {
 				{
 					layer->OnGuiRender();
 				}
-				CZVimguiManager::ShowDemo();
-				CZVimguiManager::End(m_upWindow);
+				// CZVimguiManager::ShowDemo();
+				CZVimguiManager::End();
 			}
 
 			m_upWindow->Clear();

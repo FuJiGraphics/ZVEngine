@@ -11,7 +11,8 @@ namespace ZVLab {
 		: m_vContainer()
 		, m_uiInsertIndex(0)
 		, m_bInitialized(false)
-	{/*Empty*/}
+	{/*Empty*/
+	}
 
 	CZVlayerBuffer::~CZVlayerBuffer()
 	{
