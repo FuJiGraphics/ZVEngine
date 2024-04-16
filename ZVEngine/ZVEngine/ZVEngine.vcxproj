@@ -80,7 +80,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZV_PLATFORM_WINDOWS;ZV_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;src;..\..\ZVCore\ZVCore\src;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -105,7 +105,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZV_PLATFORM_WINDOWS;ZV_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;src;..\..\ZVCore\ZVCore\src;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -133,7 +133,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZV_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;src;..\..\ZVCore\ZVCore\src;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -152,12 +152,14 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Buttons\Button1.h" />
-    <ClInclude Include="src\GUI_Liberator.h" />
-    <ClInclude Include="src\ZVapp.h" />
+    <ClInclude Include="core\GUI_Liberator.h" />
+    <ClInclude Include="core\ZVapp.h" />
+    <ClInclude Include="src\GUI.h" />
+    <ClInclude Include="src\Layers\Example.h" />
+    <ClInclude Include="src\Layers\Dialog2.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\EntryPoint.cpp" />
+    <ClCompile Include="core\EntryPoint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ZVCore\ZVCore\ZVCore.vcxproj">

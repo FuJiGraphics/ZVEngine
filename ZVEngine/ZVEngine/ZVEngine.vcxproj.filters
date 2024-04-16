@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Buttons">
-      <UniqueIdentifier>{F475A3F5-6055-2291-696D-AD67D5CB88F2}</UniqueIdentifier>
+    <Filter Include="core">
+      <UniqueIdentifier>{4E40957C-3A77-960D-E363-7C10CF79120F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Buttons">
+      <UniqueIdentifier>{0B76DDFE-772B-56F4-0020-50CB6CD44CF8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Buttons\Button1.h">
-      <Filter>Buttons</Filter>
+    <ClInclude Include="core\GUI_Liberator.h">
+      <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\GUI_Liberator.h" />
-    <ClInclude Include="src\ZVapp.h" />
+    <ClInclude Include="core\ZVapp.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layers\Dialog2.h">
+      <Filter>src\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI.h" />
+    <ClInclude Include="src\Layers\Example.h">
+      <Filter>src\Buttons</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\EntryPoint.cpp" />
+    <ClCompile Include="core\EntryPoint.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

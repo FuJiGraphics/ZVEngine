@@ -23,8 +23,9 @@ project "ZVEngine"
 	includedirs
     {
         "%{prj.name}",
+        "%{prj.name}/core",
         "%{prj.name}/src",
-		"%{IncludeDir.ZVCore}",
+		"%{IncludeDir.ZVCore}/export/",
 		"%{IncludeDir.FZLib}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.GLFW}",
