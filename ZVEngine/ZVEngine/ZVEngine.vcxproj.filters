@@ -7,8 +7,8 @@
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Buttons">
-      <UniqueIdentifier>{0B76DDFE-772B-56F4-0020-50CB6CD44CF8}</UniqueIdentifier>
+    <Filter Include="src\Layers">
+      <UniqueIdentifier>{4C4DA51D-3805-E76A-A10C-C0C68DE3815B}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -18,12 +18,14 @@
     <ClInclude Include="core\ZVapp.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Layers\Dialog2.h">
-      <Filter>src\Buttons</Filter>
+    <ClInclude Include="src\GUI.h">
+      <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\GUI.h" />
+    <ClInclude Include="src\Layers\Dialog2.h">
+      <Filter>src\Layers</Filter>
+    </ClInclude>
     <ClInclude Include="src\Layers\Example.h">
-      <Filter>src\Buttons</Filter>
+      <Filter>src\Layers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
