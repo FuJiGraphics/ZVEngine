@@ -17,7 +17,6 @@
 #include "GLFW/glfw3.h"
 #include "backends/imgui_impl_opengl3.h"
 #include "backends/imgui_impl_glfw.h"
-#include "extensions/ImCoolbar/ImCoolbar.h"
 
 #ifdef ZV_USAGE_DLL
 	#ifdef ZV_EXPORT_DLL
