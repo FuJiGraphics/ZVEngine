@@ -20,6 +20,7 @@ namespace ZVLab {
 		virtual void OnEvent(CZVevent& event) {};
 		virtual void OnUpdate(const float& dt) {};
 		virtual void OnGuiRender() {};
+		virtual void OnMenuRender() {};
 	};
 
 } 

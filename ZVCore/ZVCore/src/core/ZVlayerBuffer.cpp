@@ -29,6 +29,7 @@ namespace ZVLab {
 				for (const auto& Layer : m_vContainer)
 				{
 					ZVLOG_FAILED(Layer, "FAILED: Failed to deallocate memory.");
+					Layer->OnDetach();
 					delete Layer;
 				}
 			}

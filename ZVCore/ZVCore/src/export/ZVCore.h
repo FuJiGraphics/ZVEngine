@@ -5,6 +5,8 @@
 #include "FZLib/Helpers/LogHelper.h"
 // imgui interfaces
 #include "../platform/imgui/export/ZVDialog.h"
+#include "../platform/imgui/export/ZVMenu.h"
+#include "../platform/imgui/export/ZVButton.h"
 // events
 #include "../events/ZVevent.h"
 #include "../events/ZVappEvent.h"
@@ -15,4 +17,6 @@
 #include "../core/ZVlayer.h"
 #include "../core/ZVwindow.h"
 #include "../core/ZVsystem.h"
+
+
 

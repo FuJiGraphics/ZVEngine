@@ -53,6 +53,16 @@ namespace ZVLab {
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	}
 
+	bool CZVimguiManager::BeginMainMenu()
+	{
+		return (ImGui::BeginMainMenuBar());
+	}
+
+	void CZVimguiManager::EndMainMenu()
+	{
+		ImGui::EndMainMenuBar();
+	}
+
 	void ZVLab::CZVimguiManager::ShowDemo()
 	{
 		bool show_demo_window = true;

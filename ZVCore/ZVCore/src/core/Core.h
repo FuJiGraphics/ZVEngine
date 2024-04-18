@@ -67,4 +67,5 @@ struct ZV_API TApplicationSpecification
 	TApplicationCommandLineArgs CommandLineArgs;
 };
 
+
 #endif /* __ZV_CORE_H__ */

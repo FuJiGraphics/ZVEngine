@@ -20,6 +20,8 @@ namespace ZVLab {
 		static void Shutdown();
 		static void Begin(const Unique<CZVwindow>& window);
 		static void End();
+		static bool BeginMainMenu();
+		static void EndMainMenu();
 		static void ShowDemo();
 	};
 

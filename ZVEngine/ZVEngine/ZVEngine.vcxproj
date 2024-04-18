@@ -155,8 +155,9 @@
     <ClInclude Include="core\GUI_Liberator.h" />
     <ClInclude Include="core\ZVapp.h" />
     <ClInclude Include="src\GUI.h" />
-    <ClInclude Include="src\Layers\Dialog2.h" />
+    <ClInclude Include="src\Layers\Layer1.h" />
     <ClInclude Include="src\Layers\Example.h" />
+    <ClInclude Include="src\Overlays\Menu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\EntryPoint.cpp" />

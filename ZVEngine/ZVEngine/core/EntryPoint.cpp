@@ -5,14 +5,6 @@
 
 namespace ZVLab {
 
-	static void GenerateLayers(CZVsystem* app)
-	{
-		for (auto& layer : g_GenerateLayerList)
-		{
-			app->AttachLayer(layer);
-		}
-	}
-	
 	CZVsystem* CreateApplication(TApplicationCommandLineArgs args)
 	{
 		TApplicationSpecification spec;
@@ -24,8 +16,7 @@ namespace ZVLab {
 
 		CZVsystem* app = new CZVapp(spec);
 		g_pApplication = app;
-		GenerateLayers(app);
-		return (app);
+		return (g_pApplication);
 	}
 
 

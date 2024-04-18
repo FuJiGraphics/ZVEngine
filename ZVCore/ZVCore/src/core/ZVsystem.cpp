@@ -70,15 +70,23 @@ namespace ZVLab {
 				}
 			}
 
+			CZVimguiManager::Begin(m_upWindow);
 			{ // ImGui_Layer
-				CZVimguiManager::Begin(m_upWindow);
+				if (CZVimguiManager::BeginMainMenu())
+				{
+					for (auto& layer : *m_upLayerBuffer)
+					{
+						layer->OnMenuRender();
+					}
+					CZVimguiManager::EndMainMenu();
+				}
 				for (auto& layer : *m_upLayerBuffer)
 				{
 					layer->OnGuiRender();
 				}
 				// CZVimguiManager::ShowDemo();
-				CZVimguiManager::End();
 			}
+			CZVimguiManager::End();
 
 			m_upWindow->Clear();
 		}

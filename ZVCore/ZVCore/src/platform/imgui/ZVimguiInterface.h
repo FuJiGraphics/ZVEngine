@@ -9,10 +9,16 @@ namespace ZVLab {
 
 	class ZV_API CZVimguiInterface
 	{
-	public:
-		static bool Begin(const std::string& name);
-		static bool Button(const char* str, float w, float h);
-		static bool Button(const char* str, float w, float h, float x, float y);
+	public: // Menu
+		static bool BeginMenu(const char* label);
+		static bool MenuItem(const char* label, const char* shortcut = NULL, bool selected = false, bool enabled = true);
+		static void EndMenu();
+
+
+	public: // Dialog
+		static bool Begin(const char* label);
+		static bool Button(const char* label, float w, float h);
+		static bool Button(const char* label, float w, float h, float x, float y);
 		static void End();
 	};
 

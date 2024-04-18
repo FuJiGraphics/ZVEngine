@@ -10,6 +10,9 @@
     <Filter Include="src\Layers">
       <UniqueIdentifier>{4C4DA51D-3805-E76A-A10C-C0C68DE3815B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Overlays">
+      <UniqueIdentifier>{F1D5BA03-DD38-4AA8-86BE-825E7200162B}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\GUI_Liberator.h">
@@ -21,10 +24,13 @@
     <ClInclude Include="src\GUI.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Layers\Dialog2.h">
+    <ClInclude Include="src\Layers\Example.h">
       <Filter>src\Layers</Filter>
     </ClInclude>
-    <ClInclude Include="src\Layers\Example.h">
+    <ClInclude Include="src\Overlays\Menu.h">
+      <Filter>src\Overlays</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layers\Layer1.h">
       <Filter>src\Layers</Filter>
     </ClInclude>
   </ItemGroup>

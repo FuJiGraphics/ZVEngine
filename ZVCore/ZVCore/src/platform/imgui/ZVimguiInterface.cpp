@@ -2,20 +2,38 @@
 
 namespace ZVLab {
 
-	bool CZVimguiInterface::Begin(const std::string& name)
+	bool CZVimguiInterface::BeginMenu(const char* label)
 	{
-		return (ImGui::Begin(name.c_str()));
+		ZVLOG_FAILED(label, "FAILED: const char* label is nullptr!");
+		return (ImGui::BeginMenu(label));
+	}
+	bool CZVimguiInterface::MenuItem(const char* label, const char* shortcut, bool selected, bool enabled)
+	{
+		ZVLOG_FAILED(label, "FAILED: const char* label is nullptr!");
+		return (ImGui::MenuItem(label, shortcut, selected, enabled));
+	}
+	void CZVimguiInterface::EndMenu()
+	{
+		ImGui::EndMenu();
 	}
 
-	bool CZVimguiInterface::Button(const char* str, float w, float h)
+	bool CZVimguiInterface::Begin(const char* label)
 	{
-		return (ImGui::Button(str, { w, h }));
+		ZVLOG_FAILED(label, "FAILED: const char* label is nullptr!");
+		return (ImGui::Begin(label));
 	}
 
-	bool CZVimguiInterface::Button(const char * str, float w, float h, float x, float y)
+	bool CZVimguiInterface::Button(const char* label, float w, float h)
 	{
+		ZVLOG_FAILED(label, "FAILED: const char* label is nullptr!");
+		return (ImGui::Button(label, { w, h }));
+	}
+
+	bool CZVimguiInterface::Button(const char* label, float w, float h, float x, float y)
+	{
+		ZVLOG_FAILED(label, "FAILED: const char* label is nullptr!");
 		ImGui::SetCursorPos({ x, y });
-		return (CZVimguiInterface::Button(str, w, h));
+		return (CZVimguiInterface::Button(label, w, h));
 	}
 
 	void CZVimguiInterface::End()

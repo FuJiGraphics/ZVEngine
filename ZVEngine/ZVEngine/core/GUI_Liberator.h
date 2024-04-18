@@ -13,8 +13,7 @@ ZVLab::CZVsystem*				g_pApplication = nullptr;
 class ClassGenerate##layer\
 {\
 public:\
-	ClassGenerate##layer()\
-	{\
+	ClassGenerate##layer(){\
 		g_GenerateLayerList.push_back(new(##layer));\
 	}\
 };\
