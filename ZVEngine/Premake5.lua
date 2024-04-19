@@ -30,10 +30,12 @@ project "ZVEngine"
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
+		"%{IncludeDir.SOIL2}",
     }
 
 	libdirs 
 	{
+		"%{LibraryDir.SOIL2}",
 	}
 
 	links
@@ -41,6 +43,7 @@ project "ZVEngine"
 		"ZVCore",
 		"%{Library.FZLib}",
 		"%{Library.GLFW}",
+		"%{Library.SOIL2}",
 		"GLAD",
 		"ImGui",
 		"Opengl32.lib", 

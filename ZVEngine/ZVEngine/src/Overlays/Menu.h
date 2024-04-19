@@ -8,7 +8,7 @@ using namespace ZVLab;
 class Menu : public ZVLab::CZVlayer
 {
 public:
-	virtual void OnMenuRender()
+	virtual void OnMainMenuBar()
 	{
 		if (ImGui::BeginMenu("File"))
 		{

@@ -1,17 +1,6 @@
-d:\dev\zvlab\zvengine\zvengine\dist\debug\imgui_impl_glfw.obj
-d:\dev\zvlab\zvengine\zvengine\dist\debug\imgui_impl_opengl3.obj
-d:\dev\zvlab\zvengine\zvengine\dist\debug\imgui_widgets.obj
-d:\dev\zvlab\zvengine\zvengine\dist\debug\imgui_tables.obj
-d:\dev\zvlab\zvengine\zvengine\dist\debug\imgui_draw.obj
-d:\dev\zvlab\zvengine\zvengine\dist\debug\imgui_demo.obj
-d:\dev\zvlab\zvengine\zvengine\dist\debug\entrypoint.obj
-d:\dev\zvlab\zvengine\zvengine\dist\debug\imgui.obj
-d:\dev\zvlab\zvengine\zvengine\dist\debug\zvapp.obj
 d:\dev\zvlab\zvengine\zvengine\dist\debug\vc141.pdb
-d:\dev\zvlab\zvengine\zvengine\dist\zvengine.exe
-d:\dev\zvlab\zvengine\zvengine\dist\zvengine.ilk
-d:\dev\zvlab\zvengine\zvengine\dist\zvengine.pdb
 d:\dev\zvlab\zvengine\zvengine\dist\debug\vc141.idb
+d:\dev\zvlab\zvengine\zvengine\dist\debug\entrypoint.obj
 d:\dev\zvlab\zvengine\zvengine\dist\debug\zvengine.tlog\cl.command.1.tlog
 d:\dev\zvlab\zvengine\zvengine\dist\debug\zvengine.tlog\cl.read.1.tlog
 d:\dev\zvlab\zvengine\zvengine\dist\debug\zvengine.tlog\cl.write.1.tlog
@@ -20,6 +9,5 @@ d:\dev\zvlab\zvengine\zvengine\dist\debug\zvengine.tlog\link-cvtres.write.1.tlog
 d:\dev\zvlab\zvengine\zvengine\dist\debug\zvengine.tlog\link-rc.read.1.tlog
 d:\dev\zvlab\zvengine\zvengine\dist\debug\zvengine.tlog\link-rc.write.1.tlog
 d:\dev\zvlab\zvengine\zvengine\dist\debug\zvengine.tlog\link.command.1.tlog
-d:\dev\zvlab\zvengine\zvengine\dist\debug\zvengine.tlog\link.delete.1.tlog
 d:\dev\zvlab\zvengine\zvengine\dist\debug\zvengine.tlog\link.read.1.tlog
 d:\dev\zvlab\zvengine\zvengine\dist\debug\zvengine.tlog\link.write.1.tlog

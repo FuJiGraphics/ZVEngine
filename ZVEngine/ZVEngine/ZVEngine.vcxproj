@@ -80,7 +80,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZV_PLATFORM_WINDOWS;ZV_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui\include;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;..\..\Vendor\SOIL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -91,7 +91,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Debug\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Debug\glfw3.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Debug\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Debug\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Debug\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>IF NOT EXIST "..\Dist\lib\Debug\x86_64\" (mkdir "..\Dist\lib\Debug\x86_64\")</Command>
@@ -105,7 +106,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZV_PLATFORM_WINDOWS;ZV_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui\include;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;..\..\Vendor\SOIL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -119,7 +120,8 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Release\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Release\glfw3.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Release\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Release\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Release\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>IF NOT EXIST "..\Dist\lib\Release\x86_64\" (mkdir "..\Dist\lib\Release\x86_64\")</Command>
@@ -133,7 +135,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZV_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui\include;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;..\..\Vendor\SOIL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -142,7 +144,8 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Dist\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Dist\glfw3.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Dist\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Dist\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Dist\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PreBuildEvent>
       <Command>IF NOT EXIST "..\Dist\lib\Dist\x86_64\" (mkdir "..\Dist\lib\Dist\x86_64\")</Command>
@@ -155,8 +158,8 @@
     <ClInclude Include="core\GUI_Liberator.h" />
     <ClInclude Include="core\ZVapp.h" />
     <ClInclude Include="src\GUI.h" />
-    <ClInclude Include="src\Layers\Layer1.h" />
     <ClInclude Include="src\Layers\Example.h" />
+    <ClInclude Include="src\Layers\Layer1.h" />
     <ClInclude Include="src\Overlays\Menu.h" />
   </ItemGroup>
   <ItemGroup>

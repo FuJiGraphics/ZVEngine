@@ -5,6 +5,6 @@ d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207)
 d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3234): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 d:\dev\zvlab\zvengine\zvcore\zvcore\src\core\zvwindow.h(9): warning C4099: 'GLFWwindow': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다.
-  d:\dev\zvlab\zvengine\vendor\imgui\backends\imgui_impl_glfw.h(24): note: 'GLFWwindow' 선언을 참조하십시오.
+  d:\dev\zvlab\zvengine\vendor\imgui\include\imgui\backends\imgui_impl_glfw.h(28): note: 'GLFWwindow' 선언을 참조하십시오.
   ZVEngine.vcxproj -> D:\Dev\ZVLab\ZVEngine\ZVEngine\ZVEngine\..\Dist\ZVEngine.exe
   지정된 파일을 찾을 수 없습니다.

@@ -43,7 +43,7 @@ public:
 
 	/// ImGui의 기능을 구현하는 함수입니다.
 	/// 이 함수는 매 프레임당 호출됩니다.
-	virtual void OnGuiRender()
+	virtual void OnGUI()
 	{
 		ImGui::Begin("Dialog1");
 		auto coolbar_button = [](const char* label) -> bool {

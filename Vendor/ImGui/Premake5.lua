@@ -7,27 +7,29 @@ project "ImGui"
 
     files
 	{
-		"imconfig.h",
-		"imgui.h",
-		"imgui.cpp",
-		"imgui_draw.cpp",
-		"imgui_internal.h",
-		"imgui_widgets.cpp",
-		"imstb_rectpack.h",
-		"imstb_textedit.h",
-		"imstb_truetype.h",
-        "imgui_tables.cpp",
-		"imgui_demo.cpp",
-        "backends/imgui_impl_opengl3.cpp",
-        "backends/imgui_impl_opengl3.h",
-        "backends/imgui_impl_opengl3_loader.h",
-        "backends/imgui_impl_glfw.cpp",
-        "backends/imgui_impl_glfw.h",
+		"include/imgui/imconfig.h",
+		"include/imgui/imgui.h",
+		"include/imgui/imgui.cpp",
+		"include/imgui/imgui_draw.cpp",
+		"include/imgui/imgui_internal.h",
+		"include/imgui/imgui_widgets.cpp",
+		"include/imgui/imstb_rectpack.h",
+		"include/imgui/imstb_textedit.h",
+		"include/imgui/imstb_truetype.h",
+        "include/imgui/imgui_tables.cpp",
+		"include/imgui/imgui_demo.cpp",
+        "include/imgui/backends/imgui_impl_opengl3.cpp",
+        "include/imgui/backends/imgui_impl_opengl3.h",
+        "include/imgui/backends/imgui_impl_opengl3_loader.h",
+        "include/imgui/backends/imgui_impl_glfw.cpp",
+        "include/imgui/backends/imgui_impl_glfw.h",
+        "include/imgui/extensions/*.cpp",
+        "include/imgui/extensions/*.h",
 	}
 
     includedirs
     {
-        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.ImGui}/imgui",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
     }
