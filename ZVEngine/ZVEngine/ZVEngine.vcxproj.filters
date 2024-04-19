@@ -24,13 +24,14 @@
     <ClInclude Include="src\GUI.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Layers\Example.h">
+    <ClInclude Include="examples\CoolbarExam.h">
       <Filter>src\Layers</Filter>
     </ClInclude>
-    <ClInclude Include="src\Layers\Layer1.h">
+    <ClInclude Include="examples\TemplateExam.h">
       <Filter>src\Layers</Filter>
     </ClInclude>
-    <ClInclude Include="src\Overlays\Menu.h">
+    <ClInclude Include="src\Layers\Layer1.h" />
+    <ClInclude Include="src\Overlays\DeveloperMenu.h">
       <Filter>src\Overlays</Filter>
     </ClInclude>
   </ItemGroup>
