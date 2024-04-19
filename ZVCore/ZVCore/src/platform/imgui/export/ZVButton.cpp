@@ -7,6 +7,7 @@ namespace ZVLab {
 		, m_fWidth(width), m_fHeight(height)
 		, m_fPosX(-999.f), m_fPosY(-999.f)
 		, m_bSetupPos(false)
+		, m_fpCallbackFn(nullptr)
 	{/*Empty*/}
 
 	CZVButton::CZVButton(const std::string & label, float width, float height, float posX, float posY)
@@ -14,14 +15,21 @@ namespace ZVLab {
 		, m_fWidth(width), m_fHeight(height)
 		, m_fPosX(posX), m_fPosY(posY)
 		, m_bSetupPos(true)
+		, m_fpCallbackFn(nullptr)
 	{/*Empty*/}
 
 	bool CZVButton::IsClicked() const
 	{
+		bool result = false;
 		if (m_bSetupPos)
-			return (CZVimguiInterface::Button(m_strButtonLabel.c_str(), m_fWidth, m_fHeight, m_fPosX, m_fPosY));
+			result = CZVimguiInterface::Button(m_strButtonLabel.c_str(), m_fWidth, m_fHeight, m_fPosX, m_fPosY);
 		else
-			return (CZVimguiInterface::Button(m_strButtonLabel.c_str(), m_fWidth, m_fHeight));
+			result = CZVimguiInterface::Button(m_strButtonLabel.c_str(), m_fWidth, m_fHeight);
+		if (result && m_fpCallbackFn != nullptr)
+		{  // 이벤트 콜백 등록시 호출 되는 함수
+			m_fpCallbackFn();
+		}
+		return (false);
 	}
 
 } // namespace ZVLab

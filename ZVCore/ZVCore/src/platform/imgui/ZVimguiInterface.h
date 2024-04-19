@@ -14,12 +14,14 @@ namespace ZVLab {
 		static bool MenuItem(const char* label, const char* shortcut = NULL, bool selected = false, bool enabled = true);
 		static void EndMenu();
 
-
 	public: // Dialog
 		static bool Begin(const char* label);
+		static void End();
+
+	public: // Buttons
 		static bool Button(const char* label, float w, float h);
 		static bool Button(const char* label, float w, float h, float x, float y);
-		static void End();
+		// static bool ImageButton()
 	};
 
 

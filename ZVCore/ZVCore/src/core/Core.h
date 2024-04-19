@@ -12,11 +12,11 @@
 #include <vector>
 
 // imgui
-#include "imgui.h"
+#include "imgui/imgui.h"
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
-#include "backends/imgui_impl_opengl3.h"
-#include "backends/imgui_impl_glfw.h"
+#include "imgui/backends/imgui_impl_opengl3.h"
+#include "imgui/backends/imgui_impl_glfw.h"
 
 #ifdef ZV_USAGE_DLL
 	#ifdef ZV_EXPORT_DLL
@@ -67,5 +67,7 @@ struct ZV_API TApplicationSpecification
 	TApplicationCommandLineArgs CommandLineArgs;
 };
 
+#define BIND_MEM_CALLBACK(fn, obj) std::bind(&(fn), &(obj))
+#define BIND_CALLBACK(fn, obj) std::bind(&(fn))
 
 #endif /* __ZV_CORE_H__ */

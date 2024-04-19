@@ -81,7 +81,13 @@
     <ClInclude Include="src\platform\imgui\export\ZVGui.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVImageButton.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVMenu.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVTexture.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\windows\ZVwindow_win.h">
@@ -110,7 +116,13 @@
     <ClCompile Include="src\platform\imgui\export\ZVDialog.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVImageButton.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVMenu.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVTexture.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\windows\ZVwindow_win.cpp">

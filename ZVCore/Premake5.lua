@@ -23,18 +23,21 @@ includedirs
 	"%{IncludeDir.GLFW}",
 	"%{IncludeDir.ImGui}",
 	"%{IncludeDir.GLAD}",
+	"%{IncludeDir.SOIL2}",
 }
 
 libdirs 
 {
 	"%{LibraryDir.FZLib}",
 	"%{LibraryDir.GLFW}",
+	"%{LibraryDir.SOIL2}",
 }
 
 links
 {
 	"%{Library.FZLib}",
 	"%{Library.GLFW}",
+	"%{Library.SOIL2}",
 	"GLAD",
 	"ImGui",
 	"Opengl32.lib",

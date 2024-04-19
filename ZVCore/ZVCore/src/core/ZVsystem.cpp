@@ -76,13 +76,13 @@ namespace ZVLab {
 				{
 					for (auto& layer : *m_upLayerBuffer)
 					{
-						layer->OnMenuRender();
+						layer->OnMainMenuBar();
 					}
 					CZVimguiManager::EndMainMenu();
 				}
 				for (auto& layer : *m_upLayerBuffer)
 				{
-					layer->OnGuiRender();
+					layer->OnGUI();
 				}
 				// CZVimguiManager::ShowDemo();
 			}
