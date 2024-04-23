@@ -56,22 +56,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\Dist\</OutDir>
-    <IntDir>..\Dist\Debug\</IntDir>
+    <OutDir>..\..\Dist\</OutDir>
+    <IntDir>..\..\Dist\Debug\</IntDir>
     <TargetName>ZVEngine</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\Dist\</OutDir>
-    <IntDir>..\Dist\Release\</IntDir>
+    <OutDir>..\..\Dist\</OutDir>
+    <IntDir>..\..\Dist\Release\</IntDir>
     <TargetName>ZVEngine</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\Dist\</OutDir>
-    <IntDir>..\Dist\Dist\</IntDir>
+    <OutDir>..\..\Dist\</OutDir>
+    <IntDir>..\..\Dist\Dist\</IntDir>
     <TargetName>ZVEngine</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
@@ -94,9 +94,6 @@
       <AdditionalDependencies>..\..\Vendor\FZLib\lib\Debug\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Debug\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Debug\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
-    <PreBuildEvent>
-      <Command>IF NOT EXIST "..\Dist\lib\Debug\x86_64\" (mkdir "..\Dist\lib\Debug\x86_64\")</Command>
-    </PreBuildEvent>
     <PostBuildEvent>
       <Command>rmdir /S /Q "..\Dist\log\"</Command>
     </PostBuildEvent>
@@ -123,9 +120,6 @@
       <AdditionalDependencies>..\..\Vendor\FZLib\lib\Release\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Release\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Release\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
-    <PreBuildEvent>
-      <Command>IF NOT EXIST "..\Dist\lib\Release\x86_64\" (mkdir "..\Dist\lib\Release\x86_64\")</Command>
-    </PreBuildEvent>
     <PostBuildEvent>
       <Command>rmdir /S /Q "..\Dist\log\"</Command>
     </PostBuildEvent>
@@ -147,9 +141,6 @@
       <AdditionalDependencies>..\..\Vendor\FZLib\lib\Dist\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Dist\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Dist\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
-    <PreBuildEvent>
-      <Command>IF NOT EXIST "..\Dist\lib\Dist\x86_64\" (mkdir "..\Dist\lib\Dist\x86_64\")</Command>
-    </PreBuildEvent>
     <PostBuildEvent>
       <Command>rmdir /S /Q "..\Dist\log\"</Command>
     </PostBuildEvent>
@@ -157,11 +148,11 @@
   <ItemGroup>
     <ClInclude Include="core\GUI_Liberator.h" />
     <ClInclude Include="core\ZVapp.h" />
-    <ClInclude Include="src\GUI.h" />
-    <ClInclude Include="examples\TemplateExam.h" />
     <ClInclude Include="examples\CoolbarExam.h" />
-    <ClInclude Include="src\Layers\Layer1.h" />
-    <ClInclude Include="src\Overlays\DeveloperMenu.h" />
+    <ClInclude Include="examples\TemplateExam.h" />
+    <ClInclude Include="src\Developer\Layers\Layer1.h" />
+    <ClInclude Include="src\Developer\Overlays\DeveloperMenu.h" />
+    <ClInclude Include="src\GUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\EntryPoint.cpp" />

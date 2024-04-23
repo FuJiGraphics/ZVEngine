@@ -14,12 +14,12 @@ namespace ZVLab {
 		~CZVDialog();
 
 	public: // interface
-		bool Folded() const;
-		bool UnFolded() const;
+		bool IsFolded() const;
+		bool IsUnFolded() const;
 
 		bool Button(const std::string& name, float w, float h);
 		bool Button(const std::string& name, float w, float h, float posX, float posY);
-		bool Button(const CZVButton& button);
+		bool Button(CZVButton& button);
 
 	public:
 		inline std::string GetLabel() const { return (m_DialogLabel); }
@@ -28,9 +28,13 @@ namespace ZVLab {
 		bool Synchronization();
 
 	private:
-		std::string	m_DialogLabel;
-		bool		m_isUnFolded;
-		
+		std::string		m_DialogLabel;
+		bool			m_isUnFolded;
+		unsigned int	m_Width;
+		unsigned int	m_Height;
+		unsigned int	m_PosX;
+		unsigned int	m_PosY;
+
 	private:
 		static bool		   s_FirstInit;
 		static std::string s_currDialog;

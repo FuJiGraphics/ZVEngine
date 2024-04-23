@@ -18,7 +18,7 @@ namespace ZVLab {
 		, m_fpCallbackFn(nullptr)
 	{/*Empty*/}
 
-	bool CZVButton::IsClicked() const
+	bool CZVButton::Bind()
 	{
 		bool result = false;
 		if (m_bSetupPos)
@@ -29,7 +29,7 @@ namespace ZVLab {
 		{  // 이벤트 콜백 등록시 호출 되는 함수
 			m_fpCallbackFn();
 		}
-		return (false);
+		return (result);
 	}
 
 } // namespace ZVLab

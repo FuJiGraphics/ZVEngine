@@ -1,5 +1,6 @@
 #include "ZVDialog.h"
 #include "../ZVimguiInterface.h"
+#include "../ZVimguiManager.h"
 
 namespace ZVLab {
 
@@ -9,6 +10,8 @@ namespace ZVLab {
 	CZVDialog::CZVDialog(const std::string& label)
 		: m_DialogLabel(label)
 		, m_isUnFolded(true)
+		, m_Width(0), m_Height(0)
+		, m_PosX(0), m_PosY(0)
 	{
 		ZVLOG_FAILED(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -18,18 +21,19 @@ namespace ZVLab {
 	{
 		if (s_currDialog == m_DialogLabel)
 		{
+			// Release a dialog
 			s_FirstInit = true;
 			CZVimguiInterface::End();
 			s_currDialog.clear();
 		}
 	}
 
-	bool CZVDialog::Folded() const
+	bool CZVDialog::IsFolded() const
 	{
 		return (!m_isUnFolded);
 	}
 
-	bool CZVDialog::UnFolded() const
+	bool CZVDialog::IsUnFolded() const
 	{
 		return (m_isUnFolded);
 	}
@@ -39,7 +43,7 @@ namespace ZVLab {
 		if (this->Synchronization())
 		{
 			CZVButton button(name, w, h);
-			return (button.IsClicked());
+			return (button.Bind());
 		}
 		return (false);
 	}
@@ -49,16 +53,16 @@ namespace ZVLab {
 		if (this->Synchronization())
 		{
 			CZVButton button(name, w, h, posX, posY);
-			return (button.IsClicked());
+			return (button.Bind());
 		}
 		return (false);
 	}
 
-	bool CZVDialog::Button(const CZVButton& button)
+	bool CZVDialog::Button(CZVButton& button)
 	{
 		if (this->Synchronization())
 		{
-			return (button.IsClicked());
+			return (button.Bind());
 		}
 		return (false);
 	}
@@ -70,7 +74,9 @@ namespace ZVLab {
 			if (s_FirstInit)
 				s_FirstInit = false;
 			else
-				CZVimguiInterface::End(); 
+			{
+				CZVimguiInterface::End();
+			}
 			s_currDialog = m_DialogLabel;
 			return (m_isUnFolded = CZVimguiInterface::Begin(m_DialogLabel.c_str()));
 		}

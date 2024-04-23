@@ -30,7 +30,7 @@ namespace ZVLab {
 		inline float		GetPosX() const		{ return (m_fPosX); }
 		inline float		GetPosY() const		{ return (m_fPosY); }
 		inline bool			IsSetupPos() const	{ return (m_bSetupPos); }
-
+		
 	public: // inline Setter
 		inline void		SetLabel(const std::string& label)	{ m_strButtonLabel = label; }
 		inline void		SetWidth(float width)				{ m_fWidth = width; }
@@ -40,7 +40,7 @@ namespace ZVLab {
 		inline void		SetCallbackFunc(EventCallbackFn fn) { m_fpCallbackFn = fn; }
 
 	public: // others
-		bool IsClicked() const;
+		virtual bool Bind();
 	};
 
 } // namesapce ZVLab

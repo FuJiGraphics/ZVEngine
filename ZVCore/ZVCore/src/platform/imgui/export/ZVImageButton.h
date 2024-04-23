@@ -12,18 +12,32 @@ namespace ZVLab {
 	class ZV_API CZVImageButton : public CZVButton
 	{
 	private:
-		CZVTexture	m_cTexture;
+		Shared<CZVTexture>	m_TexIdle;
+		Shared<CZVTexture>	m_TexClick;
+		ImVec2				m_Weight;
+		ImVec2				m_RectMin;
+		ImVec2				m_RectMax;
+		bool				m_IsSetRect;
+		bool				m_IsClicked;
 
 	public:
 		CZVImageButton(const std::string& label = std::string());
 		CZVImageButton(float posX, float posY, const std::string& label = std::string());
 
 	public:
-		void SetTexture(CZVTexture* tex);
-		void SetTexture(const std::string& path);
+		void SetTexture(const Shared<CZVTexture>& idle, const Shared<CZVTexture>& click = nullptr);
+		void SetTexture(const std::string& idle_path, const std::string& click_path = std::string());
 
 	public: // others
-		bool IsClicked();
+		bool IsHovered(const ImVec2& pos);
+
+	public: // inlines
+		inline void ResizingX(float weightX) { m_Weight.x = weightX; }
+		inline void ResizingY(float weightY) { m_Weight.y = weightY; }
+		inline void Resizing(const ImVec2& weight) { m_Weight = weight; }
+
+	public: // overrides
+		virtual bool Bind() override;
 	};
 
 } // namesapce ZVLab

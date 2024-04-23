@@ -4,14 +4,20 @@
     <Filter Include="core">
       <UniqueIdentifier>{4E40957C-3A77-960D-E363-7C10CF79120F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="examples">
+      <UniqueIdentifier>{84D830B1-70A5-8BBC-99BE-796485EAC04A}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Layers">
-      <UniqueIdentifier>{4C4DA51D-3805-E76A-A10C-C0C68DE3815B}</UniqueIdentifier>
+    <Filter Include="src\Developer">
+      <UniqueIdentifier>{6214B0C7-CED4-2BFE-970F-757B038F70DA}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Overlays">
-      <UniqueIdentifier>{F1D5BA03-DD38-4AA8-86BE-825E7200162B}</UniqueIdentifier>
+    <Filter Include="src\Developer\Layers">
+      <UniqueIdentifier>{E1A8DDB1-CD37-677B-7656-7B7662C47721}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Developer\Overlays">
+      <UniqueIdentifier>{C66A7887-B264-A1D9-9BD1-37EA876A0746}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -21,18 +27,20 @@
     <ClInclude Include="core\ZVapp.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\GUI.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="examples\CoolbarExam.h">
-      <Filter>src\Layers</Filter>
+      <Filter>examples</Filter>
     </ClInclude>
     <ClInclude Include="examples\TemplateExam.h">
-      <Filter>src\Layers</Filter>
+      <Filter>examples</Filter>
     </ClInclude>
-    <ClInclude Include="src\Layers\Layer1.h" />
-    <ClInclude Include="src\Overlays\DeveloperMenu.h">
-      <Filter>src\Overlays</Filter>
+    <ClInclude Include="src\Developer\Layers\Layer1.h">
+      <Filter>src\Developer\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Developer\Overlays\DeveloperMenu.h">
+      <Filter>src\Developer\Overlays</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GUI.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,13 +6,8 @@ project "ZVEngine"
 		staticruntime "on"
     systemversion "latest"  
 
-    targetdir ("Dist/")
-    objdir ("Dist/")
-
-	prebuildcommands
-	{
-		"{MKDIR} %[Dist/lib/%{cfg.buildcfg}/%{cfg.architecture}/]",
-	} 
+    targetdir ("../Dist/")
+    objdir ("../Dist/")
 
     files
     {

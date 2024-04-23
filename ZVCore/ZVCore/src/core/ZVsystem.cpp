@@ -1,6 +1,10 @@
 #include "ZVsystem.h"
 #include "ZVwindow.h"
 
+// icons
+#include "../platform/imgui/fonts/IconsLucide.h"
+
+
 namespace ZVLab {
 
 	CZVsystem::CZVsystem(const TApplicationSpecification& spec)
@@ -32,6 +36,25 @@ namespace ZVLab {
 		CZVimguiManager::Initialize(m_upWindow);
 		// Set Callback
 		m_upWindow->SetEventCallback(BIND_EVENT_FUNC(CZVsystem::OnEvent));
+
+
+		// TODO: 폰트 기능 리팩토링 및 수정 필요
+		// Set Font
+		CZVimguiManager::UploadFont("D:\\Dev\\ZVLab\\ZVEngine\\Resources\\Fonts\\OpenSans_Condensed-Regular.ttf", "OpenSans-Regular", 25);
+
+		// Graphic icon
+		ImGuiIO& io = ImGui::GetIO();
+		io.Fonts->AddFontDefault();
+		float baseFontSize = 40.0; // 13.0f is the size of the default font. Change to the font size you use.
+		// merge in icons from Font Awesome
+		static const ImWchar icons_ranges[] = { ICON_MIN_LC, ICON_MAX_LC, 0 };
+		// icon config
+		ImFontConfig icons_config;
+		icons_config.MergeMode = true;
+		icons_config.PixelSnapH = true;
+		icons_config.GlyphMinAdvanceX = baseFontSize;
+		// use FONT_ICON_FILE_NAME_FAR if you want regular instead of solid
+		CZVimguiManager::UploadFont("D:\\Dev\\ZVLab\\ZVEngine\\Resources\\Fonts\\lucide.ttf", "lucide", baseFontSize, &icons_config, icons_ranges);
 	}
 
 	void CZVsystem::Shutdown()
@@ -69,7 +92,7 @@ namespace ZVLab {
 					layer->OnUpdate(0.0);
 				}
 			}
-
+			
 			CZVimguiManager::Begin(m_upWindow);
 			{ // ImGui_Layer
 				if (CZVimguiManager::BeginMainMenu())
@@ -86,6 +109,7 @@ namespace ZVLab {
 				}
 				// CZVimguiManager::ShowDemo();
 			}
+
 			CZVimguiManager::End();
 
 			m_upWindow->Clear();

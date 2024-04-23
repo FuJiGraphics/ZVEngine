@@ -201,7 +201,7 @@ unsigned int
 /**
 	Loads 6 images from disk into an OpenGL cubemap texture.
 	\param x_pos_file the name of the file to upload as the +x cube face
-	\param x_neg_file the name of the file to upload as the -x cube face
+	\param x_neg_file the n3ame of the file to upload as the -x cube face
 	\param y_pos_file the name of the file to upload as the +y cube face
 	\param y_neg_file the name of the file to upload as the -y cube face
 	\param z_pos_file the name of the file to upload as the +z cube face

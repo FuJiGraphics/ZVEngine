@@ -48,16 +48,16 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\..\bin\Debug-windows-x86_64\Premake\</OutDir>
-    <IntDir>..\..\bin-int\Debug-windows-x86_64\Premake\</IntDir>
+    <OutDir>..\..\bin\Build\Debug-windows-x86_64\Premake\</OutDir>
+    <IntDir>..\..\bin-int\Build\Debug-windows-x86_64\Premake\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\..\bin\Release-windows-x86_64\Premake\</OutDir>
-    <IntDir>..\..\bin-int\Release-windows-x86_64\Premake\</IntDir>
+    <OutDir>..\..\bin\Build\Release-windows-x86_64\Premake\</OutDir>
+    <IntDir>..\..\bin-int\Build\Release-windows-x86_64\Premake\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
-    <OutDir>..\..\bin\Dist-windows-x86_64\Premake\</OutDir>
-    <IntDir>..\..\bin-int\Dist-windows-x86_64\Premake\</IntDir>
+    <OutDir>..\..\bin\Build\Dist-windows-x86_64\Premake\</OutDir>
+    <IntDir>..\..\bin-int\Build\Dist-windows-x86_64\Premake\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PostBuildEvent>
@@ -82,7 +82,6 @@
     <None Include="..\..\ZVCore\Premake5.lua" />
     <None Include="..\..\ZVEngine\Premake5.lua" />
     <None Include="..\ImGui\Premake5.lua" />
-    <None Include="..\SOIL2\premake5.lua" />
     <None Include="..\StbImage\Premake5.lua" />
     <None Include="..\glad\Premake5.lua" />
     <None Include="premake5.lua" />

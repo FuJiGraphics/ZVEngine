@@ -16,9 +16,6 @@
     <Filter Include="..\ImGui">
       <UniqueIdentifier>{4BEA8637-37B7-E142-60D0-CFEA4CFC16D1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="..\SOIL2">
-      <UniqueIdentifier>{F96E2B38-E53B-8643-0E55-74EBFA80BBD1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="..\StbImage">
       <UniqueIdentifier>{1CB38C63-8868-0559-115D-FF2F7D11FC5C}</UniqueIdentifier>
     </Filter>
@@ -38,9 +35,6 @@
     </None>
     <None Include="..\ImGui\Premake5.lua">
       <Filter>..\ImGui</Filter>
-    </None>
-    <None Include="..\SOIL2\premake5.lua">
-      <Filter>..\SOIL2</Filter>
     </None>
     <None Include="..\StbImage\Premake5.lua">
       <Filter>..\StbImage</Filter>

@@ -16,7 +16,7 @@ workspace "ZVEngine"
 		"MultiProcessorCompile"
 	}
 
-outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "Build/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 group "Dependencies"
 	include "Vendor/Premake5"

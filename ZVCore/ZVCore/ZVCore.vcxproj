@@ -55,20 +55,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\..\bin\Debug-windows-x86_64\ZVCore\</OutDir>
-    <IntDir>..\..\bin-int\Debug-windows-x86_64\ZVCore\</IntDir>
+    <OutDir>bin\Debug\</OutDir>
+    <IntDir>obj\Debug\</IntDir>
     <TargetName>ZVCore</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\..\bin\Release-windows-x86_64\ZVCore\</OutDir>
-    <IntDir>..\..\bin-int\Release-windows-x86_64\ZVCore\</IntDir>
+    <OutDir>bin\Release\</OutDir>
+    <IntDir>obj\Release\</IntDir>
     <TargetName>ZVCore</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
-    <OutDir>..\..\bin\Dist-windows-x86_64\ZVCore\</OutDir>
-    <IntDir>..\..\bin-int\Dist-windows-x86_64\ZVCore\</IntDir>
+    <OutDir>bin\Dist\</OutDir>
+    <IntDir>obj\Dist\</IntDir>
     <TargetName>ZVCore</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
@@ -154,6 +154,9 @@
     <ClInclude Include="src\events\ZVmouseEvent.h" />
     <ClInclude Include="src\export\EntryPoint.h" />
     <ClInclude Include="src\export\ZVCore.h" />
+    <ClInclude Include="src\platform\imgui\fonts\IconsLucide.h" />
+    <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
+    <ClInclude Include="src\platform\imgui\ZVTexture_impl.h" />
     <ClInclude Include="src\platform\imgui\ZVimguiInterface.h" />
     <ClInclude Include="src\platform\imgui\ZVimguiManager.h" />
     <ClInclude Include="src\platform\imgui\export\ZVButton.h" />
@@ -168,6 +171,8 @@
     <ClCompile Include="src\core\ZVlayerBuffer.cpp" />
     <ClCompile Include="src\core\ZVsystem.cpp" />
     <ClCompile Include="src\core\ZVwindow.cpp" />
+    <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp" />
+    <ClCompile Include="src\platform\imgui\ZVTexture_impl.cpp" />
     <ClCompile Include="src\platform\imgui\ZVimguiInterface.cpp" />
     <ClCompile Include="src\platform\imgui\ZVimguiManager.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVButton.cpp" />

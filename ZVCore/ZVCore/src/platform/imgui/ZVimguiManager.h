@@ -23,6 +23,16 @@ namespace ZVLab {
 		static bool BeginMainMenu();
 		static void EndMainMenu();
 		static void ShowDemo();
+		static void SetOverviewDockspace(bool enable);
+		static bool EnabledOverviewDockspace();
+
+	public:
+		static bool UploadFont(const std::string& path, const std::string& fontName, float size_pixels, ImFontConfig* config = nullptr, const ImWchar* glyph_ranges = nullptr);
+		static ImFont* GetFont(const std::string& fontName);
+
+	private:
+		static bool s_bEnableOverviewDockspace;
+		static std::unordered_map<std::string, ImFont*> s_mapFonts;
 	};
 
 } // namespace ZVLab

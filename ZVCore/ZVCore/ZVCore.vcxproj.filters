@@ -66,6 +66,12 @@
     <ClInclude Include="src\export\ZVCore.h">
       <Filter>export</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\ZVImguiTheme.h">
+      <Filter>platform\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\ZVTexture_impl.h">
+      <Filter>platform\imgui</Filter>
+    </ClInclude>
     <ClInclude Include="src\platform\imgui\ZVimguiInterface.h">
       <Filter>platform\imgui</Filter>
     </ClInclude>
@@ -93,6 +99,7 @@
     <ClInclude Include="src\platform\windows\ZVwindow_win.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\fonts\IconsLucide.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVlayerBuffer.cpp">
@@ -103,6 +110,12 @@
     </ClCompile>
     <ClCompile Include="src\core\ZVwindow.cpp">
       <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp">
+      <Filter>platform\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\ZVTexture_impl.cpp">
+      <Filter>platform\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\ZVimguiInterface.cpp">
       <Filter>platform\imgui</Filter>

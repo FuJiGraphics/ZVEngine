@@ -1,14 +1,24 @@
 #include "ZVimguiManager.h"
-
+#include "ZVImguiTheme.h"
+#include "fonts/IconsLucide.h"
 //imgui
 #include <stdio.h>
 
+void StyleColorsSpectrum() {
+	ImGuiStyle* style = &ImGui::GetStyle();
+	style->GrabRounding = 4.0f;
+
+
+}
 
 void glfw_error_callback(int error, const char * description)
 {
 }
 
 namespace ZVLab {
+
+	bool CZVimguiManager::s_bEnableOverviewDockspace = true;
+	std::unordered_map<std::string, ImFont*> CZVimguiManager::s_mapFonts;
 
 	void CZVimguiManager::Initialize(const Unique<CZVwindow>& window)
 	{
@@ -23,8 +33,11 @@ namespace ZVLab {
 		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // Enable Docking
 		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
 		// Setup Dear ImGui style
-		ImGui::StyleColorsDark();
+		// ImGui::StyleColorsDark();
 		//ImGui::StyleColorsLight();
+
+		ImGui::Spectrum::StyleColorsSpectrum();
+		io.Fonts->AddFontDefault();
 
 		// Setup Platform/Renderer backends
 		ImGui_ImplGlfw_InitForOpenGL(window->GetNativeWindow(), true);
@@ -46,6 +59,10 @@ namespace ZVLab {
 			ImGui_ImplOpenGL3_NewFrame();
 			ImGui_ImplGlfw_NewFrame();
 			ImGui::NewFrame();
+			if (s_bEnableOverviewDockspace)
+			{
+				ImGui::DockSpaceOverViewport();
+			}
 		}
 	}
 
@@ -54,9 +71,6 @@ namespace ZVLab {
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
-		// Update and Render additional Platform Windows
-		// (Platform functions may change the current OpenGL context, so we save/restore it to make it easier to paste this code elsewhere.
-		//  For this specific demo app we could also call glfwMakeContextCurrent(window) directly)
 		if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
 		{
 			GLFWwindow* backup_current_context = glfwGetCurrentContext();
@@ -108,4 +122,58 @@ namespace ZVLab {
 			show_another_window = false;
 		ImGui::End();
 	}
+
+	void CZVimguiManager::SetOverviewDockspace(bool enable)
+	{
+		s_bEnableOverviewDockspace = enable;
+	}
+
+	bool CZVimguiManager::EnabledOverviewDockspace()
+	{
+		return (s_bEnableOverviewDockspace);
+	}
+
+	bool CZVimguiManager::UploadFont(const std::string& path, 
+									 const std::string& fontName, 
+									 float size_pixels, 
+									 ImFontConfig* config,
+									 const ImWchar* glyph_ranges)
+	{
+		if (s_mapFonts.find(fontName) != s_mapFonts.end())
+		{
+			ZVLOG_FAILED(false, "FAILED: Already uploaded font!");
+			return (false);
+		}
+		auto io = ImGui::GetIO();
+
+		ImFont* font = nullptr;
+		if (config == nullptr && glyph_ranges == nullptr)
+			font = io.Fonts->AddFontFromFileTTF(path.c_str(), size_pixels);
+		else if (config != nullptr && glyph_ranges == nullptr)
+			font = io.Fonts->AddFontFromFileTTF(path.c_str(), size_pixels, config);
+		else if (config != nullptr && glyph_ranges != nullptr)
+			font = io.Fonts->AddFontFromFileTTF(path.c_str(), size_pixels, config, glyph_ranges);
+
+		if (font == nullptr)
+		{
+			ZVLOG_FAILED(font, "FAILED: Unexpected Error! font is null!!");
+			return (false);
+		}
+		s_mapFonts.insert({ fontName, font });
+		return (true);
+	}
+
+	ImFont* CZVimguiManager::GetFont(const std::string & fontName)
+	{
+		if (s_mapFonts.find(fontName) == s_mapFonts.end())
+		{
+			ZVLOG_FAILED(false, "FAILED: Did not found font!");
+			return (false);
+		}
+		ImFont* font = s_mapFonts[fontName];
+		ZVLOG_FAILED(font, "FAILED: ImFont* font is null!");
+		return (font);
+	}
+
+
 } // namespace ZVLab
