@@ -150,7 +150,7 @@
     <ClInclude Include="core\ZVapp.h" />
     <ClInclude Include="examples\CoolbarExam.h" />
     <ClInclude Include="examples\TemplateExam.h" />
-    <ClInclude Include="src\Developer\Layers\Layer1.h" />
+    <ClInclude Include="src\Developer\Layers\Controllers\Motion\ZVMotion_Layer.h" />
     <ClInclude Include="src\Developer\Layers\Sidebar_left.h" />
     <ClInclude Include="src\Developer\Overlays\DeveloperMenu.h" />
     <ClInclude Include="src\GUI.h" />

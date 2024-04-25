@@ -33,9 +33,6 @@
     <ClInclude Include="examples\TemplateExam.h">
       <Filter>examples</Filter>
     </ClInclude>
-    <ClInclude Include="src\Developer\Layers\Layer1.h">
-      <Filter>src\Developer\Layers</Filter>
-    </ClInclude>
     <ClInclude Include="src\Developer\Layers\Sidebar_left.h">
       <Filter>src\Developer\Layers</Filter>
     </ClInclude>
@@ -45,6 +42,7 @@
     <ClInclude Include="src\GUI.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Developer\Layers\Controllers\Motion\ZVMotion_Layer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\EntryPoint.cpp">
