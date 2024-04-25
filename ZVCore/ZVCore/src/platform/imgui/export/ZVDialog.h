@@ -7,6 +7,10 @@
 
 namespace ZVLab {
 
+	struct ZV_API TDialogInfo
+	{
+	};
+
 	class ZV_API CZVDialog
 	{
 	public:
