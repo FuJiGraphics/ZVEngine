@@ -1,5 +1,4 @@
 #include "ZVDialog.h"
-#include "../ZVimguiInterface.h"
 #include "../ZVimguiManager.h"
 
 namespace ZVLab {
@@ -23,7 +22,7 @@ namespace ZVLab {
 		{
 			// Release a dialog
 			s_FirstInit = true;
-			CZVimguiInterface::End();
+			ImGui::End();
 			s_currDialog.clear();
 		}
 	}
@@ -75,10 +74,10 @@ namespace ZVLab {
 				s_FirstInit = false;
 			else
 			{
-				CZVimguiInterface::End();
+				ImGui::End();
 			}
 			s_currDialog = m_DialogLabel;
-			return (m_isUnFolded = CZVimguiInterface::Begin(m_DialogLabel.c_str()));
+			return (m_isUnFolded = ImGui::Begin(m_DialogLabel.c_str()));
 		}
 		return (m_isUnFolded);
 	}

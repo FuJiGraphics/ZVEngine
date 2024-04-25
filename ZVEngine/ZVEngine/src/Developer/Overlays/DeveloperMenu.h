@@ -17,6 +17,20 @@ public:
 			if (ImGui::MenuItem("Close", "Ctrl+W")) {}
 			ImGui::EndMenu();
 		}
+
+		static bool flags = true;
+		if (ImGui::BeginMenu("Options"))
+		{
+			if (ImGui::MenuItem("Enable Dockspace"))
+			{
+				if (flags)
+					flags = false;
+				else
+					flags = true;
+				CZVimguiManager::SetOverviewDockspace(flags);
+			}
+			ImGui::EndMenu();
+		}
 	}
 };
 

@@ -5,7 +5,6 @@
 #include "ZVCore.h"
 #include "GUI_Liberator.h"
 
-
 static void GenerateLayers(CZVsystem* app)
 {
 	for (auto& layer : g_GenerateLayerList)

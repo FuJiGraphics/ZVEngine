@@ -36,6 +36,9 @@
     <ClInclude Include="src\Developer\Layers\Layer1.h">
       <Filter>src\Developer\Layers</Filter>
     </ClInclude>
+    <ClInclude Include="src\Developer\Layers\Sidebar_left.h">
+      <Filter>src\Developer\Layers</Filter>
+    </ClInclude>
     <ClInclude Include="src\Developer\Overlays\DeveloperMenu.h">
       <Filter>src\Developer\Overlays</Filter>
     </ClInclude>

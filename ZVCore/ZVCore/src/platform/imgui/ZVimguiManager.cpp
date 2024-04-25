@@ -34,9 +34,9 @@ namespace ZVLab {
 		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
 		// Setup Dear ImGui style
 		// ImGui::StyleColorsDark();
-		//ImGui::StyleColorsLight();
+		ImGui::StyleColorsLight();
 
-		ImGui::Spectrum::StyleColorsSpectrum();
+		//ImGui::Spectrum::StyleColorsSpectrum();
 		io.Fonts->AddFontDefault();
 
 		// Setup Platform/Renderer backends
@@ -163,7 +163,7 @@ namespace ZVLab {
 		return (true);
 	}
 
-	ImFont* CZVimguiManager::GetFont(const std::string & fontName)
+	ImFont* CZVimguiManager::GetFont(const std::string& fontName)
 	{
 		if (s_mapFonts.find(fontName) == s_mapFonts.end())
 		{

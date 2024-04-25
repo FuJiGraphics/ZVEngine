@@ -154,7 +154,6 @@
     <ClInclude Include="src\events\ZVmouseEvent.h" />
     <ClInclude Include="src\export\EntryPoint.h" />
     <ClInclude Include="src\export\ZVCore.h" />
-    <ClInclude Include="src\platform\imgui\fonts\IconsLucide.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
     <ClInclude Include="src\platform\imgui\ZVTexture_impl.h" />
     <ClInclude Include="src\platform\imgui\ZVimguiInterface.h" />
@@ -165,6 +164,7 @@
     <ClInclude Include="src\platform\imgui\export\ZVImageButton.h" />
     <ClInclude Include="src\platform\imgui\export\ZVMenu.h" />
     <ClInclude Include="src\platform\imgui\export\ZVTexture.h" />
+    <ClInclude Include="src\platform\imgui\fonts\IconsLucide.h" />
     <ClInclude Include="src\platform\windows\ZVwindow_win.h" />
   </ItemGroup>
   <ItemGroup>

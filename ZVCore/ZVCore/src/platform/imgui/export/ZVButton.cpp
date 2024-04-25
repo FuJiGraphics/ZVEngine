@@ -1,5 +1,4 @@
 #include "ZVButton.h"
-#include "../ZVimguiInterface.h"
 
 namespace ZVLab {
 	CZVButton::CZVButton(const std::string& label, float width, float height)
@@ -22,9 +21,10 @@ namespace ZVLab {
 	{
 		bool result = false;
 		if (m_bSetupPos)
-			result = CZVimguiInterface::Button(m_strButtonLabel.c_str(), m_fWidth, m_fHeight, m_fPosX, m_fPosY);
-		else
-			result = CZVimguiInterface::Button(m_strButtonLabel.c_str(), m_fWidth, m_fHeight);
+		{
+			ImGui::SetCursorPos({ m_fPosX, m_fPosY });
+		}
+		result = ImGui::Button(m_strButtonLabel.c_str(), { m_fWidth, m_fHeight });
 		if (result && m_fpCallbackFn != nullptr)
 		{  // 이벤트 콜백 등록시 호출 되는 함수
 			m_fpCallbackFn();

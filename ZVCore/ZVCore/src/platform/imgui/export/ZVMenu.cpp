@@ -1,5 +1,4 @@
 #include "ZVMenu.h"
-#include "../ZVimguiInterface.h"
 
 namespace ZVLab {
 
@@ -24,7 +23,7 @@ namespace ZVLab {
 		}
 		if (s_bOpenedMenu)
 		{
-			CZVimguiInterface::EndMenu(); 
+			ImGui::EndMenu(); 
 			s_bOpenedMenu = false;
 			s_currMenu.clear(); 
 			s_FirstInitMenu = true;
@@ -38,7 +37,7 @@ namespace ZVLab {
 		{
 			if (OpenedMenu(label))
 			{
-				return (CZVimguiInterface::MenuItem(label.c_str(), shortcut, selected, enabled));
+				return (ImGui::MenuItem(label.c_str(), shortcut, selected, enabled));
 			}
 		}
 		return (false);
@@ -56,7 +55,7 @@ namespace ZVLab {
 	{
 		if (s_FirstInitMenu)
 		{
-			s_bOpenedMenu = CZVimguiInterface::BeginMenu(label.c_str());
+			s_bOpenedMenu = ImGui::BeginMenu(label.c_str());
 			if (s_bOpenedMenu)
 			{
 				s_currMenu = label;
@@ -65,9 +64,9 @@ namespace ZVLab {
 		}
 		else if (s_bOpenedMenu && s_currMenu != label)
 		{
-			CZVimguiInterface::EndMenu();
+			ImGui::EndMenu();
 			s_currMenu = label;
-			s_bOpenedMenu = CZVimguiInterface::BeginMenu(label.c_str());
+			s_bOpenedMenu = ImGui::BeginMenu(label.c_str());
 		}
 		return (s_bOpenedMenu);
 	}
