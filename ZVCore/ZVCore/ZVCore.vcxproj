@@ -157,7 +157,6 @@
     <ClInclude Include="src\platform\imgui\fonts\IconsLucide.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
     <ClInclude Include="src\platform\imgui\ZVTexture_impl.h" />
-    <ClInclude Include="src\platform\imgui\ZVimguiInterface.h" />
     <ClInclude Include="src\platform\imgui\ZVimguiManager.h" />
     <ClInclude Include="src\platform\imgui\export\ZVButton.h" />
     <ClInclude Include="src\platform\imgui\export\ZVDialog.h" />
@@ -173,7 +172,6 @@
     <ClCompile Include="src\core\ZVwindow.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp" />
     <ClCompile Include="src\platform\imgui\ZVTexture_impl.cpp" />
-    <ClCompile Include="src\platform\imgui\ZVimguiInterface.cpp" />
     <ClCompile Include="src\platform\imgui\ZVimguiManager.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVButton.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVDialog.cpp" />
