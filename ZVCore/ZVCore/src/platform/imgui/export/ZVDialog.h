@@ -3,19 +3,31 @@
 #pragma once
 
 #include "../../../core/Core.h"
+#include "ZVGuiConfig.h"
 #include "ZVButton.h"
 
 namespace ZVLab {
 
-	struct ZV_API TDialogInfo
+	class ZV_API CzvDialog
 	{
-	};
+	private:
+		static bool			s_bFirstInit;
+		static std::string	s_strCurrDialog;
 
-	class ZV_API CZVDialog
-	{
+	private:
+		std::string		m_strLabel;
+		ImVec2			m_tPosition;
+		ImVec2			m_tSize;
+		bool			m_bIsUnFolded;
+		TzvDialogInfo	m_tOptions;
+
 	public:
-		CZVDialog(const std::string& name);
-		~CZVDialog();
+		CzvDialog(const std::string& label, const TzvDialogInfo& options = TzvDialogInfo());
+		CzvDialog(const std::string& label,
+				  const ImVec2& position, 
+				  const ImVec2& size = ImVec2(),
+				  const TzvDialogInfo& options = TzvDialogInfo());
+		~CzvDialog();
 
 	public: // interface
 		bool IsFolded() const;
@@ -26,22 +38,11 @@ namespace ZVLab {
 		bool Button(CZVButton& button);
 
 	public:
-		inline std::string GetLabel() const { return (m_DialogLabel); }
+		inline std::string GetLabel() const { return (m_strLabel); }
 
 	private:
 		bool Synchronization();
 
-	private:
-		std::string		m_DialogLabel;
-		bool			m_isUnFolded;
-		unsigned int	m_Width;
-		unsigned int	m_Height;
-		unsigned int	m_PosX;
-		unsigned int	m_PosY;
-
-	private:
-		static bool		   s_FirstInit;
-		static std::string s_currDialog;
 	};
 
 } // namespace ZVLab

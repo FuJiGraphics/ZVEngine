@@ -1,18 +1,19 @@
-﻿  ZVMotion_Default.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\VC\VCTargets\Microsoft.CppClean.targets(76,5): warning : 'd:\dev\zvengine\zvlab\lib\debug\zvmotion.lib' 파일은 다른 프로세스에서 사용 중이므로 프로세스에서 액세스할 수 없습니다.
   ZVMotion.cpp
   ZVMotion_ACS.cpp
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\ZVMotion.cpp)
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\ZVMotion.cpp)
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\ZVMotion.cpp)
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\acs\ZVMotion_ACS.cpp)
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\acs\ZVMotion_ACS.cpp)
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\acs\ZVMotion_ACS.cpp)
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\default\ZVMotion_Default.cpp)
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\default\ZVMotion_Default.cpp)
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\default\ZVMotion_Default.cpp)
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\ZVMotion.cpp)
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\vendor\acs\ZVMotion_ACS.cpp)
-d:\dev\zvlab\zvengine\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\vendor\default\ZVMotion_Default.cpp)
+  ZVMotion_Default.cpp
+d:\dev\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\default\ZVMotion_Default.cpp)
+d:\dev\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\acs\ZVMotion_ACS.cpp)
+d:\dev\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\ZVMotion.cpp)
+d:\dev\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\default\ZVMotion_Default.cpp)
+d:\dev\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\acs\ZVMotion_ACS.cpp)
+d:\dev\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\default\ZVMotion_Default.cpp)
+d:\dev\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\vendor\acs\ZVMotion_ACS.cpp)
+d:\dev\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\ZVMotion.cpp)
+d:\dev\zvengine\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\ZVMotion.cpp)
+d:\dev\zvengine\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\vendor\default\ZVMotion_Default.cpp)
+d:\dev\zvengine\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\vendor\acs\ZVMotion_ACS.cpp)
+d:\dev\zvengine\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\ZVMotion.cpp)
 FZLib.lib(bundled_fmtlib_format.obj) : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl fmt::v9::vformat(class fmt::v9::basic_string_view<char>,class fmt::v9::basic_format_args<class fmt::v9::basic_format_context<class fmt::v9::appender,char> >)" (?vformat@v9@fmt@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@D@12@V?$basic_format_args@V?$basic_format_context@Vappender@v9@fmt@@D@v9@fmt@@@12@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
 FZLib.lib(bundled_fmtlib_format.obj) : warning LNK4006: "bool __cdecl fmt::v9::detail::is_printable(unsigned int)" (?is_printable@detail@v9@fmt@@YA_NI@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
 FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::throw_spdlog_ex(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?throw_spdlog_ex@spdlog@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
@@ -20,4 +21,4 @@ FZLib.lib(spdlog.obj) : warning LNK4006: "class std::chrono::time_point<struct s
 FZLib.lib(spdlog.obj) : warning LNK4006: "int __cdecl spdlog::details::os::pid(void)" (?pid@os@details@spdlog@@YAHXZ)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
 FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::set_formatter(class std::unique_ptr<class spdlog::formatter,struct std::default_delete<class spdlog::formatter> >)" (?set_formatter@spdlog@@YAXV?$unique_ptr@Vformatter@spdlog@@U?$default_delete@Vformatter@spdlog@@@std@@@std@@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
 FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::set_pattern(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum spdlog::pattern_time_type)" (?set_pattern@spdlog@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4pattern_time_type@1@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
-  ZVMotion.vcxproj -> D:\Dev\ZVLab\ZVEngine\ZVLab\ZVMotion\..\lib\Debug\ZVMotion.lib
+  ZVMotion.vcxproj -> D:\Dev\ZVEngine\ZVLab\ZVMotion\..\lib\Debug\ZVMotion.lib

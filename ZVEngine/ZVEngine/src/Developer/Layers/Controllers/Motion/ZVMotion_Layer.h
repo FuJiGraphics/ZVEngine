@@ -101,7 +101,7 @@ public:
 public:
 	virtual void OnGUI()
 	{
-		CZVDialog sidebar_left(" ");
+		CzvDialog sidebar_left(" ");
 		static bool OnZVMotion = false;
 		if (sidebar_left.Button(stage))
 		{
@@ -114,7 +114,9 @@ public:
 		static float speed = 0.2f;
 		if (OnZVMotion)
 		{
-			CZVDialog sidebar_ZVMotion("ZVMotion");
+			TzvDialogInfo info;
+			info.SetNoTitleBar(true);
+			CzvDialog sidebar_ZVMotion("ZVMotion", info);
 
 			ImGui::SliderFloat("SpeedX", &m_speedX, 0.0f, 50.0f);
 			ImGui::SliderFloat("SpeedY", &m_speedY, 0.0f, 50.0f);

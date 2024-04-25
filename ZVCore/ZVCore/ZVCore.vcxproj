@@ -159,7 +159,7 @@
     <ClInclude Include="src\platform\imgui\ZVimguiManager.h" />
     <ClInclude Include="src\platform\imgui\export\ZVButton.h" />
     <ClInclude Include="src\platform\imgui\export\ZVDialog.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVGui.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVGuiConfig.h" />
     <ClInclude Include="src\platform\imgui\export\ZVImageButton.h" />
     <ClInclude Include="src\platform\imgui\export\ZVMenu.h" />
     <ClInclude Include="src\platform\imgui\export\ZVTexture.h" />

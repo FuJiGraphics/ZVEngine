@@ -84,9 +84,6 @@
     <ClInclude Include="src\platform\imgui\export\ZVDialog.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVGui.h">
-      <Filter>platform\imgui\export</Filter>
-    </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVImageButton.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
@@ -101,6 +98,9 @@
     </ClInclude>
     <ClInclude Include="src\platform\windows\ZVwindow_win.h">
       <Filter>platform\windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVGuiConfig.h">
+      <Filter>platform\imgui\export</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

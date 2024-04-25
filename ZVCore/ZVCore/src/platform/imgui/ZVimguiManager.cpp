@@ -37,7 +37,7 @@ namespace ZVLab {
 		ImGui::StyleColorsLight();
 
 		//ImGui::Spectrum::StyleColorsSpectrum();
-		io.Fonts->AddFontDefault();
+		//io.Fonts->AddFontDefault();
 
 		// Setup Platform/Renderer backends
 		ImGui_ImplGlfw_InitForOpenGL(window->GetNativeWindow(), true);

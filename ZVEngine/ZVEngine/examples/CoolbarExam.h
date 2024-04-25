@@ -56,7 +56,7 @@ public:
 
 
 
-		CZVDialog dialog1("Dialog 1");
+		CzvDialog dialog1("Dialog 1");
 		m_b1.IsClicked();
 	}
 };

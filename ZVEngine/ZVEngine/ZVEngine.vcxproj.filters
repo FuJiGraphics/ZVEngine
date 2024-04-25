@@ -16,6 +16,12 @@
     <Filter Include="src\Developer\Layers">
       <UniqueIdentifier>{E1A8DDB1-CD37-677B-7656-7B7662C47721}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Developer\Layers\Controllers">
+      <UniqueIdentifier>{C7802F98-B3D1-1ADA-DC35-099CC8E5AD43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Developer\Layers\Controllers\Motion">
+      <UniqueIdentifier>{0C64941C-78F3-5507-81EF-361FEDFD9013}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Developer\Overlays">
       <UniqueIdentifier>{C66A7887-B264-A1D9-9BD1-37EA876A0746}</UniqueIdentifier>
     </Filter>
@@ -33,6 +39,9 @@
     <ClInclude Include="examples\TemplateExam.h">
       <Filter>examples</Filter>
     </ClInclude>
+    <ClInclude Include="src\Developer\Layers\Controllers\Motion\ZVMotion_Layer.h">
+      <Filter>src\Developer\Layers\Controllers\Motion</Filter>
+    </ClInclude>
     <ClInclude Include="src\Developer\Layers\Sidebar_left.h">
       <Filter>src\Developer\Layers</Filter>
     </ClInclude>
@@ -42,7 +51,6 @@
     <ClInclude Include="src\GUI.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Developer\Layers\Controllers\Motion\ZVMotion_Layer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\EntryPoint.cpp">

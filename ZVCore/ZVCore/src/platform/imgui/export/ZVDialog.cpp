@@ -3,41 +3,56 @@
 
 namespace ZVLab {
 
-	bool		CZVDialog::s_FirstInit = true;
-	std::string CZVDialog::s_currDialog;
+	bool		CzvDialog::s_bFirstInit = true;
+	std::string CzvDialog::s_strCurrDialog;
 
-	CZVDialog::CZVDialog(const std::string& label)
-		: m_DialogLabel(label)
-		, m_isUnFolded(true)
-		, m_Width(0), m_Height(0)
-		, m_PosX(0), m_PosY(0)
+	CzvDialog::CzvDialog(const std::string& label, const TzvDialogInfo& options)
+		: m_strLabel(label)
+		, m_tPosition()
+		, m_tSize()
+		, m_bIsUnFolded(true)
+		, m_tOptions(options)
 	{
 		ZVLOG_FAILED(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
 	}
 
-	CZVDialog::~CZVDialog()
+	CzvDialog::CzvDialog(const std::string& label,
+						 const ImVec2& position,
+						 const ImVec2& size,
+						 const TzvDialogInfo& options)
+		: m_strLabel(label)
+		, m_tPosition(position)
+		, m_tSize(size)
+		, m_bIsUnFolded(true)
+		, m_tOptions(options)
 	{
-		if (s_currDialog == m_DialogLabel)
+		ZVLOG_FAILED(label.size(), "FAILED: Label length must be greater than or equal to 0.");
+		this->Synchronization();
+	}
+
+	CzvDialog::~CzvDialog()
+	{
+		if (s_strCurrDialog == m_strLabel)
 		{
 			// Release a dialog
-			s_FirstInit = true;
+			s_bFirstInit = true;
 			ImGui::End();
-			s_currDialog.clear();
+			s_strCurrDialog.clear();
 		}
 	}
 
-	bool CZVDialog::IsFolded() const
+	bool CzvDialog::IsFolded() const
 	{
-		return (!m_isUnFolded);
+		return (!m_bIsUnFolded);
 	}
 
-	bool CZVDialog::IsUnFolded() const
+	bool CzvDialog::IsUnFolded() const
 	{
-		return (m_isUnFolded);
+		return (m_bIsUnFolded);
 	}
 
-	bool CZVDialog::Button(const std::string& name, float w, float h)
+	bool CzvDialog::Button(const std::string& name, float w, float h)
 	{
 		if (this->Synchronization())
 		{
@@ -47,7 +62,7 @@ namespace ZVLab {
 		return (false);
 	}
 
-	bool CZVDialog::Button(const std::string& name, float w, float h, float posX, float posY)
+	bool CzvDialog::Button(const std::string& name, float w, float h, float posX, float posY)
 	{
 		if (this->Synchronization())
 		{
@@ -57,7 +72,7 @@ namespace ZVLab {
 		return (false);
 	}
 
-	bool CZVDialog::Button(CZVButton& button)
+	bool CzvDialog::Button(CZVButton& button)
 	{
 		if (this->Synchronization())
 		{
@@ -66,20 +81,20 @@ namespace ZVLab {
 		return (false);
 	}
 
-	bool CZVDialog::Synchronization()
+	bool CzvDialog::Synchronization()
 	{
-		if (s_currDialog != m_DialogLabel || s_FirstInit)
+		if (s_strCurrDialog != m_strLabel || s_bFirstInit)
 		{
-			if (s_FirstInit)
-				s_FirstInit = false;
+			if (s_bFirstInit)
+				s_bFirstInit = false;
 			else
 			{
 				ImGui::End();
 			}
-			s_currDialog = m_DialogLabel;
-			return (m_isUnFolded = ImGui::Begin(m_DialogLabel.c_str()));
+			s_strCurrDialog = m_strLabel;
+			return (m_bIsUnFolded = ImGui::Begin(m_strLabel.c_str(), NULL, m_tOptions.GetOptions()));
 		}
-		return (m_isUnFolded);
+		return (m_bIsUnFolded);
 	}
 
 } // namespace ZVLab
