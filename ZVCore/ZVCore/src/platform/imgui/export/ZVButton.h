@@ -3,41 +3,46 @@
 #pragma once
 
 #include "../../../core/Core.h"
+#include "ZVGuiConfig.h"
 #include <string>
 
 namespace ZVLab {
 	
-	class CZVButton
+	class CzvButton
 	{
+	protected: /// using 
 		using EventCallbackFn = std::function<void(void)>;
-	private:
+
+	protected: /// static member variables
+		static unsigned int		s_nuiButtonCount;
+
+	protected: /// member variables
 		std::string				m_strButtonLabel;
-		float					m_fWidth;
-		float					m_fHeight;
-		float					m_fPosX;
-		float					m_fPosY;
-		bool					m_bSetupPos;
+		std::optional<ImVec2>	m_optSize;
+		std::optional<ImVec2>	m_optPosition;
 		std::function<void()>	m_fpCallbackFn;
 
-	public:
-		CZVButton(const std::string& label, float width, float height);
-		CZVButton(const std::string& label, float width, float height, float posX, float posY);
+	public: // static member functions
+		inline static unsigned int	GetButtonCount() { return (s_nuiButtonCount); }
+
+	public: // Constructors, Destructors
+		CzvButton(const std::string& label);
+		CzvButton(const std::string& label, const ImVec2& size);
+		CzvButton(const std::string& label, const ImVec2& size, const ImVec2& position);
+		virtual ~CzvButton();
 
 	public: // inline Getter
 		inline std::string	GetLabel() const	{ return (m_strButtonLabel); }
-		inline float		GetWidth() const	{ return (m_fWidth); }
-		inline float		GetHeight() const	{ return (m_fHeight); }
-		inline float		GetPosX() const		{ return (m_fPosX); }
-		inline float		GetPosY() const		{ return (m_fPosY); }
-		inline bool			IsSetupPos() const	{ return (m_bSetupPos); }
+		inline float		GetWidth() const	{ return (m_optSize.has_value() ? m_optSize->x : 0); }
+		inline float		GetHeight() const	{ return (m_optSize.has_value() ? m_optSize->y : 0); }
+		inline float		GetPosX() const		{ return (m_optPosition.has_value() ? m_optPosition->x : -999); }
+		inline float		GetPosY() const		{ return (m_optPosition.has_value() ? m_optPosition->y : 0); }
 		
 	public: // inline Setter
-		inline void		SetLabel(const std::string& label)	{ m_strButtonLabel = label; }
-		inline void		SetWidth(float width)				{ m_fWidth = width; }
-		inline void		SetHeight(float height)				{ m_fHeight = height; }
-		inline void		SetPosX(float x)					{ m_fPosX = x; }
-		inline void		SetPosY(float y)					{ m_fPosY = y; }
-		inline void		SetCallbackFunc(EventCallbackFn fn) { m_fpCallbackFn = fn; }
+		inline void			SetLabel(const std::string& label)	{ m_strButtonLabel = label; }
+		inline void			SetSize(float width, float height)	{ m_optSize = { width, height }; }
+		inline void			SetPosition(float x, float y)		{ m_optPosition = { x, y }; }
+		inline void			SetCallbackFunc(EventCallbackFn fn) { m_fpCallbackFn = fn; }
 
 	public: // others
 		virtual bool Bind();

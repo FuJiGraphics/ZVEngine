@@ -5,7 +5,8 @@ class AFX_EXT_CLASS CzvMotion_Acs final: public CzvMotion
 	////member variables
 protected:
 	void* m_pzvMotion_Acs__;
-
+	char m_strBoardType[DMotionNameSize];
+	int m_iMaxUseAxis;
 
 public:
 	

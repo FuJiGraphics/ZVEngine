@@ -26,11 +26,14 @@ project "ZVEngine"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
 		"%{IncludeDir.SOIL2}",
+		"%{IncludeDir.ZVLAB}",
     }
 
 	libdirs 
 	{
 		"%{LibraryDir.SOIL2}",
+		"%{LibraryDir.ZVMOTION}",
+		"%{LibraryDir.ACS}",
 	}
 
 	links
@@ -39,6 +42,8 @@ project "ZVEngine"
 		"%{Library.FZLib}",
 		"%{Library.GLFW}",
 		"%{Library.SOIL2}",
+		"%{Library.ZVMOTION}",
+		"%{Library.ACS}",
 		"GLAD",
 		"ImGui",
 		"Opengl32.lib", 

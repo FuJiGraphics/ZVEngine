@@ -32,7 +32,7 @@ namespace ZVLab {
 			SOIL_CREATE_NEW_ID,
 			SOIL_FLAG_MIPMAPS
 		);
-		ZVLOG_FAILED(m_uiTexID, "FAILED: SOIL loading error = \"{0}, {1}\"", SOIL_last_result(), path.c_str());
+		ZVLOG_FAILED(m_uiTexID, "FAILED: SOIL Load error = \"{0}, {1}\"", SOIL_last_result(), path.c_str());
 		SOIL_Load_Texture_Result(&m_uiWidth, &m_uiHeight);
 	}
 

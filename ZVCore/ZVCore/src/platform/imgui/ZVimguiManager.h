@@ -11,14 +11,14 @@ static void glfw_error_callback(int error, const char* description);
 namespace ZVLab {
 
 	// forwards
-	class CZVwindow;
+	class CzvWindow;
 
 	class ZV_API CZVimguiManager
 	{
 	public:
-		static void Initialize(const Unique<CZVwindow>& window);
+		static void Initialize(const Unique<CzvWindow>& window);
 		static void Shutdown();
-		static void Begin(const Unique<CZVwindow>& window);
+		static void Begin(const Unique<CzvWindow>& window);
 		static void End();
 		static bool BeginMainMenu();
 		static void EndMainMenu();

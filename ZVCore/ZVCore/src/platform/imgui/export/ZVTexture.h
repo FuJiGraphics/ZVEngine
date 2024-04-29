@@ -7,10 +7,10 @@
 
 namespace ZVLab {
 
-	class ZV_API CZVTexture
+	class ZV_API CzvTexture
 	{
 	public:
-		static Shared<CZVTexture> Create(const std::string& path);
+		static Shared<CzvTexture> Create(const std::string& path);
 
 	public:
 		virtual inline GLuint			GetID() const = 0;

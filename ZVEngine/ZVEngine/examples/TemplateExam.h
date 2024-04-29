@@ -5,11 +5,11 @@
 
 using namespace ZVLab;
 
-///  UI 생성 시 ZVLab::CZVlayer를 상속받습니다.
+///  UI 생성 시 ZVLab::CzvLayer를 상속받습니다.
 ///  이후 GUI_Liberator에 해당 버튼에 대한 헤더를 추가합니다.
 ///  그리고 메인 ZVapp 클래스에 AttachLayer를 해서 실제 코어 시스템에 버튼을 추가해줍니다.
 ///  메모리 관리에 대한 권한은 코어 시스템에 있습니다.
-class Dialog1 : public ZVLab::CZVlayer
+class Dialog1 : public ZVLab::CzvLayer
 {
 public:
 	/// 프로그램이 시작하고 버튼이 생성될 때 호출되는 함수입니다.
@@ -25,16 +25,16 @@ public:
 	}
 
 	/// 윈도우에 대한 어떠한 이벤트가 발생하면 호출되는 함수입니다.
-	/// CZVevent 객체는 이벤트들의 여러 타입을 대표합니다.
+	/// CzvEvent 객체는 이벤트들의 여러 타입을 대표합니다.
 	/// Dispatch 객체를 통해서 event를 전달하고 해당 이벤트의 종류를 판별해서 콜백 함수를 등록할 수 있습니다.
-	virtual void OnEvent(CZVevent& event)
+	virtual void OnEvent(CzvEvent& event)
 	{
 		// 디스패처를 통해 사용하고자 하는 이벤트 종류를 등록합니다.
 		CZVeventDispatcher ds(event);
-		// 전달된 이벤트를 EventType의 타입으로 판별하여 콜백함수로 등록합니다.
-		if (event.GetEventType() == EventType::KeyPressed)
+		// 전달된 이벤트를 EzvEventType의 타입으로 판별하여 콜백함수로 등록합니다.
+		if (event.GetEventType() == EzvEventType::KeyPressed)
 		{
-			ds.Dispatch<CZVkeyPressedEvent>(BIND_EVENT_FUNC(Dialog1::keyPressed));
+			ds.Dispatch<CzvKeyPressedEvent>(DBindEventFunction(Dialog1::keyPressed));
 		}
 	}
 
@@ -72,7 +72,7 @@ public:
 	}
 
 public:
-	bool keyPressed(ZVLab::CZVkeyPressedEvent& event)
+	bool keyPressed(ZVLab::CzvKeyPressedEvent& event)
 	{
 		
 		switch (event.GetKeyCode())

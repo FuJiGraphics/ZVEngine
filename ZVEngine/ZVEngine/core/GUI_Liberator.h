@@ -5,8 +5,8 @@
 #include "ZVapp.h"
 #include <vector>
 
-std::vector<ZVLab::CZVlayer*>	g_GenerateLayerList;
-ZVLab::CZVsystem*				g_pApplication = nullptr;
+std::vector<ZVLab::CzvLayer*>	g_GenerateLayerList;
+ZVLab::CzvSystem*				g_pApplication = nullptr;
 
 // export defines
 #define GENERATE_LAYER(layer)\
@@ -19,7 +19,7 @@ public:\
 };\
 inline ClassGenerate##layer CLASSGENERATE##layer;
 
-#define DESTROY_LAYER(layer) { ZVLab::CZVsystem::DetachLayer(layer); }
+#define DESTROY_LAYER(layer) { ZVLab::CzvSystem::DetachLayer(layer); }
 #pragma endregion
 
 // GUI Headers

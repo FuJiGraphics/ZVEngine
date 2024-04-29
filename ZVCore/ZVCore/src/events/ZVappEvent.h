@@ -6,12 +6,12 @@
 
 namespace ZVLab {
 
-	class ZV_API CZVwindowResizeEvent final : public CZVevent
+	class ZV_API CzvWindowResizeEvent final : public CzvEvent
 	{
 	private:
 		ZVint m_iWidth, m_iHeight;
 	public:
-		CZVwindowResizeEvent(ZVint width, ZVint height)
+		CzvWindowResizeEvent(ZVint width, ZVint height)
 			: m_iWidth(width), m_iHeight(height) {}
 
 		inline ZVint GetWidth() const { return (m_iWidth); }
@@ -24,44 +24,44 @@ namespace ZVLab {
 			return (ss.str());
 		}
 
-		EVENT_CLASS_TYPE(WindowResize)
-		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		DEventClassType(WindowResize)
+		DEventClassCategory(ezvEventCategory_Application)
 	};
 
-	class ZV_API CZVwindowCloseEvent final : public CZVevent
+	class ZV_API CzvWindowCloseEvent final : public CzvEvent
 	{
 	public:
-		CZVwindowCloseEvent() {}
+		CzvWindowCloseEvent() {}
 
-		EVENT_CLASS_TYPE(WindowClose)
-		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		DEventClassType(WindowClose)
+		DEventClassCategory(ezvEventCategory_Application)
 	};
 
-	class ZV_API CZVappTickEvent final : public CZVevent
+	class ZV_API CzvAppTickEvent final : public CzvEvent
 	{
 	public:
-		CZVappTickEvent() {}
+		CzvAppTickEvent() {}
 
-		EVENT_CLASS_TYPE(AppTick)
-		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		DEventClassType(AppTick)
+		DEventClassCategory(ezvEventCategory_Application)
 	};
 
-	class ZV_API CZVappUpdateEvent final : public CZVevent
+	class ZV_API CzvAppUpdateEvent final : public CzvEvent
 	{
 	public:
-		CZVappUpdateEvent() {}
+		CzvAppUpdateEvent() {}
 
-		EVENT_CLASS_TYPE(AppUpdate)
-		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		DEventClassType(AppUpdate)
+		DEventClassCategory(ezvEventCategory_Application)
 	};
 
-	class ZV_API CZVappRenderEvent final : public CZVevent
+	class ZV_API CzvAppRenderEvent final : public CzvEvent
 	{
 	public:
-		CZVappRenderEvent() {}
+		CzvAppRenderEvent() {}
 
-		EVENT_CLASS_TYPE(AppRender)
-		EVENT_CLASS_CATEGORY(EventCategoryApplication)
+		DEventClassType(AppRender)
+		DEventClassCategory(ezvEventCategory_Application)
 	};
 
 

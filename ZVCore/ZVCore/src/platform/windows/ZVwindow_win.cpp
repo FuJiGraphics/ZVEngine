@@ -39,7 +39,7 @@ namespace ZVLab {
 
 	void CZVwindow_Windows::SetEventCallback(const EventCallbackFn& callback)
 	{
-		m_tData.Callback = callback;
+		m_tData.cbCallback = callback;
 	}
 
 	void CZVwindow_Windows::Initialize()
@@ -65,9 +65,9 @@ namespace ZVLab {
 			}
 
 			// Set Chunk
-			m_tData.Title = m_strWindowName;
-			m_tData.Width = m_uiWidth;
-			m_tData.Height = m_uiHeight;
+			m_tData.strTitle = m_strWindowName;
+			m_tData.uiWidth = m_uiWidth;
+			m_tData.uiHeight = m_uiHeight;
 			glfwSetWindowUserPointer(m_pGlfwWindow, &m_tData);
 
 			// init callback system
@@ -108,43 +108,43 @@ namespace ZVLab {
 								  [](GLFWwindow* window, ZVint width, ZVint height)
 		{
 			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
-			WindowChunk& data = *(WindowChunk*)glfwGetWindowUserPointer(window);
-			data.Width = static_cast<ZVuint>(width);
-			data.Height = static_cast<ZVuint>(height);
+			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
+			data.uiWidth = static_cast<ZVuint>(width);
+			data.uiHeight = static_cast<ZVuint>(height);
 
-			CZVwindowResizeEvent event{ width, height };
-			data.Callback(event);
+			CzvWindowResizeEvent event{ width, height };
+			data.cbCallback(event);
 		});
 
 		glfwSetWindowCloseCallback(m_pGlfwWindow,
 								   [](GLFWwindow* window) {
 			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
-			WindowChunk& data = *(WindowChunk*)glfwGetWindowUserPointer(window);
-			CZVwindowCloseEvent event;
-			data.Callback(event);
+			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
+			CzvWindowCloseEvent event;
+			data.cbCallback(event);
 		});
 
 		glfwSetCursorPosCallback(m_pGlfwWindow,
 								 [](GLFWwindow* window, ZVdouble xpos, ZVdouble ypos) {
 			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
-			WindowChunk& data = *(WindowChunk*)glfwGetWindowUserPointer(window);
-			CZVmouseMovedEvent event((ZVfloat)xpos, (ZVfloat)ypos);
-			data.Callback(event);
+			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
+			CzvMouseMovedEvent event((ZVfloat)xpos, (ZVfloat)ypos);
+			data.cbCallback(event);
 		});
 
 		glfwSetMouseButtonCallback(m_pGlfwWindow,
 								   [](GLFWwindow* window, ZVint button, ZVint action, ZVint mods) {
 			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
-			WindowChunk& data = *(WindowChunk*)glfwGetWindowUserPointer(window);
+			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
 			switch (action)
 			{
 				case GLFW_PRESS: {
-					CZVmouseButtonPressedEvent mbpEvent(button);
-					data.Callback(mbpEvent);
+					CzvMouseButtonPressedEvent mbpEvent(button);
+					data.cbCallback(mbpEvent);
 				} break;
 				case GLFW_RELEASE: {
-					CZVmouseButtonReleasedEvent mbrEvent(button);
-					data.Callback(mbrEvent);
+					CzvMouseButtonReleasedEvent mbrEvent(button);
+					data.cbCallback(mbrEvent);
 				} break;
 			}
 		});
@@ -153,25 +153,25 @@ namespace ZVLab {
 							  [](GLFWwindow* window, ZVdouble xoffset, ZVdouble yoffset)
 		{
 			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
-			WindowChunk& data = *(WindowChunk*)glfwGetWindowUserPointer(window);
-			CZVmouseScrolledEvent event((ZVfloat)xoffset, (ZVfloat)yoffset);
-			data.Callback(event);
+			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
+			CzvMouseScrolledEvent event((ZVfloat)xoffset, (ZVfloat)yoffset);
+			data.cbCallback(event);
 		});
 
 		glfwSetKeyCallback(m_pGlfwWindow,
 						   [](GLFWwindow* window, ZVint key, ZVint scancode, ZVint action, ZVint mods)
 		{
 			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
-			WindowChunk& data = *(WindowChunk*)glfwGetWindowUserPointer(window);
+			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
 			static ZVuint repeatCount = 0;
-			CZVkeyReleasedEvent releasedEvent(key);
-			CZVkeyPressedEvent pressedEvent(key, (ZVuint)repeatCount);
+			CzvKeyReleasedEvent releasedEvent(key);
+			CzvKeyPressedEvent pressedEvent(key, (ZVuint)repeatCount);
 			switch (action)
 			{
 			case GLFW_RELEASE:
 			{
 				repeatCount = 0;
-				data.Callback(releasedEvent);
+				data.cbCallback(releasedEvent);
 				return;
 			} break;
 
@@ -179,7 +179,7 @@ namespace ZVLab {
 			case GLFW_REPEAT:
 			{
 				++repeatCount;
-				data.Callback(pressedEvent);
+				data.cbCallback(pressedEvent);
 				return;
 			} break;
 			}
@@ -189,9 +189,9 @@ namespace ZVLab {
 							[](GLFWwindow* window, ZVuint key)
 		{
 			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
-			WindowChunk& data = *(WindowChunk*)glfwGetWindowUserPointer(window);
-			CZVkeyTypedEvent pressedEvent(key);
-			data.Callback(pressedEvent);
+			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
+			CzvKeyTypedEvent pressedEvent(key);
+			data.cbCallback(pressedEvent);
 		});
 	}
 

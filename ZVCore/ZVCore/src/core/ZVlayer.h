@@ -7,17 +7,17 @@
 
 namespace ZVLab {
 
-	class ZV_API CZVlayer
+	class ZV_API CzvLayer
 	{
 	public:
-		CZVlayer() = default;
-		virtual ~CZVlayer() = default;
+		CzvLayer() = default;
+		virtual ~CzvLayer() = default;
 
 	public:
 		virtual void OnAttach() {};
 		virtual void OnDetach() {};
 
-		virtual void OnEvent(CZVevent& event) {};
+		virtual void OnEvent(CzvEvent& event) {};
 		virtual void OnUpdate(const float& dt) {};
 		virtual void OnGUI() {};
 		virtual void OnMainMenuBar() {};

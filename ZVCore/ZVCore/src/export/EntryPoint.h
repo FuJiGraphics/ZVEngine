@@ -4,7 +4,7 @@
 #include "ZVCore.h"
 
 	#ifdef ZV_PLATFORM_WINDOWS
-extern ZVLab::CZVsystem* ZVLab::CreateApplication(TApplicationCommandLineArgs args);
+extern ZVLab::CzvSystem* ZVLab::CreateApplication(TzvApplicationCommandLineArgs args);
 
 int main(int argc, char** argv)
 {

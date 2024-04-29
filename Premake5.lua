@@ -24,5 +24,9 @@ group "Dependencies"
 	include "Vendor/glad"
 group ""
 
+group "ZVLab"
+	include "ZVLab/ZVMotion"
+group ""
+
 include "ZVCore"
 include "ZVEngine"

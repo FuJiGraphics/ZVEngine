@@ -10,7 +10,7 @@
 
 namespace ZVLab {
 
-	Unique<CZVwindow> CZVwindow::Create(const std::string& name, ZVuint width, ZVuint height)
+	Unique<CzvWindow> CzvWindow::Create(const std::string& name, ZVuint width, ZVuint height)
 	{
 #ifdef ZV_PLATFORM_WINDOWS
 		return (CreateUnique<CZVwindow_Windows>(name, width, height));

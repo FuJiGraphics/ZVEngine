@@ -1,25 +1,25 @@
-#include "ZVlayerBuffer.h"
+#include "ZVLayerBuffer.h"
 
 namespace ZVLab {
 	// static
-	Unique<CZVlayerBuffer> CZVlayerBuffer::Create()
+	Unique<CzvLayerBuffer> CzvLayerBuffer::Create()
 	{
-		return (CreateUnique<CZVlayerBuffer>());
+		return (CreateUnique<CzvLayerBuffer>());
 	}
 
-	CZVlayerBuffer::CZVlayerBuffer()
+	CzvLayerBuffer::CzvLayerBuffer()
 		: m_vContainer()
 		, m_uiInsertIndex(0)
 		, m_bInitialized(false)
 	{/*Empty*/
 	}
 
-	CZVlayerBuffer::~CZVlayerBuffer()
+	CzvLayerBuffer::~CzvLayerBuffer()
 	{
 		this->Shutdown();
 	}
 
-	void CZVlayerBuffer::Shutdown()
+	void CzvLayerBuffer::Shutdown()
 	{
 		if (m_bInitialized)
 		{
@@ -36,7 +36,7 @@ namespace ZVLab {
 		}
 	}
 
-	bool CZVlayerBuffer::InsertLayer(CZVlayer* pLayer)
+	bool CzvLayerBuffer::InsertLayer(CzvLayer* pLayer)
 	{
 		ZVLOG_FAILED(pLayer, "FAILED: Failed to called a emplace");
 
@@ -52,7 +52,7 @@ namespace ZVLab {
 		return (false);
 	}
 
-	bool CZVlayerBuffer::InsertOverlay(CZVlayer* pOverlay)
+	bool CzvLayerBuffer::InsertOverlay(CzvLayer* pOverlay)
 	{
 		ZVLOG_FAILED(pOverlay, "FAILED: Failed to called a emplace_back");
 
@@ -67,7 +67,7 @@ namespace ZVLab {
 		return (false);
 	}
 
-	bool CZVlayerBuffer::RemoveLayer(CZVlayer* pLayer)
+	bool CzvLayerBuffer::RemoveLayer(CzvLayer* pLayer)
 	{
 		ZVLOG_FAILED(pLayer, "FAILED: Failed to called a PopLevel");
 
@@ -84,7 +84,7 @@ namespace ZVLab {
 		return (false);
 	}
 
-	bool CZVlayerBuffer::RemoveOverlay(CZVlayer* pOverlay)
+	bool CzvLayerBuffer::RemoveOverlay(CzvLayer* pOverlay)
 	{
 		ZVLOG_FAILED(pOverlay, "FAILED: Failed to called a PopOverlay");
 
@@ -100,13 +100,13 @@ namespace ZVLab {
 		return (false);
 	}
 
-	CZVlayerBuffer::iter CZVlayerBuffer::FindLayer(CZVlayer* pLayer)
+	CzvLayerBuffer::iter CzvLayerBuffer::FindLayer(CzvLayer* pLayer)
 	{
 		return std::find_if(m_vContainer.begin(), m_vContainer.end(),
-							[pLayer](CZVlayer* pTarget)
+							[pLayer](CzvLayer* pTarget)
 		{
 			return (pLayer == pTarget);
 		});
-	} // auto CZVlayerBuffer::FindLayer( Layer* pLevel )
+	} // auto CzvLayerBuffer::FindLayer( Layer* pLevel )
 
 } // namespace ZVLab

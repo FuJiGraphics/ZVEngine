@@ -5,11 +5,13 @@
 // headers
 #include "DataTypes.h"
 #include "FZLib/Helpers/LogHelper.h"
-#include "ZVassert.h"
+#include "ZVAssert.h"
+#include "ZVMemory.h"
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
+#include <optional>
 
 // imgui
 #include "imgui/imgui.h"
@@ -28,46 +30,28 @@
 	#define ZV_API
 #endif
 
-namespace ZVLab {
-	template<typename T>
-	using Unique = std::unique_ptr<T>;
-	template<typename T, typename ... Args>
-	constexpr Unique<T> CreateUnique(Args&& ... args)
-	{
-		return std::make_unique<T>(std::forward<Args>(args)...);
-	}
-
-	template<typename T>
-	using Shared = std::shared_ptr<T>;
-	template<typename T, typename ... Args>
-	constexpr Shared<T> CreateShared(Args&& ... args)
-	{
-		return std::make_shared<T>(std::forward<Args>(args)...);
-	}
-} // namespace ZVLab
-
-struct ZV_API TApplicationCommandLineArgs
+struct ZV_API TzvApplicationCommandLineArgs
 {
-	int Count = 0;
-	char** Args = nullptr;
+	int	iCount = 0;
+	char** ppcArgs = nullptr;
 
 	const char* operator[](int index) const
 	{
-		FZLOG_DEBUG(index < Count);
-		return Args[index];
+		FZLOG_DEBUG(index < iCount);
+		return ppcArgs[index];
 	}
 };
 
-struct ZV_API TApplicationSpecification
+struct ZV_API TzvApplicationSpecification
 {
-	std::string Name = "ZVEngine App";
-	unsigned int Width = 1280;
-	unsigned int Height = 720;
-	std::string WorkingDirectory;
-	TApplicationCommandLineArgs CommandLineArgs;
+	std::string strName = "ZVEngine App";
+	unsigned int uiWidth = 1280;
+	unsigned int uiHeight = 720;
+	std::string strWorkingDirectory;
+	TzvApplicationCommandLineArgs strCommandLineArgs;
 };
 
-#define BIND_MEM_CALLBACK(fn, obj) std::bind(&(fn), &(obj))
-#define BIND_CALLBACK(fn, obj) std::bind(&(fn))
+#define DBindMemberCallback(fn, address) std::bind(&fn, address)
+#define DBindCallback(fn) std::bind(&fn)
 
 #endif /* __ZV_CORE_H__ */

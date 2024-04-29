@@ -5,7 +5,7 @@
 
 using namespace ZVLab;
 
-class DeveloperMenu: public ZVLab::CZVlayer
+class DeveloperMenu: public ZVLab::CzvLayer
 {
 public:
 	virtual void OnMainMenuBar()
@@ -15,6 +15,20 @@ public:
 			if (ImGui::MenuItem("Open..", "Ctrl+O")) {}
 			if (ImGui::MenuItem("Save", "Ctrl+S")) {}
 			if (ImGui::MenuItem("Close", "Ctrl+W")) {}
+			ImGui::EndMenu();
+		}
+
+		static bool flags = true;
+		if (ImGui::BeginMenu("Options"))
+		{
+			if (ImGui::MenuItem("Enable Dockspace"))
+			{
+				if (flags)
+					flags = false;
+				else
+					flags = true;
+				CZVimguiManager::SetOverviewDockspace(flags);
+			}
 			ImGui::EndMenu();
 		}
 	}

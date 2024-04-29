@@ -1,30 +1,68 @@
 #include "ZVButton.h"
-#include "../ZVimguiInterface.h"
 
 namespace ZVLab {
-	CZVButton::CZVButton(const std::string& label, float width, float height)
-		: m_strButtonLabel(label)
-		, m_fWidth(width), m_fHeight(height)
-		, m_fPosX(-999.f), m_fPosY(-999.f)
-		, m_bSetupPos(false)
-		, m_fpCallbackFn(nullptr)
-	{/*Empty*/}
 
-	CZVButton::CZVButton(const std::string & label, float width, float height, float posX, float posY)
-		: m_strButtonLabel(label)
-		, m_fWidth(width), m_fHeight(height)
-		, m_fPosX(posX), m_fPosY(posY)
-		, m_bSetupPos(true)
-		, m_fpCallbackFn(nullptr)
-	{/*Empty*/}
+/// static variable
+	unsigned int CzvButton::s_nuiButtonCount = 0;
 
-	bool CZVButton::Bind()
+// Constructors, Destructors
+	CzvButton::CzvButton(const std::string& label)
+		: m_strButtonLabel(label)
+		, m_optSize()
+		, m_optPosition()
+		, m_fpCallbackFn(nullptr)
+	{
+		s_nuiButtonCount++;
+		ZVLOG_FAILED((s_nuiButtonCount > 0),
+					 "FAILED: Unexpected Error! Button Count is not greater than 0 \"s_nuiButtonCount = {0}\"",
+					 s_nuiButtonCount);
+	}
+
+	CzvButton::CzvButton(const std::string& label, const ImVec2& size)
+		: m_strButtonLabel(label)
+		, m_optSize(size)
+		, m_optPosition()
+		, m_fpCallbackFn(nullptr)
+	{
+		s_nuiButtonCount++;
+		ZVLOG_FAILED((s_nuiButtonCount > 0),
+					 "FAILED: Unexpected Error! Button Count is not greater than 0 \"s_nuiButtonCount = {0}\"",
+					 s_nuiButtonCount);
+	}
+
+	CzvButton::CzvButton(const std::string& label, const ImVec2& size, const ImVec2& position)
+		: m_strButtonLabel(label)
+		, m_optSize(size)
+		, m_optPosition(position)
+		, m_fpCallbackFn(nullptr)
+	{
+		s_nuiButtonCount++;
+		ZVLOG_FAILED((s_nuiButtonCount > 0),
+					 "FAILED: Unexpected Error! Button Count is not greater than 0 \"s_nuiButtonCount = {0}\"",
+					 s_nuiButtonCount);
+	}
+
+	CzvButton::~CzvButton()
+	{
+		s_nuiButtonCount--;
+		ZVLOG_FAILED((s_nuiButtonCount >= 0), 
+					 "FAILED: Unexpected Error! Button Count is less than 0 \"s_nuiButtonCount = {0}\"", 
+					 s_nuiButtonCount);
+	}
+
+// Others
+	bool CzvButton::Bind()
 	{
 		bool result = false;
-		if (m_bSetupPos)
-			result = ImGui::Button(m_strButtonLabel.c_str(), m_fWidth, m_fHeight, m_fPosX, m_fPosY);
-		else
-			result = ImGui::Button(m_strButtonLabel.c_str(), m_fWidth, m_fHeight);
+		// Set Position
+		if (m_optPosition.has_value())
+			ImGui::SetCursorPos(m_optPosition.value());
+
+		if (m_optSize.has_value()) // Bind size
+			result = ImGui::Button(m_strButtonLabel.c_str(), m_optSize.value());
+		else // UnBind size
+			result = ImGui::Button(m_strButtonLabel.c_str());
+
 		if (result && m_fpCallbackFn != nullptr)
 		{  // 이벤트 콜백 등록시 호출 되는 함수
 			m_fpCallbackFn();

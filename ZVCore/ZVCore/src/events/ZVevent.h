@@ -9,11 +9,11 @@
 
 namespace ZVLab {
 
-#define BIT(x) ( 1 << x )
-#define BIND_EVENT_FUNC(x) std::bind( &x, this, std::placeholders::_1 )
-#define BIND_NOARGS_FUNC(x) std::bind( &x, this )
+#define DBit(x) ( 1 << x )
+#define DBindEventFunction(x) std::bind( &x, this, std::placeholders::_1 )
+#define DBindNoArgsEventFunction(x) std::bind( &x, this )
 
-	enum class EventType
+	enum class EzvEventType
 	{
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
@@ -22,35 +22,35 @@ namespace ZVLab {
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
-	enum EventCategory
+	enum EzvEventCategory
 	{
-		None = 0,
-		EventCategoryApplication	= BIT(0),
-		EventCategoryInput			= BIT(1),
-		EventCategoryKeyboard		= BIT(2),
-		EventCategoryMouse			= BIT(3),
-		EventCategoryMouseButton	= BIT(4)
+		ezvEventCategory_None = 0,
+		ezvEventCategory_Application	= DBit(0),
+		ezvEventCategory_Input			= DBit(1),
+		ezvEventCategory_Keyboard		= DBit(2),
+		ezvEventCategory_Mouse			= DBit(3),
+		ezvEventCategory_MouseButton	= DBit(4)
 	};
 
-#define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return (EventType::##type); }\
-							   virtual EventType GetEventType() const override { return (GetStaticType()); }\
+#define DEventClassType(type) static EzvEventType GetStaticType() { return (EzvEventType::##type); }\
+							   virtual EzvEventType GetEventType() const override { return (GetStaticType()); }\
 							   virtual const char* GetName() const override { return (#type); }
 
-#define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return (category); }
+#define DEventClassCategory(category) virtual int GetCategoryFlags() const override { return (category); }
 
-	class ZV_API CZVevent
+	class ZV_API CzvEvent
 	{
 		friend class CZVeventDispatcher;
 	public:
 		ZVbool bHandled = false;
 
 	public:
-		virtual EventType GetEventType() const = 0;
+		virtual EzvEventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return (GetName()); }
 
-		inline ZVbool IsInCategory(EventCategory category)
+		inline ZVbool IsInCategory(EzvEventCategory category)
 		{
 			return (GetCategoryFlags() & category);
 		}
@@ -62,10 +62,10 @@ namespace ZVLab {
 		using EventFn = std::function<ZVbool(T&)>;
 
 	private:
-		CZVevent& m_Event;
+		CzvEvent& m_Event;
 
 	public:
-		CZVeventDispatcher(CZVevent& event)
+		CZVeventDispatcher(CzvEvent& event)
 			: m_Event(event)
 		{/*Empty*/}
 
@@ -81,7 +81,7 @@ namespace ZVLab {
 		}
 	};
 
-	inline std::ostream& operator<<(std::ostream& os, const CZVevent& e)
+	inline std::ostream& operator<<(std::ostream& os, const CzvEvent& e)
 	{
 		return (os << e.ToString());
 	}

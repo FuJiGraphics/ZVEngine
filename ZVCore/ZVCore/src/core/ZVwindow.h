@@ -10,21 +10,21 @@ class GLFWwindow;
 
 namespace ZVLab {
 
-	class ZV_API CZVwindow
+	class ZV_API CzvWindow
 	{
 	public:
-		using EventCallbackFn = std::function<void(CZVevent&)>;
+		using EventCallbackFn = std::function<void(CzvEvent&)>;
 
-		struct WindowChunk {
-			std::string			Title;
-			ZVuint				Width;
-			ZVuint				Height;
-			bool				VSync;
-			EventCallbackFn		Callback;
+		struct TzvWindowChunk {
+			std::string			strTitle;
+			ZVuint				uiWidth;
+			ZVuint				uiHeight;
+			bool				bVSync;
+			EventCallbackFn		cbCallback;
 		};
 
 	public:
-		static Unique<CZVwindow> Create(const std::string& name, ZVuint width, ZVuint height);
+		static Unique<CzvWindow> Create(const std::string& name, ZVuint width, ZVuint height);
 
 	public:
 		virtual GLFWwindow*		GetNativeWindow() const = 0;

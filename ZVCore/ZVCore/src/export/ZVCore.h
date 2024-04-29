@@ -2,6 +2,7 @@
 
 // main
 #include "../core/Core.h"
+#include "../core/ZVMemory.h"
 #include "FZLib/Helpers/LogHelper.h"
 // imgui interfaces
 #include "../platform/imgui/export/ZVTexture.h"
@@ -16,7 +17,7 @@
 #include "../events/ZVmouseEvent.h"
 #include "../events/ZVKeyCodes.h"
 // core system
-#include "../core/ZVlayer.h"
+#include "../core/ZVLayer.h"
 #include "../core/ZVwindow.h"
 #include "../core/ZVsystem.h"
 

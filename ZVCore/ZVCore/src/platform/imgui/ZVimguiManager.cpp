@@ -20,7 +20,7 @@ namespace ZVLab {
 	bool CZVimguiManager::s_bEnableOverviewDockspace = true;
 	std::unordered_map<std::string, ImFont*> CZVimguiManager::s_mapFonts;
 
-	void CZVimguiManager::Initialize(const Unique<CZVwindow>& window)
+	void CZVimguiManager::Initialize(const Unique<CzvWindow>& window)
 	{
 		const char* glsl_version = "#version 130";
 
@@ -34,10 +34,10 @@ namespace ZVLab {
 		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
 		// Setup Dear ImGui style
 		// ImGui::StyleColorsDark();
-		//ImGui::StyleColorsLight();
+		ImGui::StyleColorsLight();
 
-		ImGui::Spectrum::StyleColorsSpectrum();
-		io.Fonts->AddFontDefault();
+		//ImGui::Spectrum::StyleColorsSpectrum();
+		//io.Fonts->AddFontDefault();
 
 		// Setup Platform/Renderer backends
 		ImGui_ImplGlfw_InitForOpenGL(window->GetNativeWindow(), true);
@@ -51,7 +51,7 @@ namespace ZVLab {
 		ImGui::DestroyContext();
 	}
 
-	void CZVimguiManager::Begin(const Unique<CZVwindow>& window)
+	void CZVimguiManager::Begin(const Unique<CzvWindow>& window)
 	{
 		if (!glfwWindowShouldClose(window->GetNativeWindow()))
 		{
@@ -163,7 +163,7 @@ namespace ZVLab {
 		return (true);
 	}
 
-	ImFont* CZVimguiManager::GetFont(const std::string & fontName)
+	ImFont* CZVimguiManager::GetFont(const std::string& fontName)
 	{
 		if (s_mapFonts.find(fontName) == s_mapFonts.end())
 		{

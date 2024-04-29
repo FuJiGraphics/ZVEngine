@@ -5,16 +5,16 @@
 
 namespace ZVLab {
 
-	CZVsystem* CreateApplication(TApplicationCommandLineArgs args)
+	CzvSystem* CreateApplication(TzvApplicationCommandLineArgs args)
 	{
-		TApplicationSpecification spec;
-		spec.Name = "ZVEngine";
-		spec.Width = 1280;
-		spec.Height = 720;
-		spec.WorkingDirectory = "../ZVEngine";
-		spec.CommandLineArgs = args;
+		TzvApplicationSpecification spec;
+		spec.strName = "ZVEngine";
+		spec.uiWidth = 1280;
+		spec.uiHeight = 720;
+		spec.strWorkingDirectory = "../ZVEngine";
+		spec.strCommandLineArgs = args;
 
-		CZVsystem* app = new CZVapp(spec);
+		CzvSystem* app = new CZVapp(spec);
 		g_pApplication = app;
 		return (g_pApplication);
 	}

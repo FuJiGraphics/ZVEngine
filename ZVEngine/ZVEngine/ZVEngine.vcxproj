@@ -80,7 +80,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZV_PLATFORM_WINDOWS;ZV_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui\include;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;..\..\Vendor\SOIL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui\include;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;..\..\Vendor\SOIL2\include;..\..\ZVLab;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -91,8 +91,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Debug\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Debug\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Debug\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Debug\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Debug\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Debug\soil2.lib;..\..\ZVLab\lib\Debug\ZVMotion.lib;..\..\Vendor\ACS\lib\Debug\x86_64\ACSCL_x64.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Debug;..\..\ZVLab\lib\Debug;..\..\Vendor\ACS\lib\Debug\x86_64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>rmdir /S /Q "..\Dist\log\"</Command>
@@ -103,7 +103,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZV_PLATFORM_WINDOWS;ZV_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui\include;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;..\..\Vendor\SOIL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui\include;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;..\..\Vendor\SOIL2\include;..\..\ZVLab;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -117,8 +117,8 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Release\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Release\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Release\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Release\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Release\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Release\soil2.lib;..\..\ZVLab\lib\Release\ZVMotion.lib;..\..\Vendor\ACS\lib\Release\x86_64\ACSCL_x64.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Release;..\..\ZVLab\lib\Release;..\..\Vendor\ACS\lib\Release\x86_64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>rmdir /S /Q "..\Dist\log\"</Command>
@@ -129,7 +129,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ZV_PLATFORM_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui\include;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;..\..\Vendor\SOIL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;core;src;..\..\ZVCore\ZVCore\src\export;..\..\Vendor\FZLib\include;..\..\Vendor\ImGui\include;..\..\Vendor\GLFW\include;..\..\Vendor\glad\include;..\..\Vendor\SOIL2\include;..\..\ZVLab;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -138,8 +138,8 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Dist\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Dist\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Dist\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Dist\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Dist\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Dist\soil2.lib;..\..\ZVLab\lib\Dist\ZVMotion.lib;..\..\Vendor\ACS\lib\Dist\x86_64\ACSCL_x64.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Dist;..\..\ZVLab\lib\Dist;..\..\Vendor\ACS\lib\Dist\x86_64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>rmdir /S /Q "..\Dist\log\"</Command>
@@ -150,12 +150,14 @@
     <ClInclude Include="core\ZVapp.h" />
     <ClInclude Include="examples\CoolbarExam.h" />
     <ClInclude Include="examples\TemplateExam.h" />
-    <ClInclude Include="src\Developer\Layers\Layer1.h" />
+    <ClInclude Include="src\Developer\Layers\Motion\ZVMotionAct.h" />
+    <ClInclude Include="src\Developer\Layers\Sidebar_left.h" />
     <ClInclude Include="src\Developer\Overlays\DeveloperMenu.h" />
     <ClInclude Include="src\GUI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\EntryPoint.cpp" />
+    <ClCompile Include="src\Developer\Layers\Motion\ZVMotionAct.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ZVCore\ZVCore\ZVCore.vcxproj">

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\acs">
+      <UniqueIdentifier>{D984C5A8-C53C-07F6-2E44-E0511A1BA2E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\default">
+      <UniqueIdentifier>{274323D2-1311-17D8-FCA4-87FEE811F33C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ZVMotion.h" />
+    <ClInclude Include="src\vendor\acs\ZVMotion_ACS.h">
+      <Filter>vendor\acs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\default\ZVMotion_Default.h">
+      <Filter>vendor\default</Filter>
+    </ClInclude>
+    <ClInclude Include="src\vendor\acs\ZVAcsc_Controller.h" />
+    <ClInclude Include="src\vendor\acs\ZVMotor_ACS.h" />
+    <ClInclude Include="src\ZVMotor_cfg.h" />
+    <ClInclude Include="src\ZVAssert.h" />
+    <ClInclude Include="src\ZVMotion_cfg.h" />
+    <ClInclude Include="src\ZVMotor.h" />
+    <ClInclude Include="src\ZVMemory.h" />
+    <ClInclude Include="src\ZVCore.h" />
+    <ClInclude Include="src\vendor\default\ZVMotor_Default.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ZVMotion.cpp" />
+    <ClCompile Include="src\vendor\acs\ZVMotion_ACS.cpp">
+      <Filter>vendor\acs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\default\ZVMotion_Default.cpp">
+      <Filter>vendor\default</Filter>
+    </ClCompile>
+    <ClCompile Include="src\vendor\acs\ZVAcsc_Controller.cpp" />
+    <ClCompile Include="src\vendor\acs\ZVMotor_ACS.cpp" />
+    <ClCompile Include="src\ZVMotor.cpp" />
+    <ClCompile Include="src\vendor\default\ZVMotor_Default.cpp" />
+  </ItemGroup>
+</Project>

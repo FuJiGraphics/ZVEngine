@@ -3,45 +3,48 @@
 #pragma once
 
 #include "../../../core/Core.h"
+#include "ZVGuiConfig.h"
 #include "ZVButton.h"
+#include <optional>
 
 namespace ZVLab {
 
-	struct ZV_API TDialogInfo
+	class ZV_API CzvDialog
 	{
-	};
+	private: /// static member variables
+		static bool				s_bFirstEntryScope;
+		static std::string		s_strCurrDialog;
+		static unsigned int		s_nuiDialogCount;
 
-	class ZV_API CZVDialog
-	{
-	public:
-		CZVDialog(const std::string& name);
-		~CZVDialog();
+	private: /// member variables
+		std::string				m_strLabel;
+		std::optional<ImVec2>	m_optSize;
+		std::optional<ImVec2>	m_optPosition;
+		bool					m_bIsUnFolded;
+		TzvDialogInfo			m_tOptions;
 
-	public: // interface
-		bool IsFolded() const;
-		bool IsUnFolded() const;
+	public:  // Constructors, Destructors
+		CzvDialog(const std::string& label);
+		CzvDialog(const std::string& label, const TzvDialogInfo& options);
+		CzvDialog(const std::string& label, const ImVec2& size);
+		CzvDialog(const std::string& label, const ImVec2& size, const TzvDialogInfo& options);
+		CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position);
+		CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position, const TzvDialogInfo& options);
+		virtual ~CzvDialog();
 
-		bool Button(const std::string& name, float w, float h);
-		bool Button(const std::string& name, float w, float h, float posX, float posY);
-		bool Button(CZVButton& button);
+	public: // inline Getter
+		inline std::string	GetLabel() const	{ return (m_strLabel); }
+		inline bool			IsFolded() const	{ return (!m_bIsUnFolded); }
+		inline bool			IsUnFolded() const	{ return (m_bIsUnFolded); }
 
-	public:
-		inline std::string GetLabel() const { return (m_DialogLabel); }
+	public: // interfaces
+		bool Button(const std::string& label);
+		bool Button(const std::string& label, const ImVec2& size);
+		bool Button(const std::string& label, const ImVec2& size, const ImVec2& position);
+		bool Button(CzvButton& button);
 
-	private:
+	private: /// Others
 		bool Synchronization();
-
-	private:
-		std::string		m_DialogLabel;
-		bool			m_isUnFolded;
-		unsigned int	m_Width;
-		unsigned int	m_Height;
-		unsigned int	m_PosX;
-		unsigned int	m_PosY;
-
-	private:
-		static bool		   s_FirstInit;
-		static std::string s_currDialog;
 	};
 
 } // namespace ZVLab

@@ -3,7 +3,7 @@
 #pragma once
 
 #include "Core.h"
-#include "ZVlayerBuffer.h"
+#include "ZVLayerBuffer.h"
 // imgui
 #include "../platform/imgui/ZVimguiManager.h"
 
@@ -19,44 +19,44 @@ int main(int argc, char** argv);
 namespace ZVLab {
 
 	// forwards
-	class CZVwindow;
+	class CzvWindow;
 
-	class ZV_API CZVsystem
+	class ZV_API CzvSystem
 	{
 	protected:
-		using Super = ZVLab::CZVsystem;
+		using Super = ZVLab::CzvSystem;
 	private:
 		ZVbool					m_bIsRun;
 		ZVbool					m_bInitialized;
 		ZVbool					m_bActivateResize;
-		Unique<CZVwindow>		m_upWindow;
-		Unique<CZVlayerBuffer>	m_upLayerBuffer;
+		Unique<CzvWindow>		m_upWindow;
+		Unique<CzvLayerBuffer>	m_upLayerBuffer;
 	
 	public:
-		CZVsystem(const TApplicationSpecification& spec);
-		virtual ~CZVsystem();
+		CzvSystem(const TzvApplicationSpecification& spec);
+		virtual ~CzvSystem();
 		
 	public:
-		void Initialize(const TApplicationSpecification& spec);
+		void Initialize(const TzvApplicationSpecification& spec);
 		void Shutdown();
 
 	public:
 		void Run();
 
-		void AttachLayer(CZVlayer* layer);
-		void DetachLayer(CZVlayer* layer);
-		void OnEvent(CZVevent& event);
+		void AttachLayer(CzvLayer* layer);
+		void DetachLayer(CzvLayer* layer);
+		void OnEvent(CzvEvent& event);
 
 	private:
-		ZVbool WindowResize(CZVwindowResizeEvent& event);
-		ZVbool WindowClose(CZVwindowCloseEvent& event);
+		ZVbool WindowResize(CzvWindowResizeEvent& event);
+		ZVbool WindowClose(CzvWindowCloseEvent& event);
 
 	private:
 		void PauseWindowResize(ZVbool* flags);
 	};
 
 	// ZVEngine에서 정의해야 하는 엔트리 포인트입니다.
-	CZVsystem* CreateApplication(TApplicationCommandLineArgs args);
+	CzvSystem* CreateApplication(TzvApplicationCommandLineArgs args);
 
 } // namespace ZVLab
 

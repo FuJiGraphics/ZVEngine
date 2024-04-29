@@ -7,7 +7,7 @@
 
 namespace ZVLab {
 
-	CZVsystem::CZVsystem(const TApplicationSpecification& spec)
+	CzvSystem::CzvSystem(const TzvApplicationSpecification& spec)
 		: m_bIsRun(false)
 		, m_bInitialized(false)
 		, m_bActivateResize(false)
@@ -17,34 +17,35 @@ namespace ZVLab {
 		this->Initialize(spec);
 	}
 
-	CZVsystem::~CZVsystem()
+	CzvSystem::~CzvSystem()
 	{
 		this->Shutdown();
 	}
 
-	void CZVsystem::Initialize(const TApplicationSpecification& spec)
+	void CzvSystem::Initialize(const TzvApplicationSpecification& spec)
 	{
-		ZVLOG_FAILED(spec.Width > 0, "FAILED: Window width size must be greater than 0. \"{0}\"", spec.Width);
-		ZVLOG_FAILED(spec.Height > 0, "FAILED: Window height size must be greater than 0. \"{0}\"", spec.Height);
+		ZVLOG_FAILED((spec.uiWidth > 0), "FAILED: Window width size must be greater than 0. \"{0}\"", spec.uiWidth);
+		ZVLOG_FAILED((spec.uiHeight > 0), "FAILED: Window height size must be greater than 0. \"{0}\"", spec.uiHeight);
 		m_bInitialized = true;
 		// Generated a Window
-		m_upWindow = CZVwindow::Create(spec.Name, spec.Width, spec.Height);
+		m_upWindow = CzvWindow::Create(spec.strName, spec.uiWidth, spec.uiHeight);
 		m_upWindow->Initialize();
 		// Generated a LayerBuffer
-		m_upLayerBuffer = CZVlayerBuffer::Create();
+		m_upLayerBuffer = CzvLayerBuffer::Create();
 		// Init ImGui
 		CZVimguiManager::Initialize(m_upWindow);
 		// Set Callback
-		m_upWindow->SetEventCallback(BIND_EVENT_FUNC(CZVsystem::OnEvent));
+		m_upWindow->SetEventCallback(DBindEventFunction(CzvSystem::OnEvent));
 
 
 		// TODO: 폰트 기능 리팩토링 및 수정 필요
 		// Set Font
-		CZVimguiManager::UploadFont("D:\\Dev\\ZVLab\\ZVEngine\\Resources\\Fonts\\OpenSans_Condensed-Regular.ttf", "OpenSans-Regular", 25);
+		CZVimguiManager::UploadFont("D:\\Dev\\ZVLab\\ZVEngine\\Resources\\Fonts\\OpenSans_Condensed-Regular.ttf", "OpenSans-Regular", 20);
 
 		// Graphic icon
 		ImGuiIO& io = ImGui::GetIO();
 		io.Fonts->AddFontDefault();
+
 		float baseFontSize = 40.0; // 13.0f is the size of the default font. Change to the font size you use.
 		// merge in icons from Font Awesome
 		static const ImWchar icons_ranges[] = { ICON_MIN_LC, ICON_MAX_LC, 0 };
@@ -54,10 +55,10 @@ namespace ZVLab {
 		icons_config.PixelSnapH = true;
 		icons_config.GlyphMinAdvanceX = baseFontSize;
 		// use FONT_ICON_FILE_NAME_FAR if you want regular instead of solid
-		CZVimguiManager::UploadFont("D:\\Dev\\ZVLab\\ZVEngine\\Resources\\Fonts\\lucide.ttf", "lucide", baseFontSize, &icons_config, icons_ranges);
+		// CZVimguiManager::UploadFont("Resources\\Fonts\\lucide.ttf", "lucide", baseFontSize, &icons_config, icons_ranges);
 	}
 
-	void CZVsystem::Shutdown()
+	void CzvSystem::Shutdown()
 	{
 		// Destroyed window
 		m_upWindow->Shutdown();
@@ -69,9 +70,9 @@ namespace ZVLab {
 		m_bInitialized = false;
 	}
 
-	void CZVsystem::Run()
+	void CzvSystem::Run()
 	{
-		ZVLOG_FAILED(m_bInitialized, "FAILED: CZVsystem is not initialized!");
+		ZVLOG_FAILED(m_bInitialized, "FAILED: CzvSystem is not initialized!");
 
 		m_bIsRun = true;
 		while (m_bIsRun)
@@ -94,6 +95,8 @@ namespace ZVLab {
 			}
 			
 			CZVimguiManager::Begin(m_upWindow);
+			ImFont* font = CZVimguiManager::GetFont("OpenSans-Regular");
+			ImGui::PushFont(font);
 			{ // ImGui_Layer
 				if (CZVimguiManager::BeginMainMenu())
 				{
@@ -109,35 +112,35 @@ namespace ZVLab {
 				}
 				// CZVimguiManager::ShowDemo();
 			}
-
+			ImGui::PopFont();
 			CZVimguiManager::End();
 
 			m_upWindow->Clear();
 		}
 	}
 
-	void CZVsystem::AttachLayer(CZVlayer* layer)
+	void CzvSystem::AttachLayer(CzvLayer* layer)
 	{
 		ZVLOG_FAILED(layer, "FAILED: Layer pointer is NULL!");
 		m_upLayerBuffer->InsertLayer(layer);
 	}
 
-	void CZVsystem::DetachLayer(CZVlayer* layer)
+	void CzvSystem::DetachLayer(CzvLayer* layer)
 	{
 		ZVLOG_FAILED(layer, "FAILED: Layer pointer is NULL!");
 		m_upLayerBuffer->RemoveLayer(layer);
 	}
 
-	void CZVsystem::OnEvent(CZVevent& event)
+	void CzvSystem::OnEvent(CzvEvent& event)
 	{
 		CZVeventDispatcher ed(event);
 		switch (event.GetEventType())
 		{
-			case EventType::WindowResize:
-				ed.Dispatch<CZVwindowResizeEvent>(BIND_EVENT_FUNC(ZVLab::CZVsystem::WindowResize));
+			case EzvEventType::WindowResize:
+				ed.Dispatch<CzvWindowResizeEvent>(DBindEventFunction(ZVLab::CzvSystem::WindowResize));
 				return;
-			case EventType::WindowClose:
-				ed.Dispatch<CZVwindowCloseEvent>(BIND_EVENT_FUNC(ZVLab::CZVsystem::WindowClose));
+			case EzvEventType::WindowClose:
+				ed.Dispatch<CzvWindowCloseEvent>(DBindEventFunction(ZVLab::CzvSystem::WindowClose));
 				return;
 		}
 
@@ -151,19 +154,19 @@ namespace ZVLab {
 		}
 	}
 
-	ZVbool CZVsystem::WindowResize(CZVwindowResizeEvent& event)
+	ZVbool CzvSystem::WindowResize(CzvWindowResizeEvent& event)
 	{
 		m_bActivateResize = true;
 		return (true);
 	}
 
-	ZVbool CZVsystem::WindowClose(CZVwindowCloseEvent& event)
+	ZVbool CzvSystem::WindowClose(CzvWindowCloseEvent& event)
 	{
 		m_bIsRun = false;
 		return (true);
 	}
 
-	void CZVsystem::PauseWindowResize(ZVbool* flags)
+	void CzvSystem::PauseWindowResize(ZVbool* flags)
 	{
 		m_upWindow->Clear();
 		(*flags) = false;

@@ -8,7 +8,7 @@
 
 namespace ZVLab {
 
-	class ZV_API CZVTexture_impl : public CZVTexture
+	class ZV_API CZVTexture_impl : public CzvTexture
 	{
 	private:
 		GLuint				m_uiTexID;
@@ -19,7 +19,7 @@ namespace ZVLab {
 
 	public:
 		CZVTexture_impl(const std::string& path);
-		CZVTexture_impl(const CZVTexture& tex) = delete;
+		CZVTexture_impl(const CzvTexture& tex) = delete;
 		~CZVTexture_impl();
 
 	public:

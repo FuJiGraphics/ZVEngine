@@ -8,13 +8,13 @@
 
 namespace ZVLab {
 
-	class ZV_API CZVmouseMovedEvent final : public CZVevent
+	class ZV_API CzvMouseMovedEvent final : public CzvEvent
 	{
 	private:
 		ZVfloat m_fMouseX, m_fMouseY;
 
 	public:
-		CZVmouseMovedEvent(ZVfloat x, ZVfloat y)
+		CzvMouseMovedEvent(ZVfloat x, ZVfloat y)
 			: m_fMouseX(x), m_fMouseY(y) {}
 
 		inline ZVfloat GetX() const { return (m_fMouseX); }
@@ -27,17 +27,17 @@ namespace ZVLab {
 			return (ss.str());
 		}
 
-		EVENT_CLASS_TYPE(MouseMoved)
-		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+		DEventClassType(MouseMoved)
+		DEventClassCategory(ezvEventCategory_Mouse | ezvEventCategory_Input)
 	};
 
-	class ZV_API CZVmouseScrolledEvent final : public CZVevent
+	class ZV_API CzvMouseScrolledEvent final : public CzvEvent
 	{
 	private:
 		ZVfloat m_fXOffset, m_fYOffset;
 
 	public:
-		CZVmouseScrolledEvent(ZVfloat xOffset, ZVfloat yOffset)
+		CzvMouseScrolledEvent(ZVfloat xOffset, ZVfloat yOffset)
 			: m_fXOffset(xOffset), m_fYOffset(yOffset) {}
 
 		inline ZVfloat GetXOffset() const { return (m_fXOffset); }
@@ -50,30 +50,30 @@ namespace ZVLab {
 			return (ss.str());
 		}
 
-		EVENT_CLASS_TYPE(MouseScrolled)
-		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+		DEventClassType(MouseScrolled)
+		DEventClassCategory(ezvEventCategory_Mouse | ezvEventCategory_Input)
 	};
 
-	class ZV_API CZVmouseButtonEvent : public CZVevent
+	class ZV_API CzvMouseButtonEvent : public CzvEvent
 	{
 	protected:
 		ZVint m_iButton;
 
 	protected:
-		CZVmouseButtonEvent(ZVint button)
+		CzvMouseButtonEvent(ZVint button)
 			: m_iButton(button) {}
 
 	public:
 		inline ZVint GetMouseButton() const { return (m_iButton); }
 
-		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
+		DEventClassCategory(ezvEventCategory_Mouse | ezvEventCategory_Input)
 	};
 
-	class ZV_API CZVmouseButtonPressedEvent final : public CZVmouseButtonEvent
+	class ZV_API CzvMouseButtonPressedEvent final : public CzvMouseButtonEvent
 	{
 	public:
-		CZVmouseButtonPressedEvent(ZVint button)
-			: CZVmouseButtonEvent(button) {}
+		CzvMouseButtonPressedEvent(ZVint button)
+			: CzvMouseButtonEvent(button) {}
 
 		std::string ToString() const override
 		{
@@ -82,14 +82,14 @@ namespace ZVLab {
 			return (ss.str());
 		}
 
-		EVENT_CLASS_TYPE(MouseButtonPressed)
+		DEventClassType(MouseButtonPressed)
 	};
 
-	class ZV_API CZVmouseButtonReleasedEvent final : public CZVmouseButtonEvent
+	class ZV_API CzvMouseButtonReleasedEvent final : public CzvMouseButtonEvent
 	{
 	public:
-		CZVmouseButtonReleasedEvent(ZVint button)
-			: CZVmouseButtonEvent(button) {}
+		CzvMouseButtonReleasedEvent(ZVint button)
+			: CzvMouseButtonEvent(button) {}
 
 		std::string ToString() const override
 		{
@@ -98,7 +98,7 @@ namespace ZVLab {
 			return (ss.str());
 		}
 
-		EVENT_CLASS_TYPE(MouseButtonReleased)
+		DEventClassType(MouseButtonReleased)
 	};
 
 } // namespace Normal

@@ -5,11 +5,11 @@
 
 using namespace ZVLab;
 
-class Layer1 : public ZVLab::CZVlayer
+class Layer1 : public ZVLab::CzvLayer
 {
 private:
-	CZVImageButton	m_b1;
-	CZVTexture		m_Tex;
+	CzvImageButton	m_b1;
+	CzvTexture		m_Tex;
 
 public:
 	virtual void OnAttach() override
@@ -23,7 +23,7 @@ public:
 
 		ImGui::DockSpaceOverViewport();
 
-		auto ShowCoolBarButton = [](const std::string& label, CZVTexture& tex) -> bool
+		auto ShowCoolBarButton = [](const std::string& label, CzvTexture& tex) -> bool
 		{
 			float w = ImGui::GetCoolBarItemWidth();
 
@@ -56,7 +56,7 @@ public:
 
 
 
-		CZVDialog dialog1("Dialog 1");
+		CzvDialog dialog1("Dialog 1");
 		m_b1.IsClicked();
 	}
 };

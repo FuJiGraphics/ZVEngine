@@ -3,43 +3,43 @@
 #pragma once
 
 #include "Core.h"
-#include "ZVlayer.h"
+#include "ZVLayer.h"
 
 #include <vector>
 
 namespace ZVLab {
 
-	class ZV_API CZVlayerBuffer
+	class ZV_API CzvLayerBuffer
 	{
-		using iter = std::vector<CZVlayer*>::iterator;
-		using const_iter = std::vector<CZVlayer*>::const_iterator;
+		using iter = std::vector<CzvLayer*>::iterator;
+		using const_iter = std::vector<CzvLayer*>::const_iterator;
 
 	public:
-		static Unique<CZVlayerBuffer> Create();
+		static Unique<CzvLayerBuffer> Create();
 
 	private:
-		std::vector<CZVlayer*>		m_vContainer;
+		std::vector<CzvLayer*>		m_vContainer;
 		ZVuint						m_uiInsertIndex;
 		ZVbool						m_bInitialized;
 
 	public:
-		explicit CZVlayerBuffer();
-		virtual ~CZVlayerBuffer();
+		explicit CzvLayerBuffer();
+		virtual ~CzvLayerBuffer();
 
 	private:
-		CZVlayerBuffer(CZVlayerBuffer&) = delete;
-		void operator= (CZVlayerBuffer&) = delete;
+		CzvLayerBuffer(CzvLayerBuffer&) = delete;
+		void operator= (CzvLayerBuffer&) = delete;
 
 	public:
 		void	Shutdown();
 
-		ZVbool	InsertLayer(CZVlayer* pLevel);
-		ZVbool	InsertOverlay(CZVlayer* pOverlay);
-		ZVbool	RemoveLayer(CZVlayer* pLevel);
-		ZVbool	RemoveOverlay(CZVlayer* pOverlay);
+		ZVbool	InsertLayer(CzvLayer* pLevel);
+		ZVbool	InsertOverlay(CzvLayer* pOverlay);
+		ZVbool	RemoveLayer(CzvLayer* pLevel);
+		ZVbool	RemoveOverlay(CzvLayer* pOverlay);
 
 	protected:
-		iter FindLayer(CZVlayer* pLevel);
+		iter FindLayer(CzvLayer* pLevel);
 
 	public:
 		inline ZVbool		empty() { return m_vContainer.empty(); }

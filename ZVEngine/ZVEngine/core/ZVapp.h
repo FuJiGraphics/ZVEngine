@@ -5,8 +5,7 @@
 #include "ZVCore.h"
 #include "GUI_Liberator.h"
 
-
-static void GenerateLayers(CZVsystem* app)
+static void GenerateLayers(CzvSystem* app)
 {
 	for (auto& layer : g_GenerateLayerList)
 	{
@@ -15,11 +14,11 @@ static void GenerateLayers(CZVsystem* app)
 }
 
 
-class CZVapp : public ZVLab::CZVsystem
+class CZVapp : public ZVLab::CzvSystem
 {
 public:
-	CZVapp(const TApplicationSpecification& spec)
-		: CZVsystem(spec)
+	CZVapp(const TzvApplicationSpecification& spec)
+		: CzvSystem(spec)
 	{
 		GenerateLayers(this);
 	}

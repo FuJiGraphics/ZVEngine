@@ -9,7 +9,7 @@
 
 namespace ZVLab {
 
-	class ZV_API CZVwindow_Windows final : public CZVwindow
+	class ZV_API CZVwindow_Windows final : public CzvWindow
 	{
 	private: // members
 		bool			m_bInitialized;
@@ -17,7 +17,7 @@ namespace ZVLab {
 		ZVuint			m_uiWidth;
 		ZVuint			m_uiHeight;
 		GLFWwindow*		m_pGlfwWindow;
-		WindowChunk		m_tData;
+		TzvWindowChunk		m_tData;
 
 	public: // contructor and destructor
 		CZVwindow_Windows(const std::string& name, ZVuint width, ZVuint height);

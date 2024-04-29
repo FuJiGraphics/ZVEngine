@@ -9,32 +9,35 @@
 
 namespace ZVLab {
 
-	class ZV_API CZVImageButton : public CZVButton
+	class ZV_API CzvImageButton : public CzvButton
 	{
-	private:
-		Shared<CZVTexture>	m_TexIdle;
-		Shared<CZVTexture>	m_TexClick;
-		ImVec2				m_Weight;
-		ImVec2				m_RectMin;
-		ImVec2				m_RectMax;
-		bool				m_IsSetRect;
-		bool				m_IsClicked;
+	private: /// Member variables
+		Shared<CzvTexture>		m_spTexIdle;
+		Shared<CzvTexture>		m_spTexClick;
+		std::optional<ImVec2>	m_optPosition;
+		std::optional<ImVec2>	m_optWeight;
+		std::optional<ImVec2>	m_optRectMin;
+		std::optional<ImVec2>	m_optRectMax;
+		bool					m_bIsClicked;
 
-	public:
-		CZVImageButton(const std::string& label = std::string());
-		CZVImageButton(float posX, float posY, const std::string& label = std::string());
+	public: // Constructors, Destructors
+		CzvImageButton();
+		CzvImageButton(const std::string& label);
+		CzvImageButton(const std::string& label, const ImVec2& position);
+		CzvImageButton(const ImVec2& position);
+		virtual ~CzvImageButton();
 
-	public:
-		void SetTexture(const Shared<CZVTexture>& idle, const Shared<CZVTexture>& click = nullptr);
+	public: // Setter
+		void SetTexture(const Shared<CzvTexture>& idle, const Shared<CzvTexture>& click = nullptr);
 		void SetTexture(const std::string& idle_path, const std::string& click_path = std::string());
 
 	public: // others
 		bool IsHovered(const ImVec2& pos);
 
-	public: // inlines
-		inline void ResizingX(float weightX) { m_Weight.x = weightX; }
-		inline void ResizingY(float weightY) { m_Weight.y = weightY; }
-		inline void Resizing(const ImVec2& weight) { m_Weight = weight; }
+	public: // Inlines member functions
+		inline void Resizing(const ImVec2& weight)	{ m_optWeight = weight; }
+		inline void ResizingW(float weightX)		{ this->Resizing({ weightX, 1.0f }); }
+		inline void ResizingH(float weightY)		{ this->Resizing({ 1.0f, weightY }); }
 
 	public: // overrides
 		virtual bool Bind() override;
