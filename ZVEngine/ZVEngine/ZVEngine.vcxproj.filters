@@ -59,9 +59,11 @@
     <ClCompile Include="core\EntryPoint.cpp">
       <Filter>core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Developer\Layers\IO\ZVIoSystemAct.cpp">
+      <Filter>src\Developer\Layers\IO</Filter>
+    </ClCompile>
     <ClCompile Include="src\Developer\Layers\Motion\ZVMotionAct.cpp">
       <Filter>src\Developer\Layers\Motion</Filter>
     </ClCompile>
-    <ClCompile Include="src\Developer\Layers\IO\ZVIoSystemAct.cpp" />
   </ItemGroup>
 </Project>

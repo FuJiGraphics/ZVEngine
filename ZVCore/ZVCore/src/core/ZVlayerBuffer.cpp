@@ -26,7 +26,7 @@ namespace ZVLab {
 			m_bInitialized = false;
 			if (m_vContainer.size())
 			{
-				for (const auto& Layer : m_vContainer)
+				for (auto Layer : m_vContainer)
 				{
 					ZVLOG_FAILED(Layer, "FAILED: Failed to deallocate memory.");
 					Layer->OnDetach();
