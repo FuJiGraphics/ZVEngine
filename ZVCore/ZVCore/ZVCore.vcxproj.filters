@@ -42,6 +42,9 @@
     <ClInclude Include="src\core\ZVLayerBuffer.h">
       <Filter>core</Filter>
     </ClInclude>
+    <ClInclude Include="src\core\ZVMemory.h">
+      <Filter>core</Filter>
+    </ClInclude>
     <ClInclude Include="src\core\ZVsystem.h">
       <Filter>core</Filter>
     </ClInclude>
@@ -102,7 +105,6 @@
     <ClInclude Include="src\platform\windows\ZVwindow_win.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ZVMemory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVLayerBuffer.cpp">

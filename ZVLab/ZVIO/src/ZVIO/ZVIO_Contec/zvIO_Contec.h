@@ -1,37 +1,43 @@
 #pragma once
+#include "ZVCore.h"
 
-class AFX_EXT_CLASS CzvIO_Contec : public CzvIO 
-{
-	////member variables
-protected:
-	void* m_pzvIO_Contec__;
+namespace ZVLab {
 
-public:
-	
-	////member functions
-protected:
+	struct TzvIOInfo
+	{
+		char strBoardName[32];
+		short sBoardID;
+		int iInputSize;
+		int iOutputSize;
 
-public:
-	CzvIO_Contec();
-	virtual ~CzvIO_Contec();
-	CzvIO_Contec(CzvIO_Contec& IOSrc) = delete;
-	CzvIO_Contec& operator=(CzvIO_Contec& IOSrc) = delete;
+	};
 
-	CString	BoardInit();
-	CString	BoardFinish();
-	CString	IOInit(void);
-	CString	GetBoardInfo(unsigned char *pucbuf, int n);
+	class CzvIO_Contec
+	{
+		////member variables
+	protected:
+		std::vector<TzvIOInfo> m_vtIOInfo;
 
-	CString	GetInputSize(int &iSize);					//입력비트의 크기
-	CString	GetInput(int iInputIndex, BOOL& b);				//1비트입력
+	public:
 
-	CString	GetOutputSize(int &iSize);					//출력비트의 크기
-	CString	SetOutput(int iOutPutIndex, BOOL bOn);				//1비트 출력 
-	CString	GetOutput(int iOutPutIndex, BOOL& bOut);			//1비트 출력 
-};
+		////member functions
+	protected:
 
-extern "C"
-{
-	AFX_EXT_API extern CzvIO* CreateIOContec();
-}
+	public:
+		CzvIO_Contec() = default;
+		~CzvIO_Contec();
 
+		void		BoardInit();
+		void		BoardFinish();
+		std::string	IOInit(void);
+		std::string	GetBoardInfo(unsigned char *pucbuf, int n);
+
+		std::string	GetInputSize(int &iSize);					//입력비트의 크기
+		std::string	GetInput(int iInputIndex, BOOL& b);		//1비트입력
+
+		std::string	GetOutputSize(int &iSize);				//출력비트의 크기
+		std::string	SetOutput(int iOutPutIndex, BOOL bOn);		//1비트 출력 
+		std::string	GetOutput(int iOutPutIndex, BOOL& bOut);	//1비트 출력 
+	};
+
+} // namespace ZVLab

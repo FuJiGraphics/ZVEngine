@@ -26,6 +26,7 @@ group ""
 
 group "ZVLab"
 	include "ZVLab/ZVMotion"
+	include "ZVLab/ZVIO"
 group ""
 
 include "ZVCore"

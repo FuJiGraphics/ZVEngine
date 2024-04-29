@@ -25,6 +25,9 @@
     #include <spdlog/details/os.h>
 #endif
 
+// ZVLAB CJ
+#pragma warning(disable:4551)
+
 #include <vector>
 
 #ifndef SPDLOG_NO_EXCEPTIONS

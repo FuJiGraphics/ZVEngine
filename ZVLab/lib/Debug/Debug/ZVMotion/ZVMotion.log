@@ -1,0 +1,18 @@
+﻿  ZVMotion.cpp
+  ZVMotor.cpp
+  ZVAcsc_Controller.cpp
+  ZVMotion_ACS.cpp
+  ZVMotor_ACS.cpp
+  ZVMotion_Virtual.cpp
+  ZVMotor_Virtual.cpp
+d:\dev\zvlab\zvengine\zvlab\zvmotion\src\vendor\virtual\zvmotor_virtual.cpp(36): warning C4172: 지역 변수 또는 임시의 주소를 반환하고 있습니다.
+d:\dev\zvlab\zvengine\zvlab\zvmotion\src\vendor\virtual\zvmotion_virtual.cpp(50): warning C4172: 지역 변수 또는 임시의 주소를 반환하고 있습니다.
+d:\dev\zvlab\zvengine\zvlab\zvmotion\src\vendor\virtual\zvmotion_virtual.cpp(71): warning C4172: 지역 변수 또는 임시의 주소를 반환하고 있습니다.
+FZLib.lib(bundled_fmtlib_format.obj) : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl fmt::v9::vformat(class fmt::v9::basic_string_view<char>,class fmt::v9::basic_format_args<class fmt::v9::basic_format_context<class fmt::v9::appender,char> >)" (?vformat@v9@fmt@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@D@12@V?$basic_format_args@V?$basic_format_context@Vappender@v9@fmt@@D@v9@fmt@@@12@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(bundled_fmtlib_format.obj) : warning LNK4006: "bool __cdecl fmt::v9::detail::is_printable(unsigned int)" (?is_printable@detail@v9@fmt@@YA_NI@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::throw_spdlog_ex(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?throw_spdlog_ex@spdlog@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "class std::chrono::time_point<struct std::chrono::system_clock,class std::chrono::duration<__int64,struct std::ratio<1,10000000> > > __cdecl spdlog::details::os::now(void)" (?now@os@details@spdlog@@YA?AV?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@XZ)이(가) FZLib.lib(Device.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "int __cdecl spdlog::details::os::pid(void)" (?pid@os@details@spdlog@@YAHXZ)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::set_formatter(class std::unique_ptr<class spdlog::formatter,struct std::default_delete<class spdlog::formatter> >)" (?set_formatter@spdlog@@YAXV?$unique_ptr@Vformatter@spdlog@@U?$default_delete@Vformatter@spdlog@@@std@@@std@@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::set_pattern(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum spdlog::pattern_time_type)" (?set_pattern@spdlog@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4pattern_time_type@1@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+  ZVMotion.vcxproj -> D:\Dev\ZVLab\ZVEngine\ZVLab\ZVMotion\..\lib\Debug\ZVMotion.lib

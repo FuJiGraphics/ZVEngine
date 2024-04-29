@@ -32,7 +32,7 @@ project "ZVEngine"
 	libdirs 
 	{
 		"%{LibraryDir.SOIL2}",
-		"%{LibraryDir.ZVMOTION}",
+		"%{LibraryDir.ZVLAB}",
 		"%{LibraryDir.ACS}",
 	}
 
@@ -43,6 +43,7 @@ project "ZVEngine"
 		"%{Library.GLFW}",
 		"%{Library.SOIL2}",
 		"%{Library.ZVMOTION}",
+		"%{Library.ZVIO}",
 		"%{Library.ACS}",
 		"GLAD",
 		"ImGui",

@@ -91,7 +91,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Debug\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Debug\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Debug\soil2.lib;..\..\ZVLab\lib\Debug\ZVMotion.lib;..\..\Vendor\ACS\lib\Debug\x86_64\ACSCL_x64.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Debug\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Debug\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Debug\soil2.lib;..\..\ZVLab\lib\Debug\ZVMotion.lib;..\..\ZVLab\lib\Debug\ZVIO.lib;..\..\Vendor\ACS\lib\Debug\x86_64\ACSCL_x64.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Debug;..\..\ZVLab\lib\Debug;..\..\Vendor\ACS\lib\Debug\x86_64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -117,7 +117,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Release\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Release\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Release\soil2.lib;..\..\ZVLab\lib\Release\ZVMotion.lib;..\..\Vendor\ACS\lib\Release\x86_64\ACSCL_x64.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Release\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Release\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Release\soil2.lib;..\..\ZVLab\lib\Release\ZVMotion.lib;..\..\ZVLab\lib\Release\ZVIO.lib;..\..\Vendor\ACS\lib\Release\x86_64\ACSCL_x64.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Release;..\..\ZVLab\lib\Release;..\..\Vendor\ACS\lib\Release\x86_64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -138,7 +138,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Dist\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Dist\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Dist\soil2.lib;..\..\ZVLab\lib\Dist\ZVMotion.lib;..\..\Vendor\ACS\lib\Dist\x86_64\ACSCL_x64.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>..\..\Vendor\FZLib\lib\Dist\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Dist\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Dist\soil2.lib;..\..\ZVLab\lib\Dist\ZVMotion.lib;..\..\ZVLab\lib\Dist\ZVIO.lib;..\..\Vendor\ACS\lib\Dist\x86_64\ACSCL_x64.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\Vendor\SOIL2\lib\windows\Dist;..\..\ZVLab\lib\Dist;..\..\Vendor\ACS\lib\Dist\x86_64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -150,6 +150,7 @@
     <ClInclude Include="core\ZVapp.h" />
     <ClInclude Include="examples\CoolbarExam.h" />
     <ClInclude Include="examples\TemplateExam.h" />
+    <ClInclude Include="src\Developer\Layers\IO\ZVIoSystemAct.h" />
     <ClInclude Include="src\Developer\Layers\Motion\ZVMotionAct.h" />
     <ClInclude Include="src\Developer\Layers\Sidebar_left.h" />
     <ClInclude Include="src\Developer\Overlays\DeveloperMenu.h" />
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\EntryPoint.cpp" />
+    <ClCompile Include="src\Developer\Layers\IO\ZVIoSystemAct.cpp" />
     <ClCompile Include="src\Developer\Layers\Motion\ZVMotionAct.cpp" />
   </ItemGroup>
   <ItemGroup>

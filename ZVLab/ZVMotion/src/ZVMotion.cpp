@@ -2,7 +2,7 @@
 
 // include headers
 #if (DMotion_Vendor == DMotion_Default) 
-	#include "vendor/default/ZVMotion_Default.h"
+	#include "vendor/virtual/ZVMotion_Virtual.h"
 #elif (DMotion_Vendor == DMotion_ACS)
 	#include "vendor/acs/ZVMotion_ACS.h"
 #else
@@ -14,7 +14,7 @@ namespace ZVLab {
 #if (DMotion_Vendor == DMotion_Default) 
 	Shared<CzvMotion> CzvMotion::Create()
 	{
-		return (CreateShared<CzvMotion_Default>());
+		return (CreateShared<CzvMotion_Virtual>());
 	}
 #elif (DMotion_Vendor == DMotion_ACS)
 	Shared<CzvMotion> CZVMotion::Create()

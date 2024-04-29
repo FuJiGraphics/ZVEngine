@@ -3,6 +3,9 @@
 
 #pragma once
 
+// ZVLAB CJ
+#pragma warning(disable:4508)
+
 #ifndef SPDLOG_HEADER_ONLY
     #include <spdlog/details/log_msg.h>
 #endif

@@ -56,19 +56,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>..\lib\Debug\</OutDir>
-    <IntDir>..\lib\Debug\</IntDir>
+    <IntDir>..\lib\Debug\Debug\ZVMotion\</IntDir>
     <TargetName>ZVMotion</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>..\lib\Release\</OutDir>
-    <IntDir>..\lib\Release\</IntDir>
+    <IntDir>..\lib\Release\Release\ZVMotion\</IntDir>
     <TargetName>ZVMotion</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <OutDir>..\lib\Dist\</OutDir>
-    <IntDir>..\lib\Dist\</IntDir>
+    <IntDir>..\lib\Dist\Dist\ZVMotion\</IntDir>
     <TargetName>ZVMotion</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
@@ -140,27 +140,27 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\vendor\default\ZVMotor_Default.h" />
     <ClInclude Include="src\ZVAssert.h" />
-    <ClInclude Include="src\ZVMemory.h" />
     <ClInclude Include="src\ZVCore.h" />
-    <ClInclude Include="src\vendor\acs\ZVAcsc_Controller.h" />
-    <ClInclude Include="src\vendor\acs\ZVMotor_ACS.h" />
+    <ClInclude Include="src\ZVMemory.h" />
     <ClInclude Include="src\ZVMotion.h" />
     <ClInclude Include="src\ZVMotion_cfg.h" />
-    <ClInclude Include="src\vendor\acs\ZVMotion_ACS.h" />
-    <ClInclude Include="src\vendor\default\ZVMotion_Default.h" />
     <ClInclude Include="src\ZVMotor.h" />
     <ClInclude Include="src\ZVMotor_cfg.h" />
+    <ClInclude Include="src\vendor\acs\ZVAcsc_Controller.h" />
+    <ClInclude Include="src\vendor\acs\ZVMotion_ACS.h" />
+    <ClInclude Include="src\vendor\acs\ZVMotor_ACS.h" />
+    <ClInclude Include="src\vendor\virtual\ZVMotion_Virtual.h" />
+    <ClInclude Include="src\vendor\virtual\ZVMotor_Virtual.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\vendor\acs\ZVAcsc_Controller.cpp" />
-    <ClCompile Include="src\vendor\acs\ZVMotor_ACS.cpp" />
-    <ClCompile Include="src\vendor\default\ZVMotor_Default.cpp" />
     <ClCompile Include="src\ZVMotion.cpp" />
-    <ClCompile Include="src\vendor\acs\ZVMotion_ACS.cpp" />
-    <ClCompile Include="src\vendor\default\ZVMotion_Default.cpp" />
     <ClCompile Include="src\ZVMotor.cpp" />
+    <ClCompile Include="src\vendor\acs\ZVAcsc_Controller.cpp" />
+    <ClCompile Include="src\vendor\acs\ZVMotion_ACS.cpp" />
+    <ClCompile Include="src\vendor\acs\ZVMotor_ACS.cpp" />
+    <ClCompile Include="src\vendor\virtual\ZVMotion_Virtual.cpp" />
+    <ClCompile Include="src\vendor\virtual\ZVMotor_Virtual.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

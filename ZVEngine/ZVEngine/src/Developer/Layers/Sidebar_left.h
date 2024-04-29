@@ -1,6 +1,7 @@
 #include "ZVCore.h"
 #include "GUI_Liberator.h"
 #include "Motion/ZVMotionAct.h"
+#include "IO/ZVIoSystemAct.h"
 
 using namespace ZVLab;
 
