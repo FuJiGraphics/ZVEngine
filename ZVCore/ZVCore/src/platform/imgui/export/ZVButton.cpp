@@ -13,7 +13,7 @@ namespace ZVLab {
 		, m_fpCallbackFn(nullptr)
 	{
 		s_nuiButtonCount++;
-		ZVLOG_FAILED((s_nuiButtonCount > 0),
+		DZVLog_Failed((s_nuiButtonCount > 0),
 					 "FAILED: Unexpected Error! Button Count is not greater than 0 \"s_nuiButtonCount = {0}\"",
 					 s_nuiButtonCount);
 	}
@@ -25,7 +25,7 @@ namespace ZVLab {
 		, m_fpCallbackFn(nullptr)
 	{
 		s_nuiButtonCount++;
-		ZVLOG_FAILED((s_nuiButtonCount > 0),
+		DZVLog_Failed((s_nuiButtonCount > 0),
 					 "FAILED: Unexpected Error! Button Count is not greater than 0 \"s_nuiButtonCount = {0}\"",
 					 s_nuiButtonCount);
 	}
@@ -37,7 +37,7 @@ namespace ZVLab {
 		, m_fpCallbackFn(nullptr)
 	{
 		s_nuiButtonCount++;
-		ZVLOG_FAILED((s_nuiButtonCount > 0),
+		DZVLog_Failed((s_nuiButtonCount > 0),
 					 "FAILED: Unexpected Error! Button Count is not greater than 0 \"s_nuiButtonCount = {0}\"",
 					 s_nuiButtonCount);
 	}
@@ -45,7 +45,7 @@ namespace ZVLab {
 	CzvButton::~CzvButton()
 	{
 		s_nuiButtonCount--;
-		ZVLOG_FAILED((s_nuiButtonCount >= 0), 
+		DZVLog_Failed((s_nuiButtonCount >= 0), 
 					 "FAILED: Unexpected Error! Button Count is less than 0 \"s_nuiButtonCount = {0}\"", 
 					 s_nuiButtonCount);
 	}

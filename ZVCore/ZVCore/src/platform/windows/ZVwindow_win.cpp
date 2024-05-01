@@ -47,7 +47,7 @@ namespace ZVLab {
 		if (!m_bInitialized)
 		{
 			m_bInitialized = true;
-			ZVLOG_FAILED(glfwInit(), "FAILED: Failed to initialized a glfw!");
+			DZVLog_Failed(glfwInit(), "FAILED: Failed to initialized a glfw!");
 
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 			glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -57,7 +57,7 @@ namespace ZVLab {
 											 static_cast<int>(m_uiHeight),
 											 m_strWindowName.c_str(),
 											 NULL, NULL);
-			ZVLOG_FAILED(m_pGlfwWindow, "FAILED: Failed to created a glfwWindow!");
+			DZVLog_Failed(m_pGlfwWindow, "FAILED: Failed to created a glfwWindow!");
 
 			glfwMakeContextCurrent(m_pGlfwWindow);
 			if (!gladLoadGL()) {
@@ -89,14 +89,14 @@ namespace ZVLab {
 
 	void CZVwindow_Windows::PollEvents()
 	{
-		ZVLOG_FAILED(m_bInitialized, "FAILED: Initialization hasn't been completed yet.");\
+		DZVLog_Failed(m_bInitialized, "FAILED: Initialization hasn't been completed yet.");\
 		glfwPollEvents();
 
 	}
 
 	void CZVwindow_Windows::Clear()
 	{
-		ZVLOG_FAILED(m_bInitialized, "FAILED: Initialization hasn't been completed yet."); \
+		DZVLog_Failed(m_bInitialized, "FAILED: Initialization hasn't been completed yet."); \
 		this->UpdateSwapChain();
 		this->UpdateViewport();
 		this->ClearScreen();
@@ -107,7 +107,7 @@ namespace ZVLab {
 		glfwSetWindowSizeCallback(m_pGlfwWindow,
 								  [](GLFWwindow* window, ZVint width, ZVint height)
 		{
-			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
+			DZVLog_Failed(window, "FAILED: Failed to created a glfwWindow!");
 			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
 			data.uiWidth = static_cast<ZVuint>(width);
 			data.uiHeight = static_cast<ZVuint>(height);
@@ -118,7 +118,7 @@ namespace ZVLab {
 
 		glfwSetWindowCloseCallback(m_pGlfwWindow,
 								   [](GLFWwindow* window) {
-			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
+			DZVLog_Failed(window, "FAILED: Failed to created a glfwWindow!");
 			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
 			CzvWindowCloseEvent event;
 			data.cbCallback(event);
@@ -126,7 +126,7 @@ namespace ZVLab {
 
 		glfwSetCursorPosCallback(m_pGlfwWindow,
 								 [](GLFWwindow* window, ZVdouble xpos, ZVdouble ypos) {
-			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
+			DZVLog_Failed(window, "FAILED: Failed to created a glfwWindow!");
 			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
 			CzvMouseMovedEvent event((ZVfloat)xpos, (ZVfloat)ypos);
 			data.cbCallback(event);
@@ -134,7 +134,7 @@ namespace ZVLab {
 
 		glfwSetMouseButtonCallback(m_pGlfwWindow,
 								   [](GLFWwindow* window, ZVint button, ZVint action, ZVint mods) {
-			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
+			DZVLog_Failed(window, "FAILED: Failed to created a glfwWindow!");
 			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
 			switch (action)
 			{
@@ -152,7 +152,7 @@ namespace ZVLab {
 		glfwSetScrollCallback(m_pGlfwWindow,
 							  [](GLFWwindow* window, ZVdouble xoffset, ZVdouble yoffset)
 		{
-			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
+			DZVLog_Failed(window, "FAILED: Failed to created a glfwWindow!");
 			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
 			CzvMouseScrolledEvent event((ZVfloat)xoffset, (ZVfloat)yoffset);
 			data.cbCallback(event);
@@ -161,7 +161,7 @@ namespace ZVLab {
 		glfwSetKeyCallback(m_pGlfwWindow,
 						   [](GLFWwindow* window, ZVint key, ZVint scancode, ZVint action, ZVint mods)
 		{
-			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
+			DZVLog_Failed(window, "FAILED: Failed to created a glfwWindow!");
 			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
 			static ZVuint repeatCount = 0;
 			CzvKeyReleasedEvent releasedEvent(key);
@@ -188,7 +188,7 @@ namespace ZVLab {
 		glfwSetCharCallback(m_pGlfwWindow,
 							[](GLFWwindow* window, ZVuint key)
 		{
-			ZVLOG_FAILED(window, "FAILED: Failed to created a glfwWindow!");
+			DZVLog_Failed(window, "FAILED: Failed to created a glfwWindow!");
 			TzvWindowChunk& data = *(TzvWindowChunk*)glfwGetWindowUserPointer(window);
 			CzvKeyTypedEvent pressedEvent(key);
 			data.cbCallback(pressedEvent);
@@ -197,13 +197,13 @@ namespace ZVLab {
 
 	void CZVwindow_Windows::UpdateSwapChain()
 	{
-		ZVLOG_FAILED(m_bInitialized, "FAILED: Initialization hasn't been completed yet.");
+		DZVLog_Failed(m_bInitialized, "FAILED: Initialization hasn't been completed yet.");
 		glfwSwapBuffers(m_pGlfwWindow);
 	}
 
 	void CZVwindow_Windows::UpdateViewport()
 	{
-		ZVLOG_FAILED(m_bInitialized, "FAILED: Initialization hasn't been completed yet.");
+		DZVLog_Failed(m_bInitialized, "FAILED: Initialization hasn't been completed yet.");
 		int w, h;
 		glfwGetFramebufferSize(m_pGlfwWindow, &w, &h);
 		m_uiWidth = static_cast<ZVuint>(w);

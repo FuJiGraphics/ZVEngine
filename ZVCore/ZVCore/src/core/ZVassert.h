@@ -13,7 +13,7 @@
 	#error "Did not found platform!";
 #endif
 
-#define ZVLOG_FAILED(boolean, ...)\
-		FZLOG_FAILED(boolean, __VA_ARGS__);\
-		if(!boolean) ZV_DEBUG_BREAK;
+#define DZVLog_Failed(boolean, ...)\
+		FZLOG_FAILED(boolean, __VA_ARGS__);
+		// if(!boolean) ZV_DEBUG_BREAK;
 	

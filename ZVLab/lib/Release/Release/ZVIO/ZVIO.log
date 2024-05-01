@@ -1,0 +1,5 @@
+﻿  zvIO_Contec.cpp
+c:\users\dev\desktop\zvengine\zvlab\zvio\src\zvio\zvio_contec\zvio_contec.cpp(183): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+FZLib.lib(bundled_fmtlib_format.obj) : warning LNK4006: "bool __cdecl fmt::v9::detail::is_printable(unsigned int)" (?is_printable@detail@v9@fmt@@YA_NI@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::throw_spdlog_ex(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?throw_spdlog_ex@spdlog@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+  ZVIO.vcxproj -> C:\Users\dev\Desktop\ZVEngine\ZVLab\ZVIO\..\lib\Release\ZVIO.lib

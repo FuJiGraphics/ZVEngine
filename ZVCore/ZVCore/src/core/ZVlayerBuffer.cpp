@@ -28,7 +28,7 @@ namespace ZVLab {
 			{
 				for (auto Layer : m_vContainer)
 				{
-					ZVLOG_FAILED(Layer, "FAILED: Failed to deallocate memory.");
+					DZVLog_Failed(Layer, "FAILED: Failed to deallocate memory.");
 					Layer->OnDetach();
 					delete Layer;
 				}
@@ -38,7 +38,7 @@ namespace ZVLab {
 
 	bool CzvLayerBuffer::InsertLayer(CzvLayer* pLayer)
 	{
-		ZVLOG_FAILED(pLayer, "FAILED: Failed to called a emplace");
+		DZVLog_Failed(pLayer, "FAILED: Failed to called a emplace");
 
 		auto findLayer = FindLayer(pLayer);
 		if (findLayer == m_vContainer.end())
@@ -54,7 +54,7 @@ namespace ZVLab {
 
 	bool CzvLayerBuffer::InsertOverlay(CzvLayer* pOverlay)
 	{
-		ZVLOG_FAILED(pOverlay, "FAILED: Failed to called a emplace_back");
+		DZVLog_Failed(pOverlay, "FAILED: Failed to called a emplace_back");
 
 		auto findOverlay = FindLayer(pOverlay);
 		if (findOverlay == m_vContainer.end())
@@ -69,7 +69,7 @@ namespace ZVLab {
 
 	bool CzvLayerBuffer::RemoveLayer(CzvLayer* pLayer)
 	{
-		ZVLOG_FAILED(pLayer, "FAILED: Failed to called a PopLevel");
+		DZVLog_Failed(pLayer, "FAILED: Failed to called a PopLevel");
 
 		auto findLayer = FindLayer(pLayer);
 		if (findLayer != m_vContainer.end())
@@ -86,7 +86,7 @@ namespace ZVLab {
 
 	bool CzvLayerBuffer::RemoveOverlay(CzvLayer* pOverlay)
 	{
-		ZVLOG_FAILED(pOverlay, "FAILED: Failed to called a PopOverlay");
+		DZVLog_Failed(pOverlay, "FAILED: Failed to called a PopOverlay");
 
 		auto findOverlay = FindLayer(pOverlay);
 		if (findOverlay != m_vContainer.end())

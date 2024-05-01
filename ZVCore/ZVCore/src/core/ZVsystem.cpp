@@ -24,8 +24,8 @@ namespace ZVLab {
 
 	void CzvSystem::Initialize(const TzvApplicationSpecification& spec)
 	{
-		ZVLOG_FAILED((spec.uiWidth > 0), "FAILED: Window width size must be greater than 0. \"{0}\"", spec.uiWidth);
-		ZVLOG_FAILED((spec.uiHeight > 0), "FAILED: Window height size must be greater than 0. \"{0}\"", spec.uiHeight);
+		DZVLog_Failed((spec.uiWidth > 0), "FAILED: Window width size must be greater than 0. \"{0}\"", spec.uiWidth);
+		DZVLog_Failed((spec.uiHeight > 0), "FAILED: Window height size must be greater than 0. \"{0}\"", spec.uiHeight);
 		m_bInitialized = true;
 		// Generated a Window
 		m_upWindow = CzvWindow::Create(spec.strName, spec.uiWidth, spec.uiHeight);
@@ -40,7 +40,7 @@ namespace ZVLab {
 
 		// TODO: 폰트 기능 리팩토링 및 수정 필요
 		// Set Font
-		CZVimguiManager::UploadFont("D:\\Dev\\ZVLab\\ZVEngine\\Resources\\Fonts\\OpenSans_Condensed-Regular.ttf", "OpenSans-Regular", 20);
+		CZVimguiManager::UploadFont("..\\..\\Resources\\Fonts\\OpenSans_Condensed-Regular.ttf", "OpenSans-Regular", 20);
 
 		// Graphic icon
 		ImGuiIO& io = ImGui::GetIO();
@@ -72,7 +72,7 @@ namespace ZVLab {
 
 	void CzvSystem::Run()
 	{
-		ZVLOG_FAILED(m_bInitialized, "FAILED: CzvSystem is not initialized!");
+		DZVLog_Failed(m_bInitialized, "FAILED: CzvSystem is not initialized!");
 
 		m_bIsRun = true;
 		while (m_bIsRun)
@@ -121,13 +121,13 @@ namespace ZVLab {
 
 	void CzvSystem::AttachLayer(CzvLayer* layer)
 	{
-		ZVLOG_FAILED(layer, "FAILED: Layer pointer is NULL!");
+		DZVLog_Failed(layer, "FAILED: Layer pointer is NULL!");
 		m_upLayerBuffer->InsertLayer(layer);
 	}
 
 	void CzvSystem::DetachLayer(CzvLayer* layer)
 	{
-		ZVLOG_FAILED(layer, "FAILED: Layer pointer is NULL!");
+		DZVLog_Failed(layer, "FAILED: Layer pointer is NULL!");
 		m_upLayerBuffer->RemoveLayer(layer);
 	}
 

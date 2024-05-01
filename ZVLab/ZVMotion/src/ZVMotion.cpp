@@ -17,7 +17,7 @@ namespace ZVLab {
 		return (CreateShared<CzvMotion_Virtual>());
 	}
 #elif (DMotion_Vendor == DMotion_ACS)
-	Shared<CzvMotion> CZVMotion::Create()
+	Shared<CzvMotion> CzvMotion::Create()
 	{
 		return (CreateShared<CzvMotion_ACS>());
 	}

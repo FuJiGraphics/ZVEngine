@@ -1,5 +1,5 @@
 ﻿  ZVLayerBuffer.cpp
-  ZVsystem.cpp
+  ZVSystem.cpp
   ZVwindow.cpp
   ZVImguiTheme.cpp
   ZVTexture_impl.cpp
@@ -10,29 +10,29 @@
   ZVMenu.cpp
   ZVTexture.cpp
   ZVwindow_win.cpp
-d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVButton.cpp)
-d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVMenu.cpp)
-d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\windows\ZVwindow_win.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\ZVTexture_impl.cpp)
 d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\core\ZVLayerBuffer.cpp)
-d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVButton.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTexture.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVMenu.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\core\ZVSystem.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\core\ZVwindow.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\ZVimguiManager.cpp)
+d:\dev\zvlab\zvengine\zvcore\zvcore\src\core\zvwindow.h(9): warning C4099: 'GLFWwindow': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\core\ZVwindow.cpp)
+  d:\dev\zvlab\zvengine\vendor\imgui\include\imgui\backends\imgui_impl_glfw.h(28): note: 'GLFWwindow' 선언을 참조하십시오. (소스 파일 컴파일 중 src\core\ZVwindow.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\windows\ZVwindow_win.cpp)
+d:\dev\zvlab\zvengine\zvcore\zvcore\src\core\zvwindow.h(9): warning C4099: 'GLFWwindow': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\platform\imgui\ZVimguiManager.cpp)
+  d:\dev\zvlab\zvengine\vendor\imgui\include\imgui\backends\imgui_impl_glfw.h(28): note: 'GLFWwindow' 선언을 참조하십시오. (소스 파일 컴파일 중 src\platform\imgui\ZVimguiManager.cpp)
+d:\dev\zvlab\zvengine\zvcore\zvcore\src\core\zvwindow.h(9): warning C4099: 'GLFWwindow': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\core\ZVSystem.cpp)
+  d:\dev\zvlab\zvengine\vendor\imgui\include\imgui\backends\imgui_impl_glfw.h(28): note: 'GLFWwindow' 선언을 참조하십시오. (소스 파일 컴파일 중 src\core\ZVSystem.cpp)
 d:\dev\zvlab\zvengine\zvcore\zvcore\src\core\zvwindow.h(9): warning C4099: 'GLFWwindow': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\platform\windows\ZVwindow_win.cpp)
   d:\dev\zvlab\zvengine\vendor\imgui\include\imgui\backends\imgui_impl_glfw.h(28): note: 'GLFWwindow' 선언을 참조하십시오. (소스 파일 컴파일 중 src\platform\windows\ZVwindow_win.cpp)
-d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\core\ZVsystem.cpp)
-d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTexture.cpp)
-d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\core\ZVwindow.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
 d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVImageButton.cpp)
-d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\ZVTexture_impl.cpp)
-d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\ZVimguiManager.cpp)
 d:\dev\zvlab\zvengine\zvcore\zvcore\src\core\zvwindow.h(9): warning C4099: 'GLFWwindow': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
   d:\dev\zvlab\zvengine\vendor\imgui\include\imgui\backends\imgui_impl_glfw.h(28): note: 'GLFWwindow' 선언을 참조하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
 d:\dev\zvlab\zvengine\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(19): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
-d:\dev\zvlab\zvengine\zvcore\zvcore\src\core\zvwindow.h(9): warning C4099: 'GLFWwindow': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\core\ZVsystem.cpp)
-  d:\dev\zvlab\zvengine\vendor\imgui\include\imgui\backends\imgui_impl_glfw.h(28): note: 'GLFWwindow' 선언을 참조하십시오. (소스 파일 컴파일 중 src\core\ZVsystem.cpp)
-d:\dev\zvlab\zvengine\zvcore\zvcore\src\core\zvwindow.h(9): warning C4099: 'GLFWwindow': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\core\ZVwindow.cpp)
-  d:\dev\zvlab\zvengine\vendor\imgui\include\imgui\backends\imgui_impl_glfw.h(28): note: 'GLFWwindow' 선언을 참조하십시오. (소스 파일 컴파일 중 src\core\ZVwindow.cpp)
 d:\dev\zvlab\zvengine\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(34): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
-d:\dev\zvlab\zvengine\zvcore\zvcore\src\core\zvwindow.h(9): warning C4099: 'GLFWwindow': 처음에는 'struct'을(를) 사용하여 형식 이름을 표시했는데 이제는 'class'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\platform\imgui\ZVimguiManager.cpp)
-  d:\dev\zvlab\zvengine\vendor\imgui\include\imgui\backends\imgui_impl_glfw.h(28): note: 'GLFWwindow' 선언을 참조하십시오. (소스 파일 컴파일 중 src\platform\imgui\ZVimguiManager.cpp)
 d:\dev\zvlab\zvengine\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(49): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
 d:\dev\zvlab\zvengine\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(64): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
 d:\dev\zvlab\zvengine\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(79): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중

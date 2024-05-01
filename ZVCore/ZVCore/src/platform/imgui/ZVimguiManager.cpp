@@ -141,7 +141,7 @@ namespace ZVLab {
 	{
 		if (s_mapFonts.find(fontName) != s_mapFonts.end())
 		{
-			ZVLOG_FAILED(false, "FAILED: Already uploaded font!");
+			DZVLog_Failed(false, "FAILED: Already uploaded font!");
 			return (false);
 		}
 		auto io = ImGui::GetIO();
@@ -156,7 +156,7 @@ namespace ZVLab {
 
 		if (font == nullptr)
 		{
-			ZVLOG_FAILED(font, "FAILED: Unexpected Error! font is null!!");
+			DZVLog_Failed(font, "FAILED: Unexpected Error! font is null!!");
 			return (false);
 		}
 		s_mapFonts.insert({ fontName, font });
@@ -167,11 +167,11 @@ namespace ZVLab {
 	{
 		if (s_mapFonts.find(fontName) == s_mapFonts.end())
 		{
-			ZVLOG_FAILED(false, "FAILED: Did not found font!");
+			DZVLog_Failed(false, "FAILED: Did not found font!");
 			return (false);
 		}
 		ImFont* font = s_mapFonts[fontName];
-		ZVLOG_FAILED(font, "FAILED: ImFont* font is null!");
+		DZVLog_Failed(font, "FAILED: ImFont* font is null!");
 		return (font);
 	}
 

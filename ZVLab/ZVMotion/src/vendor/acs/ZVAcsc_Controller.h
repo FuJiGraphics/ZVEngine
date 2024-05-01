@@ -6,7 +6,6 @@
 
 namespace ZVLab {
 
-
 	enum EzvAcsc_Movement
 	{
 		ezvAcsc_Movement_AMF_None = 0,

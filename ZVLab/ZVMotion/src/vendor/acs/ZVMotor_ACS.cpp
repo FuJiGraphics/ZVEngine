@@ -20,7 +20,7 @@ namespace ZVLab {
 		int iLevel = m_tInfo.tHwInfo.iLimitLevel ? 0 : 1;
 		//리밋 레벨 세팅
 
-		ZVLOG_FAILED((m_tInfo.tSwInfo.dOnePulseDist > 0), 
+		DZVLog_Failed((m_tInfo.tSwInfo.dOnePulseDist > 0), 
 					 "FAILED: dOnePulseDist is not greater than 0 = {0}",
 					 m_tInfo.tSwInfo.dOnePulseDist);
 	}

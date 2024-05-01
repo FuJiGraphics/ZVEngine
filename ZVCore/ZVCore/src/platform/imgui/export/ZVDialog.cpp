@@ -6,7 +6,7 @@ namespace ZVLab {
 /// static variable
 	bool			CzvDialog::s_bFirstEntryScope = true;
 	std::string		CzvDialog::s_strCurrDialog;
-	unsigned int	CzvDialog::s_nuiDialogCount = 0;
+	unsigned int	CzvDialog::s_unDialogCount = 0;
 
 // constructors, destructors
 	CzvDialog::CzvDialog(const std::string& label)
@@ -16,12 +16,12 @@ namespace ZVLab {
 		, m_bIsUnFolded(true)
 		, m_tOptions()
 	{
-		ZVLOG_FAILED(label.size(), "FAILED: Label length must be than or equal to 0.");
+		DZVLog_Failed(label.size(), "FAILED: Label length must be than or equal to 0.");
 		this->Synchronization();
-		s_nuiDialogCount++;
-		ZVLOG_FAILED((s_nuiDialogCount > 0), 
+		s_unDialogCount++;
+		DZVLog_Failed((s_unDialogCount > 0), 
 					 "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_nuiDialogCount = {0}\"", 
-					 s_nuiDialogCount);
+					 s_unDialogCount);
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const TzvDialogInfo& options)
@@ -31,12 +31,12 @@ namespace ZVLab {
 		, m_bIsUnFolded(true)
 		, m_tOptions(options)
 	{
-		ZVLOG_FAILED(label.size(), "FAILED: Label length must be greater than or equal to 0.");
+		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
-		s_nuiDialogCount++;
-		ZVLOG_FAILED((s_nuiDialogCount > 0),
+		s_unDialogCount++;
+		DZVLog_Failed((s_unDialogCount > 0),
 					 "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_nuiDialogCount = {0}\"",
-					 s_nuiDialogCount);
+					 s_unDialogCount);
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size)
@@ -46,12 +46,12 @@ namespace ZVLab {
 		, m_bIsUnFolded(true)
 		, m_tOptions()
 	{
-		ZVLOG_FAILED(label.size(), "FAILED: Label length must be greater than or equal to 0.");
+		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
-		s_nuiDialogCount++;
-		ZVLOG_FAILED((s_nuiDialogCount > 0),
+		s_unDialogCount++;
+		DZVLog_Failed((s_unDialogCount > 0),
 					 "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_nuiDialogCount = {0}\"",
-					 s_nuiDialogCount);
+					 s_unDialogCount);
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const TzvDialogInfo& options)
@@ -61,12 +61,12 @@ namespace ZVLab {
 		, m_bIsUnFolded(true)
 		, m_tOptions(options)
 	{
-		ZVLOG_FAILED(label.size(), "FAILED: Label length must be greater than or equal to 0.");
+		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
-		s_nuiDialogCount++;
-		ZVLOG_FAILED((s_nuiDialogCount > 0),
+		s_unDialogCount++;
+		DZVLog_Failed((s_unDialogCount > 0),
 					 "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_nuiDialogCount = {0}\"",
-					 s_nuiDialogCount);
+					 s_unDialogCount);
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position)
@@ -76,12 +76,12 @@ namespace ZVLab {
 		, m_bIsUnFolded(true)
 		, m_tOptions()
 	{
-		ZVLOG_FAILED(label.size(), "FAILED: Label length must be greater than or equal to 0.");
+		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
-		s_nuiDialogCount++;
-		ZVLOG_FAILED((s_nuiDialogCount > 0),
+		s_unDialogCount++;
+		DZVLog_Failed((s_unDialogCount > 0),
 					 "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_nuiDialogCount = {0}\"",
-					 s_nuiDialogCount);
+					 s_unDialogCount);
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position, const TzvDialogInfo& options)
@@ -91,12 +91,12 @@ namespace ZVLab {
 		, m_bIsUnFolded(true)
 		, m_tOptions(options)
 	{
-		ZVLOG_FAILED(label.size(), "FAILED: Label length must be greater than or equal to 0.");
+		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
-		s_nuiDialogCount++;
-		ZVLOG_FAILED((s_nuiDialogCount > 0),
+		s_unDialogCount++;
+		DZVLog_Failed((s_unDialogCount > 0),
 					 "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_nuiDialogCount = {0}\"",
-					 s_nuiDialogCount);
+					 s_unDialogCount);
 	}
 
 	CzvDialog::~CzvDialog()
@@ -108,10 +108,10 @@ namespace ZVLab {
 			ImGui::End();
 			s_strCurrDialog.clear();
 		}
-		s_nuiDialogCount--;
-		ZVLOG_FAILED((s_nuiDialogCount >= 0),
+		s_unDialogCount--;
+		DZVLog_Failed((s_unDialogCount >= 0),
 					 "FAILED: Unexpected Error! Dialog Count is less than 0 \"s_nuiDialogCount = {0}\"",
-					 s_nuiDialogCount);
+					 s_unDialogCount);
 	}
 
 // interfaces

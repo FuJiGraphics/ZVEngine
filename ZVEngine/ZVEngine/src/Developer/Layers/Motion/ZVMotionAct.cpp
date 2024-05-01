@@ -10,8 +10,8 @@ CzvMotionAct::CzvMotionAct()
 
 void CzvMotionAct::Initialize()
 {
-	ibStage.SetTexture("D:\\Dev\\ZVLab\\ZVEngine\\Resources\\IDB_BUTTON_DLG_MENU_JOG.png",
-					   "D:\\Dev\\ZVLab\\ZVEngine\\Resources\\IDB_BUTTON_DLG_MENU_JOG_PRESSED.png");
+	ibStage.SetTexture(	"..\\..\\Resources\\IDB_BUTTON_DLG_MENU_JOG.png",
+						"..\\..\\Resources\\IDB_BUTTON_DLG_MENU_JOG_PRESSED.png");
 
 	spZVMotion = CzvMotion::Create();
 
@@ -130,7 +130,7 @@ void CzvMotionAct::OnButton()
 	}
 	if (sidebar_ZVMotion.Button("Up", { 50.0f, 40.0f }, { 80.0f + MovePosX, 25.0f + MovePosY }))
 	{
-		spZVMotion->RelMove(1, 3);
+		spZVMotion->RelMove(1, -3);
 	}
 	if (sidebar_ZVMotion.Button("Down", { 50.0f, 40.0f }, { 80.0f + MovePosX, 135.0f + MovePosY }))
 	{
@@ -142,7 +142,7 @@ void CzvMotionAct::OnButton()
 	}
 	if (sidebar_ZVMotion.Button("Right", { 50.0f, 40.0f }, { 150.0f + MovePosX, 80.0f + MovePosY }))
 	{
-		spZVMotion->RelMove(0, 3);
+		spZVMotion->RelMove(0, -3);
 	}
 }
 

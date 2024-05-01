@@ -11,7 +11,7 @@ namespace ZVLab {
 	class CzvButton
 	{
 	protected: /// using 
-		using EventCallbackFn = std::function<void(void)>;
+		using FuncEventCallback = std::function<void(void)>;
 
 	protected: /// static member variables
 		static unsigned int		s_nuiButtonCount;
@@ -42,7 +42,7 @@ namespace ZVLab {
 		inline void			SetLabel(const std::string& label)	{ m_strButtonLabel = label; }
 		inline void			SetSize(float width, float height)	{ m_optSize = { width, height }; }
 		inline void			SetPosition(float x, float y)		{ m_optPosition = { x, y }; }
-		inline void			SetCallbackFunc(EventCallbackFn fn) { m_fpCallbackFn = fn; }
+		inline void			SetCallbackFunc(FuncEventCallback fn) { m_fpCallbackFn = fn; }
 
 	public: // others
 		virtual bool Bind();
