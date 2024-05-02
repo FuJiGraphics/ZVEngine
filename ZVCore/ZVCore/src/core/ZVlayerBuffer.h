@@ -44,7 +44,7 @@ namespace ZVLab {
 	public:
 		inline ZVbool		empty() { return m_vContainer.empty(); }
 		inline iter			begin() { return m_vContainer.begin(); }
-		inline iter			end() { return m_vContainer.end(); }
+		inline iter			end()	{ return m_vContainer.end(); }
 		inline ZVbool		empty() const { return m_vContainer.empty(); }
 		inline const_iter	begin() const { return m_vContainer.begin(); }
 		inline const_iter	end()	const { return m_vContainer.end(); }

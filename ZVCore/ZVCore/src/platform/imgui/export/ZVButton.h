@@ -48,6 +48,9 @@ namespace ZVLab {
 		virtual bool Bind();
 	};
 
+
+	void ToggleButton(const char* str_id, bool* v);
+
 } // namesapce ZVLab
 #endif /*__ZV_ZVBUTTON_H__*/
 

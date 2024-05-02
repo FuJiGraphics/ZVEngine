@@ -11,22 +11,26 @@ void StyleColorsSpectrum() {
 
 }
 
-void glfw_error_callback(int error, const char * description)
-{
+void glfw_error_callback(int error, const char * description) {
+
 }
 
 namespace ZVLab {
 
+	bool CZVimguiManager::s_bEnabledImplot = false;
 	bool CZVimguiManager::s_bEnableOverviewDockspace = true;
 	std::unordered_map<std::string, ImFont*> CZVimguiManager::s_mapFonts;
 
-	void CZVimguiManager::Initialize(const Unique<CzvWindow>& window)
+	void CZVimguiManager::Initialize(const Unique<CzvWindow>& window, UsageExtensionsFlags flags)
 	{
 		const char* glsl_version = "#version 130";
 
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
+		if (flags )
+			ImPlot::CreateContext();
+			
 		ImGuiIO& io = ImGui::GetIO(); (void)io;
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
 		io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
@@ -48,6 +52,8 @@ namespace ZVLab {
 	{
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
+		if (s_bEnabledImplot)
+			ImPlot::DestroyContext();
 		ImGui::DestroyContext();
 	}
 
@@ -174,6 +180,5 @@ namespace ZVLab {
 		DZVLog_Failed(font, "FAILED: ImFont* font is null!");
 		return (font);
 	}
-
 
 } // namespace ZVLab

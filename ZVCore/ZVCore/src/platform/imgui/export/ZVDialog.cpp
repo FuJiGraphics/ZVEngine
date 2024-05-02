@@ -4,17 +4,19 @@
 namespace ZVLab {
 
 /// static variable
-	bool			CzvDialog::s_bFirstEntryScope = true;
-	std::string		CzvDialog::s_strCurrDialog;
-	unsigned int	CzvDialog::s_unDialogCount = 0;
+	static bool					s_bFirstEntryScope = true;
+	static bool					s_bFirstEntryScopeChild = true;
+	static TzvDialogChunk		s_CurrDialogData;
+	static TzvDialogChunk		s_CurrDialogChildData;
+	static unsigned int			s_unDialogCount = 0;
+	static unsigned int			s_unDialogChildCount = 0;
 
-// constructors, destructors
+//----------------------------------------------------
+// Dialog
+//----------------------------------------------------
+	// constructors, destructors
 	CzvDialog::CzvDialog(const std::string& label)
-		: m_strLabel(label)
-		, m_optSize()
-		, m_optPosition()
-		, m_bIsUnFolded(true)
-		, m_tOptions()
+		: m_tData{ label, {}, {}, true, {} }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be than or equal to 0.");
 		this->Synchronization();
@@ -25,11 +27,7 @@ namespace ZVLab {
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const TzvDialogInfo& options)
-		: m_strLabel(label)
-		, m_optSize()
-		, m_optPosition()
-		, m_bIsUnFolded(true)
-		, m_tOptions(options)
+		: m_tData{ label, {}, {}, true, options }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -40,11 +38,7 @@ namespace ZVLab {
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size)
-		: m_strLabel(label)
-		, m_optSize(size)
-		, m_optPosition()
-		, m_bIsUnFolded(true)
-		, m_tOptions()
+		: m_tData{ label, size, {}, true, {} }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -55,11 +49,7 @@ namespace ZVLab {
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const TzvDialogInfo& options)
-		: m_strLabel(label)
-		, m_optSize(size)
-		, m_optPosition()
-		, m_bIsUnFolded(true)
-		, m_tOptions(options)
+		: m_tData{ label, size, {}, true, options }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -70,11 +60,7 @@ namespace ZVLab {
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position)
-		: m_strLabel(label)
-		, m_optSize(size)
-		, m_optPosition(position)
-		, m_bIsUnFolded(true)
-		, m_tOptions()
+		: m_tData{ label, size, position, true, {} }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -85,11 +71,7 @@ namespace ZVLab {
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position, const TzvDialogInfo& options)
-		: m_strLabel(label)
-		, m_optSize(size)
-		, m_optPosition(position)
-		, m_bIsUnFolded(true)
-		, m_tOptions(options)
+		: m_tData{ label, size, position, true, options }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -99,14 +81,18 @@ namespace ZVLab {
 					 s_unDialogCount);
 	}
 
+	CzvDialog::CzvDialog(const TzvDialogChunk& data)
+		: m_tData{data.strLabel, data.optSize, data.optPosition, data.bIsUnFolded, data.tOptions}
+	{ /*Empty*/ }
+
 	CzvDialog::~CzvDialog()
 	{
-		if (s_strCurrDialog == m_strLabel)
+		if (s_CurrDialogData.strLabel == m_tData.strLabel)
 		{
 			// Release a dialog
 			s_bFirstEntryScope = true;
 			ImGui::End();
-			s_strCurrDialog.clear();
+			s_CurrDialogData.strLabel.clear();
 		}
 		s_unDialogCount--;
 		DZVLog_Failed((s_unDialogCount >= 0),
@@ -114,7 +100,7 @@ namespace ZVLab {
 					 s_unDialogCount);
 	}
 
-// interfaces
+	// interfaces
 	bool CzvDialog::Button(const std::string& label)
 	{
 		if (this->Synchronization())
@@ -154,28 +140,150 @@ namespace ZVLab {
 		return (false);
 	}
 
-/// others
+	/// others
 	bool CzvDialog::Synchronization()
 	{
-		if (s_strCurrDialog != m_strLabel || s_bFirstEntryScope)
+		if (s_CurrDialogData.strLabel != m_tData.strLabel || s_bFirstEntryScope)
 		{
 			if (s_bFirstEntryScope)
 				s_bFirstEntryScope = false;
 			else
 				ImGui::End();
 
-			if (m_optPosition.has_value())
+			if (m_tData.optPosition.has_value())
 			{
-				ImGui::SetNextWindowPos(*m_optPosition, ImGuiCond_Once);
+				ImGui::SetNextWindowPos(*m_tData.optPosition, ImGuiCond_Once);
 			}
-			if (m_optSize.has_value())
+			if (m_tData.optSize.has_value())
 			{
-				ImGui::SetNextWindowSize(*m_optSize, ImGuiCond_Once);
+				ImGui::SetNextWindowSize(*m_tData.optSize, ImGuiCond_Once);
 			}
-			s_strCurrDialog = m_strLabel;
-			return (m_bIsUnFolded = ImGui::Begin(m_strLabel.c_str(), NULL, m_tOptions.GetOptions()));
+			s_CurrDialogData.strLabel = m_tData.strLabel;
+			s_CurrDialogData.optSize = m_tData.optSize;
+			s_CurrDialogData.optPosition = m_tData.optPosition;
+			s_CurrDialogData.bIsUnFolded = m_tData.bIsUnFolded;
+			s_CurrDialogData.tOptions = m_tData.tOptions;
+			return (m_tData.bIsUnFolded = ImGui::Begin(m_tData.strLabel.c_str(), NULL, m_tData.tOptions.GetOptions()));
 		}
-		return (m_bIsUnFolded);
+		return (m_tData.bIsUnFolded);
+	}
+
+
+//----------------------------------------------------
+// Dialog Child
+//----------------------------------------------------
+	CzvDialog_Child::CzvDialog_Child(const std::string& label)
+		: CzvDialog(s_CurrDialogData)
+		, m_tData{ label, {}, {}, true, {} }
+	{
+		DZVLog_Failed(label.size(), "FAILED: Label length must be than or equal to 0.");
+		this->Synchronization();
+		s_unDialogChildCount++;
+		DZVLog_Failed((s_unDialogChildCount > 0),
+					  "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_unDialogChildCount = {0}\"",
+					  s_unDialogChildCount);
+	}
+
+	CzvDialog_Child::CzvDialog_Child(const std::string& label, const TzvDialogInfo& options)
+		: CzvDialog(s_CurrDialogData)
+		, m_tData{ label, {}, {}, true, options }
+	{
+		DZVLog_Failed(label.size(), "FAILED: Label length must be than or equal to 0.");
+		this->Synchronization();
+		s_unDialogChildCount++;
+		DZVLog_Failed((s_unDialogChildCount > 0),
+					  "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_unDialogChildCount = {0}\"",
+					  s_unDialogChildCount);
+	}
+
+	CzvDialog_Child::CzvDialog_Child(const std::string& label, const ImVec2& size)
+		: CzvDialog(s_CurrDialogData)
+		, m_tData{ label, size, {}, true, {} }
+	{
+		DZVLog_Failed(label.size(), "FAILED: Label length must be than or equal to 0.");
+		this->Synchronization();
+		s_unDialogChildCount++;
+		DZVLog_Failed((s_unDialogChildCount > 0),
+					  "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_unDialogChildCount = {0}\"",
+					  s_unDialogChildCount);
+	}
+
+	CzvDialog_Child::CzvDialog_Child(const std::string& label, const ImVec2& size, const TzvDialogInfo& options)
+		: CzvDialog(s_CurrDialogData)
+		, m_tData{ label, size, {}, true, options }
+	{
+		DZVLog_Failed(label.size(), "FAILED: Label length must be than or equal to 0.");
+		this->Synchronization();
+		s_unDialogChildCount++;
+		DZVLog_Failed((s_unDialogChildCount > 0),
+					  "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_unDialogChildCount = {0}\"",
+					  s_unDialogChildCount);
+	}
+
+	CzvDialog_Child::CzvDialog_Child(const std::string& label, const ImVec2& size, const ImVec2& position)
+		: CzvDialog(s_CurrDialogData)
+		, m_tData{ label, size, position, true, {} }
+	{
+		DZVLog_Failed(label.size(), "FAILED: Label length must be than or equal to 0.");
+		this->Synchronization();
+		s_unDialogChildCount++;
+		DZVLog_Failed((s_unDialogChildCount > 0),
+					  "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_unDialogChildCount = {0}\"",
+					  s_unDialogChildCount);
+	}
+
+	CzvDialog_Child::CzvDialog_Child(const std::string& label, const ImVec2& size, const ImVec2& position, const TzvDialogInfo& options)
+		: CzvDialog(s_CurrDialogData)
+		, m_tData{ label, size, position, true, options }
+	{
+		DZVLog_Failed(label.size(), "FAILED: Label length must be than or equal to 0.");
+		this->Synchronization();
+		s_unDialogChildCount++;
+		DZVLog_Failed((s_unDialogChildCount > 0),
+					  "FAILED: Unexpected Error! Dialog Count is not greater than 0 \"s_unDialogChildCount = {0}\"",
+					  s_unDialogChildCount);
+	}
+
+	CzvDialog_Child::~CzvDialog_Child()
+	{
+		if (s_CurrDialogChildData.strLabel == m_tData.strLabel)
+		{
+			// Release a dialog
+			s_bFirstEntryScopeChild = true;
+			ImGui::End();
+			s_CurrDialogChildData.strLabel.clear();
+		}
+		s_unDialogCount--;
+		DZVLog_Failed((s_unDialogCount >= 0),
+					  "FAILED: Unexpected Error! Dialog Count is less than 0 \"s_nuiDialogCount = {0}\"",
+					  s_unDialogCount);
+	}
+
+	bool CzvDialog_Child::Synchronization()
+	{
+		if (s_CurrDialogChildData.strLabel != m_tData.strLabel || s_bFirstEntryScopeChild)
+		{
+			if (s_bFirstEntryScopeChild)
+				s_bFirstEntryScopeChild = false;
+			else
+				ImGui::EndChild();
+
+			if (m_tData.optPosition.has_value())
+			{
+				ImGui::SetNextWindowPos(*m_tData.optPosition, ImGuiCond_Once);
+			}
+			if (m_tData.optSize.has_value())
+			{
+				ImGui::SetNextWindowSize(*m_tData.optSize, ImGuiCond_Once);
+			}
+			s_CurrDialogChildData.strLabel = m_tData.strLabel;
+			s_CurrDialogChildData.optSize = m_tData.optSize;
+			s_CurrDialogChildData.optPosition = m_tData.optPosition;
+			s_CurrDialogChildData.bIsUnFolded = m_tData.bIsUnFolded;
+			s_CurrDialogChildData.tOptions = m_tData.tOptions;
+			return (m_tData.bIsUnFolded = ImGui::BeginChild(m_tData.strLabel.c_str()));
+		}
+		return (m_tData.bIsUnFolded);
 	}
 
 } // namespace ZVLab

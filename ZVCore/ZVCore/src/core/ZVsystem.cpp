@@ -1,9 +1,6 @@
 #include "ZVsystem.h"
 #include "ZVwindow.h"
-
-// icons
-#include "../platform/imgui/fonts/IconsLucide.h"
-
+#include "ZVTimer.h"
 
 namespace ZVLab {
 
@@ -33,7 +30,7 @@ namespace ZVLab {
 		// Generated a LayerBuffer
 		m_upLayerBuffer = CzvLayerBuffer::Create();
 		// Init ImGui
-		CZVimguiManager::Initialize(m_upWindow);
+		CZVimguiManager::Initialize(m_upWindow, true);
 		// Set Callback
 		m_upWindow->SetEventCallback(DBindEventFunction(CzvSystem::OnEvent));
 
@@ -45,17 +42,6 @@ namespace ZVLab {
 		// Graphic icon
 		ImGuiIO& io = ImGui::GetIO();
 		io.Fonts->AddFontDefault();
-
-		float baseFontSize = 40.0; // 13.0f is the size of the default font. Change to the font size you use.
-		// merge in icons from Font Awesome
-		static const ImWchar icons_ranges[] = { ICON_MIN_LC, ICON_MAX_LC, 0 };
-		// icon config
-		ImFontConfig icons_config;
-		icons_config.MergeMode = true;
-		icons_config.PixelSnapH = true;
-		icons_config.GlyphMinAdvanceX = baseFontSize;
-		// use FONT_ICON_FILE_NAME_FAR if you want regular instead of solid
-		// CZVimguiManager::UploadFont("Resources\\Fonts\\lucide.ttf", "lucide", baseFontSize, &icons_config, icons_ranges);
 	}
 
 	void CzvSystem::Shutdown()
@@ -98,6 +84,7 @@ namespace ZVLab {
 			ImFont* font = CZVimguiManager::GetFont("OpenSans-Regular");
 			ImGui::PushFont(font);
 			{ // ImGui_Layer
+				DProfile_StartRecord("OnMainMenuBar")
 				if (CZVimguiManager::BeginMainMenu())
 				{
 					for (auto& layer : *m_upLayerBuffer)
@@ -106,13 +93,18 @@ namespace ZVLab {
 					}
 					CZVimguiManager::EndMainMenu();
 				}
+				DProfile_EndRecord
+
+				DProfile_StartRecord("OnGui")
 				for (auto& layer : *m_upLayerBuffer)
 				{
 					layer->OnGUI();
 				}
 				// CZVimguiManager::ShowDemo();
+				DProfile_EndRecord
 			}
 			ImGui::PopFont();
+			DProfile_Execute
 			CZVimguiManager::End();
 
 			m_upWindow->Clear();

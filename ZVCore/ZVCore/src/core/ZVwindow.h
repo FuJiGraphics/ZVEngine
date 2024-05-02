@@ -6,7 +6,7 @@
 #include "../events/ZVevent.h"
 
 // Forwards
-class GLFWwindow;
+struct GLFWwindow;
 
 namespace ZVLab {
 

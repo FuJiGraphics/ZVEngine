@@ -4,8 +4,10 @@
 
 #include "Core.h"
 #include "ZVLayerBuffer.h"
+
 // imgui
 #include "../platform/imgui/ZVimguiManager.h"
+#include "../platform/imgui/export/ZVProfiler.h"
 
 // events
 #include "../events/ZVevent.h"

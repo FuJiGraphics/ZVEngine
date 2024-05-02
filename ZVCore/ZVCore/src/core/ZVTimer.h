@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Core.h"
 #include <chrono>
 
 #define DZVTimer_CurrentTime std::chrono::high_resolution_clock::now()
@@ -14,12 +15,9 @@ namespace ZVLab {
 		eTimeUnit_Milliseconds,
 		eTimeUnit_Seconds,
 	};
-
-	class CzvTimer
+           
+	class ZV_API CzvTimer
 	{
-	private:
-		std::chrono::time_point<std::chrono::high_resolution_clock> m_startTime;
-
 	public:
 		CzvTimer()
 		{
@@ -45,7 +43,8 @@ namespace ZVLab {
 					/*seconds*/	(unit == EzvTimerUnit::eTimeUnit_Seconds) ? (e * 0.001f * 0.001f * 0.001f) :
 					/*return*/	(e);
 		}
+
+	private:
+		std::chrono::time_point<std::chrono::high_resolution_clock> m_startTime;
 	};
-
-
 }

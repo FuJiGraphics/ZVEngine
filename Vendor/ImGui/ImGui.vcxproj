@@ -141,6 +141,8 @@
     <ClInclude Include="include\imgui\backends\imgui_impl_opengl3.h" />
     <ClInclude Include="include\imgui\backends\imgui_impl_opengl3_loader.h" />
     <ClInclude Include="include\imgui\extensions\ImCoolbar.h" />
+    <ClInclude Include="include\imgui\extensions\implot\implot.h" />
+    <ClInclude Include="include\imgui\extensions\implot\implot_internal.h" />
     <ClInclude Include="include\imgui\imconfig.h" />
     <ClInclude Include="include\imgui\imgui.h" />
     <ClInclude Include="include\imgui\imgui_internal.h" />
@@ -152,6 +154,9 @@
     <ClCompile Include="include\imgui\backends\imgui_impl_glfw.cpp" />
     <ClCompile Include="include\imgui\backends\imgui_impl_opengl3.cpp" />
     <ClCompile Include="include\imgui\extensions\ImCoolbar.cpp" />
+    <ClCompile Include="include\imgui\extensions\implot\implot.cpp" />
+    <ClCompile Include="include\imgui\extensions\implot\implot_demo.cpp" />
+    <ClCompile Include="include\imgui\extensions\implot\implot_items.cpp" />
     <ClCompile Include="include\imgui\imgui.cpp" />
     <ClCompile Include="include\imgui\imgui_demo.cpp" />
     <ClCompile Include="include\imgui\imgui_draw.cpp" />

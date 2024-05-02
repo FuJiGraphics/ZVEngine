@@ -45,10 +45,13 @@
     <ClInclude Include="src\core\ZVMemory.h">
       <Filter>core</Filter>
     </ClInclude>
+    <ClInclude Include="src\core\ZVSystem.h">
+      <Filter>core</Filter>
+    </ClInclude>
     <ClInclude Include="src\core\ZVTimer.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ZVwindow.h">
+    <ClInclude Include="src\core\ZVWindow.h">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="src\events\ZVKeyCodes.h">
@@ -73,9 +76,6 @@
       <Filter>export</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h">
-      <Filter>platform\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\platform\imgui\ZVTexture_impl.h">
       <Filter>platform\imgui</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\ZVimguiManager.h">
@@ -105,21 +105,23 @@
     <ClInclude Include="src\platform\windows\ZVwindow_win.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ZVSystem.h">
-      <Filter>core</Filter>
+    <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h" />
+    <ClInclude Include="src\platform\imgui\ZVTexture_internal.h">
+      <Filter>platform\imgui</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVProfiler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVLayerBuffer.cpp">
       <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\ZVwindow.cpp">
+    <ClCompile Include="src\core\ZVSystem.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\ZVWindow.cpp">
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp">
-      <Filter>platform\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\platform\imgui\ZVTexture_impl.cpp">
       <Filter>platform\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\ZVimguiManager.cpp">
@@ -143,8 +145,10 @@
     <ClCompile Include="src\platform\windows\ZVwindow_win.cpp">
       <Filter>platform\windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\ZVSystem.cpp">
-      <Filter>core</Filter>
+    <ClCompile Include="src\platform\imgui\ZVTexture_internal.cpp">
+      <Filter>platform\imgui</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\imgui\ZVProfiler_internal.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp" />
   </ItemGroup>
 </Project>

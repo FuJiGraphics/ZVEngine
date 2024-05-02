@@ -15,8 +15,14 @@ namespace ZVLab {
 
 	class ZV_API CZVimguiManager
 	{
+		enum EzvUsageExtensions
+		{
+			eUsageActivateImPlot = (1 << 0),
+		};
+		using UsageExtensionsFlags = int;
+
 	public:
-		static void Initialize(const Unique<CzvWindow>& window);
+		static void Initialize(const Unique<CzvWindow>& window, UsageExtensionsFlags flags);
 		static void Shutdown();
 		static void Begin(const Unique<CzvWindow>& window);
 		static void End();
@@ -31,6 +37,7 @@ namespace ZVLab {
 		static ImFont* GetFont(const std::string& fontName);
 
 	private:
+		static bool s_bEnabledImplot;
 		static bool s_bEnableOverviewDockspace;
 		static std::unordered_map<std::string, ImFont*> s_mapFonts;
 	};

@@ -118,6 +118,7 @@ void CzvMotionAct::OnButton()
 	motInfoX.tSpeedInfo.dVm = static_cast<float>(m_fSpeedX);
 	motInfoY.tSpeedInfo.dVm = static_cast<float>(m_fSpeedY);
 
+
 	float MovePosY = 200.0f;
 	float MovePosX = 30.0f;
 	if (sidebar_ZVMotion.Button("Home", { 50.0f, 40.0f }, { 80.0f + MovePosX, 80.0f + MovePosY }))
@@ -126,8 +127,8 @@ void CzvMotionAct::OnButton()
 		spZVMotion->Hold(1, true);
 		spZVMotion->Home(0);
 		spZVMotion->Home(1);
-
 	}
+
 	if (sidebar_ZVMotion.Button("Up", { 50.0f, 40.0f }, { 80.0f + MovePosX, 25.0f + MovePosY }))
 	{
 		spZVMotion->RelMove(1, -3);

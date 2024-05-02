@@ -2,16 +2,19 @@
 #define __ZV_CORE_H__
 #pragma once
 
-// headers
-#include "DataTypes.h"
-#include "FZLib/Helpers/LogHelper.h"
-#include "ZVAssert.h"
-#include "ZVMemory.h"
+// standard
 #include <iostream>
 #include <sstream>
 #include <string>
 #include <vector>
 #include <optional>
+#include <map>
+
+// headers
+#include "DataTypes.h"
+#include "FZLib/Helpers/LogHelper.h"
+#include "ZVAssert.h"
+#include "ZVMemory.h"
 
 // imgui
 #include "imgui/imgui.h"
@@ -19,6 +22,7 @@
 #include "GLFW/glfw3.h"
 #include "imgui/backends/imgui_impl_opengl3.h"
 #include "imgui/backends/imgui_impl_glfw.h"
+#include "imgui/extensions/implot/implot.h"
 
 #ifdef ZV_USAGE_DLL
 	#ifdef ZV_EXPORT_DLL

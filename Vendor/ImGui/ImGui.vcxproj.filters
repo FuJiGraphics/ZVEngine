@@ -7,6 +7,9 @@
     <Filter Include="extensions">
       <UniqueIdentifier>{9579B0DD-8131-F22A-EA38-CB86D60F8D1B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="extensions\implot">
+      <UniqueIdentifier>{F9C47156-65DB-6FEC-AE52-FB0D1AA84074}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\imgui\backends\imgui_impl_glfw.h">
@@ -20,6 +23,12 @@
     </ClInclude>
     <ClInclude Include="include\imgui\extensions\ImCoolbar.h">
       <Filter>extensions</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\extensions\implot\implot.h">
+      <Filter>extensions\implot</Filter>
+    </ClInclude>
+    <ClInclude Include="include\imgui\extensions\implot\implot_internal.h">
+      <Filter>extensions\implot</Filter>
     </ClInclude>
     <ClInclude Include="include\imgui\imconfig.h" />
     <ClInclude Include="include\imgui\imgui.h" />
@@ -37,6 +46,15 @@
     </ClCompile>
     <ClCompile Include="include\imgui\extensions\ImCoolbar.cpp">
       <Filter>extensions</Filter>
+    </ClCompile>
+    <ClCompile Include="include\imgui\extensions\implot\implot.cpp">
+      <Filter>extensions\implot</Filter>
+    </ClCompile>
+    <ClCompile Include="include\imgui\extensions\implot\implot_demo.cpp">
+      <Filter>extensions\implot</Filter>
+    </ClCompile>
+    <ClCompile Include="include\imgui\extensions\implot\implot_items.cpp">
+      <Filter>extensions\implot</Filter>
     </ClCompile>
     <ClCompile Include="include\imgui\imgui.cpp" />
     <ClCompile Include="include\imgui\imgui_demo.cpp" />

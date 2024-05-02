@@ -146,9 +146,9 @@
     <ClInclude Include="src\core\ZVLayer.h" />
     <ClInclude Include="src\core\ZVLayerBuffer.h" />
     <ClInclude Include="src\core\ZVMemory.h" />
-    <ClInclude Include="src\core\ZVTimer.h" />
     <ClInclude Include="src\core\ZVSystem.h" />
-    <ClInclude Include="src\core\ZVwindow.h" />
+    <ClInclude Include="src\core\ZVTimer.h" />
+    <ClInclude Include="src\core\ZVWindow.h" />
     <ClInclude Include="src\events\ZVKeyCodes.h" />
     <ClInclude Include="src\events\ZVappEvent.h" />
     <ClInclude Include="src\events\ZVevent.h" />
@@ -156,8 +156,10 @@
     <ClInclude Include="src\events\ZVmouseEvent.h" />
     <ClInclude Include="src\export\EntryPoint.h" />
     <ClInclude Include="src\export\ZVCore.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVProfiler.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
-    <ClInclude Include="src\platform\imgui\ZVTexture_impl.h" />
+    <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h" />
+    <ClInclude Include="src\platform\imgui\ZVTexture_internal.h" />
     <ClInclude Include="src\platform\imgui\ZVimguiManager.h" />
     <ClInclude Include="src\platform\imgui\export\ZVButton.h" />
     <ClInclude Include="src\platform\imgui\export\ZVDialog.h" />
@@ -171,9 +173,11 @@
   <ItemGroup>
     <ClCompile Include="src\core\ZVLayerBuffer.cpp" />
     <ClCompile Include="src\core\ZVSystem.cpp" />
-    <ClCompile Include="src\core\ZVwindow.cpp" />
+    <ClCompile Include="src\core\ZVWindow.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp" />
-    <ClCompile Include="src\platform\imgui\ZVTexture_impl.cpp" />
+    <ClCompile Include="src\platform\imgui\ZVProfiler_internal.cpp" />
+    <ClCompile Include="src\platform\imgui\ZVTexture_internal.cpp" />
     <ClCompile Include="src\platform\imgui\ZVimguiManager.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVButton.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVDialog.cpp" />
