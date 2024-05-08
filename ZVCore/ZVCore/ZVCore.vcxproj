@@ -157,6 +157,7 @@
     <ClInclude Include="src\export\EntryPoint.h" />
     <ClInclude Include="src\export\ZVCore.h" />
     <ClInclude Include="src\platform\imgui\export\ZVTabItem.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVToggleButton.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
     <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h" />
     <ClInclude Include="src\platform\imgui\ZVTexture_internal.h" />
@@ -176,6 +177,7 @@
     <ClCompile Include="src\core\ZVSystem.cpp" />
     <ClCompile Include="src\core\ZVWindow.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVTabItem.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVToggleButton.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp" />
     <ClCompile Include="src\platform\imgui\ZVProfiler_internal.cpp" />
     <ClCompile Include="src\platform\imgui\ZVTexture_internal.cpp" />

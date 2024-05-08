@@ -26,35 +26,36 @@ void CzvIoSystemAct::OnButton()
 		return;
 	CzvDialog dlg_io("IO System");
 
-	static bool red = false;
-	static bool green = false;
-	static bool orange = false;
-	static bool motorFlag = false;
-	static bool ActivateProfiler = false;
+	CzvToggleButton red("red");
+	CzvToggleButton green("green");
+	CzvToggleButton orange("orange");
+	CzvToggleButton motor("motor");
+	CzvToggleButton ActivateProfiler("ActivateProfiler");
 
 	ImGui::Text("Lamp");
-	ToggleButton("Red", &red);
+
+	red.Bind();
 	ImGui::SameLine();
 	ImGui::Text("Red");
-	m_Contec.SetOutput(24, red);
+	m_Contec.SetOutput(24, red.GetStatus());
 
-	ToggleButton("Orange", &orange);
-	ImGui::SameLine();
-	ImGui::Text("Orange");
-	m_Contec.SetOutput(25, orange);
-
-	ToggleButton("Green", &green);
+	green.Bind();
 	ImGui::SameLine();
 	ImGui::Text("Green");
-	m_Contec.SetOutput(26, green);
+	m_Contec.SetOutput(25, green.GetStatus());
 
-	ToggleButton("Motor", &motorFlag);
+	orange.SetPosition(200, 500);
+	orange.Bind();
+	ImGui::Text("Orange");
+	m_Contec.SetOutput(26, orange.GetStatus());
+
+	motor.Bind();
 	ImGui::SameLine();
 	ImGui::Text("Motor");
-	m_Contec.SetOutput(18, motorFlag);
+	m_Contec.SetOutput(18, motor.GetStatus());
 
-	ToggleButton("ActivateProfiler", &ActivateProfiler);
-	DProfile_Activate(ActivateProfiler)
+	ActivateProfiler.Bind();
+	DProfile_Activate(ActivateProfiler.GetStatus())
 	ImGui::SameLine();
 	ImGui::Text("ActivateProfiler");
 }

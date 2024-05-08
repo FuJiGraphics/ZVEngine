@@ -7,12 +7,12 @@ namespace ZVLab {
 		static ZVLab::TzvTabItemChunk	s_CurrTabItemData;
 		static unsigned int				s_nuiItemCount = 0;
 	}
+
 	// Constructors, Destructors
 	CzvTabItem::CzvTabItem(const std::string& label, const TzvTabItemInfo& options)
 		: m_tData{ label, options, false }
 		, m_fpCallbackFn(nullptr)
 	{
-		FZLOG_INFO("START ITEM = {0}", label);
 		DZVLog_Failed(label.size(), "FAILED: Label length must be than or equal to 0.");
 		s_nuiItemCount++;
 		DZVLog_Failed((s_nuiItemCount > 0),
@@ -22,7 +22,6 @@ namespace ZVLab {
 
 	CzvTabItem::~CzvTabItem()
 	{
-		FZLOG_INFO("END ITEM = {0}", m_tData.Label);
 		if (s_CurrTabItemData.Label == m_tData.Label && m_tData.IsUnFolded )
 		{
 			// Release a tab bar
@@ -48,7 +47,6 @@ namespace ZVLab {
 		}
 		return (result);
 	}
-
 
 	bool CzvTabItem::Synchronization()
 	{

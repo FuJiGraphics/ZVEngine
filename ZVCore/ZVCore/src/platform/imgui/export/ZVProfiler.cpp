@@ -24,9 +24,15 @@ namespace ZVLab {
 	void CzvProfiler::RenderProfilers()
 	{
 		CzvDialog dialog("Profiler");
-			CzvTabBar tab_TableRender("Profiler");
-				for (const auto& profiler : s_ProfilerLists)
-					profiler.second->TableRender();	
+
+		CzvTabBar tabbar("Profiler");
+		for (const auto& profiler : s_ProfilerLists)
+		{
+			if (tabbar.TabItem(profiler.first))
+			{
+				profiler.second->TableRender();
+			}
+		}
 	}
 
 	void CzvProfiler::ActivateProfiler(bool enabled)

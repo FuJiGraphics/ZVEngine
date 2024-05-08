@@ -21,7 +21,6 @@ namespace ZVLab {
 
 	CzvTabBar::~CzvTabBar()
 	{
-		FZLOG_INFO("END TABBAR : {0}", s_CurrTabBarData.Label);
 		if (s_CurrTabBarData.Label == m_tData.Label)
 		{
 			// Release a tab bar
@@ -33,6 +32,23 @@ namespace ZVLab {
 		DZVLog_Failed((s_unTabBarCount >= 0),
 					  "FAILED: Unexpected Error! Tab Bar Count is less than 0 \"s_nuiDialogCount = {0}\"",
 					  s_unTabBarCount);
+	}
+
+	bool CzvTabBar::TabItem(const std::string& label)
+	{
+		CzvTabItem item(label);
+		return (item.Bind());
+	}
+
+	bool CzvTabBar::TabItem(const std::string& label, const TzvTabItemInfo& option)
+	{
+		CzvTabItem item(label, option);
+		return (item.Bind());
+	}
+
+	bool CzvTabBar::TabItem(CzvTabItem& item)
+	{
+		return (item.Bind());
 	}
 
 	bool CzvTabBar::Synchronization()

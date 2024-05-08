@@ -79,17 +79,13 @@ namespace ZVLab {
 
 	void CzvProfiler_internal::TableRender()
 	{
-		CzvTabItem tabItem(m_strLabel.c_str());
-		if (tabItem.Bind())
+		for (auto& profile : m_vDataList)
 		{
-			for (auto& profile : m_vDataList)
-			{
-				ImGui::Text(profile->first.c_str());
-				ImGui::SameLine();
-				ImGui::Text("\t %f", profile->second);
-				ImGui::SameLine();
-				ImGui::Text("ms");
-			}
+			ImGui::Text(profile->first.c_str());
+			ImGui::SameLine();
+			ImGui::Text("\t %f", profile->second);
+			ImGui::SameLine();
+			ImGui::Text("ms");
 		}
 	}
 

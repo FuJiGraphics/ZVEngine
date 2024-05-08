@@ -112,6 +112,7 @@
       <Filter>platform\windows</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVTabItem.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVToggleButton.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVLayerBuffer.cpp">
@@ -160,5 +161,6 @@
       <Filter>platform\windows</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVTabItem.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVToggleButton.cpp" />
   </ItemGroup>
 </Project>

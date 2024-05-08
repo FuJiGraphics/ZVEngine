@@ -42,7 +42,7 @@ namespace ZVLab {
 		inline void			SetCallbackFunc(FuncEventCallback fn) { m_fpCallbackFn = fn; }
 
 	public: // others
-		virtual bool Bind();
+		virtual bool		Bind();
 	};
 
 } // namesapce ZVLab

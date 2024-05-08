@@ -4,6 +4,7 @@
 
 #include "../../../core/Core.h"
 #include "ZVGuiConfig.h"
+#include "ZVTabItem.h"
 
 namespace ZVLab {
 	//----------------------------------------------------
@@ -26,6 +27,10 @@ namespace ZVLab {
 	public:
 		CzvTabBar(const std::string& label, const TzvTabBarInfo& info = TzvTabBarInfo());
 		virtual ~CzvTabBar();
+
+		bool TabItem(const std::string& label);
+		bool TabItem(const std::string& label, const TzvTabItemInfo& option);
+		bool TabItem(CzvTabItem& item);
 
 	private:
 		bool Synchronization();

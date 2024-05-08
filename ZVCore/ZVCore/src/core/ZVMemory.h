@@ -2,6 +2,7 @@
 #define __ZV_ZVMEMORY_H__
 #pragma once
 #include <memory>
+#include <optional>
 
 namespace ZVLab {
 
@@ -21,6 +22,9 @@ namespace ZVLab {
 		return std::make_shared<T>(std::forward<Args>(args)...);
 	}
 
+	template<typename T>
+	using Optional = std::optional<T>;
+	
 } // namespace ZVLab
 
 #endif /*__ZV_ZVMEMORY_H__*/
