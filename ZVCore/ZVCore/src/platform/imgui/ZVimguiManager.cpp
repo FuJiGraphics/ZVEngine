@@ -1,6 +1,5 @@
 #include "ZVimguiManager.h"
 #include "ZVImguiTheme.h"
-#include "fonts/IconsLucide.h"
 //imgui
 #include <stdio.h>
 

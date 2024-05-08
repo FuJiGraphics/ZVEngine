@@ -1,6 +1,7 @@
 #include "ZVProfiler.h"
 #include "../ZVProfiler_internal.h"
 #include "ZVDialog.h"
+#include "ZVTabBar.h"
 
 namespace ZVLab {
 	
@@ -23,14 +24,9 @@ namespace ZVLab {
 	void CzvProfiler::RenderProfilers()
 	{
 		CzvDialog dialog("Profiler");
-		if (ImGui::BeginTabBar("Profiler"))
-		{
-			for (const auto& profiler : s_ProfilerLists)
-			{
-				profiler.second->Render();
-			}
-			ImGui::EndTabBar();
-		}
+			CzvTabBar tab_TableRender("Profiler");
+				for (const auto& profiler : s_ProfilerLists)
+					profiler.second->TableRender();	
 	}
 
 	void CzvProfiler::ActivateProfiler(bool enabled)

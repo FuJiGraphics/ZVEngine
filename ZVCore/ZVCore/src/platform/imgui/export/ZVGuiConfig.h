@@ -3,10 +3,15 @@
 #pragma once
 #include "../../../core/Core.h"
 
+namespace ZVLab { 
+
 // ZVGui Defines
 #define DBindLabelNumbering(label, number) (std::string(##label) + std::to_string(##number))
 
 #pragma region Dialog Options
+//----------------------------------------------------
+// enum Dialog Options
+//----------------------------------------------------
 enum EzvDialogOptions
 {
 	ezvDialogFlags_None							= ImGuiWindowFlags_::ImGuiWindowFlags_None,
@@ -44,11 +49,14 @@ enum EzvDialogOptions
 	ezvDialogFlags_DockNodeHost					= ImGuiWindowFlags_::ImGuiWindowFlags_DockNodeHost,
 };
 
+//----------------------------------------------------
+// struct Dialog Info
+//----------------------------------------------------
 struct ZV_API TzvDialogInfo
 {
 	using DialogOptions = int;
 
-	/// members
+	//// Member Variables
 private:
 	DialogOptions	m_uiDialogOptions = ezvDialogFlags_None;
 
@@ -99,5 +107,115 @@ public:
 	inline void DelOptions(const EzvDialogOptions& flag) { m_uiDialogOptions &= ~flag; }
 };
 #pragma endregion
+#pragma region TabBar Options
+//----------------------------------------------------
+// enum Tab Bar Options
+//----------------------------------------------------
+enum EzvTabBarOptions
+{
+	ezvTabBarOptions_None							= ImGuiTabBarFlags_::ImGuiTabBarFlags_None,
+	ezvTabBarOptions_Reorderable					= ImGuiTabBarFlags_::ImGuiTabBarFlags_Reorderable,
+	ezvTabBarOptions_AutoSelectNewTabs				= ImGuiTabBarFlags_::ImGuiTabBarFlags_AutoSelectNewTabs,
+	ezvTabBarOptions_TabListPopupButton				= ImGuiTabBarFlags_::ImGuiTabBarFlags_TabListPopupButton,
+	ezvTabBarOptions_NoCloseWithMiddleMouseButton	= ImGuiTabBarFlags_::ImGuiTabBarFlags_NoCloseWithMiddleMouseButton,
+	ezvTabBarOptions_NoTabListScrollingButtons		= ImGuiTabBarFlags_::ImGuiTabBarFlags_NoTabListScrollingButtons,
+	ezvTabBarOptions_NoTooltip						= ImGuiTabBarFlags_::ImGuiTabBarFlags_NoTooltip,
+	ezvTabBarOptions_FittingPolicyResizeDown		= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyResizeDown,
+	ezvTabBarOptions_FittingPolicyScroll			= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyScroll,
+	ezvTabBarOptions_FittingPolicyMask_				= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyMask_,
+	ezvTabBarOptions_FittingPolicyDefault_			= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyDefault_,
+};
 
+//----------------------------------------------------
+// struct Tab Bar Info
+//----------------------------------------------------
+struct ZV_API TzvTabBarInfo
+{
+	using TabBarOptions = int;
+
+//// Member Variables
+private:
+	TabBarOptions	m_TabBarOptions = ezvTabBarOptions_None;
+
+//// Member Functions
+public:
+	/// getter
+	inline TabBarOptions	GetOptions() { return (m_TabBarOptions); }
+
+	/// setter
+	inline void SetOptions(EzvTabBarOptions flags)				{ this->AddOptions(flags); }
+	inline void SetReorderable(bool enabled)					{ this->FlagOptions(enabled, ezvTabBarOptions_Reorderable);  }
+	inline void SetAutoSelectNewTabs(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarOptions_AutoSelectNewTabs); }
+	inline void SetTabListPopupButton(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarOptions_TabListPopupButton); }
+	inline void SetNoCloseWithMiddleMouseButton(bool enabled)	{ this->FlagOptions(enabled, ezvTabBarOptions_NoCloseWithMiddleMouseButton); }
+	inline void SetNoTabListScrollingButtons(bool enabled)		{ this->FlagOptions(enabled, ezvTabBarOptions_NoTabListScrollingButtons); }
+	inline void SetNoTooltip(bool enabled)						{ this->FlagOptions(enabled, ezvTabBarOptions_NoTooltip); }
+	inline void SetFittingPolicyResizeDown(bool enabled)		{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyResizeDown); }
+	inline void SetFittingPolicyScroll(bool enabled)			{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyScroll); }
+	inline void SetFittingPolicyMask_(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyMask_); }
+	inline void SetFittingPolicyDefault_(bool enabled)			{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyDefault_); }
+
+	/// others
+public:
+	inline void FlagOptions(bool enabled, const EzvTabBarOptions& flag) { (enabled) ? this->AddOptions(flag) : this->DelOptions(flag); }
+	inline void AddOptions(const EzvTabBarOptions& flag) { m_TabBarOptions |= flag; }
+	inline void DelOptions(const EzvTabBarOptions& flag) { m_TabBarOptions &= ~flag; }
+};
+#pragma endregion
+#pragma region TabItem Options
+//----------------------------------------------------
+// enum Tab Item Options
+//----------------------------------------------------
+enum EzvTabItemOptions
+{
+	ezvTabItemOptions_None								= ImGuiTabItemFlags_::ImGuiTabItemFlags_None,
+	ezvTabItemOptions_UnsavedDocument					= ImGuiTabItemFlags_::ImGuiTabItemFlags_UnsavedDocument,
+	ezvTabItemOptions_SetSelected						= ImGuiTabItemFlags_::ImGuiTabItemFlags_SetSelected,
+	ezvTabItemOptions_NoCloseWithMiddleMouseButton		= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoCloseWithMiddleMouseButton,
+	ezvTabItemOptions_NoPushId							= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoPushId,
+	ezvTabItemOptions_NoTooltip							= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoTooltip,
+	ezvTabItemOptions_NoReorder							= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoReorder,
+	ezvTabItemOptions_Leading							= ImGuiTabItemFlags_::ImGuiTabItemFlags_Leading,
+	ezvTabItemOptions_Trailing							= ImGuiTabItemFlags_::ImGuiTabItemFlags_Trailing,
+	ezvTabItemOptions_NoAssumedClosure					= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoAssumedClosure,
+};
+
+//----------------------------------------------------
+// struct Tab Item Info
+//----------------------------------------------------
+struct ZV_API TzvTabItemInfo
+{
+	using TabItemOptions = int;
+
+	//// Member Variables
+private:
+	TabItemOptions	m_TabItemOptions = ezvTabBarOptions_None;
+
+	//// Member Functions
+public:
+	/// getter
+	inline TabItemOptions	GetOptions() { return (m_TabItemOptions); }
+
+	/// setter
+	inline void SetOptions(EzvTabItemOptions flags)				{ this->AddOptions(flags); }
+	inline void SetUnsavedDocument(bool enabled)				{ this->FlagOptions(enabled, ezvTabItemOptions_UnsavedDocument);  }
+	inline void SetSetSelected(bool enabled)					{ this->FlagOptions(enabled, ezvTabItemOptions_SetSelected); }
+	inline void SetNoCloseWithMiddleMouseButton(bool enabled)	{ this->FlagOptions(enabled, ezvTabItemOptions_NoCloseWithMiddleMouseButton); }
+	inline void SetNoPushId(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_NoPushId); }
+	inline void SetNoTooltip(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_NoTooltip); }
+	inline void SetNoReorder(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_NoReorder); }
+	inline void SetLeading(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_Leading); }
+	inline void SetTrailing(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_Trailing); }
+	inline void SetNoAssumedClosure(bool enabled)				{ this->FlagOptions(enabled, ezvTabItemOptions_NoAssumedClosure); }
+
+	/// others
+public:
+	inline void FlagOptions(bool enabled, const EzvTabItemOptions& flag) { (enabled) ? this->AddOptions(flag) : this->DelOptions(flag); }
+	inline void AddOptions(const EzvTabItemOptions& flag) { m_TabItemOptions |= flag; }
+	inline void DelOptions(const EzvTabItemOptions& flag) { m_TabItemOptions &= ~flag; }
+};
+#pragma endregion
+
+} // namespace ZVLab
 #endif /*__ZV_ZVGUICONFIG_H__*/
+

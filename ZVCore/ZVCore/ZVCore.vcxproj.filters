@@ -19,9 +19,6 @@
     <Filter Include="platform\imgui\export">
       <UniqueIdentifier>{E57A9FE1-51E7-5ADC-1ADB-F23986067D44}</UniqueIdentifier>
     </Filter>
-    <Filter Include="platform\imgui\fonts">
-      <UniqueIdentifier>{8D917E73-7920-083D-223F-1C380EAD18E3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="platform\windows">
       <UniqueIdentifier>{A44FC440-9048-E392-B97A-C817A5D2C29E}</UniqueIdentifier>
     </Filter>
@@ -78,6 +75,12 @@
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h">
       <Filter>platform\imgui</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h">
+      <Filter>platform\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\ZVTexture_internal.h">
+      <Filter>platform\imgui</Filter>
+    </ClInclude>
     <ClInclude Include="src\platform\imgui\ZVimguiManager.h">
       <Filter>platform\imgui</Filter>
     </ClInclude>
@@ -96,20 +99,19 @@
     <ClInclude Include="src\platform\imgui\export\ZVMenu.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVTexture.h">
+    <ClInclude Include="src\platform\imgui\export\ZVProfiler.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\fonts\IconsLucide.h">
-      <Filter>platform\imgui\fonts</Filter>
+    <ClInclude Include="src\platform\imgui\export\ZVTabBar.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVTexture.h">
+      <Filter>platform\imgui\export</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\windows\ZVwindow_win.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h" />
-    <ClInclude Include="src\platform\imgui\ZVTexture_internal.h">
-      <Filter>platform\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVProfiler.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVTabItem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVLayerBuffer.cpp">
@@ -122,6 +124,12 @@
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp">
+      <Filter>platform\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\ZVProfiler_internal.cpp">
+      <Filter>platform\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\ZVTexture_internal.cpp">
       <Filter>platform\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\ZVimguiManager.cpp">
@@ -139,16 +147,18 @@
     <ClCompile Include="src\platform\imgui\export\ZVMenu.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVTabBar.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVTexture.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\windows\ZVwindow_win.cpp">
       <Filter>platform\windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\platform\imgui\ZVTexture_internal.cpp">
-      <Filter>platform\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="src\platform\imgui\ZVProfiler_internal.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVTabItem.cpp" />
   </ItemGroup>
 </Project>

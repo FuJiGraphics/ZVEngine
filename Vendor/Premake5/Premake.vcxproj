@@ -83,6 +83,7 @@
     <None Include="..\..\ZVEngine\Premake5.lua" />
     <None Include="..\..\ZVLab\ZVIO\Premake5.lua" />
     <None Include="..\..\ZVLab\ZVMotion\Premake5.lua" />
+    <None Include="..\..\ZVLab\ZVUI\Premake5.lua" />
     <None Include="..\ImGui\Premake5.lua" />
     <None Include="..\StbImage\Premake5.lua" />
     <None Include="..\glad\Premake5.lua" />

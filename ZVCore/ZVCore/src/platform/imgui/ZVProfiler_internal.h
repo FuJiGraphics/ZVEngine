@@ -25,7 +25,8 @@ namespace ZVLab {
 		virtual ~CzvProfiler_internal();
 
 		virtual void Submit(const TzvTimeStep& data) override;
-		virtual void Render() override;
+		virtual void PlotRender() override;
+		virtual void TableRender() override;
 	};
 
 } // namespace ZVLab

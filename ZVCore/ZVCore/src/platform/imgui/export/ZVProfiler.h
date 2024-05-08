@@ -6,6 +6,7 @@
 
 #include "../../../core/Core.h"
 #include "../../../core/ZVTimer.h"
+#include "ZVTabItem.h"
 #include <typeinfo>
 
 namespace ZVLab {
@@ -26,7 +27,8 @@ namespace ZVLab {
 
 	public:
 		virtual void Submit(const TzvTimeStep& data) = 0;
-		virtual void Render() = 0;
+		virtual void PlotRender() = 0;
+		virtual void TableRender() = 0;
 	};
 
 //----------------------------------------------------
@@ -38,7 +40,9 @@ namespace ZVLab {
 		float			ElapsedTime;
 	};
 
-// Define Interfaces
+//----------------------------------------------------
+// Interface Defines
+//----------------------------------------------------
 #define DProfile_StartRecord(label){\
 		CzvTimer timer;\
 		TzvTimeStep rec{label, 0.0f};

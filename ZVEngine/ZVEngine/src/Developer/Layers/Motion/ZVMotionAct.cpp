@@ -103,11 +103,12 @@ void CzvMotionAct::OnButton()
 {
 	if (m_isOpen == false)
 		return;
-
 	TzvDialogInfo info;
+	DProfile_StartRecord("SetNoTitleBar")
 	info.SetNoTitleBar(true);
+	DProfile_EndRecord;
 	CzvDialog sidebar_ZVMotion("ZVMotion", info);
-
+		
 	auto& motInfoX = spZVMotion->FetchMotorInfo(0);
 	auto& motInfoY = spZVMotion->FetchMotorInfo(1);
 

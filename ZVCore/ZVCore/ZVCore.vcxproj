@@ -156,7 +156,7 @@
     <ClInclude Include="src\events\ZVmouseEvent.h" />
     <ClInclude Include="src\export\EntryPoint.h" />
     <ClInclude Include="src\export\ZVCore.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVProfiler.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVTabItem.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
     <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h" />
     <ClInclude Include="src\platform\imgui\ZVTexture_internal.h" />
@@ -166,15 +166,16 @@
     <ClInclude Include="src\platform\imgui\export\ZVGuiConfig.h" />
     <ClInclude Include="src\platform\imgui\export\ZVImageButton.h" />
     <ClInclude Include="src\platform\imgui\export\ZVMenu.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVProfiler.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVTabBar.h" />
     <ClInclude Include="src\platform\imgui\export\ZVTexture.h" />
-    <ClInclude Include="src\platform\imgui\fonts\IconsLucide.h" />
     <ClInclude Include="src\platform\windows\ZVwindow_win.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVLayerBuffer.cpp" />
     <ClCompile Include="src\core\ZVSystem.cpp" />
     <ClCompile Include="src\core\ZVWindow.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVTabItem.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp" />
     <ClCompile Include="src\platform\imgui\ZVProfiler_internal.cpp" />
     <ClCompile Include="src\platform\imgui\ZVTexture_internal.cpp" />
@@ -183,6 +184,8 @@
     <ClCompile Include="src\platform\imgui\export\ZVDialog.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVImageButton.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVMenu.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVTabBar.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVTexture.cpp" />
     <ClCompile Include="src\platform\windows\ZVwindow_win.cpp" />
   </ItemGroup>

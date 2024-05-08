@@ -1,0 +1,52 @@
+﻿  ZVImguiTheme.cpp
+  ZVProfiler_internal.cpp
+  ZVTexture_internal.cpp
+  ZVimguiManager.cpp
+  ZVButton.cpp
+  ZVDialog.cpp
+  ZVImageButton.cpp
+  ZVMenu.cpp
+  ZVProfiler.cpp
+  ZVTabBar.cpp
+  ZVTexture.cpp
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\ZVProfiler_internal.cpp)
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvprofiler.h(37): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\ZVProfiler_internal.cpp)
+  d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvprofiler.h(36): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오. (소스 파일 컴파일 중 src\ZVProfiler_internal.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\export\ZVTexture.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\export\ZVImageButton.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\export\ZVButton.cpp)
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\zvprofiler_internal.cpp(53): warning C4244: '인수': 'double'에서 '_Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=float
+          ]
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\zvprofiler_internal.cpp(57): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\export\ZVProfiler.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\export\ZVTabBar.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\export\ZVDialog.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\ZVTexture_internal.cpp)
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvprofiler.h(37): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\export\ZVProfiler.cpp)
+  d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvprofiler.h(36): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오. (소스 파일 컴파일 중 src\export\ZVProfiler.cpp)
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvtabbar.cpp(15): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\ZVimguiManager.cpp)
+d:\dev\zvlab\zvengine\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\export\ZVMenu.cpp)
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(25): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(36): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(47): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(58): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(69): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(80): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(183): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(195): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(207): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(219): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(231): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zvengine\zvlab\zvui\zvui\src\export\zvdialog.cpp(243): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+FZLib.lib(bundled_fmtlib_format.obj) : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl fmt::v9::vformat(class fmt::v9::basic_string_view<char>,class fmt::v9::basic_format_args<class fmt::v9::basic_format_context<class fmt::v9::appender,char> >)" (?vformat@v9@fmt@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@D@12@V?$basic_format_args@V?$basic_format_context@Vappender@v9@fmt@@D@v9@fmt@@@12@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(bundled_fmtlib_format.obj) : warning LNK4006: "bool __cdecl fmt::v9::detail::is_printable(unsigned int)" (?is_printable@detail@v9@fmt@@YA_NI@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::throw_spdlog_ex(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?throw_spdlog_ex@spdlog@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "class std::chrono::time_point<struct std::chrono::system_clock,class std::chrono::duration<__int64,struct std::ratio<1,10000000> > > __cdecl spdlog::details::os::now(void)" (?now@os@details@spdlog@@YA?AV?$time_point@Usystem_clock@chrono@std@@V?$duration@_JU?$ratio@$00$0JIJGIA@@std@@@23@@chrono@std@@XZ)이(가) FZLib.lib(Device.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "int __cdecl spdlog::details::os::pid(void)" (?pid@os@details@spdlog@@YAHXZ)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::set_formatter(class std::unique_ptr<class spdlog::formatter,struct std::default_delete<class spdlog::formatter> >)" (?set_formatter@spdlog@@YAXV?$unique_ptr@Vformatter@spdlog@@U?$default_delete@Vformatter@spdlog@@@std@@@std@@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::set_pattern(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,enum spdlog::pattern_time_type)" (?set_pattern@spdlog@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4pattern_time_type@1@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+  ZVUI.vcxproj -> D:\Dev\ZVLab\ZVEngine\ZVLab\ZVUI\ZVUI\..\..\lib\Debug\ZVUI.lib

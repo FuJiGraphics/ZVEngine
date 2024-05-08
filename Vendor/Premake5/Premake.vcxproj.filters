@@ -22,6 +22,9 @@
     <Filter Include="..\..\ZVLab\ZVMotion">
       <UniqueIdentifier>{8FADA985-7B3C-334F-245B-474A10C943F5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="..\..\ZVLab\ZVUI">
+      <UniqueIdentifier>{9772CC75-836B-EBC7-AC9D-D04C98F5CAD3}</UniqueIdentifier>
+    </Filter>
     <Filter Include="..\ImGui">
       <UniqueIdentifier>{4BEA8637-37B7-E142-60D0-CFEA4CFC16D1}</UniqueIdentifier>
     </Filter>
@@ -47,6 +50,9 @@
     </None>
     <None Include="..\..\ZVLab\ZVMotion\Premake5.lua">
       <Filter>..\..\ZVLab\ZVMotion</Filter>
+    </None>
+    <None Include="..\..\ZVLab\ZVUI\Premake5.lua">
+      <Filter>..\..\ZVLab\ZVUI</Filter>
     </None>
     <None Include="..\ImGui\Premake5.lua">
       <Filter>..\ImGui</Filter>

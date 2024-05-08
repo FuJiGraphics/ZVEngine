@@ -68,6 +68,7 @@ namespace ZVLab {
 			{ // 윈도우 종료시 루프 X
 				break;
 			}
+
 			if (m_bActivateResize)
 			{ // 윈도우 사이즈를 변경중일 때는 루프 X
 				this->PauseWindowResize(&m_bActivateResize);
@@ -95,17 +96,19 @@ namespace ZVLab {
 				}
 				DProfile_EndRecord
 
-				DProfile_StartRecord("OnGui")
+
+				DProfile_StartRecord("OnGUI")
 				for (auto& layer : *m_upLayerBuffer)
 				{
 					layer->OnGUI();
 				}
-				// CZVimguiManager::ShowDemo();
 				DProfile_EndRecord
+				// CZVimguiManager::ShowDemo();
 			}
+
 			ImGui::PopFont();
 			DProfile_Execute
-			CZVimguiManager::End();
+      			CZVimguiManager::End();
 
 			m_upWindow->Clear();
 		}
