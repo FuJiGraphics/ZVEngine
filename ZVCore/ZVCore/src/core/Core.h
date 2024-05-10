@@ -22,7 +22,8 @@
 #include "GLFW/glfw3.h"
 #include "imgui/backends/imgui_impl_opengl3.h"
 #include "imgui/backends/imgui_impl_glfw.h"
-#include "imgui/extensions/implot/implot.h"
+#include "imgui/extensions/im_plot/implot.h"
+#include "imgui/extensions/im_file_dialog/ImFileDialog.h"
 
 #ifdef ZV_USAGE_DLL
 	#ifdef ZV_EXPORT_DLL

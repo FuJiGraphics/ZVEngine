@@ -48,6 +48,28 @@ namespace ZVLab {
 		// Graphic icon
 		ImGuiIO& io = ImGui::GetIO();
 		io.Fonts->AddFontDefault();
+
+		// test dialog
+		ifd::FileDialog::Instance().CreateTexture = [](uint8_t* data, int w, int h, char fmt) -> void* {
+			GLuint tex;
+
+			glGenTextures(1, &tex);
+			glBindTexture(GL_TEXTURE_2D, tex);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, (fmt == 0) ? GL_BGRA : GL_RGBA, GL_UNSIGNED_BYTE, data);
+			glGenerateMipmap(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, 0);
+
+			return (void*)tex;
+		};
+		ifd::FileDialog::Instance().DeleteTexture = [](void* tex) {
+			GLuint texID = (GLuint)tex;
+			glDeleteTextures(1, &texID);
+		};
+
 	}
 
 	void CzvSystem::Shutdown()
@@ -68,7 +90,6 @@ namespace ZVLab {
 
 		while (s_bIsRunApplication != false)
 		{
-			FZLOG_INFO("{0}", s_bIsRunApplication);
 			m_upWindow->PollEvents();
 			if (s_bIsRunApplication == false)
 			{ // 윈도우 종료시 루프 X
@@ -114,6 +135,15 @@ namespace ZVLab {
 					break;
 				}
 				// CZVimguiManager::ShowDemo();
+
+				// test dialog
+				if (ifd::FileDialog::Instance().IsDone("TextureOpenDialog")) {
+					if (ifd::FileDialog::Instance().HasResult()) {
+						std::string res = ifd::FileDialog::Instance().GetResult().u8string();
+						printf("OPEN[%s]\n", res.c_str());
+					}
+					ifd::FileDialog::Instance().Close();
+				}
 			}
 
 			ImGui::PopFont();

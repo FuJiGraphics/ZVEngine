@@ -32,18 +32,21 @@ project "ImGui"
         "%{IncludeDir.ImGui}/imgui",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
+        "%{IncludeDir.SOIL2}",
     }
 
 	libdirs 
 	{
 		"%{LibraryDir.GLFW}",
 		"%{LibraryDir.GLAD}",
+	    "%{LibraryDir.SOIL2}",
 	}
 
 	links
 	{
 		"%{Library.GLFW}",
 		"%{Library.GLAD}",
+	    "%{Library.SOIL2}",
 	}
 
 	filter "system:windows"

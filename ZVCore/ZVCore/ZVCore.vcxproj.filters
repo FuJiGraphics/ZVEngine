@@ -30,25 +30,25 @@
     <ClInclude Include="src\core\DataTypes.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ZVAssert.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\core\ZVLayer.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\core\ZVLayerBuffer.h">
-      <Filter>core</Filter>
-    </ClInclude>
     <ClInclude Include="src\core\ZVMemory.h">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="src\core\ZVTimer.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ZVWindow.h">
+    <ClInclude Include="src\core\ZVassert.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\ZVlayer.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\ZVlayerBuffer.h">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="src\core\ZVsystem.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\ZVwindow.h">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="src\events\ZVKeyCodes.h">
@@ -119,13 +119,13 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\ZVLayerBuffer.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\core\ZVWindow.cpp">
+    <ClCompile Include="src\core\ZVlayerBuffer.cpp">
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="src\core\ZVsystem.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\ZVwindow.cpp">
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp">

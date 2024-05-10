@@ -12,9 +12,18 @@ public:
 	{
 		if (ImGui::BeginMenu("File"))
 		{
-			if (ImGui::MenuItem("Open..", "Ctrl+O")) {}
-			if (ImGui::MenuItem("Save", "Ctrl+S")) {}
-			if (ImGui::MenuItem("Close", "Ctrl+W")) {}
+			if (ImGui::MenuItem("Open..", "Ctrl+O")) 
+			{
+				ifd::FileDialog::Instance().Open("TextureOpenDialog", "Open a texture", "Image file (*.png;*.jpg;*.jpeg;*.bmp;*.tga){.png,.jpg,.jpeg,.bmp,.tga},.*");
+			}
+			if (ImGui::MenuItem("Save", "Ctrl+S")) 
+			{
+			
+			}
+			if (ImGui::MenuItem("Close", "Ctrl+W")) 
+			{
+				
+			}
 			ImGui::EndMenu();
 		}
 
