@@ -27,17 +27,21 @@ namespace ZVLab {
 	{
 	protected:
 		using Super = ZVLab::CzvSystem;
+
 	private:
-		ZVbool					m_bIsRun;
+		static bool				s_bIsRunApplication;
 		ZVbool					m_bInitialized;
 		ZVbool					m_bActivateResize;
 		Unique<CzvWindow>		m_upWindow;
 		Unique<CzvLayerBuffer>	m_upLayerBuffer;
-	
+
+	public:
+		static void ExitApp();
+
 	public:
 		CzvSystem(const TzvApplicationSpecification& spec);
 		virtual ~CzvSystem();
-		
+
 	public:
 		void Initialize(const TzvApplicationSpecification& spec);
 		void Shutdown();
