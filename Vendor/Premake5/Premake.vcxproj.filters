@@ -25,6 +25,18 @@
     <Filter Include="..\..\ZVLab\ZVUI">
       <UniqueIdentifier>{9772CC75-836B-EBC7-AC9D-D04C98F5CAD3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="..\..\ZVLab\ZVUI\ZVUI">
+      <UniqueIdentifier>{D4FB2345-4068-DF3F-095C-779D758701A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\..\ZVLab\ZVUI\ZVUI\include">
+      <UniqueIdentifier>{47B7892C-B3CF-7056-7C7C-00F0E85305F0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\..\ZVLab\ZVUI\ZVUI\include\ImGui">
+      <UniqueIdentifier>{B145265D-1DFF-9007-A65E-ABE112174777}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="..\..\ZVLab\ZVUI\ZVUI\include\glad">
+      <UniqueIdentifier>{AE2E5FF3-9A6A-625D-037D-7A54EFD70A78}</UniqueIdentifier>
+    </Filter>
     <Filter Include="..\ImGui">
       <UniqueIdentifier>{4BEA8637-37B7-E142-60D0-CFEA4CFC16D1}</UniqueIdentifier>
     </Filter>
@@ -53,6 +65,12 @@
     </None>
     <None Include="..\..\ZVLab\ZVUI\Premake5.lua">
       <Filter>..\..\ZVLab\ZVUI</Filter>
+    </None>
+    <None Include="..\..\ZVLab\ZVUI\ZVUI\include\ImGui\Premake5.lua">
+      <Filter>..\..\ZVLab\ZVUI\ZVUI\include\ImGui</Filter>
+    </None>
+    <None Include="..\..\ZVLab\ZVUI\ZVUI\include\glad\Premake5.lua">
+      <Filter>..\..\ZVLab\ZVUI\ZVUI\include\glad</Filter>
     </None>
     <None Include="..\ImGui\Premake5.lua">
       <Filter>..\ImGui</Filter>
