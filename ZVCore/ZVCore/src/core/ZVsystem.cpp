@@ -4,9 +4,15 @@
 
 namespace ZVLab {
 
+	bool CzvSystem::s_bIsRunApplication = true;
+
+	void CzvSystem::ExitApp()
+	{
+		s_bIsRunApplication = false;
+	}
+
 	CzvSystem::CzvSystem(const TzvApplicationSpecification& spec)
-		: m_bIsRun(false)
-		, m_bInitialized(false)
+		: m_bInitialized(false)
 		, m_bActivateResize(false)
 		, m_upWindow(nullptr)
 		, m_upLayerBuffer(nullptr)
@@ -60,11 +66,11 @@ namespace ZVLab {
 	{
 		DZVLog_Failed(m_bInitialized, "FAILED: CzvSystem is not initialized!");
 
-		m_bIsRun = true;
-		while (m_bIsRun)
+		while (s_bIsRunApplication != false)
 		{
+			FZLOG_INFO("{0}", s_bIsRunApplication);
 			m_upWindow->PollEvents();
-			if (m_bIsRun == false)
+			if (s_bIsRunApplication == false)
 			{ // 윈도우 종료시 루프 X
 				break;
 			}
@@ -80,12 +86,11 @@ namespace ZVLab {
 					layer->OnUpdate(0.0);
 				}
 			}
-			
+
 			CZVimguiManager::Begin(m_upWindow);
 			ImFont* font = CZVimguiManager::GetFont("OpenSans-Regular");
 			ImGui::PushFont(font);
 			{ // ImGui_Layer
-				DProfile_StartRecord("OnMainMenuBar")
 				if (CZVimguiManager::BeginMainMenu())
 				{
 					for (auto& layer : *m_upLayerBuffer)
@@ -94,21 +99,26 @@ namespace ZVLab {
 					}
 					CZVimguiManager::EndMainMenu();
 				}
-				DProfile_EndRecord
+				if (s_bIsRunApplication == false)
+				{
+					break;
+				}
 
-
-				DProfile_StartRecord("OnGUI")
 				for (auto& layer : *m_upLayerBuffer)
 				{
 					layer->OnGUI();
 				}
-				DProfile_EndRecord
+				if (s_bIsRunApplication == false)
+				{
+					CZVimguiManager::End();
+					break;
+				}
 				// CZVimguiManager::ShowDemo();
 			}
 
 			ImGui::PopFont();
 			DProfile_Execute
-      			CZVimguiManager::End();
+				CZVimguiManager::End();
 
 			m_upWindow->Clear();
 		}
@@ -131,12 +141,12 @@ namespace ZVLab {
 		CZVeventDispatcher ed(event);
 		switch (event.GetEventType())
 		{
-			case EzvEventType::WindowResize:
-				ed.Dispatch<CzvWindowResizeEvent>(DBindEventFunction(ZVLab::CzvSystem::WindowResize));
-				return;
-			case EzvEventType::WindowClose:
-				ed.Dispatch<CzvWindowCloseEvent>(DBindEventFunction(ZVLab::CzvSystem::WindowClose));
-				return;
+		case EzvEventType::WindowResize:
+			ed.Dispatch<CzvWindowResizeEvent>(DBindEventFunction(ZVLab::CzvSystem::WindowResize));
+			return;
+		case EzvEventType::WindowClose:
+			ed.Dispatch<CzvWindowCloseEvent>(DBindEventFunction(ZVLab::CzvSystem::WindowClose));
+			return;
 		}
 
 		{ // toss Event
@@ -157,7 +167,7 @@ namespace ZVLab {
 
 	ZVbool CzvSystem::WindowClose(CzvWindowCloseEvent& event)
 	{
-		m_bIsRun = false;
+		CzvSystem::ExitApp();
 		return (true);
 	}
 
