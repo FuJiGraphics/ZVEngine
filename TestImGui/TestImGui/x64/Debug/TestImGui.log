@@ -1,0 +1,33 @@
+﻿  TestImGui.cpp
+c:\users\choicheoljin\desktop\dasd\testimgui\vendor\zvui\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+c:\users\choicheoljin\desktop\dasd\testimgui\vendor\zvui\include\zvcore\platform\imgui\export\zvprofiler.h(38): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다.
+  c:\users\choicheoljin\desktop\dasd\testimgui\vendor\zvui\include\zvcore\platform\imgui\export\zvprofiler.h(37): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오.
+ZVCore.lib(wgl_context.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(wgl_context.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(win32_window.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_window.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(win32_monitor.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_monitor.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(win32_joystick.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_joystick.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(win32_init.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_init.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(win32_thread.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_thread.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(win32_time.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_time.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(win32_module.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_module.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(null_joystick.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(null_joystick.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(null_window.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(null_window.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(null_monitor.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(null_monitor.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(null_init.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(null_init.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(osmesa_context.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(osmesa_context.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(egl_context.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(egl_context.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(window.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(window.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(vulkan.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(vulkan.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(platform.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(platform.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(monitor.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(monitor.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(input.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(input.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(init.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(init.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ZVCore.lib(context.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(context.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_impl_glfw.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui_impl_glfw.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_impl_opengl3.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui_impl_opengl3.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_demo.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui_demo.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_draw.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui_draw.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_tables.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui_tables.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_widgets.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui_widgets.obj)' 또는 'C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  TestImGui.vcxproj -> C:\Users\CHOICHEOLJIN\Desktop\dasd\TestImGui\x64\Debug\TestImGui.exe

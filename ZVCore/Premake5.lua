@@ -46,6 +46,13 @@ defines
     "ZV_PLATFORM_WINDOWS",
 }
 
+postbuildcommands {
+    -- 폴더를 만들고 파일을 복사하는 명령 추가
+    "{MKDIR} %{wks.location}/include/ZVCore/",
+	"{COPY} %{IncludeDir.ZVCore}/ %{wks.location}/include/ZVCore",
+	"{DELETE} %{wks.location}/include/ZVCore/platform/**.cpp",
+}
+
 filter "configurations:Debug"
     defines "ZV_DEBUG"
     runtime "Debug"

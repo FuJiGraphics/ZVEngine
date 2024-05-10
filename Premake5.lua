@@ -2,7 +2,7 @@ include "Dependencies.lua"
 
 workspace "ZVEngine"
 	architecture "x86_64"
-	startproject "ZVEngine"
+	startproject "ZVCore"
 
 	configurations
 	{
@@ -16,7 +16,7 @@ workspace "ZVEngine"
 		"MultiProcessorCompile"
 	}
 
-outputdir = "Build/%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
+outputdir = "Build/%{cfg.buildcfg}/%{cfg.system}/%{cfg.architecture}/"
 
 group "Dependencies"
 	include "Vendor/Premake5"
@@ -24,11 +24,4 @@ group "Dependencies"
 	include "Vendor/glad"
 group ""
 
-group "ZVLab"
-	include "ZVLab/ZVMotion"
-	include "ZVLab/ZVIO"
-	include "ZVLab/ZVUI"
-group ""
-
 include "ZVCore"
-include "ZVEngine"

@@ -14,6 +14,18 @@ namespace ZVLab {
 		this->Initialize(spec);
 	}
 
+	CzvSystem::CzvSystem(HANDLE hwnd)
+		: m_bIsRun(false)
+		, m_bInitialized(false)
+		, m_bActivateResize(false)
+		, m_upWindow(nullptr)
+		, m_upLayerBuffer(nullptr)
+		, m_Hwnd(NULL)
+	{
+		m_Hwnd = hwnd;
+		this->Initialize(m_Hwnd);
+	}
+
 	CzvSystem::~CzvSystem()
 	{
 		this->Shutdown();
@@ -34,6 +46,23 @@ namespace ZVLab {
 		// Set Callback
 		m_upWindow->SetEventCallback(DBindEventFunction(CzvSystem::OnEvent));
 
+
+		// TODO: 폰트 기능 리팩토링 및 수정 필요
+		// Set Font
+		CZVimguiManager::UploadFont("..\\..\\Resources\\Fonts\\OpenSans_Condensed-Regular.ttf", "OpenSans-Regular", 20);
+
+		// Graphic icon
+		ImGuiIO& io = ImGui::GetIO();
+		io.Fonts->AddFontDefault();
+	}
+
+	void CzvSystem::Initialize(HANDLE hwnd)
+	{
+		m_bInitialized = true;
+		// Generated a LayerBuffer
+		m_upLayerBuffer = CzvLayerBuffer::Create();
+		// Init ImGui
+		CZVimguiManager::Initialize(hwnd, true);
 
 		// TODO: 폰트 기능 리팩토링 및 수정 필요
 		// Set Font
@@ -108,7 +137,7 @@ namespace ZVLab {
 
 			ImGui::PopFont();
 			DProfile_Execute
-      			CZVimguiManager::End();
+      		CZVimguiManager::End();
 
 			m_upWindow->Clear();
 		}
@@ -167,5 +196,19 @@ namespace ZVLab {
 		(*flags) = false;
 	}
 
+
+	CzvSystem* CreateApplication(const TzvApplicationSpecification& spec)
+	{
+		CzvSystem* app = nullptr;
+		app = new CzvSystem(spec);
+		return (app);
+	}
+
+	CzvSystem* CreateApplication(HANDLE parrent)
+	{
+		CzvSystem* app = nullptr;
+		app = new CzvSystem(parrent);
+		return (app);
+	}
 
 } // namespace ZVLab

@@ -93,6 +93,11 @@
       <AdditionalDependencies>..\..\Vendor\FZLib\lib\Debug\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Debug\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Debug\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\Vendor\FZLib\lib\Debug\x86_64;..\..\Vendor\GLFW\lib\Debug;..\..\Vendor\SOIL2\lib\windows\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST $(SolutionDir)\include\ZVCore (mkdir $(SolutionDir)\include\ZVCore)
+IF EXIST $(SolutionDir)\ZVCore\ZVCore\src\ (xcopy /Q /E /Y /I $(SolutionDir)\ZVCore\ZVCore\src $(SolutionDir)\include\ZVCore &gt; nul) ELSE (xcopy /Q /Y /I $(SolutionDir)\ZVCore\ZVCore\src $(SolutionDir)\include\ZVCore &gt; nul)
+del $(SolutionDir)\include\ZVCore\platform\**.cpp</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -118,6 +123,11 @@
       <AdditionalDependencies>..\..\Vendor\FZLib\lib\Release\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Release\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Release\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\Vendor\FZLib\lib\Release\x86_64;..\..\Vendor\GLFW\lib\Release;..\..\Vendor\SOIL2\lib\windows\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST $(SolutionDir)\include\ZVCore (mkdir $(SolutionDir)\include\ZVCore)
+IF EXIST $(SolutionDir)\ZVCore\ZVCore\src\ (xcopy /Q /E /Y /I $(SolutionDir)\ZVCore\ZVCore\src $(SolutionDir)\include\ZVCore &gt; nul) ELSE (xcopy /Q /Y /I $(SolutionDir)\ZVCore\ZVCore\src $(SolutionDir)\include\ZVCore &gt; nul)
+del $(SolutionDir)\include\ZVCore\platform\**.cpp</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
@@ -138,6 +148,11 @@
       <AdditionalDependencies>..\..\Vendor\FZLib\lib\Dist\x86_64\FZLib.lib;..\..\Vendor\GLFW\lib\Dist\glfw3.lib;..\..\Vendor\SOIL2\lib\windows\Dist\soil2.lib;Opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\Vendor\FZLib\lib\Dist\x86_64;..\..\Vendor\GLFW\lib\Dist;..\..\Vendor\SOIL2\lib\windows\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
+    <PostBuildEvent>
+      <Command>IF NOT EXIST $(SolutionDir)\include\ZVCore (mkdir $(SolutionDir)\include\ZVCore)
+IF EXIST $(SolutionDir)\ZVCore\ZVCore\src\ (xcopy /Q /E /Y /I $(SolutionDir)\ZVCore\ZVCore\src $(SolutionDir)\include\ZVCore &gt; nul) ELSE (xcopy /Q /Y /I $(SolutionDir)\ZVCore\ZVCore\src $(SolutionDir)\include\ZVCore &gt; nul)
+del $(SolutionDir)\include\ZVCore\platform\**.cpp</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\core\Core.h" />
@@ -156,8 +171,6 @@
     <ClInclude Include="src\events\ZVmouseEvent.h" />
     <ClInclude Include="src\export\EntryPoint.h" />
     <ClInclude Include="src\export\ZVCore.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVTabItem.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVToggleButton.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
     <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h" />
     <ClInclude Include="src\platform\imgui\ZVTexture_internal.h" />
@@ -169,15 +182,15 @@
     <ClInclude Include="src\platform\imgui\export\ZVMenu.h" />
     <ClInclude Include="src\platform\imgui\export\ZVProfiler.h" />
     <ClInclude Include="src\platform\imgui\export\ZVTabBar.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVTabItem.h" />
     <ClInclude Include="src\platform\imgui\export\ZVTexture.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVToggleButton.h" />
     <ClInclude Include="src\platform\windows\ZVwindow_win.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVLayerBuffer.cpp" />
     <ClCompile Include="src\core\ZVSystem.cpp" />
     <ClCompile Include="src\core\ZVWindow.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVTabItem.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVToggleButton.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp" />
     <ClCompile Include="src\platform\imgui\ZVProfiler_internal.cpp" />
     <ClCompile Include="src\platform\imgui\ZVTexture_internal.cpp" />
@@ -188,7 +201,9 @@
     <ClCompile Include="src\platform\imgui\export\ZVMenu.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVTabBar.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVTabItem.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVTexture.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVToggleButton.cpp" />
     <ClCompile Include="src\platform\windows\ZVwindow_win.cpp" />
   </ItemGroup>
   <ItemGroup>

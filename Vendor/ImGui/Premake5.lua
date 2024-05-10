@@ -23,6 +23,8 @@ project "ImGui"
         "include/imgui/backends/imgui_impl_opengl3_loader.h",
         "include/imgui/backends/imgui_impl_glfw.cpp",
         "include/imgui/backends/imgui_impl_glfw.h",
+        "include/imgui/backends/imgui_impl_win32.cpp",
+        "include/imgui/backends/imgui_impl_win32.h",
         "include/imgui/extensions/**.cpp",
         "include/imgui/extensions/**.h",
 	}

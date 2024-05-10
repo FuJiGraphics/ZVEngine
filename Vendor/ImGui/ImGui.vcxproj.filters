@@ -21,6 +21,9 @@
     <ClInclude Include="include\imgui\backends\imgui_impl_opengl3_loader.h">
       <Filter>backends</Filter>
     </ClInclude>
+    <ClInclude Include="include\imgui\backends\imgui_impl_win32.h">
+      <Filter>backends</Filter>
+    </ClInclude>
     <ClInclude Include="include\imgui\extensions\ImCoolbar.h">
       <Filter>extensions</Filter>
     </ClInclude>
@@ -42,6 +45,9 @@
       <Filter>backends</Filter>
     </ClCompile>
     <ClCompile Include="include\imgui\backends\imgui_impl_opengl3.cpp">
+      <Filter>backends</Filter>
+    </ClCompile>
+    <ClCompile Include="include\imgui\backends\imgui_impl_win32.cpp">
       <Filter>backends</Filter>
     </ClCompile>
     <ClCompile Include="include\imgui\extensions\ImCoolbar.cpp">
