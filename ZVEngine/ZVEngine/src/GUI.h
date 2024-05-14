@@ -1,6 +1,8 @@
 #pragma once
 
 // Attach Layer Headers
-#include "Developer/Layers/Sidebar_left.h"
-#include "Developer/Overlays/DeveloperMenu.h"
+#include "Dlg/DlgClassification.h"
+#include "Dlg/DlgSidebarLeft.h"
+#include "Dlg/DlgDisplayWindow.h"
+#include "Layers/ZVMenubar.h"
 

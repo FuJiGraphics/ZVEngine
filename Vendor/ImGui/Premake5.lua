@@ -33,6 +33,7 @@ project "ImGui"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.GLAD}",
         "%{IncludeDir.SOIL2}",
+        "%{IncludeDir.OpenCV}",
     }
 
 	libdirs 
@@ -40,6 +41,7 @@ project "ImGui"
 		"%{LibraryDir.GLFW}",
 		"%{LibraryDir.GLAD}",
 	    "%{LibraryDir.SOIL2}",
+        "%{LibraryDir.OpenCV}",
 	}
 
 	links
@@ -47,6 +49,7 @@ project "ImGui"
 		"%{Library.GLFW}",
 		"%{Library.GLAD}",
 	    "%{Library.SOIL2}",
+        "%{Library.OpenCV}",
 	}
 
 	filter "system:windows"

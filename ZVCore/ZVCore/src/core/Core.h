@@ -16,6 +16,12 @@
 #include "ZVAssert.h"
 #include "ZVMemory.h"
 
+// opencv
+#include "opencv2/core.hpp"
+#include "opencv2/highgui.hpp"
+#include "opencv2/opencv.hpp"
+#include "opencv2/imgproc/types_c.h"
+
 // imgui
 #include "imgui/imgui.h"
 #include "glad/glad.h"
@@ -24,6 +30,8 @@
 #include "imgui/backends/imgui_impl_glfw.h"
 #include "imgui/extensions/im_plot/implot.h"
 #include "imgui/extensions/im_file_dialog/ImFileDialog.h"
+
+
 
 #ifdef ZV_USAGE_DLL
 	#ifdef ZV_EXPORT_DLL

@@ -5,16 +5,13 @@
 #include "ZVapp.h"
 #include <vector>
 
-std::vector<ZVLab::CzvLayer*>	g_GenerateLayerList;
-ZVLab::CzvSystem*				g_pApplication = nullptr;
-
 // export defines
 #define GENERATE_LAYER(layer)\
 class ClassGenerate##layer\
 {\
 public:\
 	ClassGenerate##layer(){\
-		g_GenerateLayerList.push_back(new(##layer));\
+		CzvApp::GetInstance()->AttachLayer(new ##(layer));\
 	}\
 };\
 inline ClassGenerate##layer CLASSGENERATE##layer;

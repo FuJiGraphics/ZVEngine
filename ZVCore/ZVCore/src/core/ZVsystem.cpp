@@ -11,14 +11,12 @@ namespace ZVLab {
 		s_bIsRunApplication = false;
 	}
 
-	CzvSystem::CzvSystem(const TzvApplicationSpecification& spec)
+	CzvSystem::CzvSystem()
 		: m_bInitialized(false)
 		, m_bActivateResize(false)
 		, m_upWindow(nullptr)
 		, m_upLayerBuffer(nullptr)
-	{
-		this->Initialize(spec);
-	}
+	{}
 
 	CzvSystem::~CzvSystem()
 	{
@@ -36,14 +34,14 @@ namespace ZVLab {
 		// Generated a LayerBuffer
 		m_upLayerBuffer = CzvLayerBuffer::Create();
 		// Init ImGui
-		CZVimguiManager::Initialize(m_upWindow, true);
+		CzvImguiManager::Initialize(m_upWindow, true);
 		// Set Callback
 		m_upWindow->SetEventCallback(DBindEventFunction(CzvSystem::OnEvent));
 
 
 		// TODO: 폰트 기능 리팩토링 및 수정 필요
 		// Set Font
-		CZVimguiManager::UploadFont("..\\..\\Resources\\Fonts\\OpenSans_Condensed-Regular.ttf", "OpenSans-Regular", 20);
+		// CzvImguiManager::UploadFont("..\\..\\Resources\\Fonts\\OpenSans_Condensed-Regular.ttf", "OpenSans-Regular", 20);
 
 		// Graphic icon
 		ImGuiIO& io = ImGui::GetIO();
@@ -79,7 +77,7 @@ namespace ZVLab {
 		// Destroyed a LayerBuffer
 		m_upLayerBuffer->Shutdown();
 		// Destroyed ImGui
-		CZVimguiManager::Shutdown();
+		CzvImguiManager::Shutdown();
 		// off flag
 		m_bInitialized = false;
 	}
@@ -108,17 +106,17 @@ namespace ZVLab {
 				}
 			}
 
-			CZVimguiManager::Begin(m_upWindow);
-			ImFont* font = CZVimguiManager::GetFont("OpenSans-Regular");
+			CzvImguiManager::Begin(m_upWindow);
+			ImFont* font = CzvImguiManager::GetFont("OpenSans-Regular");
 			ImGui::PushFont(font);
 			{ // ImGui_Layer
-				if (CZVimguiManager::BeginMainMenu())
+				if (CzvImguiManager::BeginMainMenu())
 				{
 					for (auto& layer : *m_upLayerBuffer)
 					{
 						layer->OnMainMenuBar();
 					}
-					CZVimguiManager::EndMainMenu();
+					CzvImguiManager::EndMainMenu();
 				}
 				if (s_bIsRunApplication == false)
 				{
@@ -131,24 +129,15 @@ namespace ZVLab {
 				}
 				if (s_bIsRunApplication == false)
 				{
-					CZVimguiManager::End();
+					CzvImguiManager::End();
 					break;
 				}
 				// CZVimguiManager::ShowDemo();
-
-				// test dialog
-				if (ifd::FileDialog::Instance().IsDone("TextureOpenDialog")) {
-					if (ifd::FileDialog::Instance().HasResult()) {
-						std::string res = ifd::FileDialog::Instance().GetResult().u8string();
-						printf("OPEN[%s]\n", res.c_str());
-					}
-					ifd::FileDialog::Instance().Close();
-				}
 			}
 
 			ImGui::PopFont();
 			DProfile_Execute
-				CZVimguiManager::End();
+				CzvImguiManager::End();
 
 			m_upWindow->Clear();
 		}

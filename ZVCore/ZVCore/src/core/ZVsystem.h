@@ -15,7 +15,6 @@
 #include "../events/ZVkeyEvent.h"
 #include "../events/ZVmouseEvent.h"
 
-
 int main(int argc, char** argv);
 
 namespace ZVLab {
@@ -39,7 +38,7 @@ namespace ZVLab {
 		static void ExitApp();
 
 	public:
-		CzvSystem(const TzvApplicationSpecification& spec);
+		CzvSystem();
 		virtual ~CzvSystem();
 
 	public:

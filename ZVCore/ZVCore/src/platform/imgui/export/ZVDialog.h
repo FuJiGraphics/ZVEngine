@@ -18,7 +18,6 @@ namespace ZVLab {
 		TzvDialogInfo			tOptions;
 	};
 
-
 //----------------------------------------------------
 // Dialog
 //----------------------------------------------------
@@ -49,27 +48,6 @@ namespace ZVLab {
 		bool Button(CzvButton& button);
 
 	private: // Others
-		bool Synchronization();
-	};
-
-//----------------------------------------------------
-// Dialog Child
-//----------------------------------------------------
-	class ZV_API CzvDialog_Child : public CzvDialog
-	{
-	private:
-		TzvDialogChunk	m_tData;
-
-	public:
-		CzvDialog_Child(const std::string& label);
-		CzvDialog_Child(const std::string& label, const TzvDialogInfo& options);
-		CzvDialog_Child(const std::string& label, const ImVec2& size);
-		CzvDialog_Child(const std::string& label, const ImVec2& size, const TzvDialogInfo& options);
-		CzvDialog_Child(const std::string& label, const ImVec2& size, const ImVec2& position);
-		CzvDialog_Child(const std::string& label, const ImVec2& size, const ImVec2& position, const TzvDialogInfo& options);
-		virtual ~CzvDialog_Child();
-
-	private:
 		bool Synchronization();
 	};
 

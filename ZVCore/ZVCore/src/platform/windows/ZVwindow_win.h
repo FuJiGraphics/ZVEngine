@@ -12,11 +12,11 @@ namespace ZVLab {
 	class ZV_API CZVwindow_Windows final : public CzvWindow
 	{
 	private: // members
-		bool			m_bInitialized;
-		std::string		m_strWindowName;
-		ZVuint			m_uiWidth;
-		ZVuint			m_uiHeight;
-		GLFWwindow*		m_pGlfwWindow;
+		bool				m_bInitialized;
+		std::string			m_strWindowName;
+		ZVuint				m_uiWidth;
+		ZVuint				m_uiHeight;
+		GLFWwindow*			m_pGlfwWindow;
 		TzvWindowChunk		m_tData;
 
 	public: // contructor and destructor

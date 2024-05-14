@@ -8,7 +8,7 @@
 
 namespace ZVLab {
 
-	class ZV_API CzvToggleButton : public CzvButton
+	class ZV_API CzvToggleButton final : public CzvButton
 	{
 	//// Member Functions
 	public: 

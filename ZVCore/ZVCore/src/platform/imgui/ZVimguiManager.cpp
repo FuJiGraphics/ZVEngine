@@ -1,4 +1,4 @@
-#include "ZVimguiManager.h"
+#include "ZVImguiManager.h"
 #include "ZVImguiTheme.h"
 //imgui
 #include <stdio.h>
@@ -16,11 +16,11 @@ void glfw_error_callback(int error, const char * description) {
 
 namespace ZVLab {
 
-	bool CZVimguiManager::s_bEnabledImplot = false;
-	bool CZVimguiManager::s_bEnableOverviewDockspace = true;
-	std::unordered_map<std::string, ImFont*> CZVimguiManager::s_mapFonts;
+	bool CzvImguiManager::s_bEnabledImplot = false;
+	bool CzvImguiManager::s_bEnableOverviewDockspace = true;
+	std::unordered_map<std::string, ImFont*> CzvImguiManager::s_mapFonts;
 
-	void CZVimguiManager::Initialize(const Unique<CzvWindow>& window, UsageExtensionsFlags flags)
+	void CzvImguiManager::Initialize(const Unique<CzvWindow>& window, UsageExtensionsFlags flags)
 	{
 		const char* glsl_version = "#version 130";
 
@@ -45,9 +45,30 @@ namespace ZVLab {
 		// Setup Platform/Renderer backends
 		ImGui_ImplGlfw_InitForOpenGL(window->GetNativeWindow(), true);
 		ImGui_ImplOpenGL3_Init(glsl_version);
+
+		// ImFileDialog requires you to set the CreateTexture and DeleteTexture
+		ifd::FileDialog::Instance().CreateTexture = [](uint8_t* data, int w, int h, char fmt) -> void* {
+			GLuint tex;
+
+			glGenTextures(1, &tex);
+			glBindTexture(GL_TEXTURE_2D, tex);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, (fmt == 0) ? GL_BGRA : GL_RGBA, GL_UNSIGNED_BYTE, data);
+			glGenerateMipmap(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, 0);
+
+			return (void*)tex;
+		};
+		ifd::FileDialog::Instance().DeleteTexture = [](void* tex) {
+			GLuint texID = (GLuint)((uintptr_t)tex);
+			glDeleteTextures(1, &texID);
+		};
 	}
 
-	void CZVimguiManager::Shutdown()
+	void CzvImguiManager::Shutdown()
 	{
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
@@ -56,7 +77,7 @@ namespace ZVLab {
 		ImGui::DestroyContext();
 	}
 
-	void CZVimguiManager::Begin(const Unique<CzvWindow>& window)
+	void CzvImguiManager::Begin(const Unique<CzvWindow>& window)
 	{
 		if (!glfwWindowShouldClose(window->GetNativeWindow()))
 		{
@@ -71,7 +92,7 @@ namespace ZVLab {
 		}
 	}
 
-	void CZVimguiManager::End()
+	void CzvImguiManager::End()
 	{
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -85,17 +106,17 @@ namespace ZVLab {
 		}
 	}
 
-	bool CZVimguiManager::BeginMainMenu()
+	bool CzvImguiManager::BeginMainMenu()
 	{
 		return (ImGui::BeginMainMenuBar());
 	}
 
-	void CZVimguiManager::EndMainMenu()
+	void CzvImguiManager::EndMainMenu()
 	{
 		ImGui::EndMainMenuBar();
 	}
 
-	void ZVLab::CZVimguiManager::ShowDemo()
+	void ZVLab::CzvImguiManager::ShowDemo()
 	{
 		bool show_demo_window = true;
 		bool show_another_window = true;
@@ -128,21 +149,17 @@ namespace ZVLab {
 		ImGui::End();
 	}
 
-	void CZVimguiManager::SetOverviewDockspace(bool enable)
+	void CzvImguiManager::SetOverviewDockspace(bool enable)
 	{
 		s_bEnableOverviewDockspace = enable;
 	}
 
-	bool CZVimguiManager::EnabledOverviewDockspace()
+	bool CzvImguiManager::EnabledOverviewDockspace()
 	{
 		return (s_bEnableOverviewDockspace);
 	}
 
-	bool CZVimguiManager::UploadFont(const std::string& path, 
-									 const std::string& fontName, 
-									 float size_pixels, 
-									 ImFontConfig* config,
-									 const ImWchar* glyph_ranges)
+	bool CzvImguiManager::UploadFont(const std::string& path, const std::string& fontName, float size_pixels, ImFontConfig* config, const ImWchar* glyph_ranges)
 	{
 		if (s_mapFonts.find(fontName) != s_mapFonts.end())
 		{
@@ -168,7 +185,7 @@ namespace ZVLab {
 		return (true);
 	}
 
-	ImFont* CZVimguiManager::GetFont(const std::string& fontName)
+	ImFont* CzvImguiManager::GetFont(const std::string& fontName)
 	{
 		if (s_mapFonts.find(fontName) == s_mapFonts.end())
 		{

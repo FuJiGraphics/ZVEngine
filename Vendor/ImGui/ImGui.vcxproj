@@ -76,7 +76,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>include\imgui;..\GLFW\include;..\glad\include;..\SOIL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include\imgui;..\GLFW\include;..\glad\include;..\SOIL2\include;..\OpenCV2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
@@ -89,15 +89,15 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>..\GLFW\lib\Debug\glfw3.lib;..\glad\lib\Debug\glad.lib;..\SOIL2\lib\windows\Debug\soil2.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\GLFW\lib\Debug;..\glad\lib\Debug;..\SOIL2\lib\windows\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\GLFW\lib\Debug\glfw3.lib;..\glad\lib\Debug\glad.lib;..\SOIL2\lib\windows\Debug\soil2.lib;..\OpenCV2\lib\Debug\opencv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\GLFW\lib\Debug;..\glad\lib\Debug;..\SOIL2\lib\windows\Debug;..\OpenCV2\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>include\imgui;..\GLFW\include;..\glad\include;..\SOIL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include\imgui;..\GLFW\include;..\glad\include;..\SOIL2\include;..\OpenCV2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -113,15 +113,15 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>..\GLFW\lib\Release\glfw3.lib;..\glad\lib\Release\glad.lib;..\SOIL2\lib\windows\Release\soil2.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\GLFW\lib\Release;..\glad\lib\Release;..\SOIL2\lib\windows\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\GLFW\lib\Release\glfw3.lib;..\glad\lib\Release\glad.lib;..\SOIL2\lib\windows\Release\soil2.lib;..\OpenCV2\lib\Release\opencv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\GLFW\lib\Release;..\glad\lib\Release;..\SOIL2\lib\windows\Release;..\OpenCV2\lib\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>include\imgui;..\GLFW\include;..\glad\include;..\SOIL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include\imgui;..\GLFW\include;..\glad\include;..\SOIL2\include;..\OpenCV2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <MinimalRebuild>false</MinimalRebuild>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -132,8 +132,8 @@
       <SubSystem>Windows</SubSystem>
     </Link>
     <Lib>
-      <AdditionalDependencies>..\GLFW\lib\Dist\glfw3.lib;..\glad\lib\Dist\glad.lib;..\SOIL2\lib\windows\Dist\soil2.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>..\GLFW\lib\Dist;..\glad\lib\Dist;..\SOIL2\lib\windows\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>..\GLFW\lib\Dist\glfw3.lib;..\glad\lib\Dist\glad.lib;..\SOIL2\lib\windows\Dist\soil2.lib;..\OpenCV2\lib\Dist\opencv.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\GLFW\lib\Dist;..\glad\lib\Dist;..\SOIL2\lib\windows\Dist;..\OpenCV2\lib\Dist;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -142,6 +142,7 @@
     <ClInclude Include="include\imgui\backends\imgui_impl_opengl3_loader.h" />
     <ClInclude Include="include\imgui\extensions\im_coolbar\ImCoolbar.h" />
     <ClInclude Include="include\imgui\extensions\im_file_dialog\ImFileDialog.h" />
+    <ClInclude Include="include\imgui\extensions\im_mvision\immvision.h" />
     <ClInclude Include="include\imgui\extensions\im_plot\implot.h" />
     <ClInclude Include="include\imgui\extensions\im_plot\implot_internal.h" />
     <ClInclude Include="include\imgui\imconfig.h" />
@@ -156,6 +157,7 @@
     <ClCompile Include="include\imgui\backends\imgui_impl_opengl3.cpp" />
     <ClCompile Include="include\imgui\extensions\im_coolbar\ImCoolbar.cpp" />
     <ClCompile Include="include\imgui\extensions\im_file_dialog\ImFileDialog.cpp" />
+    <ClCompile Include="include\imgui\extensions\im_mvision\immvision.cpp" />
     <ClCompile Include="include\imgui\extensions\im_plot\implot.cpp" />
     <ClCompile Include="include\imgui\extensions\im_plot\implot_demo.cpp" />
     <ClCompile Include="include\imgui\extensions\im_plot\implot_items.cpp" />

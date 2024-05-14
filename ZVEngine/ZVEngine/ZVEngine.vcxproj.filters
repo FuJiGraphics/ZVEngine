@@ -4,26 +4,14 @@
     <Filter Include="core">
       <UniqueIdentifier>{4E40957C-3A77-960D-E363-7C10CF79120F}</UniqueIdentifier>
     </Filter>
-    <Filter Include="examples">
-      <UniqueIdentifier>{84D830B1-70A5-8BBC-99BE-796485EAC04A}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Developer">
-      <UniqueIdentifier>{6214B0C7-CED4-2BFE-970F-757B038F70DA}</UniqueIdentifier>
+    <Filter Include="src\Dlg">
+      <UniqueIdentifier>{136F2FA9-7F4E-AE44-8866-391BF4C414A6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Developer\Layers">
-      <UniqueIdentifier>{E1A8DDB1-CD37-677B-7656-7B7662C47721}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Developer\Layers\IO">
-      <UniqueIdentifier>{E8DA589D-5412-A134-5D1C-0558C9D2C72D}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Developer\Layers\Motion">
-      <UniqueIdentifier>{E62A750E-5238-A3F4-DB1E-9FDF472B6FAB}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Developer\Overlays">
-      <UniqueIdentifier>{C66A7887-B264-A1D9-9BD1-37EA876A0746}</UniqueIdentifier>
+    <Filter Include="src\Layers">
+      <UniqueIdentifier>{4C4DA51D-3805-E76A-A10C-C0C68DE3815B}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -33,37 +21,34 @@
     <ClInclude Include="core\ZVapp.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="examples\CoolbarExam.h">
-      <Filter>examples</Filter>
+    <ClInclude Include="src\Dlg\DlgClassification.h">
+      <Filter>src\Dlg</Filter>
     </ClInclude>
-    <ClInclude Include="examples\TemplateExam.h">
-      <Filter>examples</Filter>
+    <ClInclude Include="src\Dlg\DlgDisplayWindow.h">
+      <Filter>src\Dlg</Filter>
     </ClInclude>
-    <ClInclude Include="src\Developer\Layers\IO\ZVIoSystemAct.h">
-      <Filter>src\Developer\Layers\IO</Filter>
+    <ClInclude Include="src\Dlg\DlgSidebarLeft.h">
+      <Filter>src\Dlg</Filter>
     </ClInclude>
-    <ClInclude Include="src\Developer\Layers\Motion\ZVMotionAct.h">
-      <Filter>src\Developer\Layers\Motion</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Developer\Layers\Sidebar_left.h">
-      <Filter>src\Developer\Layers</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Developer\Overlays\DeveloperMenu.h">
-      <Filter>src\Developer\Overlays</Filter>
+    <ClInclude Include="src\Environment.h">
+      <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\GUI.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Layers\ZVMenubar.h">
+      <Filter>src\Layers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\EntryPoint.cpp">
       <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Developer\Layers\IO\ZVIoSystemAct.cpp">
-      <Filter>src\Developer\Layers\IO</Filter>
+    <ClCompile Include="core\ZVapp.cpp">
+      <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Developer\Layers\Motion\ZVMotionAct.cpp">
-      <Filter>src\Developer\Layers\Motion</Filter>
+    <ClCompile Include="src\Dlg\DlgDisplayWindow.cpp">
+      <Filter>src\Dlg</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

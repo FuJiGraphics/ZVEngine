@@ -72,6 +72,9 @@
     <ClInclude Include="src\export\ZVCore.h">
       <Filter>export</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\ZVImguiManager.h">
+      <Filter>platform\imgui</Filter>
+    </ClInclude>
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h">
       <Filter>platform\imgui</Filter>
     </ClInclude>
@@ -81,16 +84,22 @@
     <ClInclude Include="src\platform\imgui\ZVTexture_internal.h">
       <Filter>platform\imgui</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\ZVimguiManager.h">
-      <Filter>platform\imgui</Filter>
-    </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVButton.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVCommon.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVDialog.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVFileDialog.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVGuiConfig.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVImage.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVImageButton.h">
@@ -128,6 +137,9 @@
     <ClCompile Include="src\core\ZVwindow.cpp">
       <Filter>core</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\imgui\ZVImguiManager.cpp">
+      <Filter>platform\imgui</Filter>
+    </ClCompile>
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp">
       <Filter>platform\imgui</Filter>
     </ClCompile>
@@ -137,13 +149,16 @@
     <ClCompile Include="src\platform\imgui\ZVTexture_internal.cpp">
       <Filter>platform\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="src\platform\imgui\ZVimguiManager.cpp">
-      <Filter>platform\imgui</Filter>
-    </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVButton.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVDialog.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVFileDialog.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVImage.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVImageButton.cpp">

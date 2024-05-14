@@ -5,6 +5,7 @@
 #include "../core/ZVMemory.h"
 #include "FZLib/Helpers/LogHelper.h"
 // imgui interfaces
+#include "../platform/imgui/export/ZVCommon.h"
 #include "../platform/imgui/export/ZVTexture.h"
 #include "../platform/imgui/export/ZVDialog.h"
 #include "../platform/imgui/export/ZVMenu.h"
@@ -13,6 +14,8 @@
 #include "../platform/imgui/export/ZVToggleButton.h"
 #include "../platform/imgui/export/ZVTabBar.h"
 #include "../platform/imgui/export/ZVTabItem.h"
+#include "../platform/imgui/export/ZVFileDialog.h"
+#include "../platform/imgui/export/ZVImage.h"
 // events
 #include "../events/ZVevent.h"
 #include "../events/ZVappEvent.h"

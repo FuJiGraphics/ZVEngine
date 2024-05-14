@@ -3,9 +3,9 @@
 
 namespace ZVLab {
 
-	Shared<CzvTexture> CzvTexture::Create(const std::string& path)
+	Shared<CzvTexture> CzvTexture::Create(const std::string& label)
 	{
-		return (CreateShared<CzvTexture_internal>(path));
+		return (CreateShared<CzvTexture_internal>(label));
 	}
 
 }

@@ -8,22 +8,26 @@
 
 namespace ZVLab {
 
-	class ZV_API CzvProfiler_internal : public CzvProfiler
+	class ZV_API CzvProfiler_internal final : public CzvProfiler
 	{
 		using ProfileChunk			= std::pair<std::string, float>;
 		using ProfileMemoryPool		= std::map<std::string, ProfileChunk>;
 		using ProfileList			= std::vector<ProfileChunk*>;
 
+	//// Member Variables
 	private:
 		std::string			m_strLabel;
 		ProfileMemoryPool	m_mData;
 		ProfileList			m_vDataList;
 		bool				m_bOpen;
 
+	//// Member Functions
 	public:
+		// Constructor, Destructor
 		CzvProfiler_internal(const std::string& label);
 		virtual ~CzvProfiler_internal();
 
+		// Others
 		virtual void Submit(const TzvTimeStep& data) override;
 		virtual void PlotRender() override;
 		virtual void TableRender() override;

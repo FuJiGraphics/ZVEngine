@@ -21,6 +21,7 @@ includedirs
 	"%{IncludeDir.ImGui}",
 	"%{IncludeDir.GLAD}",
 	"%{IncludeDir.SOIL2}",
+	"%{IncludeDir.OpenCV}",
 }
 
 libdirs 
@@ -28,6 +29,7 @@ libdirs
 	"%{LibraryDir.FZLib}",
 	"%{LibraryDir.GLFW}",
 	"%{LibraryDir.SOIL2}",
+	"%{LibraryDir.OpenCV}",
 }
 
 links
@@ -35,6 +37,7 @@ links
 	"%{Library.FZLib}",
 	"%{Library.GLFW}",
 	"%{Library.SOIL2}",
+	"%{Library.OpenCV}",
 	"GLAD",
 	"ImGui",
 	"Opengl32.lib",

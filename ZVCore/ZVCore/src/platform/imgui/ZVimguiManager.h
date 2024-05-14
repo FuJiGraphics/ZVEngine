@@ -13,7 +13,7 @@ namespace ZVLab {
 	// forwards
 	class CzvWindow;
 
-	class ZV_API CZVimguiManager
+	class ZV_API CzvImguiManager
 	{
 		enum EzvUsageExtensions
 		{
@@ -21,25 +21,26 @@ namespace ZVLab {
 		};
 		using UsageExtensionsFlags = int;
 
-	public:
-		static void Initialize(const Unique<CzvWindow>& window, UsageExtensionsFlags flags);
-		static void Shutdown();
-		static void Begin(const Unique<CzvWindow>& window);
-		static void End();
-		static bool BeginMainMenu();
-		static void EndMainMenu();
-		static void ShowDemo();
-		static void SetOverviewDockspace(bool enable);
-		static bool EnabledOverviewDockspace();
-
-	public:
-		static bool UploadFont(const std::string& path, const std::string& fontName, float size_pixels, ImFontConfig* config = nullptr, const ImWchar* glyph_ranges = nullptr);
-		static ImFont* GetFont(const std::string& fontName);
-
+	//// Member Variables
 	private:
 		static bool s_bEnabledImplot;
 		static bool s_bEnableOverviewDockspace;
 		static std::unordered_map<std::string, ImFont*> s_mapFonts;
+
+	//// Member Functions
+	public:
+		static void		Initialize(const Unique<CzvWindow>& window, UsageExtensionsFlags flags);
+		static void		Shutdown();
+		static void		Begin(const Unique<CzvWindow>& window);
+		static void		End();
+		static bool		BeginMainMenu();
+		static void		EndMainMenu();
+		static void		ShowDemo();
+		static void		SetOverviewDockspace(bool enable);
+		static bool		EnabledOverviewDockspace();
+		static bool		UploadFont(const std::string& path, const std::string& fontName, float size_pixels, ImFontConfig* config = nullptr, const ImWchar* glyph_ranges = nullptr);
+		static ImFont*	GetFont(const std::string& fontName);
+
 	};
 
 } // namespace ZVLab

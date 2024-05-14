@@ -7,6 +7,8 @@ namespace ZVLab {
 
 // ZVGui Defines
 #define DBindLabelNumbering(label, number) (std::string(##label) + std::to_string(##number))
+#define DGLuint2ImTextureID(ptr) (reinterpret_cast<void*>(static_cast<intptr_t>(ptr)))
+#define DDrawTextureImage(texture, width, height) ImGui::Image(DGLuint2ImTextureID(texture), {static_cast<float>(width), static_cast<float>(height)});
 
 #pragma region Dialog Options
 //----------------------------------------------------

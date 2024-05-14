@@ -1,6 +1,6 @@
 include "Dependencies.lua"
 
-workspace "ZVEngine"
+workspace "ZScreen"
 	architecture "x86_64"
 	startproject "ZVEngine"
 
@@ -22,12 +22,6 @@ group "Dependencies"
 	include "Vendor/Premake5"
 	include "Vendor/ImGui"
 	include "Vendor/glad"
-group ""
-
-group "ZVLab"
-	include "ZVLab/ZVMotion"
-	include "ZVLab/ZVIO"
-	include "ZVLab/ZVUI"
 group ""
 
 include "ZVCore"

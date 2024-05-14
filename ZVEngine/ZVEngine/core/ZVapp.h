@@ -3,27 +3,16 @@
 #pragma once
 
 #include "ZVCore.h"
-#include "GUI_Liberator.h"
 
-static void GenerateLayers(CzvSystem* app)
+class CzvApp : public ZVLab::CzvSystem
 {
-	for (auto& layer : g_GenerateLayerList)
-	{
-		app->AttachLayer(layer);
-	}
-}
+private:
+	static ZVLab::CzvSystem* s_pApp;
 
-
-class CZVapp : public ZVLab::CzvSystem
-{
 public:
-	CZVapp(const TzvApplicationSpecification& spec)
-		: CzvSystem(spec)
-	{
-		GenerateLayers(this);
-	}
-
-	virtual ~CZVapp() {}
+	static ZVLab::CzvSystem* GetInstance();
+	CzvApp();
+	virtual ~CzvApp() = default;
 };
 
 #endif /*__ZV_ZVAPPLICATION_H__*/
