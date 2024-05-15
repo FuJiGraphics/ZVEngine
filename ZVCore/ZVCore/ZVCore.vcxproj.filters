@@ -126,6 +126,7 @@
     <ClInclude Include="src\platform\windows\ZVwindow_win.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVMenubar.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVlayerBuffer.cpp">
@@ -185,5 +186,6 @@
     <ClCompile Include="src\platform\windows\ZVwindow_win.cpp">
       <Filter>platform\windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVMenubar.cpp" />
   </ItemGroup>
 </Project>

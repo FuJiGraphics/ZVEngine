@@ -61,7 +61,7 @@ namespace ZVLab {
 	};
 
 	// ZVEngine에서 정의해야 하는 엔트리 포인트입니다.
-	CzvSystem* CreateApplication(TzvApplicationCommandLineArgs args);
+	Unique<CzvSystem>& CreateApplication(TzvApplicationCommandLineArgs args);
 
 } // namespace ZVLab
 

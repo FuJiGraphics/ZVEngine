@@ -4,15 +4,15 @@
 #include "ZVCore.h"
 
 	#ifdef ZV_PLATFORM_WINDOWS
-extern ZVLab::CzvSystem* ZVLab::CreateApplication(TzvApplicationCommandLineArgs args);
+extern ZVLab::Unique<ZVLab::CzvSystem>& ZVLab::CreateApplication(TzvApplicationCommandLineArgs args);
 
 int main(int argc, char** argv)
 {
-	auto* pApp = ZVLab::CreateApplication({ argc, argv });
+	auto& pApp = ZVLab::CreateApplication({ argc, argv });
 
 	pApp->Run();
-	 
-	delete pApp;
+
+	return (0);
 }
 	#endif /* ZV_PLATFORM_WINDOWS */
 

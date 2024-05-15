@@ -12,6 +12,7 @@ class CDlgDisplayWindow final : public ZVLab::CzvLayer
 private:
 	std::string		m_strLabel;
 	CzvImage		m_cImage;
+	TzvDialogInfo	m_tDialogInfo;
 
 	//// Member Functions
 public:

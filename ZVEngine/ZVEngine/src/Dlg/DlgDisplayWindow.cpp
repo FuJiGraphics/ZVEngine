@@ -3,11 +3,12 @@
 void CDlgDisplayWindow::OnAttach()
 {
 	m_strLabel = ZV_Setting::g_strLabelDisplayWindow;
+	m_tDialogInfo.+(true);
 };
 
 void CDlgDisplayWindow::OnGUI()
 {
-	CzvDialog dialkog(m_strLabel);
+	CzvDialog dialog(m_strLabel, m_tDialogInfo);
 	if (ifd::FileDialog::Instance().IsDone("TextureOpenDialog"))
 	{
 		if (ifd::FileDialog::Instance().HasResult()) {
@@ -23,6 +24,15 @@ void CDlgDisplayWindow::OnGUI()
 			m_cImage.Save(res, EzvImageFormat::ePNG);
 		}
 		ifd::FileDialog::Instance().Close();
+	}
+	
+	if (ImGui::BeginMenu("Edit"))
+	{
+		if (ImGui::MenuItem("Setting"))
+		{
+
+		}
+		ImGui::EndMenu();
 	}
 	m_cImage.Bind({ ZV_Setting::g_iDisplaySizeW, ZV_Setting::g_iDisplaySizeH });
 };

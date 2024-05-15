@@ -4,7 +4,7 @@
 
 namespace ZVLab {
 
-	CzvSystem* CreateApplication(TzvApplicationCommandLineArgs args)
+	ZVLab::Unique<ZVLab::CzvSystem>& CreateApplication(TzvApplicationCommandLineArgs args)
 	{
 		return (CzvApp::GetInstance());
 	}

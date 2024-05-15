@@ -1,5 +1,5 @@
-#ifndef __ZV_ZVWINDOWMENU_H__
-#define __ZV_ZVWINDOWMENU_H__
+#ifndef __ZV_MENU_H__
+#define __ZV_MENU_H__
 #pragma once
 
 #include "../../../core/Core.h"
@@ -36,4 +36,4 @@ namespace ZVLab {
 
 } // namespace ZVLab
 
-#endif /*__ZV_ZVWINDOWMENU_H__*/
+#endif /*__ZV_MENU_H__*/

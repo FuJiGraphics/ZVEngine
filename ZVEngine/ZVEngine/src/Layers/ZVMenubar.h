@@ -32,6 +32,15 @@ public:
 			ImGui::EndMenu();
 		}
 
+		if (ImGui::BeginMenu("Edit"))
+		{
+			if (ImGui::MenuItem("Setting ZScreen"))
+			{
+
+			}
+			ImGui::EndMenu();
+		}
+
 		static bool flags = true;
 		if (ImGui::BeginMenu("Options"))
 		{

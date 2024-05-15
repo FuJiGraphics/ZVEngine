@@ -156,6 +156,7 @@
     <ClInclude Include="src\events\ZVmouseEvent.h" />
     <ClInclude Include="src\export\EntryPoint.h" />
     <ClInclude Include="src\export\ZVCore.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVMenubar.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiManager.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
     <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="src\core\ZVlayerBuffer.cpp" />
     <ClCompile Include="src\core\ZVsystem.cpp" />
     <ClCompile Include="src\core\ZVwindow.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVMenubar.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiManager.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp" />
     <ClCompile Include="src\platform\imgui\ZVProfiler_internal.cpp" />

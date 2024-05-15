@@ -1,14 +1,14 @@
 #include "ZVapp.h"
 
-ZVLab::CzvSystem* CzvApp::s_pApp = nullptr;
+ZVLab::Unique<ZVLab::CzvSystem> CzvApp::s_upApp = nullptr;
 
-ZVLab::CzvSystem* CzvApp::GetInstance()
+ZVLab::Unique<ZVLab::CzvSystem>& CzvApp::GetInstance()
 {
-	if (s_pApp == nullptr)
+	if (s_upApp == nullptr)
 	{
-		s_pApp = new CzvApp();
+		s_upApp = ZVLab::CreateUnique<CzvApp>();
 	}
-	return (s_pApp);
+	return (s_upApp);
 }
 
 CzvApp::CzvApp()

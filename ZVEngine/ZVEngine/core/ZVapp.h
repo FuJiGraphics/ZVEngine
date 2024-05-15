@@ -6,13 +6,18 @@
 
 class CzvApp : public ZVLab::CzvSystem
 {
+//// Member Variables
 private:
-	static ZVLab::CzvSystem* s_pApp;
+	static ZVLab::Unique<ZVLab::CzvSystem> s_upApp;
 
+//// Member Functions
 public:
-	static ZVLab::CzvSystem* GetInstance();
+	// Constructor, Destructor
 	CzvApp();
 	virtual ~CzvApp() = default;
+
+	// Getter
+	static ZVLab::Unique<ZVLab::CzvSystem>& GetInstance();
 };
 
 #endif /*__ZV_ZVAPPLICATION_H__*/
