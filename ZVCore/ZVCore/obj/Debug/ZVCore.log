@@ -1,8 +1,10 @@
-﻿  ZVMenu.cpp
+﻿  ZVProfiler.cpp
 d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(38): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다.
+  d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(37): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오.
 FZLib.lib(bundled_fmtlib_format.obj) : warning LNK4006: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl fmt::v9::vformat(class fmt::v9::basic_string_view<char>,class fmt::v9::basic_format_args<class fmt::v9::basic_format_context<class fmt::v9::appender,char> >)" (?vformat@v9@fmt@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_view@D@12@V?$basic_format_args@V?$basic_format_context@Vappender@v9@fmt@@D@v9@fmt@@@12@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
 FZLib.lib(bundled_fmtlib_format.obj) : warning LNK4006: "bool __cdecl fmt::v9::detail::is_printable(unsigned int)" (?is_printable@detail@v9@fmt@@YA_NI@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
 FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::throw_spdlog_ex(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?throw_spdlog_ex@spdlog@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.

@@ -16,8 +16,11 @@ namespace ZVLab {
 
 	Shared<CzvProfiler>& CzvProfiler::GetProfiler(const std::string& label)
 	{
-		Shared<CzvProfiler> profiler = CreateShared<CzvProfiler_internal>(label);
-		s_ProfilerLists.insert({ label, profiler });
+		if (s_ProfilerLists.find(label) == s_ProfilerLists.end())
+		{
+			Shared<CzvProfiler> profiler = CreateShared<CzvProfiler_internal>(label);
+			s_ProfilerLists.insert({ label, profiler });
+		}
 		return (s_ProfilerLists[label]);
 	}
 

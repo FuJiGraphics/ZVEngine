@@ -2,25 +2,32 @@
 #include "../ZVimguiManager.h"
 
 namespace ZVLab {
-//----------------------------------------------------
-// Static Variables
-//----------------------------------------------------
-	namespace { /// static variable
-		static bool					s_bFirstEntryScope = true;
-		static bool					s_bFirstEntryScopeChild = true;
-		static TzvDialogChunk		s_CurrDialogData;
-		static TzvDialogChunk		s_CurrDialogChildData;
-		static unsigned int			s_unDialogCount = 0;
-		static unsigned int			s_unDialogChildCount = 0;
-	}
 
+	namespace { /// statics
+		static bool					s_bFirstEntryScope = true;
+		static TzvDialogChunk*		s_pCurrDialogData = nullptr;
+		static unsigned int			s_unDialogCount = 0;
+		static void s_RegistDialogChunk(TzvDialogChunk* data)
+		{
+			DZVLog_Failed(data, "FAILED: Unexpected Error! data is Null!!");
+			s_pCurrDialogData = data;
+		}
+		static void s_UnRegistDialogChunk()
+		{
+			s_pCurrDialogData = nullptr;
+		}
+		static bool s_IsCheckCurrentRegistDialog(const TzvDialogChunk& data)
+		{
+			return (s_pCurrDialogData == &data);
+		}
+	}
 
 //----------------------------------------------------
 // Dialog
 //----------------------------------------------------
 	// constructors, destructors
 	CzvDialog::CzvDialog(const std::string& label)
-		: m_tData{ label, {}, {}, true, {} }
+		: m_tData{ label, {}, {}, true, false, {} }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be than or equal to 0.");
 		this->Synchronization();
@@ -31,7 +38,7 @@ namespace ZVLab {
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const TzvDialogInfo& options)
-		: m_tData{ label, {}, {}, true, options }
+		: m_tData{ label, {}, {}, true, false, options }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -42,7 +49,7 @@ namespace ZVLab {
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size)
-		: m_tData{ label, size, {}, true, {} }
+		: m_tData{ label, size, {}, true, false, {} }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -53,7 +60,7 @@ namespace ZVLab {
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const TzvDialogInfo& options)
-		: m_tData{ label, size, {}, true, options }
+		: m_tData{ label, size, {}, true, false, options }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -64,7 +71,7 @@ namespace ZVLab {
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position)
-		: m_tData{ label, size, position, true, {} }
+		: m_tData{ label, size, position, true, false, {} }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -75,7 +82,7 @@ namespace ZVLab {
 	}
 
 	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position, const TzvDialogInfo& options)
-		: m_tData{ label, size, position, true, options }
+		: m_tData{ label, size, position, true, false, options }
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -86,17 +93,22 @@ namespace ZVLab {
 	}
 
 	CzvDialog::CzvDialog(const TzvDialogChunk& data)
-		: m_tData{data.strLabel, data.optSize, data.optPosition, data.bIsUnFolded, data.tOptions}
+		: m_tData{data.strLabel, data.optSize, data.optPosition, data.bIsUnFolded, data.bIsOpenedMenubar, data.tOptions}
 	{ /*Empty*/ }
 
 	CzvDialog::~CzvDialog()
 	{
-		if (s_CurrDialogData.strLabel == m_tData.strLabel)
+		if (s_IsCheckCurrentRegistDialog(m_tData))
 		{
-			// Release a dialog
 			s_bFirstEntryScope = true;
-			ImGui::End();
-			s_CurrDialogData.strLabel.clear();
+			// end scope menubar
+			this->EndMenubar(s_pCurrDialogData);
+			
+			// 항상 Dialog의 마지막 부분에 ImGui::End()를 해야한다.
+			// Release a dialog
+			if (m_tData.bIsUnFolded)
+				ImGui::End();
+			s_UnRegistDialogChunk();
 		}
 		s_unDialogCount--;
 		DZVLog_Failed((s_unDialogCount >= 0),
@@ -147,13 +159,16 @@ namespace ZVLab {
 	/// others
 	bool CzvDialog::Synchronization()
 	{
-		if (s_CurrDialogData.strLabel != m_tData.strLabel || s_bFirstEntryScope)
+		if (s_IsCheckCurrentRegistDialog(m_tData) || s_bFirstEntryScope)
 		{
 			if (s_bFirstEntryScope)
 				s_bFirstEntryScope = false;
 			else
+			{
 				ImGui::End();
-
+				// 기존 Dialog Menubar 활성화 여부 확인 및 종료
+				this->EndMenubar(s_pCurrDialogData);
+			}
 			if (m_tData.optPosition.has_value())
 			{
 				ImGui::SetNextWindowPos(*m_tData.optPosition, ImGuiCond_Once);
@@ -162,16 +177,36 @@ namespace ZVLab {
 			{
 				ImGui::SetNextWindowSize(*m_tData.optSize, ImGuiCond_Once);
 			}
-			s_CurrDialogData.strLabel = m_tData.strLabel;
-			s_CurrDialogData.optSize = m_tData.optSize;
-			s_CurrDialogData.optPosition = m_tData.optPosition;
-			s_CurrDialogData.bIsUnFolded = m_tData.bIsUnFolded;
-			s_CurrDialogData.tOptions = m_tData.tOptions;
-			return (m_tData.bIsUnFolded = ImGui::Begin(m_tData.strLabel.c_str(), NULL, m_tData.tOptions.GetOptions()));
+
+			// 현재 Dialog 정보 등록
+			s_RegistDialogChunk(&m_tData);
+			m_tData.bIsUnFolded = ImGui::Begin(m_tData.strLabel.c_str(), NULL, m_tData.tOptions.GetOptions());
+
+			// Menubar 활성화
+			this->BeginMenubar(&m_tData);
 		}
 		return (m_tData.bIsUnFolded);
 	}
 
+	void CzvDialog::BeginMenubar(TzvDialogChunk* data)
+	{
+		DZVLog_Failed(data, "FAILED: Unexpected Error! data is Null!!");
+		if (data->tOptions.IsActivated(EzvDialogOptions::ezvDialogFlags_MenuBar) 
+			&& data->bIsUnFolded)
+			data->bIsOpenedMenubar = ImGui::BeginMenuBar();
+	}
+
+	void CzvDialog::EndMenubar(TzvDialogChunk* data)
+	{
+		DZVLog_Failed(data, "FAILED: Unexpected Error! data is Null!!");
+		if ( data->bIsUnFolded
+			&& data->tOptions.IsActivated(EzvDialogOptions::ezvDialogFlags_MenuBar)
+			&& data->bIsOpenedMenubar)
+		{
+			ImGui::EndMenuBar();
+			data->bIsOpenedMenubar = false;
+		}
+	}
 
 } // namespace ZVLab
 

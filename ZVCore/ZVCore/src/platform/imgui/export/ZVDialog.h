@@ -15,6 +15,7 @@ namespace ZVLab {
 		std::optional<ImVec2>	optSize;
 		std::optional<ImVec2>	optPosition;
 		bool					bIsUnFolded;
+		bool					bIsOpenedMenubar;
 		TzvDialogInfo			tOptions;
 	};
 
@@ -48,7 +49,9 @@ namespace ZVLab {
 		bool Button(CzvButton& button);
 
 	private: // Others
-		bool Synchronization();
+		bool	Synchronization();
+		void	BeginMenubar(TzvDialogChunk* data);
+		void	EndMenubar(TzvDialogChunk* data);
 	};
 
 } // namespace ZVLab

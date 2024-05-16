@@ -24,6 +24,7 @@ public:
 
 	virtual void OnGUI()
 	{
+		DProfile_StartRecord(m_strLabel);
 		m_iTotal = 4;
 		m_iClassified = 4;
 		m_iIndex = 4;
@@ -34,6 +35,7 @@ public:
 			DzvUI_Bullet_Text("Classified: %d", m_iClassified);
 			DzvUI_Bullet_Text("Index: %d", m_iIndex);
 		}
+		DProfile_EndRecord;
 	};
 
 	virtual void OnMainMenuBar()

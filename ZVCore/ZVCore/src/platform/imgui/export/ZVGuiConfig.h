@@ -58,13 +58,13 @@ struct ZV_API TzvDialogInfo
 {
 	using DialogOptions = int;
 
-	//// Member Variables
+//// Member Variables
 private:
-	DialogOptions	m_uiDialogOptions = ezvDialogFlags_None;
+	DialogOptions	m_iDialogOptions = ezvDialogFlags_None;
 
 	/// getter
 public:
-	inline DialogOptions	GetOptions()	{ return (m_uiDialogOptions); }
+	inline DialogOptions	GetOptions()	{ return (m_iDialogOptions); }
 
 	/// setter
 public:
@@ -104,9 +104,10 @@ public:
 
 	/// others
 public:
-	inline void FlagOptions(bool enabled, const EzvDialogOptions& flag) { (enabled) ? this->AddOptions(flag) : this->DelOptions(flag); }
-	inline void AddOptions(const EzvDialogOptions& flag) { m_uiDialogOptions |= flag; }
-	inline void DelOptions(const EzvDialogOptions& flag) { m_uiDialogOptions &= ~flag; }
+	inline bool IsActivated(const EzvDialogOptions& flags) const { return (m_iDialogOptions & flags); }
+	inline void FlagOptions(bool enabled, const EzvDialogOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void AddOptions(const EzvDialogOptions& flags) { m_iDialogOptions |= flags; }
+	inline void DelOptions(const EzvDialogOptions& flags) { m_iDialogOptions &= ~flags; }
 };
 #pragma endregion
 #pragma region TabBar Options
@@ -137,14 +138,14 @@ struct ZV_API TzvTabBarInfo
 
 //// Member Variables
 private:
-	TabBarOptions	m_TabBarOptions = ezvTabBarOptions_None;
+	TabBarOptions	m_iTabBarOptions = ezvTabBarOptions_None;
 
 //// Member Functions
 public:
-	/// getter
-	inline TabBarOptions	GetOptions() { return (m_TabBarOptions); }
+	// getter
+	inline TabBarOptions	GetOptions()	{ return (m_iTabBarOptions); }
 
-	/// setter
+	// setter
 	inline void SetOptions(EzvTabBarOptions flags)				{ this->AddOptions(flags); }
 	inline void SetReorderable(bool enabled)					{ this->FlagOptions(enabled, ezvTabBarOptions_Reorderable);  }
 	inline void SetAutoSelectNewTabs(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarOptions_AutoSelectNewTabs); }
@@ -157,11 +158,11 @@ public:
 	inline void SetFittingPolicyMask_(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyMask_); }
 	inline void SetFittingPolicyDefault_(bool enabled)			{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyDefault_); }
 
-	/// others
-public:
-	inline void FlagOptions(bool enabled, const EzvTabBarOptions& flag) { (enabled) ? this->AddOptions(flag) : this->DelOptions(flag); }
-	inline void AddOptions(const EzvTabBarOptions& flag) { m_TabBarOptions |= flag; }
-	inline void DelOptions(const EzvTabBarOptions& flag) { m_TabBarOptions &= ~flag; }
+	// others
+	inline bool IsActivated(const EzvTabBarOptions& flags)					{ return (m_iTabBarOptions & flags); }
+	inline void FlagOptions(bool enabled, const EzvTabBarOptions& flags)	{ (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void AddOptions(const EzvTabBarOptions& flags)					{ m_iTabBarOptions |= flags; }
+	inline void DelOptions(const EzvTabBarOptions& flags)					{ m_iTabBarOptions &= ~flags; }
 };
 #pragma endregion
 #pragma region TabItem Options
@@ -189,16 +190,16 @@ struct ZV_API TzvTabItemInfo
 {
 	using TabItemOptions = int;
 
-	//// Member Variables
+//// Member Variables
 private:
-	TabItemOptions	m_TabItemOptions = ezvTabBarOptions_None;
+	TabItemOptions	m_iTabItemOptions = ezvTabBarOptions_None;
 
-	//// Member Functions
+//// Member Functions
 public:
-	/// getter
-	inline TabItemOptions	GetOptions() { return (m_TabItemOptions); }
+	// getter
+	inline TabItemOptions	GetOptions() { return (m_iTabItemOptions); }
 
-	/// setter
+	// setter
 	inline void SetOptions(EzvTabItemOptions flags)				{ this->AddOptions(flags); }
 	inline void SetUnsavedDocument(bool enabled)				{ this->FlagOptions(enabled, ezvTabItemOptions_UnsavedDocument);  }
 	inline void SetSetSelected(bool enabled)					{ this->FlagOptions(enabled, ezvTabItemOptions_SetSelected); }
@@ -209,12 +210,12 @@ public:
 	inline void SetLeading(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_Leading); }
 	inline void SetTrailing(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_Trailing); }
 	inline void SetNoAssumedClosure(bool enabled)				{ this->FlagOptions(enabled, ezvTabItemOptions_NoAssumedClosure); }
-
-	/// others
-public:
-	inline void FlagOptions(bool enabled, const EzvTabItemOptions& flag) { (enabled) ? this->AddOptions(flag) : this->DelOptions(flag); }
-	inline void AddOptions(const EzvTabItemOptions& flag) { m_TabItemOptions |= flag; }
-	inline void DelOptions(const EzvTabItemOptions& flag) { m_TabItemOptions &= ~flag; }
+	
+	// others
+	inline bool IsActivated(const EzvTabItemOptions& flags)					{ return (m_iTabItemOptions & flags); }
+	inline void FlagOptions(bool enabled, const EzvTabItemOptions& flags)	{ (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void AddOptions(const EzvTabItemOptions& flags)					{ m_iTabItemOptions |= flags; }
+	inline void DelOptions(const EzvTabItemOptions& flags)					{ m_iTabItemOptions &= ~flags; }
 };
 #pragma endregion
 
