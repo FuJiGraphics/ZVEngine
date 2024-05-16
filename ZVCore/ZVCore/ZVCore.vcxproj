@@ -157,6 +157,7 @@
     <ClInclude Include="src\export\EntryPoint.h" />
     <ClInclude Include="src\export\ZVCore.h" />
     <ClInclude Include="src\platform\imgui\export\ZVMenubar.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiManager.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
     <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h" />
@@ -168,7 +169,6 @@
     <ClInclude Include="src\platform\imgui\export\ZVGuiConfig.h" />
     <ClInclude Include="src\platform\imgui\export\ZVImage.h" />
     <ClInclude Include="src\platform\imgui\export\ZVImageButton.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVMenu.h" />
     <ClInclude Include="src\platform\imgui\export\ZVProfiler.h" />
     <ClInclude Include="src\platform\imgui\export\ZVTabBar.h" />
     <ClInclude Include="src\platform\imgui\export\ZVTabItem.h" />
@@ -190,7 +190,6 @@
     <ClCompile Include="src\platform\imgui\export\ZVFileDialog.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVImage.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVImageButton.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVMenu.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVTabBar.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVTabItem.cpp" />

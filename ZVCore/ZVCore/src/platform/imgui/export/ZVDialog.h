@@ -5,28 +5,26 @@
 #include "../../../core/Core.h"
 #include "ZVGuiConfig.h"
 #include "ZVButton.h"
+#include "ZVMenubar.h"
 #include <optional>
 
 namespace ZVLab {
-
-	struct TzvDialogChunk
-	{
-		std::string				strLabel;
-		std::optional<ImVec2>	optSize;
-		std::optional<ImVec2>	optPosition;
-		bool					bIsUnFolded;
-		bool					bIsOpenedMenubar;
-		TzvDialogInfo			tOptions;
-	};
 
 //----------------------------------------------------
 // Dialog
 //----------------------------------------------------
 	class ZV_API CzvDialog
 	{
+	//// Member Variables
 	protected: 
-		TzvDialogChunk	m_tData;
+		std::string				m_strLabel;
+		std::optional<ImVec2>	m_optSize;
+		std::optional<ImVec2>	m_optPosition;
+		bool					m_bIsUnFolded;
+		CzvMenuBar				m_MenuBar;
+		TzvDialogInfo			m_tOptions;
 		
+	//// Member Functions
 	public:
 		CzvDialog(const std::string& label);
 		CzvDialog(const std::string& label, const TzvDialogInfo& options);
@@ -34,24 +32,59 @@ namespace ZVLab {
 		CzvDialog(const std::string& label, const ImVec2& size, const TzvDialogInfo& options);
 		CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position);
 		CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position, const TzvDialogInfo& options);
-		CzvDialog(const TzvDialogChunk& data);
 		virtual ~CzvDialog();
 
 		// get
-		inline std::string	GetLabel() const	{ return (m_tData.strLabel); }
-		inline bool			IsFolded() const	{ return (!m_tData.bIsUnFolded); }
-		inline bool			IsUnFolded() const	{ return (m_tData.bIsUnFolded); }
+		inline std::string	GetLabel() const	{ return (m_strLabel); }
+		inline bool			IsFolded() const	{ return (!m_bIsUnFolded); }
+		inline bool			IsUnFolded() const	{ return (m_bIsUnFolded); }
 
+		//----------------------------------------------------
 		// interfaces
-		bool Button(const std::string& label);
-		bool Button(const std::string& label, const ImVec2& size);
-		bool Button(const std::string& label, const ImVec2& size, const ImVec2& position);
-		bool Button(CzvButton& button);
+		//----------------------------------------------------
+		/**
+		 * @brief 버튼 생성
+		 * @details 현재 Dialog에 버튼을 생성합니다.
+		 * @param[in]	label:	버튼의 라벨
+		 * @return		bool:	활성화 여부 (true/false) 
+		 */
+		bool	Button(const std::string& label);
+		/**
+		 * @brief 버튼 생성
+		 * @details 현재 Dialog에 버튼을 생성합니다.
+		 * @param[in]	label:	버튼 라벨
+		 * @param[in]	size:	버튼 크기
+		 * @return		bool:	활성화 여부 (true/false)
+		 */
+		bool	Button(const std::string& label, const ImVec2& size);
+		/**
+		 * @brief 버튼 생성
+		 * @details 현재 Dialog에 버튼을 생성합니다.
+		 * @param[in]	label:		버튼 라벨
+		 * @param[in]	size:		버튼 크기
+		 * @param[in]	position:	버튼 위치
+		 * @return		bool:		활성화 여부 (true/false)
+		 */
+		bool	Button(const std::string& label, const ImVec2& size, const ImVec2& position);
+		/**
+		 * @brief 버튼 출력
+		 * @details 현재 Dialog에 버튼을 출력합니다.
+		 * @param[in]	button:	버튼 객체
+		 * @return		bool:	활성화 여부 (true/false)
+		 */
+		bool	Button(CzvButton& button);
+		/**
+		 * @brief 메뉴 아이템 생성
+		 * @details
+		 *	- 현재 Dialog에 MenuItem을 생성합니다.
+		 *  - TzvDialogInfo의 SetMenubar 설정에 영향을 받습니다.
+		 * @param[in]	label:	메뉴 아이템 라벨
+		 * @return		bool:	메뉴 아이템 활성화 여부 (true/false)
+		 */
+		bool	MenuItem(const std::string& label);
 
 	private: // Others
 		bool	Synchronization();
-		void	BeginMenubar(TzvDialogChunk* data);
-		void	EndMenubar(TzvDialogChunk* data);
 	};
 
 } // namespace ZVLab

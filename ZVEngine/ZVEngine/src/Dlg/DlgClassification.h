@@ -35,6 +35,11 @@ public:
 			DzvUI_Bullet_Text("Classified: %d", m_iClassified);
 			DzvUI_Bullet_Text("Index: %d", m_iIndex);
 		}
+
+		dlg.Button("rel");
+		dlg.Button("rel2");
+		dlg.Button("rel3");
+
 		DProfile_EndRecord;
 	};
 

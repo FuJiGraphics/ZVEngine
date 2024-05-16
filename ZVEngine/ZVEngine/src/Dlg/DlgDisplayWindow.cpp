@@ -8,7 +8,7 @@ void CDlgDisplayWindow::OnAttach()
 
 void CDlgDisplayWindow::OnGUI()
 {
-	DProfile_StartRecord(m_strLabel);
+	//DProfile_StartRecord(m_strLabel);
 	CzvDialog dialog(m_strLabel, m_tDialogInfo);
 	if (ifd::FileDialog::Instance().IsDone("TextureOpenDialog"))
 	{
@@ -26,14 +26,14 @@ void CDlgDisplayWindow::OnGUI()
 		}
 		ifd::FileDialog::Instance().Close();
 	}
-
+	
 	if (ImGui::MenuItem("Setting"))
 	{
 
 	}
 
 	m_cImage.Bind({ ZV_Setting::g_iDisplaySizeW, ZV_Setting::g_iDisplaySizeH });
-	DProfile_EndRecord;
+	//DProfile_EndRecord;
 };
 
 void CDlgDisplayWindow::OnMainMenuBar()

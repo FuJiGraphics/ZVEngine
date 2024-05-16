@@ -11,13 +11,24 @@ namespace ZVLab {
 	//// Member Variables
 	private:
 		std::string		m_strLabel;
+		bool			m_bIsActivated;
 
-	private:
-		bool	Synchronization();
+	//// Member Functions
 	public:
+		// Constructor, Destructor
 		CzvMenuBar(const std::string& label);
 		~CzvMenuBar();
 
+		// Getter
+		inline bool	IsActivated() const { return (m_bIsActivated); }
+
+		// Others
+		bool		Bind();
+		void		UnBind();
+
+	private:
+		bool		Synchronization();
+		void		Release();
 	};
 
 } // namespace ZVLab

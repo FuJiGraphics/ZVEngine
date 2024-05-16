@@ -105,9 +105,6 @@
     <ClInclude Include="src\platform\imgui\export\ZVImageButton.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVMenu.h">
-      <Filter>platform\imgui\export</Filter>
-    </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVProfiler.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
@@ -127,6 +124,7 @@
       <Filter>platform\windows</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVMenubar.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVlayerBuffer.cpp">
@@ -163,9 +161,6 @@
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVImageButton.cpp">
-      <Filter>platform\imgui\export</Filter>
-    </ClCompile>
-    <ClCompile Include="src\platform\imgui\export\ZVMenu.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp">
