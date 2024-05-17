@@ -1,13 +1,8 @@
 ﻿  ZVDialog.cpp
-  ZVMenubar.cpp
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVMenubar.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVMenubar.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVMenubar.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVMenubar.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
 d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(26): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
 d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(42): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
 d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(58): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중

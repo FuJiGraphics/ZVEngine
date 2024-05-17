@@ -55,7 +55,7 @@ namespace ZVLab {
 		}
 	}
 
-	void CzvImage::Bind(const ImVec2& size)
+	void CzvImage::Bind(const ImVec2& size) const
 	{
 		if (this->Empty() == false)
 		{

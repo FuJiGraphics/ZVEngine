@@ -6,6 +6,7 @@
 #include "ZVGuiConfig.h"
 #include "ZVButton.h"
 #include "ZVMenubar.h"
+#include "ZVImage.h"
 #include <optional>
 
 namespace ZVLab {
@@ -43,23 +44,23 @@ namespace ZVLab {
 		// interfaces
 		//----------------------------------------------------
 		/**
-		 * @brief 버튼 생성
-		 * @details 현재 Dialog에 버튼을 생성합니다.
+		 * @brief		버튼 생성
+		 * @details		현재 Dialog에 버튼을 생성합니다.
 		 * @param[in]	label:	버튼의 라벨
 		 * @return		bool:	활성화 여부 (true/false) 
 		 */
 		bool	Button(const std::string& label);
 		/**
-		 * @brief 버튼 생성
-		 * @details 현재 Dialog에 버튼을 생성합니다.
+		 * @brief		버튼 생성
+		 * @details		현재 Dialog에 버튼을 생성합니다.
 		 * @param[in]	label:	버튼 라벨
 		 * @param[in]	size:	버튼 크기
 		 * @return		bool:	활성화 여부 (true/false)
 		 */
 		bool	Button(const std::string& label, const ImVec2& size);
 		/**
-		 * @brief 버튼 생성
-		 * @details 현재 Dialog에 버튼을 생성합니다.
+		 * @brief		버튼 생성
+		 * @details		현재 Dialog에 버튼을 생성합니다.
 		 * @param[in]	label:		버튼 라벨
 		 * @param[in]	size:		버튼 크기
 		 * @param[in]	position:	버튼 위치
@@ -67,12 +68,19 @@ namespace ZVLab {
 		 */
 		bool	Button(const std::string& label, const ImVec2& size, const ImVec2& position);
 		/**
-		 * @brief 버튼 출력
-		 * @details 현재 Dialog에 버튼을 출력합니다.
+		 * @brief		버튼 출력
+		 * @details		현재 Dialog에 버튼을 출력합니다.
 		 * @param[in]	button:	버튼 객체
 		 * @return		bool:	활성화 여부 (true/false)
 		 */
 		bool	Button(CzvButton& button);
+		/**
+		 * @brief		이미지 출력
+		 * @details		현재 Dialog에 이미지를 출력합니다.
+		 * @param[in]	image:	이미지 객체
+		 * @param[in]	size:	이미지 출력 크기 (초기값: 기본 크기)
+		 */
+		void	Image(const CzvImage& image, const ImVec2& size = { 0.0f, 0.0f });
 		/**
 		 * @brief 메뉴 아이템 생성
 		 * @details

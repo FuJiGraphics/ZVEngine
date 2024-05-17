@@ -174,6 +174,20 @@ namespace ZVLab {
 		return (false);
 	}
 
+	void CzvDialog::Image(const CzvImage& image, const ImVec2& size)
+	{
+		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
+		{
+			m_MenuBar.UnBind();
+			image.Bind(size);
+			m_MenuBar.Bind();
+		}
+		else
+		{
+			image.Bind(size);
+		}
+	}
+
 	bool CzvDialog::MenuItem(const std::string& label)
 	{
 		if (this->Synchronization())

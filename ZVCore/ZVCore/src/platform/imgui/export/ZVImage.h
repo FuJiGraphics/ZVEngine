@@ -17,11 +17,11 @@ namespace ZVLab {
 	{
 	//// Member Variables
 	private:
-		std::string			m_strLabel;
-		std::string			m_strPath;
-		cv::Mat				m_matImageData;
-		Shared<CzvTexture>	m_spTexture;
-		bool				m_bInitialized;
+		std::string				m_strLabel;
+		std::string				m_strPath;
+		cv::Mat					m_matImageData;
+		Shared<CzvTexture>		m_spTexture;
+		bool					m_bInitialized;
 
 	//// Member Functions
 	public:
@@ -32,7 +32,7 @@ namespace ZVLab {
 		bool	Load(const std::string& path);
 		bool	Save(const std::string& path, const EzvImageFormat& format);
 		void	Release();
-		void	Bind(const ImVec2& size = { 0.0f, 0.0f });
+		void	Bind(const ImVec2& size = { 0.0f, 0.0f }) const;
 	};
 
 } // namespace ZVLab

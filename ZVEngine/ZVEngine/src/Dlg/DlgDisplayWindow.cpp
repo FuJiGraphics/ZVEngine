@@ -26,13 +26,18 @@ void CDlgDisplayWindow::OnGUI()
 		}
 		ifd::FileDialog::Instance().Close();
 	}
+
+	dialog.Image
+	(
+		m_cImage, 
+		{ ZV_Setting::g_iDisplaySizeW, ZV_Setting::g_iDisplaySizeH }
+	);
 	
 	if (ImGui::MenuItem("Setting"))
 	{
 
 	}
 
-	m_cImage.Bind({ ZV_Setting::g_iDisplaySizeW, ZV_Setting::g_iDisplaySizeH });
 	//DProfile_EndRecord;
 };
 
