@@ -32,11 +32,15 @@ void CDlgDisplayWindow::OnGUI()
 		m_cImage, 
 		{ ZV_Setting::g_iDisplaySizeW, ZV_Setting::g_iDisplaySizeH }
 	);
-		
-	CzvMenuItem item("item", "A+SPACE");
-	if (item.Bind(KeyMaps::KEY_SPACE + KeyMaps::KEY_A, dialog))
+
+	if (ImGui::BeginMenu("File"))
 	{
-		FZLOG_INFO("Clicked MenuItem");
+		CzvMenuItem item("item", "A+SPACE");
+		if (item.Bind(KeyMaps::KEY_SPACE + KeyMaps::KEY_A, dialog))
+		{
+			FZLOG_INFO("item click!");
+		}
+		ImGui::EndMenu();
 	}
 
 	DProfile_EndRecord;

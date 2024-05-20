@@ -21,7 +21,8 @@ namespace ZVLab {
 		bool result = false;
 		
 		const char* shortcut = (m_strShortCut.empty()) ? nullptr : m_strShortCut.c_str();
-		shortcut = (isOverwriteShortcut) ? keyMap.GetKeyString().c_str() : shortcut;
+		const std::string& keyMapstr = keyMap.GetKeyString();
+		shortcut = keyMapstr.c_str();
 		result = ImGui::MenuItem(m_strLabel.c_str(), shortcut);
 		if (result == false)
 		{
@@ -30,7 +31,6 @@ namespace ZVLab {
 				result = keyMap.IsPressed();
 			}
 		}
-
 		return (result);
 	}
 
