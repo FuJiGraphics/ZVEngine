@@ -1,134 +1,261 @@
 #pragma once
 
 #ifdef ZV_PLATFORM_WINDOWS
-
 namespace ZVLab { 
-
 // From glfw3.h
 	enum EzvKeyCodes {
-		ezvKeyCodes_SPACE             = (unsigned int)32,
-		ezvKeyCodes_APOSTROPHE        = (unsigned int)39,  /* ' */
-		ezvKeyCodes_COMMA             = (unsigned int)44,  /* , */
-		ezvKeyCodes_MINUS             = (unsigned int)45,  /* - */
-		ezvKeyCodes_PERIOD            = (unsigned int)46,  /* . */
-		ezvKeyCodes_SLASH             = (unsigned int)47,  /* / */
-		ezvKeyCodes_0                 = (unsigned int)48,
-		ezvKeyCodes_1                 = (unsigned int)49,
-		ezvKeyCodes_2                 = (unsigned int)50,
-		ezvKeyCodes_3                 = (unsigned int)51,
-		ezvKeyCodes_4                 = (unsigned int)52,
-		ezvKeyCodes_5                 = (unsigned int)53,
-		ezvKeyCodes_6                 = (unsigned int)54,
-		ezvKeyCodes_7                 = (unsigned int)55,
-		ezvKeyCodes_8                 = (unsigned int)56,
-		ezvKeyCodes_9                 = (unsigned int)57,
-		ezvKeyCodes_SEMICOLON         = (unsigned int)59,  /* ; */
-		ezvKeyCodes_EQUAL             = (unsigned int)61,  /* = */
-		ezvKeyCodes_A                 = (unsigned int)65,
-		ezvKeyCodes_B                 = (unsigned int)66,
-		ezvKeyCodes_C                 = (unsigned int)67,
-		ezvKeyCodes_D                 = (unsigned int)68,
-		ezvKeyCodes_E                 = (unsigned int)69,
-		ezvKeyCodes_F                 = (unsigned int)70,
-		ezvKeyCodes_G                 = (unsigned int)71,
-		ezvKeyCodes_H                 = (unsigned int)72,
-		ezvKeyCodes_I                 = (unsigned int)73,
-		ezvKeyCodes_J                 = (unsigned int)74,
-		ezvKeyCodes_K                 = (unsigned int)75,
-		ezvKeyCodes_L                 = (unsigned int)76,
-		ezvKeyCodes_M                 = (unsigned int)77,
-		ezvKeyCodes_N                 = (unsigned int)78,
-		ezvKeyCodes_O                 = (unsigned int)79,
-		ezvKeyCodes_P                 = (unsigned int)80,
-		ezvKeyCodes_Q                 = (unsigned int)81,
-		ezvKeyCodes_R                 = (unsigned int)82,
-		ezvKeyCodes_S                 = (unsigned int)83,
-		ezvKeyCodes_T                 = (unsigned int)84,
-		ezvKeyCodes_U                 = (unsigned int)85,
-		ezvKeyCodes_V                 = (unsigned int)86,
-		ezvKeyCodes_W                 = (unsigned int)87,
-		ezvKeyCodes_X                 = (unsigned int)88,
-		ezvKeyCodes_Y                 = (unsigned int)89,
-		ezvKeyCodes_Z                 = (unsigned int)90,
-		ezvKeyCodes_LEFT_BRACKET      = (unsigned int)91,  /* [ */
-		ezvKeyCodes_BACKSLASH         = (unsigned int)92,  /* \ */
-		ezvKeyCodes_RIGHT_BRACKET     = (unsigned int)93,  /* ] */
-		ezvKeyCodes_GRAVE_ACCENT      = (unsigned int)96,  /* ` */
-		ezvKeyCodes_WORLD_1           = (unsigned int)161, /* non-US #1 */
-		ezvKeyCodes_WORLD_2           = (unsigned int)162, /* non-US #2 */
+		ezvKeyCodes_NONE			  = 0					  ,
+		ezvKeyCodes_SPACE             = GLFW_KEY_SPACE        ,
+		ezvKeyCodes_APOSTROPHE        = GLFW_KEY_APOSTROPHE   ,  /* ' */
+		ezvKeyCodes_COMMA             = GLFW_KEY_COMMA        ,  /* , */
+		ezvKeyCodes_MINUS             = GLFW_KEY_MINUS        ,  /* - */
+		ezvKeyCodes_PERIOD            = GLFW_KEY_PERIOD       ,  /* . */
+		ezvKeyCodes_SLASH             = GLFW_KEY_SLASH        ,  /* / */
+		ezvKeyCodes_0                 = GLFW_KEY_0            ,
+		ezvKeyCodes_1                 = GLFW_KEY_1            ,
+		ezvKeyCodes_2                 = GLFW_KEY_2            ,
+		ezvKeyCodes_3                 = GLFW_KEY_3            ,
+		ezvKeyCodes_4                 = GLFW_KEY_4            ,
+		ezvKeyCodes_5                 = GLFW_KEY_5            ,
+		ezvKeyCodes_6                 = GLFW_KEY_6            ,
+		ezvKeyCodes_7                 = GLFW_KEY_7            ,
+		ezvKeyCodes_8                 = GLFW_KEY_8            ,
+		ezvKeyCodes_9                 = GLFW_KEY_9            ,
+		ezvKeyCodes_SEMICOLON         = GLFW_KEY_SEMICOLON    ,  /* ; */
+		ezvKeyCodes_EQUAL             = GLFW_KEY_EQUAL        ,  /* = */
+		ezvKeyCodes_A                 = GLFW_KEY_A            ,
+		ezvKeyCodes_B                 = GLFW_KEY_B            ,
+		ezvKeyCodes_C                 = GLFW_KEY_C            ,
+		ezvKeyCodes_D                 = GLFW_KEY_D            ,
+		ezvKeyCodes_E                 = GLFW_KEY_E            ,
+		ezvKeyCodes_F                 = GLFW_KEY_F            ,
+		ezvKeyCodes_G                 = GLFW_KEY_G            ,
+		ezvKeyCodes_H                 = GLFW_KEY_H            ,
+		ezvKeyCodes_I                 = GLFW_KEY_I            ,
+		ezvKeyCodes_J                 = GLFW_KEY_J            ,
+		ezvKeyCodes_K                 = GLFW_KEY_K            ,
+		ezvKeyCodes_L                 = GLFW_KEY_L            ,
+		ezvKeyCodes_M                 = GLFW_KEY_M            ,
+		ezvKeyCodes_N                 = GLFW_KEY_N            ,
+		ezvKeyCodes_O                 = GLFW_KEY_O            ,
+		ezvKeyCodes_P                 = GLFW_KEY_P            ,
+		ezvKeyCodes_Q                 = GLFW_KEY_Q            ,
+		ezvKeyCodes_R                 = GLFW_KEY_R            ,
+		ezvKeyCodes_S                 = GLFW_KEY_S            ,
+		ezvKeyCodes_T                 = GLFW_KEY_T            ,
+		ezvKeyCodes_U                 = GLFW_KEY_U            ,
+		ezvKeyCodes_V                 = GLFW_KEY_V            ,
+		ezvKeyCodes_W                 = GLFW_KEY_W            ,
+		ezvKeyCodes_X                 = GLFW_KEY_X            ,
+		ezvKeyCodes_Y                 = GLFW_KEY_Y            ,
+		ezvKeyCodes_Z                 = GLFW_KEY_Z            ,
+		ezvKeyCodes_LEFT_BRACKET      = GLFW_KEY_LEFT_BRACKET ,  /* [ */
+		ezvKeyCodes_BACKSLASH         = GLFW_KEY_BACKSLASH    ,  /* \ */
+		ezvKeyCodes_RIGHT_BRACKET     = GLFW_KEY_RIGHT_BRACKET,  /* ] */
+		ezvKeyCodes_GRAVE_ACCENT      = GLFW_KEY_GRAVE_ACCENT ,  /* ` */
+		ezvKeyCodes_WORLD_1           = GLFW_KEY_WORLD_1      , /* non-US #1 */
+		ezvKeyCodes_WORLD_2           = GLFW_KEY_WORLD_2      , /* non-US #2 */
 
 	/* Function keys */
-		ezvKeyCodes_ESCAPE            = (unsigned int)256,
-		ezvKeyCodes_ENTER             = (unsigned int)257,
-		ezvKeyCodes_TAB               = (unsigned int)258,
-		ezvKeyCodes_BACKSPACE         = (unsigned int)259,
-		ezvKeyCodes_INSERT            = (unsigned int)260,
-		ezvKeyCodes_DELETE            = (unsigned int)261,
-		ezvKeyCodes_RIGHT             = (unsigned int)262,
-		ezvKeyCodes_LEFT              = (unsigned int)263,
-		ezvKeyCodes_DOWN              = (unsigned int)264,
-		ezvKeyCodes_UP                = (unsigned int)265,
-		ezvKeyCodes_PAGE_UP           = (unsigned int)266,
-		ezvKeyCodes_PAGE_DOWN         = (unsigned int)267,
-		ezvKeyCodes_HOME              = (unsigned int)268,
-		ezvKeyCodes_END               = (unsigned int)269,
-		ezvKeyCodes_CAPS_LOCK         = (unsigned int)280,
-		ezvKeyCodes_SCROLL_LOCK       = (unsigned int)281,
-		ezvKeyCodes_NUM_LOCK          = (unsigned int)282,
-		ezvKeyCodes_PRINT_SCREEN      = (unsigned int)283,
-		ezvKeyCodes_PAUSE             = (unsigned int)284,
-		ezvKeyCodes_F1                = (unsigned int)290,
-		ezvKeyCodes_F2                = (unsigned int)291,
-		ezvKeyCodes_F3                = (unsigned int)292,
-		ezvKeyCodes_F4                = (unsigned int)293,
-		ezvKeyCodes_F5                = (unsigned int)294,
-		ezvKeyCodes_F6                = (unsigned int)295,
-		ezvKeyCodes_F7                = (unsigned int)296,
-		ezvKeyCodes_F8                = (unsigned int)297,
-		ezvKeyCodes_F9                = (unsigned int)298,
-		ezvKeyCodes_F10               = (unsigned int)299,
-		ezvKeyCodes_F11               = (unsigned int)300,
-		ezvKeyCodes_F12               = (unsigned int)301,
-		ezvKeyCodes_F13               = (unsigned int)302,
-		ezvKeyCodes_F14               = (unsigned int)303,
-		ezvKeyCodes_F15               = (unsigned int)304,
-		ezvKeyCodes_F16               = (unsigned int)305,
-		ezvKeyCodes_F17               = (unsigned int)306,
-		ezvKeyCodes_F18               = (unsigned int)307,
-		ezvKeyCodes_F19               = (unsigned int)308,
-		ezvKeyCodes_F20               = (unsigned int)309,
-		ezvKeyCodes_F21               = (unsigned int)310,
-		ezvKeyCodes_F22               = (unsigned int)311,
-		ezvKeyCodes_F23               = (unsigned int)312,
-		ezvKeyCodes_F24               = (unsigned int)313,
-		ezvKeyCodes_F25               = (unsigned int)314,
-		ezvKeyCodes_KP_0              = (unsigned int)320,
-		ezvKeyCodes_KP_1              = (unsigned int)321,
-		ezvKeyCodes_KP_2              = (unsigned int)322,
-		ezvKeyCodes_KP_3              = (unsigned int)323,
-		ezvKeyCodes_KP_4              = (unsigned int)324,
-		ezvKeyCodes_KP_5              = (unsigned int)325,
-		ezvKeyCodes_KP_6              = (unsigned int)326,
-		ezvKeyCodes_KP_7              = (unsigned int)327,
-		ezvKeyCodes_KP_8              = (unsigned int)328,
-		ezvKeyCodes_KP_9              = (unsigned int)329,
-		ezvKeyCodes_KP_DECIMAL        = (unsigned int)330,
-		ezvKeyCodes_KP_DIVIDE         = (unsigned int)331,
-		ezvKeyCodes_KP_MULTIPLY       = (unsigned int)332,
-		ezvKeyCodes_KP_SUBTRACT       = (unsigned int)333,
-		ezvKeyCodes_KP_ADD            = (unsigned int)334,
-		ezvKeyCodes_KP_ENTER          = (unsigned int)335,
-		ezvKeyCodes_KP_EQUAL          = (unsigned int)336,
-		ezvKeyCodes_LEFT_SHIFT        = (unsigned int)340,
-		ezvKeyCodes_LEFT_CONTROL      = (unsigned int)341,
-		ezvKeyCodes_LEFT_ALT          = (unsigned int)342,
-		ezvKeyCodes_LEFT_SUPER        = (unsigned int)343,
-		ezvKeyCodes_RIGHT_SHIFT       = (unsigned int)344,
-		ezvKeyCodes_RIGHT_CONTROL     = (unsigned int)345,
-		ezvKeyCodes_RIGHT_ALT         = (unsigned int)346,
-		ezvKeyCodes_RIGHT_SUPER       = (unsigned int)347,
-		ezvKeyCodes_MENU              = (unsigned int)348,
+		ezvKeyCodes_ESCAPE            = GLFW_KEY_ESCAPE       ,
+		ezvKeyCodes_ENTER             = GLFW_KEY_ENTER        ,
+		ezvKeyCodes_TAB               = GLFW_KEY_TAB          ,
+		ezvKeyCodes_BACKSPACE         = GLFW_KEY_BACKSPACE    ,
+		ezvKeyCodes_INSERT            = GLFW_KEY_INSERT       ,
+		ezvKeyCodes_DELETE            = GLFW_KEY_DELETE       ,
+		ezvKeyCodes_RIGHT             = GLFW_KEY_RIGHT        ,
+		ezvKeyCodes_LEFT              = GLFW_KEY_LEFT         ,
+		ezvKeyCodes_DOWN              = GLFW_KEY_DOWN         ,
+		ezvKeyCodes_UP                = GLFW_KEY_UP           ,
+		ezvKeyCodes_PAGE_UP           = GLFW_KEY_PAGE_UP      ,
+		ezvKeyCodes_PAGE_DOWN         = GLFW_KEY_PAGE_DOWN    ,
+		ezvKeyCodes_HOME              = GLFW_KEY_HOME         ,
+		ezvKeyCodes_END               = GLFW_KEY_END          ,
+		ezvKeyCodes_CAPS_LOCK         = GLFW_KEY_CAPS_LOCK    ,
+		ezvKeyCodes_SCROLL_LOCK       = GLFW_KEY_SCROLL_LOCK  ,
+		ezvKeyCodes_NUM_LOCK          = GLFW_KEY_NUM_LOCK     ,
+		ezvKeyCodes_PRINT_SCREEN      = GLFW_KEY_PRINT_SCREEN ,
+		ezvKeyCodes_PAUSE             = GLFW_KEY_PAUSE        ,
+		ezvKeyCodes_F1                = GLFW_KEY_F1           ,
+		ezvKeyCodes_F2                = GLFW_KEY_F2           ,
+		ezvKeyCodes_F3                = GLFW_KEY_F3           ,
+		ezvKeyCodes_F4                = GLFW_KEY_F4           ,
+		ezvKeyCodes_F5                = GLFW_KEY_F5           ,
+		ezvKeyCodes_F6                = GLFW_KEY_F6           ,
+		ezvKeyCodes_F7                = GLFW_KEY_F7           ,
+		ezvKeyCodes_F8                = GLFW_KEY_F8           ,
+		ezvKeyCodes_F9                = GLFW_KEY_F9           ,
+		ezvKeyCodes_F10               = GLFW_KEY_F10          ,
+		ezvKeyCodes_F11               = GLFW_KEY_F11          ,
+		ezvKeyCodes_F12               = GLFW_KEY_F12          ,
+		ezvKeyCodes_F13               = GLFW_KEY_F13          ,
+		ezvKeyCodes_F14               = GLFW_KEY_F14          ,
+		ezvKeyCodes_F15               = GLFW_KEY_F15          ,
+		ezvKeyCodes_F16               = GLFW_KEY_F16          ,
+		ezvKeyCodes_F17               = GLFW_KEY_F17          ,
+		ezvKeyCodes_F18               = GLFW_KEY_F18          ,
+		ezvKeyCodes_F19               = GLFW_KEY_F19          ,
+		ezvKeyCodes_F20               = GLFW_KEY_F20          ,
+		ezvKeyCodes_F21               = GLFW_KEY_F21          ,
+		ezvKeyCodes_F22               = GLFW_KEY_F22          ,
+		ezvKeyCodes_F23               = GLFW_KEY_F23          ,
+		ezvKeyCodes_F24               = GLFW_KEY_F24          ,
+		ezvKeyCodes_F25               = GLFW_KEY_F25          ,
+		ezvKeyCodes_KP_0              = GLFW_KEY_KP_0         ,
+		ezvKeyCodes_KP_1              = GLFW_KEY_KP_1         ,
+		ezvKeyCodes_KP_2              = GLFW_KEY_KP_2         ,
+		ezvKeyCodes_KP_3              = GLFW_KEY_KP_3         ,
+		ezvKeyCodes_KP_4              = GLFW_KEY_KP_4         ,
+		ezvKeyCodes_KP_5              = GLFW_KEY_KP_5         ,
+		ezvKeyCodes_KP_6              = GLFW_KEY_KP_6         ,
+		ezvKeyCodes_KP_7              = GLFW_KEY_KP_7         ,
+		ezvKeyCodes_KP_8              = GLFW_KEY_KP_8         ,
+		ezvKeyCodes_KP_9              = GLFW_KEY_KP_9         ,
+		ezvKeyCodes_KP_DECIMAL        = GLFW_KEY_KP_DECIMAL   ,
+		ezvKeyCodes_KP_DIVIDE         = GLFW_KEY_KP_DIVIDE    ,
+		ezvKeyCodes_KP_MULTIPLY       = GLFW_KEY_KP_MULTIPLY  ,
+		ezvKeyCodes_KP_SUBTRACT       = GLFW_KEY_KP_SUBTRACT  ,
+		ezvKeyCodes_KP_ADD            = GLFW_KEY_KP_ADD       ,
+		ezvKeyCodes_KP_ENTER          = GLFW_KEY_KP_ENTER     ,
+		ezvKeyCodes_KP_EQUAL          = GLFW_KEY_KP_EQUAL     ,
+		ezvKeyCodes_LEFT_SHIFT        = GLFW_KEY_LEFT_SHIFT   ,
+		ezvKeyCodes_LEFT_CONTROL      = GLFW_KEY_LEFT_CONTROL ,
+		ezvKeyCodes_LEFT_ALT          = GLFW_KEY_LEFT_ALT     ,
+		ezvKeyCodes_LEFT_SUPER        = GLFW_KEY_LEFT_SUPER   ,
+		ezvKeyCodes_RIGHT_SHIFT       = GLFW_KEY_RIGHT_SHIFT  ,
+		ezvKeyCodes_RIGHT_CONTROL     = GLFW_KEY_RIGHT_CONTROL,
+		ezvKeyCodes_RIGHT_ALT         = GLFW_KEY_RIGHT_ALT    ,
+		ezvKeyCodes_RIGHT_SUPER       = GLFW_KEY_RIGHT_SUPER  ,
+		ezvKeyCodes_MENU              = GLFW_KEY_MENU         ,
 	}; // enum EzvKeyCodes
-} // namespace ZVLab
 
+	static std::string sZVKeyCode2String(const EzvKeyCodes& keycode)
+	{
+		switch (keycode)
+		{
+			case	ezvKeyCodes_NONE			: return ("None");
+			case	ezvKeyCodes_SPACE			: return ("Space");
+			case	ezvKeyCodes_APOSTROPHE		: return ("Apostrophe");
+			case	ezvKeyCodes_COMMA			: return ("Comma");
+			case	ezvKeyCodes_MINUS			: return ("Minus");
+			case	ezvKeyCodes_PERIOD			: return ("Period");
+			case	ezvKeyCodes_SLASH			: return ("Slash");
+			case	ezvKeyCodes_0				: return ("0");
+			case	ezvKeyCodes_1				: return ("1");
+			case	ezvKeyCodes_2				: return ("2");
+			case	ezvKeyCodes_3				: return ("3");
+			case	ezvKeyCodes_4				: return ("4");
+			case	ezvKeyCodes_5				: return ("5");
+			case	ezvKeyCodes_6				: return ("6");
+			case	ezvKeyCodes_7				: return ("7");
+			case	ezvKeyCodes_8				: return ("8");
+			case	ezvKeyCodes_9				: return ("9");
+			case	ezvKeyCodes_SEMICOLON		: return ("Semicolon");
+			case	ezvKeyCodes_EQUAL			: return ("Equal");
+			case	ezvKeyCodes_A				: return ("A");
+			case	ezvKeyCodes_B				: return ("B");
+			case	ezvKeyCodes_C				: return ("C");
+			case	ezvKeyCodes_D				: return ("D");
+			case	ezvKeyCodes_E				: return ("E");
+			case	ezvKeyCodes_F				: return ("F");
+			case	ezvKeyCodes_G				: return ("G");
+			case	ezvKeyCodes_H				: return ("H");
+			case	ezvKeyCodes_I				: return ("I");
+			case	ezvKeyCodes_J				: return ("J");
+			case	ezvKeyCodes_K				: return ("K");
+			case	ezvKeyCodes_L				: return ("L");
+			case	ezvKeyCodes_M				: return ("M");
+			case	ezvKeyCodes_N				: return ("N");
+			case	ezvKeyCodes_O				: return ("O");
+			case	ezvKeyCodes_P				: return ("P");
+			case	ezvKeyCodes_Q				: return ("Q");
+			case	ezvKeyCodes_R				: return ("R");
+			case	ezvKeyCodes_S				: return ("S");
+			case	ezvKeyCodes_T				: return ("T");
+			case	ezvKeyCodes_U				: return ("U");
+			case	ezvKeyCodes_V				: return ("V");
+			case	ezvKeyCodes_W				: return ("W");
+			case	ezvKeyCodes_X				: return ("X");
+			case	ezvKeyCodes_Y				: return ("Y");
+			case	ezvKeyCodes_Z				: return ("Z");
+			case	ezvKeyCodes_LEFT_BRACKET	: return ("Left Bracket");
+			case	ezvKeyCodes_BACKSLASH		: return ("Backslash");
+			case	ezvKeyCodes_RIGHT_BRACKET	: return ("Right Bracket");
+			case	ezvKeyCodes_GRAVE_ACCENT	: return ("Grave Accent");
+			case	ezvKeyCodes_WORLD_1			: return ("World 1");
+			case	ezvKeyCodes_WORLD_2			: return ("World 2");
+			case	ezvKeyCodes_ESCAPE			: return ("Escape");
+			case	ezvKeyCodes_ENTER			: return ("Enter");
+			case	ezvKeyCodes_TAB				: return ("Tab");
+			case	ezvKeyCodes_BACKSPACE		: return ("Backspace");
+			case	ezvKeyCodes_INSERT			: return ("Insert");
+			case	ezvKeyCodes_DELETE			: return ("Delete");
+			case	ezvKeyCodes_RIGHT			: return ("Right");
+			case	ezvKeyCodes_LEFT			: return ("Left");
+			case	ezvKeyCodes_DOWN			: return ("Down");
+			case	ezvKeyCodes_UP				: return ("Up");
+			case	ezvKeyCodes_PAGE_UP			: return ("Page Up");
+			case	ezvKeyCodes_PAGE_DOWN		: return ("Page Down");
+			case	ezvKeyCodes_HOME			: return ("Home");
+			case	ezvKeyCodes_END				: return ("End");
+			case	ezvKeyCodes_CAPS_LOCK		: return ("Caps Lock");
+			case	ezvKeyCodes_SCROLL_LOCK		: return ("Scroll Lock");
+			case	ezvKeyCodes_NUM_LOCK		: return ("Num Lock");
+			case	ezvKeyCodes_PRINT_SCREEN	: return ("Print Screen");
+			case	ezvKeyCodes_PAUSE			: return ("Pause");
+			case	ezvKeyCodes_F1				: return ("F1");
+			case	ezvKeyCodes_F2				: return ("F2");
+			case	ezvKeyCodes_F3				: return ("F3");
+			case	ezvKeyCodes_F4				: return ("F4");
+			case	ezvKeyCodes_F5				: return ("F5");
+			case	ezvKeyCodes_F6				: return ("F6");
+			case	ezvKeyCodes_F7				: return ("F7");
+			case	ezvKeyCodes_F8				: return ("F8");
+			case	ezvKeyCodes_F9				: return ("F9");
+			case	ezvKeyCodes_F10				: return ("F10");
+			case	ezvKeyCodes_F11				: return ("F11");
+			case	ezvKeyCodes_F12				: return ("F12");
+			case	ezvKeyCodes_F13				: return ("F13");
+			case	ezvKeyCodes_F14				: return ("F14");
+			case	ezvKeyCodes_F15				: return ("F15");
+			case	ezvKeyCodes_F16				: return ("F16");
+			case	ezvKeyCodes_F17				: return ("F17");
+			case	ezvKeyCodes_F18				: return ("F18");
+			case	ezvKeyCodes_F19				: return ("F19");
+			case	ezvKeyCodes_F20				: return ("F20");
+			case	ezvKeyCodes_F21				: return ("F21");
+			case	ezvKeyCodes_F22				: return ("F22");
+			case	ezvKeyCodes_F23				: return ("F23");
+			case	ezvKeyCodes_F24				: return ("F24");
+			case	ezvKeyCodes_F25				: return ("F25");
+			case	ezvKeyCodes_KP_0			: return ("KP_0");
+			case	ezvKeyCodes_KP_1			: return ("KP_1");
+			case	ezvKeyCodes_KP_2			: return ("KP_2");
+			case	ezvKeyCodes_KP_3			: return ("KP_3");
+			case	ezvKeyCodes_KP_4			: return ("KP_4");
+			case	ezvKeyCodes_KP_5			: return ("KP_5");
+			case	ezvKeyCodes_KP_6			: return ("KP_6");
+			case	ezvKeyCodes_KP_7			: return ("KP_7");
+			case	ezvKeyCodes_KP_8			: return ("KP_8");
+			case	ezvKeyCodes_KP_9			: return ("KP_9");
+			case	ezvKeyCodes_KP_DECIMAL		: return ("KP_Decimal");
+			case	ezvKeyCodes_KP_DIVIDE		: return ("KP_Divide");
+			case	ezvKeyCodes_KP_MULTIPLY		: return ("KP_Multiply");
+			case	ezvKeyCodes_KP_SUBTRACT		: return ("KP_Subtract");
+			case	ezvKeyCodes_KP_ADD			: return ("KP_Add");
+			case	ezvKeyCodes_KP_ENTER		: return ("KP_Enter");
+			case	ezvKeyCodes_KP_EQUAL		: return ("KP_Equal");
+			case	ezvKeyCodes_LEFT_SHIFT		: return ("Left Shift");
+			case	ezvKeyCodes_LEFT_CONTROL	: return ("Left Control");
+			case	ezvKeyCodes_LEFT_ALT		: return ("Left Alt");
+			case	ezvKeyCodes_LEFT_SUPER		: return ("Left Super");
+			case	ezvKeyCodes_RIGHT_SHIFT		: return ("Right Shift");
+			case	ezvKeyCodes_RIGHT_CONTROL	: return ("Right Control");
+			case	ezvKeyCodes_RIGHT_ALT		: return ("Right Alt");
+			case	ezvKeyCodes_RIGHT_SUPER		: return ("Right Super");
+			case	ezvKeyCodes_MENU			: return ("Menu");
+		}
+	}
+
+} // namespace ZVLab
 #endif /*ZV_PLATFORM_WINDOWS*/

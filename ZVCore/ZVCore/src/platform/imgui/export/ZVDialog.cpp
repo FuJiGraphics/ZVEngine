@@ -134,6 +134,19 @@ namespace ZVLab {
 					 s_unDialogCount);
 	}
 
+	bool CzvDialog::IsWindowFocused()
+	{
+		bool result = false;
+		if (this->Synchronization())
+		{
+			if (ImGui::IsWindowFocused())
+			{
+
+			}
+		}
+		return (result);
+	}
+
 	// interfaces
 	bool CzvDialog::Button(const std::string& label)
 	{

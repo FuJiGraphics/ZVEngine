@@ -10,6 +10,51 @@ namespace ZVLab {
 #define DGLuint2ImTextureID(ptr) (reinterpret_cast<void*>(static_cast<intptr_t>(ptr)))
 #define DDrawTextureImage(texture, width, height) ImGui::Image(DGLuint2ImTextureID(texture), {static_cast<float>(width), static_cast<float>(height)});
 
+#pragma region Window Focus Options
+//----------------------------------------------------
+// enum Window Focus Options
+//----------------------------------------------------
+enum EzvWindowFoucsOptions
+{
+	ezvWindowFocusFlags_None				= ImGuiFocusedFlags_::ImGuiFocusedFlags_None,
+	ezvWindowFocusFlags_ChildWindows		= ImGuiFocusedFlags_::ImGuiFocusedFlags_ChildWindows,
+	ezvWindowFocusFlags_RootWindow			= ImGuiFocusedFlags_::ImGuiFocusedFlags_RootWindow,
+	ezvWindowFocusFlags_AnyWindow			= ImGuiFocusedFlags_::ImGuiFocusedFlags_AnyWindow,
+	ezvWindowFocusFlags_NoPopupHierarchy	= ImGuiFocusedFlags_::ImGuiFocusedFlags_NoPopupHierarchy,
+	ezvWindowFocusFlags_DockHierarchy		= ImGuiFocusedFlags_::ImGuiFocusedFlags_DockHierarchy,
+	ezvWindowFocusFlags_RootAndChildWindows	= ImGuiFocusedFlags_::ImGuiFocusedFlags_RootAndChildWindows,
+};
+struct ZV_API TzvDialogInfo
+{
+	using WindowFocusedOptions = int;
+
+//// Member Variables
+private:
+	WindowFocusedOptions	m_iWindowFocusedOptions = ImGuiFocusedFlags_None;
+
+//// Member Functions
+public:
+	// getter
+	inline WindowFocusedOptions	GetOptions()	{ return (m_iWindowFocusedOptions); }
+
+	// setter
+	inline void SetOptions(EzvWindowFoucsOptions flags)		{ this->AddOptions(flags); }
+	inline void SetNoTitleBar(bool enabled)					{ this->FlagOptions(enabled, ezvWindowFocusFlags_None); }
+	inline void SetNoResize(bool enabled)					{ this->FlagOptions(enabled, ezvWindowFocusFlags_ChildWindows);}		
+	inline void SetNoMove(bool enabled)						{ this->FlagOptions(enabled, ezvWindowFocusFlags_RootWindow);}	
+	inline void SetNoScrollbar(bool enabled)				{ this->FlagOptions(enabled, ezvWindowFocusFlags_AnyWindow);}		
+	inline void SetNoScrollWithMouse(bool enabled)			{ this->FlagOptions(enabled, ezvWindowFocusFlags_NoPopupHierarchy);}
+	inline void SetNoCollapse(bool enabled)					{ this->FlagOptions(enabled, ezvWindowFocusFlags_DockHierarchy);}
+	inline void SetAlwaysAutoResize(bool enabled)			{ this->FlagOptions(enabled, ezvWindowFocusFlags_RootAndChildWindows);}
+
+	// others
+	inline bool IsActivated(const EzvWindowFoucsOptions& flags) const { return (m_iWindowFocusedOptions & flags); }
+	inline void FlagOptions(bool enabled, const EzvWindowFoucsOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void AddOptions(const EzvWindowFoucsOptions& flags) { m_iWindowFocusedOptions |= flags; }
+	inline void DelOptions(const EzvWindowFoucsOptions& flags) { m_iWindowFocusedOptions &= ~flags; }
+};
+
+#pragma endregion
 #pragma region Dialog Options
 //----------------------------------------------------
 // enum Dialog Options
@@ -62,12 +107,12 @@ struct ZV_API TzvDialogInfo
 private:
 	DialogOptions	m_iDialogOptions = ezvDialogFlags_None;
 
-	/// getter
+//// Member Functions
 public:
+	// Getter
 	inline DialogOptions	GetOptions()	{ return (m_iDialogOptions); }
 
-	/// setter
-public:
+	// Setter
 	inline void SetOptions(EzvDialogOptions flags)			{ this->AddOptions(flags); }
 	inline void SetNoTitleBar(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoTitleBar); }
 	inline void SetNoResize(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoResize); }
@@ -102,8 +147,7 @@ public:
 	inline void SetChildMenu(bool enabled)		{  this->FlagOptions(enabled, ezvDialogFlags_ChildMenu); }
 	inline void SetDockNodeHost(bool enabled)	{  this->FlagOptions(enabled, ezvDialogFlags_DockNodeHost); }
 
-	/// others
-public:
+	// others
 	inline bool IsActivated(const EzvDialogOptions& flags) const { return (m_iDialogOptions & flags); }
 	inline void FlagOptions(bool enabled, const EzvDialogOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
 	inline void AddOptions(const EzvDialogOptions& flags) { m_iDialogOptions |= flags; }
@@ -142,10 +186,10 @@ private:
 
 //// Member Functions
 public:
-	// getter
+	// Getter
 	inline TabBarOptions	GetOptions()	{ return (m_iTabBarOptions); }
 
-	// setter
+	// Setter
 	inline void SetOptions(EzvTabBarOptions flags)				{ this->AddOptions(flags); }
 	inline void SetReorderable(bool enabled)					{ this->FlagOptions(enabled, ezvTabBarOptions_Reorderable);  }
 	inline void SetAutoSelectNewTabs(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarOptions_AutoSelectNewTabs); }
@@ -158,7 +202,7 @@ public:
 	inline void SetFittingPolicyMask_(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyMask_); }
 	inline void SetFittingPolicyDefault_(bool enabled)			{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyDefault_); }
 
-	// others
+	// Others
 	inline bool IsActivated(const EzvTabBarOptions& flags)					{ return (m_iTabBarOptions & flags); }
 	inline void FlagOptions(bool enabled, const EzvTabBarOptions& flags)	{ (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
 	inline void AddOptions(const EzvTabBarOptions& flags)					{ m_iTabBarOptions |= flags; }
@@ -192,14 +236,14 @@ struct ZV_API TzvTabItemInfo
 
 //// Member Variables
 private:
-	TabItemOptions	m_iTabItemOptions = ezvTabBarOptions_None;
+	TabItemOptions	m_iTabItemOptions = ImGuiTabItemFlags_None;
 
 //// Member Functions
 public:
-	// getter
+	// Getter
 	inline TabItemOptions	GetOptions() { return (m_iTabItemOptions); }
 
-	// setter
+	// Setter
 	inline void SetOptions(EzvTabItemOptions flags)				{ this->AddOptions(flags); }
 	inline void SetUnsavedDocument(bool enabled)				{ this->FlagOptions(enabled, ezvTabItemOptions_UnsavedDocument);  }
 	inline void SetSetSelected(bool enabled)					{ this->FlagOptions(enabled, ezvTabItemOptions_SetSelected); }
@@ -211,7 +255,7 @@ public:
 	inline void SetTrailing(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_Trailing); }
 	inline void SetNoAssumedClosure(bool enabled)				{ this->FlagOptions(enabled, ezvTabItemOptions_NoAssumedClosure); }
 	
-	// others
+	// Others
 	inline bool IsActivated(const EzvTabItemOptions& flags)					{ return (m_iTabItemOptions & flags); }
 	inline void FlagOptions(bool enabled, const EzvTabItemOptions& flags)	{ (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
 	inline void AddOptions(const EzvTabItemOptions& flags)					{ m_iTabItemOptions |= flags; }

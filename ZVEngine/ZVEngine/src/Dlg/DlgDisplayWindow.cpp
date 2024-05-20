@@ -8,7 +8,7 @@ void CDlgDisplayWindow::OnAttach()
 
 void CDlgDisplayWindow::OnGUI()
 {
-	//DProfile_StartRecord(m_strLabel);
+	DProfile_StartRecord(m_strLabel);
 	CzvDialog dialog(m_strLabel, m_tDialogInfo);
 	if (ifd::FileDialog::Instance().IsDone("TextureOpenDialog"))
 	{
@@ -32,13 +32,16 @@ void CDlgDisplayWindow::OnGUI()
 		m_cImage, 
 		{ ZV_Setting::g_iDisplaySizeW, ZV_Setting::g_iDisplaySizeH }
 	);
-	
-	if (ImGui::MenuItem("Setting"))
-	{
+		
+	CzvMenuItem item("item", "A+SPACE");
+	item.SetHotKey(KeyMaps::KEY_SPACE + KeyMaps::KEY_A + KeyMaps::KEY_5);
 
+	if (item.Bind())
+	{
+		FZLOG_INFO("Clicked MenuItem");
 	}
 
-	//DProfile_EndRecord;
+	DProfile_EndRecord;
 };
 
 void CDlgDisplayWindow::OnMainMenuBar()

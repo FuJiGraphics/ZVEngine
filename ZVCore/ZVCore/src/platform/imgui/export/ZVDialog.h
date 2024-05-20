@@ -35,7 +35,9 @@ namespace ZVLab {
 		CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position, const TzvDialogInfo& options);
 		virtual ~CzvDialog();
 
-		// get
+		// Getter
+		bool				IsWindowFocused();
+		// Inlines
 		inline std::string	GetLabel() const	{ return (m_strLabel); }
 		inline bool			IsFolded() const	{ return (!m_bIsUnFolded); }
 		inline bool			IsUnFolded() const	{ return (m_bIsUnFolded); }

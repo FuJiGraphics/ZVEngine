@@ -36,7 +36,7 @@
     <ClInclude Include="src\GUI.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Layers\ZVMenubar.h">
+    <ClInclude Include="src\Layers\ZVWindowMenu.h">
       <Filter>src\Layers</Filter>
     </ClInclude>
   </ItemGroup>

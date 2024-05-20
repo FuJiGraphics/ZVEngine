@@ -41,7 +41,7 @@ namespace ZVLab {
 
 	bool CzvImage::Save(const std::string& path, const EzvImageFormat& format)
 	{
-		
+		// TODO: Save 기능 개발
 		return true;
 	}
 

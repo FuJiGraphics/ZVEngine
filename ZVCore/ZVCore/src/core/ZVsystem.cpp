@@ -107,8 +107,8 @@ namespace ZVLab {
 			}
 
 			CzvImguiManager::Begin(m_upWindow);
-			ImFont* font = CzvImguiManager::GetFont("OpenSans-Regular");
-			ImGui::PushFont(font);
+			// ImFont* font = CzvImguiManager::GetFont("OpenSans-Regular");
+			// ImGui::PushFont(font);
 			{ // ImGui_Layer
 				if (CzvImguiManager::BeginMainMenu())
 				{
@@ -135,7 +135,7 @@ namespace ZVLab {
 				// CZVimguiManager::ShowDemo();
 			}
 
-			ImGui::PopFont();
+			// ImGui::PopFont();
 			DProfile_Execute
 				CzvImguiManager::End();
 

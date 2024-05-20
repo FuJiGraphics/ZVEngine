@@ -42,9 +42,6 @@
     <ClInclude Include="src\core\ZVlayer.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ZVlayerBuffer.h">
-      <Filter>core</Filter>
-    </ClInclude>
     <ClInclude Include="src\core\ZVsystem.h">
       <Filter>core</Filter>
     </ClInclude>
@@ -125,11 +122,13 @@
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVMenubar.h" />
     <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h" />
+    <ClInclude Include="src\core\ZVLayerBuffer.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVKeyMap.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVHotKey.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\ZVlayerBuffer.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
     <ClCompile Include="src\core\ZVsystem.cpp">
       <Filter>core</Filter>
     </ClCompile>
@@ -182,5 +181,11 @@
       <Filter>platform\windows</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVMenubar.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVMenuItem.cpp" />
+    <ClCompile Include="src\core\ZVLayerBuffer.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVKeyMap.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVHotKey.cpp" />
   </ItemGroup>
 </Project>

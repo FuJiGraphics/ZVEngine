@@ -4,5 +4,5 @@
 #include "Dlg/DlgClassification.h"
 #include "Dlg/DlgSidebarLeft.h"
 #include "Dlg/DlgDisplayWindow.h"
-#include "Layers/ZVMenubar.h"
+#include "Layers/ZVWindowMenu.h"
 

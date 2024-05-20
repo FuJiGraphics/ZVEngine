@@ -31,8 +31,6 @@
 #include "imgui/extensions/im_plot/implot.h"
 #include "imgui/extensions/im_file_dialog/ImFileDialog.h"
 
-
-
 #ifdef ZV_USAGE_DLL
 	#ifdef ZV_EXPORT_DLL
 		#define ZV_API	__declspec(export)
@@ -66,5 +64,7 @@ struct ZV_API TzvApplicationSpecification
 
 #define DBindMemberCallback(fn, address) std::bind(&fn, address)
 #define DBindCallback(fn) std::bind(&fn)
+#define	DObject2String(obj) (#obj);
+
 
 #endif /* __ZV_CORE_H__ */
