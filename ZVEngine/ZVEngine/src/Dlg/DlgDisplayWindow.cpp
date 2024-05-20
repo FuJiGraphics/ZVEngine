@@ -10,6 +10,30 @@ void CDlgDisplayWindow::OnGUI()
 {
 	DProfile_StartRecord(m_strLabel);
 	CzvDialog dialog(m_strLabel, m_tDialogInfo);
+	
+	dialog.Image
+	(
+		m_cImage, 
+		{ ZV_Setting::g_iDisplaySizeW, ZV_Setting::g_iDisplaySizeH }
+	);
+
+	if (ImGui::BeginMenu("File"))
+	{
+		CzvMenuItem item_open("Image Open..");
+		if (item_open.Bind(KeyMaps::KEY_LEFT_CONTROL + KeyMaps::KEY_O))
+		{
+			FZLOG_INFO("Message: {0}", item_open.GetLabel().c_str());
+			ifd::FileDialog::Instance().Open("TextureOpenDialog", "Open a texture", "Image file (*.png;*.jpg;*.jpeg;*.bmp;){.png,.jpg,.jpeg,.bmp},.*", true);
+		}
+		CzvMenuItem item_save("Image Save");
+		if (item_save.Bind(KeyMaps::KEY_LEFT_CONTROL + KeyMaps::KEY_S))
+		{
+			FZLOG_INFO("Message: {0}", item_save.GetLabel().c_str());
+			ifd::FileDialog::Instance().Save("TextureSaveDialog", "Save a texture", "Image file (*.png;*.jpg;*.jpeg;*.bmp;){.png,.jpg,.jpeg,.bmp},.*");
+		}
+		ImGui::EndMenu();
+	}
+
 	if (ifd::FileDialog::Instance().IsDone("TextureOpenDialog"))
 	{
 		if (ifd::FileDialog::Instance().HasResult()) {
@@ -26,23 +50,6 @@ void CDlgDisplayWindow::OnGUI()
 		}
 		ifd::FileDialog::Instance().Close();
 	}
-
-	dialog.Image
-	(
-		m_cImage, 
-		{ ZV_Setting::g_iDisplaySizeW, ZV_Setting::g_iDisplaySizeH }
-	);
-
-	if (ImGui::BeginMenu("File"))
-	{
-		CzvMenuItem item("item", "A+SPACE");
-		if (item.Bind(KeyMaps::KEY_SPACE + KeyMaps::KEY_A, dialog))
-		{
-			FZLOG_INFO("item click!");
-		}
-		ImGui::EndMenu();
-	}
-
 	DProfile_EndRecord;
 };
 

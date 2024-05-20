@@ -24,6 +24,7 @@
 
 // imgui
 #include "imgui/imgui.h"
+#include "imgui/imgui_internal.h"
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 #include "imgui/backends/imgui_impl_opengl3.h"

@@ -38,14 +38,13 @@ namespace ZVLab {
 
 	bool CzvLayerBuffer::InsertLayer(CzvLayer* pLayer)
 	{
-		DZVLog_Failed(pLayer, "FAILED: Failed to called a emplace");
+		DZVLog_Failed(pLayer, "FAILED: Failed to called a emplace_back");
 
 		auto findLayer = FindLayer(pLayer);
 		if (findLayer == m_vContainer.end())
 		{
 			pLayer->OnAttach();
-			m_vContainer.emplace(m_vContainer.begin() + m_uiInsertIndex, pLayer);
-			++m_uiInsertIndex;
+			m_vContainer.emplace_back(pLayer);
 			m_bInitialized = true;
 			return (true);
 		}
@@ -54,13 +53,14 @@ namespace ZVLab {
 
 	bool CzvLayerBuffer::InsertOverlay(CzvLayer* pOverlay)
 	{
-		DZVLog_Failed(pOverlay, "FAILED: Failed to called a emplace_back");
+		DZVLog_Failed(pOverlay, "FAILED: Failed to called a emplace");
 
 		auto findOverlay = FindLayer(pOverlay);
 		if (findOverlay == m_vContainer.end())
 		{
 			pOverlay->OnAttach();
-			m_vContainer.emplace_back(pOverlay);
+			m_vContainer.emplace(m_vContainer.begin() + m_uiInsertIndex, pOverlay);
+			++m_uiInsertIndex;
 			m_bInitialized = true;
 			return (true);
 		}
@@ -69,14 +69,13 @@ namespace ZVLab {
 
 	bool CzvLayerBuffer::RemoveLayer(CzvLayer* pLayer)
 	{
-		DZVLog_Failed(pLayer, "FAILED: Failed to called a PopLevel");
+		DZVLog_Failed(pLayer, "FAILED: Failed to called a PopOverlay");
 
 		auto findLayer = FindLayer(pLayer);
 		if (findLayer != m_vContainer.end())
 		{
 			pLayer->OnDetach();
 			m_vContainer.erase(findLayer);
-			--m_uiInsertIndex;
 			if (m_uiInsertIndex <= 0)
 				m_bInitialized = false;
 			return (true);
@@ -84,15 +83,17 @@ namespace ZVLab {
 		return (false);
 	}
 
+
 	bool CzvLayerBuffer::RemoveOverlay(CzvLayer* pOverlay)
 	{
-		DZVLog_Failed(pOverlay, "FAILED: Failed to called a PopOverlay");
+		DZVLog_Failed(pOverlay, "FAILED: Failed to called a PopLevel");
 
 		auto findOverlay = FindLayer(pOverlay);
 		if (findOverlay != m_vContainer.end())
 		{
 			pOverlay->OnDetach();
 			m_vContainer.erase(findOverlay);
+			--m_uiInsertIndex;
 			if (m_uiInsertIndex <= 0)
 				m_bInitialized = false;
 			return (true);

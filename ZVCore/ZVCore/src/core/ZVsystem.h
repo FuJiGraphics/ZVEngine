@@ -50,6 +50,8 @@ namespace ZVLab {
 
 		void AttachLayer(CzvLayer* layer);
 		void DetachLayer(CzvLayer* layer);
+		void AttachOverlay(CzvLayer* layer);
+		void DetachOverlay(CzvLayer* layer);
 		void OnEvent(CzvEvent& event);
 
 	private:

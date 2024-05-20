@@ -14,20 +14,41 @@ using namespace ZVLab;
 class CDlgSidebarLeft final : public ZVLab::CzvLayer
 {
 private:
-	CzvImage image;
-
+	TzvDialogInfo info1;
+	CzvButton button1;
+	CzvButton button2;
 public:
+
+	CDlgSidebarLeft()
+		: button1("button")
+		, button2("button2")
+	{
+		info1.SetMenuBar(true);
+	}
 	virtual void OnAttach() 
 	{
-
 	};
 	 
-	virtual void OnGUI() 
+	virtual void OnGUI()
 	{
-		static bool first = true;
-		TzvDialogInfo info;
-		info.SetNoDocking(false);
-		CzvDialog dlgDialog("Sidebar", info);
+		DProfile_StartRecord("Sidebar1");
+		CzvDialog dialog1("Sidebar1", info1);
+		CzvMenuItem item("item", "Custom HotKey");
+
+		CzvToggleButton toggle("toggle");
+		toggle.Bind();
+
+		if (ImGui::BeginMenu("asd"))
+		{
+			if (item.Bind(KeyMaps::KEY_SPACE + KeyMaps::KEY_B, true))
+			{
+				FZLOG_INFO("item");
+			}
+			ImGui::EndMenu();
+		}
+		
+		CzvImage image;
+		DProfile_EndRecord;
 	};
 
 	virtual void OnMainMenuBar() 
@@ -36,4 +57,4 @@ public:
 
 };
 
-GENERATE_LAYER(CDlgSidebarLeft);
+GENERATE_OVERLAY(CDlgSidebarLeft);

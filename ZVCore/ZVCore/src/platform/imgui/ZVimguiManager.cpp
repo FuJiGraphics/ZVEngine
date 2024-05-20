@@ -87,7 +87,7 @@ namespace ZVLab {
 			ImGui::NewFrame();
 			if (s_bEnableOverviewDockspace)
 			{
-				ImGui::DockSpaceOverViewport();
+				ImGui::DockSpaceOverViewport((const ImGuiViewport*)0);
 			}
 		}
 	}
@@ -149,14 +149,23 @@ namespace ZVLab {
 		ImGui::End();
 	}
 
-	void CzvImguiManager::SetOverviewDockspace(bool enable)
+	void CzvImguiManager::SetOverviewDockspace(bool enabled, const TzvDockspaceInfo& options)
 	{
-		s_bEnableOverviewDockspace = enable;
+		s_bEnableOverviewDockspace = enabled;
 	}
 
-	bool CzvImguiManager::EnabledOverviewDockspace()
+	void CzvImguiManager::SetDockspace(const CzvDialog& dialog, const ImVec2& size, const TzvDockspaceInfo& options)
 	{
-		return (s_bEnableOverviewDockspace);
+		std::string dialogLabel = dialog.GetLabel();
+		auto id = ImGui::GetID(dialogLabel.c_str());
+		ImGui::DockSpace(id, size, options.GetOptions());
+	}
+
+	void CzvImguiManager::SetDockspaceOptionForNextDialog(ImGuiDockNodeFlags options)
+	{
+		ImGuiWindowClass window_class;
+		window_class.DockNodeFlagsOverrideSet = options;
+		ImGui::SetNextWindowClass(&window_class);
 	}
 
 	bool CzvImguiManager::UploadFont(const std::string& path, const std::string& fontName, float size_pixels, ImFontConfig* config, const ImWchar* glyph_ranges)

@@ -24,9 +24,12 @@ namespace ZVLab {
 		CzvMenuItem(const std::string& label, const std::string& shortcut = "");
 		~CzvMenuItem() = default;
 
+		// inlines
+		inline std::string	GetLabel() const { return (m_strLabel); }
+
 		// Others
 		bool	Bind();
-		bool	Bind(const CzvHotKey& keyMap, CzvDialog& targetFocusDialog, bool isOverwriteShortcut = true);
+		bool	Bind(const CzvHotKey& keyMap, bool isShowCustomShortcut = false);
 	};
 
 } // namespace ZVLab

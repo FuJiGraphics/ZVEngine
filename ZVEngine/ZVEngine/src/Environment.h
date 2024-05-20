@@ -12,6 +12,6 @@ namespace ZV_Setting {
 	///////////////////////////////////////////////////////////////////////////
 	std::string		g_strLabelDisplayWindow		= "Display";
 	float			g_iDisplaySizeW				= 500.0f;
-	float			g_iDisplaySizeH				= 500.0f;
+	float			g_iDisplaySizeH				= 300.0f;
 
 } // namespace ZV_Setting

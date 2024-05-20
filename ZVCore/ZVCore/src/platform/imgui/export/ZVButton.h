@@ -50,7 +50,7 @@ namespace ZVLab {
 
 	public: // others
 		virtual bool Bind();
-		virtual bool Bind(const CzvHotKey& keyMap, CzvDialog& targetFocusDialog);
+		virtual bool Bind(const CzvHotKey& keyMap);
 	};
 
 } // namesapce ZVLab

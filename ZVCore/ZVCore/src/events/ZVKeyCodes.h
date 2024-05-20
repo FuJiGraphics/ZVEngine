@@ -178,9 +178,9 @@ namespace ZVLab {
 			case	ezvKeyCodes_X				: return ("X");
 			case	ezvKeyCodes_Y				: return ("Y");
 			case	ezvKeyCodes_Z				: return ("Z");
-			case	ezvKeyCodes_LEFT_BRACKET	: return ("Left Bracket");
+			case	ezvKeyCodes_LEFT_BRACKET	: return ("(L)Bracket");
 			case	ezvKeyCodes_BACKSLASH		: return ("Backslash");
-			case	ezvKeyCodes_RIGHT_BRACKET	: return ("Right Bracket");
+			case	ezvKeyCodes_RIGHT_BRACKET	: return ("(R)Bracket");
 			case	ezvKeyCodes_GRAVE_ACCENT	: return ("Grave Accent");
 			case	ezvKeyCodes_WORLD_1			: return ("World 1");
 			case	ezvKeyCodes_WORLD_2			: return ("World 2");
@@ -245,14 +245,14 @@ namespace ZVLab {
 			case	ezvKeyCodes_KP_ADD			: return ("KP_Add");
 			case	ezvKeyCodes_KP_ENTER		: return ("KP_Enter");
 			case	ezvKeyCodes_KP_EQUAL		: return ("KP_Equal");
-			case	ezvKeyCodes_LEFT_SHIFT		: return ("Left Shift");
-			case	ezvKeyCodes_LEFT_CONTROL	: return ("Left Control");
-			case	ezvKeyCodes_LEFT_ALT		: return ("Left Alt");
-			case	ezvKeyCodes_LEFT_SUPER		: return ("Left Super");
-			case	ezvKeyCodes_RIGHT_SHIFT		: return ("Right Shift");
-			case	ezvKeyCodes_RIGHT_CONTROL	: return ("Right Control");
-			case	ezvKeyCodes_RIGHT_ALT		: return ("Right Alt");
-			case	ezvKeyCodes_RIGHT_SUPER		: return ("Right Super");
+			case	ezvKeyCodes_LEFT_SHIFT		: return ("Shift");
+			case	ezvKeyCodes_LEFT_CONTROL	: return ("Ctrl");
+			case	ezvKeyCodes_LEFT_ALT		: return ("Alt");
+			case	ezvKeyCodes_LEFT_SUPER		: return ("Super");
+			case	ezvKeyCodes_RIGHT_SHIFT		: return ("Shift");
+			case	ezvKeyCodes_RIGHT_CONTROL	: return ("Ctrl");
+			case	ezvKeyCodes_RIGHT_ALT		: return ("Alt");
+			case	ezvKeyCodes_RIGHT_SUPER		: return ("Super");
 			case	ezvKeyCodes_MENU			: return ("Menu");
 		}
 	}

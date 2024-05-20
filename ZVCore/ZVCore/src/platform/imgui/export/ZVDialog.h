@@ -24,6 +24,7 @@ namespace ZVLab {
 		bool					m_bIsUnFolded;
 		CzvMenuBar				m_MenuBar;
 		TzvDialogInfo			m_tOptions;
+		TzvDockspaceInfo		m_tDockspaceOptions;
 		
 	//// Member Functions
 	public:
@@ -123,6 +124,7 @@ namespace ZVLab {
 
 	private: // Others
 		bool	Synchronization();
+		void	SettingOptions();
 	};
 
 } // namespace ZVLab

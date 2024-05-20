@@ -72,7 +72,7 @@ namespace ZVLab {
 		return (result);
 	}
 
-	bool CzvButton::Bind(const CzvHotKey& keyMap, CzvDialog& targetFocusDialog)
+	bool CzvButton::Bind(const CzvHotKey& keyMap)
 	{
 		bool result = false;
 		// Set Position
@@ -86,10 +86,7 @@ namespace ZVLab {
 
 		if (result == false)
 		{
-			if (targetFocusDialog.IsWindowFocused())
-			{
-				result = keyMap.IsPressed();
-			}
+			result = keyMap.IsPressed();
 		}
 
 		if (result && m_fpCallbackFn != nullptr)

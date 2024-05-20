@@ -27,6 +27,9 @@ namespace ZVLab {
 
 	bool CzvHotKey::IsPressed(bool IsRepeatPressedMode) const
 	{
+		if (ImGui::IsWindowFocused() == false)
+			return (false);
+
 		static bool IsKeyDown = false;
 
 		auto io = ImGui::GetIO();

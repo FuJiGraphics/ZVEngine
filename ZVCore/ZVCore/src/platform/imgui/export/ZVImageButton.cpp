@@ -134,7 +134,7 @@ namespace ZVLab {
 		return (result);
 	}
 
-	bool CzvImageButton::Bind(const CzvHotKey& keyMap, CzvDialog& targetFocusDialog)
+	bool CzvImageButton::Bind(const CzvHotKey& keyMap)
 	{
 		if (m_spTexIdle == nullptr)
 		{
@@ -173,12 +173,9 @@ namespace ZVLab {
 			// 마우스 누르는 상태가 아닐 때
 			else
 			{ // 핫키 입력 체크
-				if (targetFocusDialog.IsWindowFocused())
-				{
-					result = keyMap.IsPressed();
-					if (result)
-						m_bIsClicked = true;
-				}
+				result = keyMap.IsPressed();
+				if (result)
+					m_bIsClicked = true;
 			}
 		}
 

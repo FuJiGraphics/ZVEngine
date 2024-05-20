@@ -155,6 +155,18 @@ namespace ZVLab {
 		m_upLayerBuffer->RemoveLayer(layer);
 	}
 
+	void CzvSystem::AttachOverlay(CzvLayer* layer)
+	{
+		DZVLog_Failed(layer, "FAILED: Layer pointer is NULL!");
+		m_upLayerBuffer->InsertOverlay(layer);
+	}
+
+	void CzvSystem::DetachOverlay(CzvLayer* layer)
+	{
+		DZVLog_Failed(layer, "FAILED: Layer pointer is NULL!");
+		m_upLayerBuffer->RemoveOverlay(layer);
+	}
+
 	void CzvSystem::OnEvent(CzvEvent& event)
 	{
 		CZVeventDispatcher ed(event);

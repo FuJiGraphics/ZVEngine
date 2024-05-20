@@ -127,6 +127,7 @@
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVKeyMap.h" />
     <ClInclude Include="src\platform\imgui\export\ZVHotKey.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVMenu.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVsystem.cpp">

@@ -16,20 +16,17 @@ namespace ZVLab {
 		return (ImGui::MenuItem(m_strLabel.c_str(), shortcut));
 	}
 
-	bool CzvMenuItem::Bind(const CzvHotKey& keyMap, CzvDialog& targetFocusDialog, bool isOverwriteShortcut)
+	bool CzvMenuItem::Bind(const CzvHotKey& keyMap, bool isShowCustomShortcut)
 	{
 		bool result = false;
 		
-		const char* shortcut = (m_strShortCut.empty()) ? nullptr : m_strShortCut.c_str();
+		const char* shortcut = nullptr;
 		const std::string& keyMapstr = keyMap.GetKeyString();
-		shortcut = keyMapstr.c_str();
+		shortcut = (isShowCustomShortcut) ? m_strShortCut.c_str() : keyMapstr.c_str();
 		result = ImGui::MenuItem(m_strLabel.c_str(), shortcut);
 		if (result == false)
 		{
-			if (targetFocusDialog.IsWindowFocused())
-			{
-				result = keyMap.IsPressed();
-			}
+			result = keyMap.IsPressed();
 		}
 		return (result);
 	}

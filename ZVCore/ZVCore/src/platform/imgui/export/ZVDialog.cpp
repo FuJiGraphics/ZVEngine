@@ -1,16 +1,16 @@
 #include "ZVDialog.h"
 #include "../ZVimguiManager.h"
 
-namespace ZVLab {
-
-	namespace { /// statics
-		static bool					s_bFirstEntryScope = true;
-		static ZVLab::CzvDialog*	s_pCurrDialog = nullptr;
-		static unsigned int			s_unDialogCount = 0;
+namespace { /// statics
+	static bool					s_bFirstEntryScope = true;
+	static ZVLab::CzvDialog*	s_pCurrDialog = nullptr;
+	static unsigned int			s_unDialogCount = 0;
 #define	DRegistRuntimeDialog(ptr)	(s_pCurrDialog = ptr);
 #define	DUnRegistRuntimeDialog()	(s_pCurrDialog = nullptr);
 #define	DIsCurrentRegistDialog(ptr)	(s_pCurrDialog == ptr)
-	}
+}
+
+namespace ZVLab {
 //----------------------------------------------------
 // Dialog
 //----------------------------------------------------
@@ -22,6 +22,7 @@ namespace ZVLab {
 		, m_bIsUnFolded(false)
 		, m_MenuBar(label)
 		, m_tOptions()
+		, m_tDockspaceOptions()
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be than or equal to 0.");
 		this->Synchronization();
@@ -38,6 +39,7 @@ namespace ZVLab {
 		, m_bIsUnFolded(false)
 		, m_MenuBar(label)
 		, m_tOptions(options)
+		, m_tDockspaceOptions()
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -54,6 +56,7 @@ namespace ZVLab {
 		, m_bIsUnFolded(false)
 		, m_MenuBar(label)
 		, m_tOptions()
+		, m_tDockspaceOptions()
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -70,6 +73,7 @@ namespace ZVLab {
 		, m_bIsUnFolded(false)
 		, m_MenuBar(label)
 		, m_tOptions(options)
+		, m_tDockspaceOptions()
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -86,6 +90,7 @@ namespace ZVLab {
 		, m_bIsUnFolded(false)
 		, m_MenuBar(label)
 		, m_tOptions()
+		, m_tDockspaceOptions()
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -102,6 +107,7 @@ namespace ZVLab {
 		, m_bIsUnFolded(false)
 		, m_MenuBar(label)
 		, m_tOptions(options)
+		, m_tDockspaceOptions()
 	{
 		DZVLog_Failed(label.size(), "FAILED: Label length must be greater than or equal to 0.");
 		this->Synchronization();
@@ -118,15 +124,12 @@ namespace ZVLab {
 			s_bFirstEntryScope = true;
 
 			// Release a menubar
-			if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
+			if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && m_bIsUnFolded)
 				m_MenuBar.UnBind();
 
 			// Release a dialog
-			if (m_bIsUnFolded)
-			{
-				ImGui::End();
-				DUnRegistRuntimeDialog();
-			}
+			ImGui::End();
+			DUnRegistRuntimeDialog();
 		}
 		s_unDialogCount--;
 		DZVLog_Failed((s_unDialogCount >= 0),
@@ -220,17 +223,15 @@ namespace ZVLab {
 	/// others
 	bool CzvDialog::Synchronization()
 	{
+		bool result = false;
 		if (!DIsCurrentRegistDialog(this) || s_bFirstEntryScope)
 		{
 			if (s_bFirstEntryScope)
 				s_bFirstEntryScope = false;
 			else
 			{
-				if (s_pCurrDialog->IsUnFolded())
-				{
-					ImGui::End();
-					DUnRegistRuntimeDialog();
-				}
+				ImGui::End();
+				DUnRegistRuntimeDialog();
 			}
 
 			if (m_optPosition.has_value())
@@ -241,17 +242,18 @@ namespace ZVLab {
 			{
 				ImGui::SetNextWindowSize(*m_optSize, ImGuiCond_Once);
 			}
-			m_bIsUnFolded = ImGui::Begin(m_strLabel.c_str(), NULL, m_tOptions.GetOptions());
-			if (m_bIsUnFolded)
-			{
-				// 현재 Dialog 정보 등록
-				DRegistRuntimeDialog(this);
-				// Menubar 활성화
-				if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar))
-					m_MenuBar.Bind();
-			}
+
+			// 현재 Dialog 정보 등록
+			DRegistRuntimeDialog(this);
+			CzvImguiManager::SetDockspaceOptionForNextDialog(m_tOptions.GetExtensionOptions());
+			result = ImGui::Begin(m_strLabel.c_str(), NULL, m_tOptions.GetOptions());
+			m_bIsUnFolded = !ImGui::IsWindowCollapsed();
+
+			// Menubar 활성화
+			if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && m_bIsUnFolded)
+				m_MenuBar.Bind();
 		}
-		return (m_bIsUnFolded);
+		return (result);
 	}
 
 } // namespace ZVLab

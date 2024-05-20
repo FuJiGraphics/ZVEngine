@@ -158,6 +158,7 @@
     <ClInclude Include="src\export\ZVCore.h" />
     <ClInclude Include="src\platform\imgui\export\ZVHotKey.h" />
     <ClInclude Include="src\platform\imgui\export\ZVKeyMap.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVMenu.h" />
     <ClInclude Include="src\platform\imgui\export\ZVMenubar.h" />
     <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiManager.h" />

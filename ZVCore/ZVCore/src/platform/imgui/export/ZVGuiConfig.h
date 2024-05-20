@@ -97,6 +97,38 @@ enum EzvDialogOptions
 	ezvDialogFlags_DockNodeHost					= ImGuiWindowFlags_::ImGuiWindowFlags_DockNodeHost,
 };
 
+enum EzvDialogExtensionOptions
+{
+	EzvDialogExtensionOptions_None							= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_None,
+	EzvDialogExtensionOptions_KeepAliveOnly					= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_KeepAliveOnly,
+	EzvDialogExtensionOptions_NoDockingOverCentralNode		= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingOverCentralNode,
+	EzvDialogExtensionOptions_PassthruCentralNode			= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_PassthruCentralNode,
+	EzvDialogExtensionOptions_NoDockingSplit				= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingSplit,
+	EzvDialogExtensionOptions_NoResize						= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoResize,
+	EzvDialogExtensionOptions_AutoHideTabBar				= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_AutoHideTabBar,
+	EzvDialogExtensionOptions_NoUndocking					= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoUndocking,
+	EzvDialogExtensionOptions_NoSplit						= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoSplit,
+	EzvDialogExtensionOptions_NoDockingInCentralNode		= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingInCentralNode,
+	EzvDialogExtensionOptions_DockSpace						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_DockSpace,
+	EzvDialogExtensionOptions_CentralNode					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_CentralNode,
+	EzvDialogExtensionOptions_NoTabBar						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoTabBar,
+	EzvDialogExtensionOptions_HiddenTabBar					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_HiddenTabBar,
+	EzvDialogExtensionOptions_NoWindowMenuButton			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoWindowMenuButton,
+	EzvDialogExtensionOptions_NoCloseButton					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoCloseButton,
+	EzvDialogExtensionOptions_NoResizeX						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeX,
+	EzvDialogExtensionOptions_NoResizeY						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeY,
+	EzvDialogExtensionOptions_DockedWindowsInFocusRoute		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_DockedWindowsInFocusRoute,
+	EzvDialogExtensionOptions_NoDockingSplitOther			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingSplitOther,
+	EzvDialogExtensionOptions_NoDockingOverMe				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverMe,
+	EzvDialogExtensionOptions_NoDockingOverOther			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverOther,
+	EzvDialogExtensionOptions_NoDockingOverEmpty			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverEmpty,
+	EzvDialogExtensionOptions_NoDocking						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDocking,
+	EzvDialogExtensionOptions_SharedFlagsInheritMask_		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_SharedFlagsInheritMask_,
+	EzvDialogExtensionOptions_NoResizeFlagsMask_			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeFlagsMask_,
+	EzvDialogExtensionOptions_LocalFlagsTransferMask_		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_LocalFlagsTransferMask_,
+	EzvDialogExtensionOptions_SavedFlagsMask_				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_SavedFlagsMask_,
+};
+
 //----------------------------------------------------
 // struct Dialog Info
 //----------------------------------------------------
@@ -106,53 +138,184 @@ struct ZV_API TzvDialogInfo
 
 //// Member Variables
 private:
-	DialogOptions	m_iDialogOptions = ezvDialogFlags_None;
+	DialogOptions				m_iDialogOptions			= ezvDialogFlags_None;
+	DialogOptions				m_iDialogExtensionOptions	= EzvDialogExtensionOptions_None;
 
 //// Member Functions
 public:
 	// Getter
-	inline DialogOptions	GetOptions()	{ return (m_iDialogOptions); }
+	inline DialogOptions	GetOptions()				{ return (m_iDialogOptions); }
+	inline DialogOptions	GetOptions() const			{ return (m_iDialogOptions); }
+	inline DialogOptions	GetExtensionOptions()		{ return (m_iDialogExtensionOptions); }
+	inline DialogOptions	GetExtensionOptions() const	{ return (m_iDialogExtensionOptions); }
 
 	// Setter
-	inline void SetOptions(EzvDialogOptions flags)			{ this->AddOptions(flags); }
-	inline void SetNoTitleBar(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoTitleBar); }
-	inline void SetNoResize(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoResize); }
-	inline void SetNoMove(bool enabled)						{ this->FlagOptions(enabled, ezvDialogFlags_NoMove); }
-	inline void SetNoScrollbar(bool enabled)				{ this->FlagOptions(enabled, ezvDialogFlags_NoScrollbar); }
-	inline void SetNoScrollWithMouse(bool enabled)			{ this->FlagOptions(enabled, ezvDialogFlags_NoScrollWithMouse); }
-	inline void SetNoCollapse(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoCollapse); }
-	inline void SetAlwaysAutoResize(bool enabled)			{ this->FlagOptions(enabled, ezvDialogFlags_AlwaysAutoResize); }
-	inline void SetNoBackground(bool enabled)				{ this->FlagOptions(enabled, ezvDialogFlags_NoBackground); }
-	inline void SetNoSavedSettings(bool enabled)			{ this->FlagOptions(enabled, ezvDialogFlags_NoSavedSettings); }
-	inline void SetNoMouseInputs(bool enabled)				{ this->FlagOptions(enabled, ezvDialogFlags_NoMouseInputs); }
-	inline void SetMenuBar(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_MenuBar); }
-	inline void SetHorizontalScrollbar(bool enabled)		{ this->FlagOptions(enabled, ezvDialogFlags_HorizontalScrollbar); }
-	inline void SetNoFocusOnAppearing(bool enabled)			{ this->FlagOptions(enabled, ezvDialogFlags_NoFocusOnAppearing); }
-	inline void SetNoBringToFrontOnFocus(bool enabled)		{ this->FlagOptions(enabled, ezvDialogFlags_NoBringToFrontOnFocus); }
-	inline void SetAlwaysVerticalScrollbar(bool enabled)	{ this->FlagOptions(enabled, ezvDialogFlags_AlwaysVerticalScrollbar); }
-	inline void SetAlwaysHorizontalScrollbar(bool enabled)	{ this->FlagOptions(enabled, ezvDialogFlags_AlwaysHorizontalScrollbar); }
-	inline void SetNoNavInputs(bool enabled)				{ this->FlagOptions(enabled, ezvDialogFlags_NoNavInputs); }
-	inline void SetNoNavFocus(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoNavFocus); }
-	inline void SetUnsavedDocument(bool enabled)			{ this->FlagOptions(enabled, ezvDialogFlags_UnsavedDocument); }
-	inline void SetNoDocking(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoDocking); }
-	inline void SetNoNav(bool enabled)						{ this->FlagOptions(enabled, ezvDialogFlags_NoNav); }
-	inline void SetNoDecoration(bool enabled)				{ this->FlagOptions(enabled, ezvDialogFlags_NoDecoration); }
-	inline void SetNoInputs(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoInputs); }
+	inline void SetOptions(EzvDialogOptions flags)				{ this->AddOptions(flags); }
+	inline void SetNoTitleBar(bool enabled)						{ this->FlagOptions(enabled, ezvDialogFlags_NoTitleBar); }
+	inline void SetNoResize(bool enabled)						{ this->FlagOptions(enabled, ezvDialogFlags_NoResize); }
+	inline void SetNoMove(bool enabled)							{ this->FlagOptions(enabled, ezvDialogFlags_NoMove); }
+	inline void SetNoScrollbar(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoScrollbar); }
+	inline void SetNoScrollWithMouse(bool enabled)				{ this->FlagOptions(enabled, ezvDialogFlags_NoScrollWithMouse); }
+	inline void SetNoCollapse(bool enabled)						{ this->FlagOptions(enabled, ezvDialogFlags_NoCollapse); }
+	inline void SetAlwaysAutoResize(bool enabled)				{ this->FlagOptions(enabled, ezvDialogFlags_AlwaysAutoResize); }
+	inline void SetNoBackground(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoBackground); }
+	inline void SetNoSavedSettings(bool enabled)				{ this->FlagOptions(enabled, ezvDialogFlags_NoSavedSettings); }
+	inline void SetNoMouseInputs(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoMouseInputs); }
+	inline void SetMenuBar(bool enabled)						{ this->FlagOptions(enabled, ezvDialogFlags_MenuBar); }
+	inline void SetHorizontalScrollbar(bool enabled)			{ this->FlagOptions(enabled, ezvDialogFlags_HorizontalScrollbar); }
+	inline void SetNoFocusOnAppearing(bool enabled)				{ this->FlagOptions(enabled, ezvDialogFlags_NoFocusOnAppearing); }
+	inline void SetNoBringToFrontOnFocus(bool enabled)			{ this->FlagOptions(enabled, ezvDialogFlags_NoBringToFrontOnFocus); }
+	inline void SetAlwaysVerticalScrollbar(bool enabled)		{ this->FlagOptions(enabled, ezvDialogFlags_AlwaysVerticalScrollbar); }
+	inline void SetAlwaysHorizontalScrollbar(bool enabled)		{ this->FlagOptions(enabled, ezvDialogFlags_AlwaysHorizontalScrollbar); }
+	inline void SetNoNavInputs(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoNavInputs); }
+	inline void SetNoNavFocus(bool enabled)						{ this->FlagOptions(enabled, ezvDialogFlags_NoNavFocus); }
+	inline void SetUnsavedDocument(bool enabled)				{ this->FlagOptions(enabled, ezvDialogFlags_UnsavedDocument); }
+	inline void SetNoDocking(bool enabled)						{ this->FlagOptions(enabled, ezvDialogFlags_NoDocking); }
+	inline void SetNoNav(bool enabled)							{ this->FlagOptions(enabled, ezvDialogFlags_NoNav); }
+	inline void SetNoDecoration(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NoDecoration); }
+	inline void SetNoInputs(bool enabled)						{ this->FlagOptions(enabled, ezvDialogFlags_NoInputs); }
 
 	// [internal]
-	inline void SetNavFlattened(bool enabled)	{  this->FlagOptions(enabled, ezvDialogFlags_NavFlattened); }
-	inline void SetChildWindow(bool enabled)	{  this->FlagOptions(enabled, ezvDialogFlags_ChildWindow); }
-	inline void SetTooltip(bool enabled)		{  this->FlagOptions(enabled, ezvDialogFlags_Tooltip); }
-	inline void SetPopup(bool enabled)			{  this->FlagOptions(enabled, ezvDialogFlags_Popup); }
-	inline void SetModal(bool enabled)			{  this->FlagOptions(enabled, ezvDialogFlags_Modal); }
-	inline void SetChildMenu(bool enabled)		{  this->FlagOptions(enabled, ezvDialogFlags_ChildMenu); }
-	inline void SetDockNodeHost(bool enabled)	{  this->FlagOptions(enabled, ezvDialogFlags_DockNodeHost); }
+	inline void SetNavFlattened(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_NavFlattened); }
+	inline void SetChildWindow(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_ChildWindow); }
+	inline void SetTooltip(bool enabled)						{ this->FlagOptions(enabled, ezvDialogFlags_Tooltip); }
+	inline void SetPopup(bool enabled)							{ this->FlagOptions(enabled, ezvDialogFlags_Popup); }
+	inline void SetModal(bool enabled)							{ this->FlagOptions(enabled, ezvDialogFlags_Modal); }
+	inline void SetChildMenu(bool enabled)						{ this->FlagOptions(enabled, ezvDialogFlags_ChildMenu); }
+	inline void SetDockNodeHost(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_DockNodeHost); }
+
+	// [Dockspace Options]
+	inline void SetDocsKeepAliveOnly(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_KeepAliveOnly); }
+	inline void SetDocsNoDockingOverCentralNode(bool enabled)	{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingOverCentralNode); }
+	inline void SetDocsPassthruCentralNode(bool enabled)		{ this->FlagOptions(enabled,EzvDialogExtensionOptions_PassthruCentralNode); }
+	inline void SetDocsNoDockingSplit(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingSplit); }
+	inline void SetDocsNoResize(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoResize); }
+	inline void SetDocsAutoHideTabBar(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_AutoHideTabBar); }
+	inline void SetDocsNoUndocking(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoUndocking); }
+	inline void SetDocsNoSplit(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoSplit); }
+	inline void SetDocsNoDockingInCentralNode(bool enabled)		{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingInCentralNode); }
+	inline void SetDocsDockSpace(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_DockSpace); }
+	inline void SetDocsCentralNode(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_CentralNode); }
+	inline void SetDocsNoTabBar(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoTabBar); }
+	inline void SetDocsHiddenTabBar(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_HiddenTabBar); }
+	inline void SetDocsNoWindowMenuButton(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoWindowMenuButton); }
+	inline void SetDocsNoCloseButton(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoCloseButton); }
+	inline void SetDocsNoResizeX(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoResizeX); }
+	inline void SetDocsNoResizeY(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoResizeY); }
+	inline void SetDocsDockedWindowsInFocusRoute(bool enabled)	{ this->FlagOptions(enabled,EzvDialogExtensionOptions_DockedWindowsInFocusRoute); }
+	inline void SetDocsNoDockingSplitOther(bool enabled)		{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingSplitOther); }
+	inline void SetDocsNoDockingOverMe(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingOverMe); }
+	inline void SetDocsNoDockingOverOther(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingOverOther); }
+	inline void SetDocsNoDockingOverEmpty(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingOverEmpty); }
+	inline void SetDocsNoDocking(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDocking); }
+	inline void SetDocsSharedFlagsInheritMask_(bool enabled)	{ this->FlagOptions(enabled,EzvDialogExtensionOptions_SharedFlagsInheritMask_); }
+	inline void SetDocsNoResizeFlagsMask_(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoResizeFlagsMask_); }
+	inline void SetDocsLocalFlagsTransferMask_(bool enabled)	{ this->FlagOptions(enabled,EzvDialogExtensionOptions_LocalFlagsTransferMask_); }
+	inline void SetDocsSavedFlagsMask_(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_SavedFlagsMask_); }
 
 	// others
-	inline bool IsActivated(const EzvDialogOptions& flags) const { return (m_iDialogOptions & flags); }
-	inline void FlagOptions(bool enabled, const EzvDialogOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
-	inline void AddOptions(const EzvDialogOptions& flags) { m_iDialogOptions |= flags; }
-	inline void DelOptions(const EzvDialogOptions& flags) { m_iDialogOptions &= ~flags; }
+	inline bool IsActivated(const EzvDialogOptions& flags) const					{ return (m_iDialogOptions & flags); }
+	inline bool IsActivated(const EzvDialogExtensionOptions& flags) const			{ return (m_iDialogExtensionOptions & flags); }
+	inline void FlagOptions(bool enabled, const EzvDialogOptions& flags)			{ (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void FlagOptions(bool enabled, const EzvDialogExtensionOptions& flags)	{ (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void AddOptions(const EzvDialogOptions& flags)							{ m_iDialogOptions |= flags; }
+	inline void DelOptions(const EzvDialogOptions& flags)							{ m_iDialogOptions &= ~flags; }
+	inline void AddOptions(const EzvDialogExtensionOptions& flags)					{ m_iDialogExtensionOptions |= flags; }
+	inline void DelOptions(const EzvDialogExtensionOptions& flags)					{ m_iDialogExtensionOptions &= ~flags; }
+};
+#pragma endregion
+#pragma region Dockspace Options
+//----------------------------------------------------
+// enum Dockspace Options
+//----------------------------------------------------
+enum EzvDockspaceOptions
+{
+	ezvDockspaceFlags_None						= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_None,
+	ezvDockspaceFlags_KeepAliveOnly				= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_KeepAliveOnly,
+	//ImGuiDockNodeFla      gs_NoCentralNode              
+	ezvDockspaceFlags_NoDockingOverCentralNode	= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingOverCentralNode,
+	ezvDockspaceFlags_PassthruCentralNode		= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_PassthruCentralNode,
+	ezvDockspaceFlags_NoDockingSplit			= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingSplit,
+	ezvDockspaceFlags_NoResize					= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoResize,
+	ezvDockspaceFlags_AutoHideTabBar			= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_AutoHideTabBar,
+	ezvDockspaceFlags_NoUndocking				= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoUndocking,
+	ezvDockspaceFlags_NoSplit					= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoSplit,
+	ezvDockspaceFlags_NoDockingInCentralNode	= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingInCentralNode,
+	// [Internal]
+	ezvDockspaceFlags_DockSpace					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_DockSpace,
+	ezvDockspaceFlags_CentralNode				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_CentralNode,
+	ezvDockspaceFlags_NoTabBar					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoTabBar,
+	ezvDockspaceFlags_HiddenTabBar				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_HiddenTabBar,
+	ezvDockspaceFlags_NoWindowMenuButton		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoWindowMenuButton,
+	ezvDockspaceFlags_NoCloseButton				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoCloseButton,
+	ezvDockspaceFlags_NoResizeX					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeX,
+	ezvDockspaceFlags_NoResizeY					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeY,
+	ezvDockspaceFlags_DockedWindowsInFocusRoute	= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_DockedWindowsInFocusRoute,
+	ezvDockspaceFlags_NoDockingSplitOther		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingSplitOther,
+	ezvDockspaceFlags_NoDockingOverMe			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverMe,
+	ezvDockspaceFlags_NoDockingOverOther		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverOther,
+	ezvDockspaceFlags_NoDockingOverEmpty		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverEmpty,
+	ezvDockspaceFlags_NoDocking					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDocking,
+	ezvDockspaceFlags_SharedFlagsInheritMask_	= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_SharedFlagsInheritMask_,
+	ezvDockspaceFlags_NoResizeFlagsMask_		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeFlagsMask_,
+	ezvDockspaceFlags_LocalFlagsTransferMask_	= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_LocalFlagsTransferMask_,
+	ezvDockspaceFlags_SavedFlagsMask_			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_SavedFlagsMask_,
+};
+
+//----------------------------------------------------
+// struct Dockspace Info
+//----------------------------------------------------
+struct ZV_API TzvDockspaceInfo
+{
+	using DockspaceOptions = int;
+
+	//// Member Variables
+private:
+	DockspaceOptions	m_iDockspaceOptions = ezvDockspaceFlags_None;
+
+	//// Member Functions
+public:
+	// Getter
+	inline DockspaceOptions	GetOptions()		{ return (m_iDockspaceOptions); }
+	inline DockspaceOptions	GetOptions() const	{ return (m_iDockspaceOptions); }
+
+	// Setter
+	inline void SetKeepAliveOnly(bool enabled)				{ this->FlagOptions(enabled, ezvDockspaceFlags_KeepAliveOnly); }
+	inline void SetNoDockingOverCentralNode(bool enabled)	{ this->FlagOptions(enabled, ezvDockspaceFlags_NoDockingOverCentralNode); }
+	inline void SetPassthruCentralNode(bool enabled)		{ this->FlagOptions(enabled, ezvDockspaceFlags_PassthruCentralNode); }
+	inline void SetNoDockingSplit(bool enabled)				{ this->FlagOptions(enabled, ezvDockspaceFlags_NoDockingSplit); }
+	inline void SetNoResize(bool enabled)					{ this->FlagOptions(enabled, ezvDockspaceFlags_NoResize); }
+	inline void SetAutoHideTabBar(bool enabled)				{ this->FlagOptions(enabled, ezvDockspaceFlags_AutoHideTabBar); }
+	inline void SetNoUndocking(bool enabled)				{ this->FlagOptions(enabled, ezvDockspaceFlags_NoUndocking); }
+	inline void SetNoSplit(bool enabled)					{ this->FlagOptions(enabled, ezvDockspaceFlags_NoSplit); }
+	inline void SetNoDockingInCentralNode(bool enabled)		{ this->FlagOptions(enabled, ezvDockspaceFlags_NoDockingInCentralNode); }
+
+	// [internal]
+	inline void SetDockSpace(bool enabled)					{ this->FlagOptions(enabled, ezvDockspaceFlags_DockSpace); }
+	inline void SetCentralNode(bool enabled)				{ this->FlagOptions(enabled, ezvDockspaceFlags_CentralNode); }
+	inline void SetNoTabBar(bool enabled)					{ this->FlagOptions(enabled, ezvDockspaceFlags_NoTabBar); }
+	inline void SetHiddenTabBar(bool enabled)				{ this->FlagOptions(enabled, ezvDockspaceFlags_HiddenTabBar); }
+	inline void SetNoWindowMenuButton(bool enabled)			{ this->FlagOptions(enabled, ezvDockspaceFlags_NoWindowMenuButton); }
+	inline void SetNoCloseButton(bool enabled)				{ this->FlagOptions(enabled, ezvDockspaceFlags_NoCloseButton); }
+	inline void SetNoResizeX(bool enabled)					{ this->FlagOptions(enabled, ezvDockspaceFlags_NoResizeX); }
+	inline void SetNoResizeY(bool enabled)					{ this->FlagOptions(enabled, ezvDockspaceFlags_NoResizeY); }
+	inline void SetDockedWindowsInFocusRoute(bool enabled)	{ this->FlagOptions(enabled, ezvDockspaceFlags_DockedWindowsInFocusRoute); }
+	inline void SetNoDockingSplitOther(bool enabled)		{ this->FlagOptions(enabled, ezvDockspaceFlags_NoDockingSplitOther); }
+	inline void SetNoDockingOverMe(bool enabled)			{ this->FlagOptions(enabled, ezvDockspaceFlags_NoDockingOverMe); }
+	inline void SetNoDockingOverOther(bool enabled)			{ this->FlagOptions(enabled, ezvDockspaceFlags_NoDockingOverOther); }
+	inline void SetNoDockingOverEmpty(bool enabled)			{ this->FlagOptions(enabled, ezvDockspaceFlags_NoDockingOverEmpty); }
+	inline void SetNoDocking(bool enabled)					{ this->FlagOptions(enabled, ezvDockspaceFlags_NoDocking); }
+	inline void SetSharedFlagsInheritMask(bool enabled)		{ this->FlagOptions(enabled, ezvDockspaceFlags_SharedFlagsInheritMask_); }
+	inline void SetNoResizeFlagsMask(bool enabled)			{ this->FlagOptions(enabled, ezvDockspaceFlags_NoResizeFlagsMask_); }
+	inline void SetLocalFlagsTransferMask(bool enabled)		{ this->FlagOptions(enabled, ezvDockspaceFlags_LocalFlagsTransferMask_); }
+	inline void SetSavedFlagsMask(bool enabled)				{ this->FlagOptions(enabled, ezvDockspaceFlags_SavedFlagsMask_); }
+
+	// others
+	inline bool IsActivated(const EzvDockspaceOptions& flags) const { return (m_iDockspaceOptions & flags); }
+	inline bool	IsNone() const { return (m_iDockspaceOptions == ezvDockspaceFlags_None); }
+	inline void FlagOptions(bool enabled, const EzvDockspaceOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void AddOptions(const EzvDockspaceOptions& flags) { m_iDockspaceOptions |= flags; }
+	inline void DelOptions(const EzvDockspaceOptions& flags) { m_iDockspaceOptions &= ~flags; }
 };
 #pragma endregion
 #pragma region TabBar Options

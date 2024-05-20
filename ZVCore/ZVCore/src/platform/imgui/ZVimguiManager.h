@@ -4,7 +4,8 @@
 
 #include "../../core/Core.h"
 #include "../../core/ZVwindow.h"
-
+#include "export/ZVGuiConfig.h"
+#include "export/ZVDialog.h"
 
 static void glfw_error_callback(int error, const char* description);
 
@@ -36,8 +37,9 @@ namespace ZVLab {
 		static bool		BeginMainMenu();
 		static void		EndMainMenu();
 		static void		ShowDemo();
-		static void		SetOverviewDockspace(bool enable);
-		static bool		EnabledOverviewDockspace();
+		static void		SetOverviewDockspace(bool enabled, const TzvDockspaceInfo& options = TzvDockspaceInfo());
+		static void		SetDockspace(const CzvDialog& dialog, const ImVec2& size = { 0, 0 }, const TzvDockspaceInfo& options = TzvDockspaceInfo());
+		static void		SetDockspaceOptionForNextDialog(ImGuiDockNodeFlags options = 0);
 		static bool		UploadFont(const std::string& path, const std::string& fontName, float size_pixels, ImFontConfig* config = nullptr, const ImWchar* glyph_ranges = nullptr);
 		static ImFont*	GetFont(const std::string& fontName);
 
