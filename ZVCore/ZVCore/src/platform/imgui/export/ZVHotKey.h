@@ -3,6 +3,7 @@
 #pragma once
 
 #include "../../../core/Core.h"
+#include "ZVDialog.h"
 #include "ZVKeyMap.h"
 
 namespace ZVLab {
@@ -11,7 +12,7 @@ namespace ZVLab {
 	{
 	//// Member Variables
 	private:
-		CzvKeyMap	m_KeyMap;
+		CzvKeyMap					m_KeyMap;
 
 	//// Member Functions
 	public:
@@ -22,11 +23,9 @@ namespace ZVLab {
 
 		// Getter
 		std::string	GetKeyString() const;
-		
 
 		// Others
 		bool IsPressed() const;
-
 
 		// Operators
 		std::ostream& operator<< (std::ostream& os);

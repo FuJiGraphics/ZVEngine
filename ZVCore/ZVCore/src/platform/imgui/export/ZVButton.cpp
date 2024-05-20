@@ -70,4 +70,31 @@ namespace ZVLab {
 		return (result);
 	}
 
+	bool CzvButton::Bind(const CzvHotKey& keyMap, CzvDialog& targetFocusDialog)
+	{
+		bool result = false;
+		// Set Position
+		if (m_optPosition.has_value())
+			ImGui::SetCursorPos(m_optPosition.value());
+
+		if (m_optSize.has_value()) // Bind size
+			result = ImGui::Button(m_strButtonLabel.c_str(), m_optSize.value());
+		else // UnBind size
+			result = ImGui::Button(m_strButtonLabel.c_str());
+
+		if (result == false)
+		{
+			if (targetFocusDialog.IsWindowFocused())
+			{
+				result = keyMap.IsPressed();
+			}
+		}
+
+		if (result && m_fpCallbackFn != nullptr)
+		{  // 이벤트 콜백 등록시 호출 되는 함수
+			m_fpCallbackFn();
+		}
+		return (result);
+	}
+
 } // namespace ZVLab

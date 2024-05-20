@@ -132,4 +132,60 @@ namespace ZVLab {
 		return (result);
 	}
 
+	bool CzvImageButton::Bind(const CzvHotKey& keyMap, CzvDialog& targetFocusDialog)
+	{
+		if (m_spTexIdle == nullptr)
+		{
+			DZVLog_Failed(false, "FAILED: ImageButton is empty!!");
+			return (false);
+		}
+
+		bool result = false;
+
+		// 클릭 시 m_TexClick ID 설정
+		auto& tex = (m_bIsClicked) ? m_spTexClick : m_spTexIdle;
+		auto targetID = (void*)(intptr_t)tex->GetID();
+		float width = static_cast<float>(tex->GetWidth()) * m_optWeight->x;
+		float height = static_cast<float>(tex->GetHeight()) * m_optWeight->y;
+
+		if (m_optPosition.has_value()) // 위치 설정 시
+			ImGui::Image(targetID, { width, height }, { m_optPosition->x, m_optPosition->y });
+		else
+			ImGui::Image(targetID, { width, height });
+
+		m_optRectMin = ImGui::GetItemRectMin();
+		m_optRectMax = ImGui::GetItemRectMax();
+
+		if (this->IsHovered(ImGui::GetMousePos()) == true)
+		{
+			// 마우스 누르는 상태
+			if (ImGui::IsMouseClicked(0)) // 0은 왼쪽 버튼 의미 TODO: 매크로 생성 필요
+			{
+				m_bIsClicked = true;
+				result = true;
+				if (m_fpCallbackFn != nullptr)
+				{
+					m_fpCallbackFn();
+				}
+			}
+			// 마우스 누르는 상태가 아닐 때
+			else
+			{ // 핫키 입력 체크
+				if (targetFocusDialog.IsWindowFocused())
+				{
+					result = keyMap.IsPressed();
+					if (result)
+						m_bIsClicked = true;
+				}
+			}
+		}
+
+		if (ImGui::IsMouseReleased(0) == true)
+		{
+			m_bIsClicked = false;
+		}
+
+		return (result);
+	}
+
 } // namespace ZVLab

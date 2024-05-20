@@ -35,11 +35,39 @@ namespace ZVLab {
 		CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position, const TzvDialogInfo& options);
 		virtual ~CzvDialog();
 
+		//----------------------------------------------------
 		// Getter
+		//----------------------------------------------------
+		/**
+		 * @brief		윈도우 포커스 확인
+		 * @details		현재 윈도우가 활성화 되어 있는지 여부를 반환합니다.
+		 * @return		bool:	윈도우 활성화 여부(true/false)
+		 */
 		bool				IsWindowFocused();
-		// Inlines
+		/**
+		 * @brief		윈도우 포커스 확인
+		 * @details		현재 윈도우가 활성화 되어 있는지 여부를 반환합니다.
+		 * @param[in]	options:	윈도우 활성화시 설정들
+		 * @return		bool:		윈도우 활성화 여부(true/false)
+		 */
+		bool				IsWindowFocused(const TzvWindowFocusedInfo& options);
+		/**
+		 * @brief		Dialog의 Label을 반환
+		 * @details		현재 Dialog의 Label을 반환합니다.
+		 * @return		std::string:	라벨명
+		 */
 		inline std::string	GetLabel() const	{ return (m_strLabel); }
+		/**
+		 * @brief		Dialog가 접힌 상태인지 여부
+		 * @details		Dialog가 접혀있는지 상태 여부를 반환합니다. 
+		 * @return		bool:	Dialog가 접혀있는지 여부 (true/false) 
+		 */
 		inline bool			IsFolded() const	{ return (!m_bIsUnFolded); }
+		/**
+		 * @brief		Dialog가 펼쳐진 상태인지 여부
+		 * @details		Dialog가 펼쳐져있는지 상태 여부를 반환합니다. 
+		 * @return		bool:	Dialog가 펼쳐져있는지 여부 (true/false) 
+		 */
 		inline bool			IsUnFolded() const	{ return (m_bIsUnFolded); }
 
 		//----------------------------------------------------

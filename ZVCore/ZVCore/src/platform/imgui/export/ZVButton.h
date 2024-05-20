@@ -4,6 +4,7 @@
 
 #include "../../../core/Core.h"
 #include "ZVGuiConfig.h"
+#include "ZVHotKey.h"
 #include <string>
 
 namespace ZVLab {
@@ -46,6 +47,7 @@ namespace ZVLab {
 
 	public: // others
 		virtual bool Bind();
+		virtual bool Bind(const CzvHotKey& keyMap, CzvDialog& targetFocusDialog);
 	};
 
 } // namesapce ZVLab

@@ -136,12 +136,18 @@ namespace ZVLab {
 
 	bool CzvDialog::IsWindowFocused()
 	{
+		TzvWindowFocusedInfo info;
+		return (this->IsWindowFocused(info));
+	}
+
+	bool CzvDialog::IsWindowFocused(const TzvWindowFocusedInfo& options)
+	{
 		bool result = false;
 		if (this->Synchronization())
 		{
-			if (ImGui::IsWindowFocused())
+			if (ImGui::IsWindowFocused(options.GetOptions()))
 			{
-
+				result = true;
 			}
 		}
 		return (result);

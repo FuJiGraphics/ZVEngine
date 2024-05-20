@@ -41,6 +41,7 @@ namespace ZVLab {
 
 	public: // overrides
 		virtual bool Bind() override;
+		virtual bool Bind(const CzvHotKey& keyMap, CzvDialog& targetFocusDialog) override;
 	};
 
 } // namesapce ZVLab

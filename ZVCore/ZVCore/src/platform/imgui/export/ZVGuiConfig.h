@@ -35,7 +35,8 @@ private:
 //// Member Functions
 public:
 	// getter
-	inline WindowFocusedOptions	GetOptions()	{ return (m_iWindowFocusedOptions); }
+	inline WindowFocusedOptions	GetOptions() const	{ return (m_iWindowFocusedOptions); }
+	inline WindowFocusedOptions	GetOptions()		{ return (m_iWindowFocusedOptions); }
 
 	// setter
 	inline void SetOptions(EzvWindowFoucsOptions flags)		{ this->AddOptions(flags); }

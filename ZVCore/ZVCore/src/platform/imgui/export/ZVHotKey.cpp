@@ -18,12 +18,12 @@ namespace ZVLab {
 	bool CzvHotKey::IsPressed() const
 	{
 		auto io = ImGui::GetIO();
-		if (ImGui::IsWindowFocused())
+		for(const auto& cmd : m_KeyMap.GetCommandList())
 		{
-
+			if (io.KeysDown[cmd] == false)
+				return (false);
 		}
-
-		return false;
+		return (true);
 	}
 
 	std::ostream& CzvHotKey::operator<<(std::ostream& os)
