@@ -34,9 +34,7 @@ void CDlgDisplayWindow::OnGUI()
 	);
 		
 	CzvMenuItem item("item", "A+SPACE");
-	item.SetHotKey(KeyMaps::KEY_SPACE + KeyMaps::KEY_A + KeyMaps::KEY_5);
-
-	if (item.Bind())
+	if (item.Bind(KeyMaps::KEY_SPACE + KeyMaps::KEY_A, dialog))
 	{
 		FZLOG_INFO("Clicked MenuItem");
 	}

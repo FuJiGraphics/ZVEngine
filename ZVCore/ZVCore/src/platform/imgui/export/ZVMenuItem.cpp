@@ -1,4 +1,6 @@
 #include "ZVMenuItem.h"
+#include "ZVDialog.h"
+#include "ZVHotKey.h"
 
 namespace ZVLab {
 
@@ -8,21 +10,28 @@ namespace ZVLab {
 	{
 	}
 
-	void CzvMenuItem::SetHotKey(const CzvKeyMap& keycodes)
-	{
-		auto& io = ImGui::GetIO();
-		
-		FZLOG_INFO("HotKey = {0}", keycodes.GetKeyString());
-	}
-
 	bool CzvMenuItem::Bind()
 	{
-		//auto& io = ImGui::GetIO();
-		//if (ImGui::IsWindowFocused() && io.KeysDown[ZVKEY])
-		//{
-		//}
+		const char* shortcut = (m_strShortCut.empty()) ? nullptr : m_strShortCut.c_str();
+		return (ImGui::MenuItem(m_strLabel.c_str(), shortcut));
+	}
 
-		return (ImGui::MenuItem(m_strLabel.c_str()));
+	bool CzvMenuItem::Bind(const CzvHotKey& keyMap, CzvDialog& targetFocusDialog, bool isOverwriteShortcut)
+	{
+		bool result = false;
+		
+		const char* shortcut = (m_strShortCut.empty()) ? nullptr : m_strShortCut.c_str();
+		shortcut = (isOverwriteShortcut) ? keyMap.GetKeyString().c_str() : shortcut;
+		result = ImGui::MenuItem(m_strLabel.c_str(), shortcut);
+		if (result == false)
+		{
+			if (targetFocusDialog.IsWindowFocused())
+			{
+				result = keyMap.IsPressed();
+			}
+		}
+
+		return (result);
 	}
 
 } 

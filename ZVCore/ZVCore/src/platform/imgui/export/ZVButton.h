@@ -4,11 +4,14 @@
 
 #include "../../../core/Core.h"
 #include "ZVGuiConfig.h"
-#include "ZVHotKey.h"
 #include <string>
 
 namespace ZVLab {
-	
+
+	// forwards
+	class ZV_API CzvDialog;
+	class ZV_API CzvHotKey;
+
 	class CzvButton
 	{
 	protected: /// using 

@@ -19,13 +19,15 @@ namespace ZVLab {
 		// Constructor, Destructor
 		CzvHotKey();
 		CzvHotKey(const CzvKeyMap& keymap);
+		CzvHotKey(const CzvHotKey& src);
 		~CzvHotKey() = default;
 
 		// Getter
+		CzvKeyMap	GetKeyMap() const;
 		std::string	GetKeyString() const;
 
 		// Others
-		bool IsPressed() const;
+		bool IsPressed(bool IsRepeatPressedMode = false) const;
 
 		// Operators
 		std::ostream& operator<< (std::ostream& os);

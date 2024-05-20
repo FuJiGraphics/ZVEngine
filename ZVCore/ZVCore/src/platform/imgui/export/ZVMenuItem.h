@@ -3,30 +3,30 @@
 #pragma once
 
 #include "../../../core/Core.h"
-#include "ZVKeyMap.h"
-#include "ZVHotKey.h"
 
 namespace ZVLab {
+
+	// forwards
+	class ZV_API CzvDialog;
+	class ZV_API CzvHotKey;
 
 	class ZV_API CzvMenuItem
 	{
 	//// Member Variables
 	private:
-		std::string		m_strLabel;
-		std::string		m_strShortCut;
-		CzvHotKey		m_HotKey;
-		bool			m_bSelected;
-		bool			m_bEnabled;
+		std::string					m_strLabel;
+		std::string					m_strShortCut;
+		bool						m_bSelected;
+		bool						m_bEnabled;
 
 	//// Member Functions
 	public:
-		CzvMenuItem(const std::string& label, const std::string& shortcut);
+		CzvMenuItem(const std::string& label, const std::string& shortcut = "");
 		~CzvMenuItem() = default;
 
-		void	SetHotKey(const CzvKeyMap& keycodes);
-
+		// Others
 		bool	Bind();
-
+		bool	Bind(const CzvHotKey& keyMap, CzvDialog& targetFocusDialog, bool isOverwriteShortcut = true);
 	};
 
 } // namespace ZVLab

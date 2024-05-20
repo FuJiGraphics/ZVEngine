@@ -7,6 +7,7 @@
 // imgui interfaces
 #include "../platform/imgui/export/ZVCommon.h"
 #include "../platform/imgui/export/ZVKeyMap.h"
+#include "../platform/imgui/export/ZVHotKey.h"
 #include "../platform/imgui/export/ZVTexture.h"
 #include "../platform/imgui/export/ZVDialog.h"
 #include "../platform/imgui/export/ZVButton.h"

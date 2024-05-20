@@ -9,6 +9,10 @@
 
 namespace ZVLab {
 
+	// forwards
+	class ZV_API CzvDialog;
+	class ZV_API CzvHotKey;
+
 	class ZV_API CzvImageButton : public CzvButton
 	{
 	private: /// Member variables

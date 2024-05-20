@@ -1,4 +1,6 @@
 #include "ZVImageButton.h"
+#include "ZVDialog.h"
+#include "ZVHotKey.h"
 
 namespace ZVLab {
 
