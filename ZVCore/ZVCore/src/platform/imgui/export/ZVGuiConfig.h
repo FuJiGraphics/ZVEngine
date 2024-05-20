@@ -24,7 +24,7 @@ enum EzvWindowFoucsOptions
 	ezvWindowFocusFlags_DockHierarchy		= ImGuiFocusedFlags_::ImGuiFocusedFlags_DockHierarchy,
 	ezvWindowFocusFlags_RootAndChildWindows	= ImGuiFocusedFlags_::ImGuiFocusedFlags_RootAndChildWindows,
 };
-struct ZV_API TzvDialogInfo
+struct ZV_API TzvWindowFocusedInfo
 {
 	using WindowFocusedOptions = int;
 
