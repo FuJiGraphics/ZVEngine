@@ -27,16 +27,20 @@ public:
 	}
 	virtual void OnAttach() 
 	{
+
 	};
 	 
 	virtual void OnGUI()
 	{
 		DProfile_StartRecord("Sidebar1");
 		CzvDialog dialog1("Sidebar1", info1);
+		CzvToggleButton toggle("toggle");
 		CzvMenuItem item("item", "Custom HotKey");
 
-		CzvToggleButton toggle("toggle");
-		toggle.Bind();
+
+		dialog1.Button("name");
+		dialog1.ToggleButton(toggle);
+		dialog1.ToggleButton();
 
 		if (ImGui::BeginMenu("asd"))
 		{

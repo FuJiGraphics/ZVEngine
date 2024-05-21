@@ -22,10 +22,15 @@ namespace ZVLab {
 		cv::Mat					m_matImageData;
 		Shared<CzvTexture>		m_spTexture;
 		bool					m_bInitialized;
+		static unsigned int		s_nuiImageCount;
+
+	protected:
+		inline static unsigned int	GetImageCount() { return (s_nuiImageCount); }
 
 	//// Member Functions
 	public:
-		CzvImage(const std::string& label = "");
+		CzvImage();
+		CzvImage(const std::string& label);
 		virtual ~CzvImage();
 
 		bool	Empty() const;

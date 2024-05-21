@@ -1,6 +1,20 @@
 #include "ZVImage.h"
 
 namespace ZVLab {
+
+	/// static variable
+	unsigned int CzvImage::s_nuiImageCount = 0;
+
+	CzvImage::CzvImage()
+		: m_strLabel(DBindLabelNumbering("Image", CzvImage::GetImageCount()))
+		, m_strPath("")
+		, m_matImageData()
+		, m_spTexture(nullptr)
+		, m_bInitialized(false)
+	{
+		m_spTexture = CzvTexture::Create(m_strLabel);
+	}
+
 	CzvImage::CzvImage(const std::string& label)
 		: m_strLabel(label)
 		, m_strPath("")

@@ -1,4 +1,8 @@
 #include "ZVDialog.h"
+#include "ZVImage.h"
+#include "ZVButton.h"
+#include "ZVImageButton.h"
+#include "ZVToggleButton.h"
 #include "../ZVimguiManager.h"
 
 namespace { /// statics
@@ -159,45 +163,84 @@ namespace ZVLab {
 	// interfaces
 	bool CzvDialog::Button(const std::string& label)
 	{
-		if (this->Synchronization())
-		{
-			CzvButton button(label);
-			return (button.Bind());
-		}
-		return (false);
+		bool result = false;
+		CzvButton button(label);
+		result = this->Binding(&button);
+		return (result);
 	}
 
 	bool CzvDialog::Button(const std::string& label, const ImVec2& size)
 	{
-		if (this->Synchronization())
-		{
-			CzvButton button(label, size);
-			return (button.Bind());
-		}
-		return (false);
+		bool result = false;
+		CzvButton button(label, size);
+		result = this->Binding(&button);
+		return (result);
 	}
 
 	bool CzvDialog::Button(const std::string& label, const ImVec2& size, const ImVec2& position)
 	{
-		if (this->Synchronization())
-		{
-			CzvButton button(label, size, position);
-			return (button.Bind());
-		}
-		return (false);
+		bool result = false;
+		CzvButton button(label, size, position);
+		result = this->Binding(&button);
+		return (result);
 	}
 
 	bool CzvDialog::Button(CzvButton& button)
 	{
-		if (this->Synchronization())
-		{
-			return (button.Bind());
-		}
-		return (false);
+		bool result = false;
+		result = this->Binding(&button);
+		return (result);
+	}
+
+	bool CzvDialog::ToggleButton()
+	{
+		bool result = false;
+		CzvToggleButton button;
+		result = this->Binding(&button);
+		return (result);
+	}
+
+	bool CzvDialog::ToggleButton(const std::string& label)
+	{
+		bool result = false;
+		CzvToggleButton button(label);
+		result = this->Binding(&button);
+		return (result);
+	}
+
+	bool CzvDialog::ToggleButton(const std::string& label, const ImVec2& size)
+	{
+		bool result = false;
+		CzvToggleButton button(label, size);
+		result = this->Binding(&button);
+		return (result);
+	}
+
+	bool CzvDialog::ToggleButton(const std::string& label, const ImVec2& size, const ImVec2& position)
+	{
+		bool result = false;
+		CzvToggleButton button(label, size, position);
+		result = this->Binding(&button);
+		return (result);
+	}
+
+	bool CzvDialog::ToggleButton(CzvToggleButton& button)
+	{
+		bool result = false;
+		result = this->Binding(&button);
+		return (result);
+	}
+
+	bool CzvDialog::ImageButton(CzvImageButton& button)
+	{
+		bool result = false;
+		result = this->Binding(&button);
+		return (result);
 	}
 
 	void CzvDialog::Image(const CzvImage& image, const ImVec2& size)
 	{
+		this->Synchronization();
 		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
 		{
 			m_MenuBar.UnBind();
@@ -212,12 +255,11 @@ namespace ZVLab {
 
 	bool CzvDialog::MenuItem(const std::string& label)
 	{
-		if (this->Synchronization())
-		{
-			if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar))
-				return (ImGui::MenuItem(label.c_str()));
-		}
-		return (false);
+		bool result = false;
+		this->Synchronization();
+		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
+			result = ImGui::MenuItem(label.c_str());
+		return (result);
 	}
 
 	/// others
@@ -252,6 +294,23 @@ namespace ZVLab {
 			// Menubar È°¼ºÈ­
 			if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && m_bIsUnFolded)
 				m_MenuBar.Bind();
+		}
+		return (result);
+	}
+
+	bool CzvDialog::Binding(CzvButton* target)
+	{
+		bool result = false;
+		this->Synchronization();
+		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
+		{
+			m_MenuBar.UnBind();
+			result = target->Bind();
+			m_MenuBar.Bind();
+		}
+		else
+		{
+			result = target->Bind();
 		}
 		return (result);
 	}
