@@ -15,7 +15,6 @@ namespace ZVLab {
 	class ZV_API	CzvImageButton;
 	class ZV_API	CzvToggleButton;
 
-
 //----------------------------------------------------
 // Dialog
 //----------------------------------------------------
@@ -164,7 +163,6 @@ namespace ZVLab {
 		 * @param[in]	size:	이미지 출력 크기 (초기값: 기본 크기)
 		 */
 		void	Image(const CzvImage& image, const ImVec2& size = { 0.0f, 0.0f });
-
 		/**
 		 * @brief 메뉴 아이템 생성
 		 * @details
@@ -177,7 +175,6 @@ namespace ZVLab {
 
 	private: // Others
 		bool	Synchronization();
-		void	SettingOptions();
 		bool	Binding(CzvButton* target);
 	};
 

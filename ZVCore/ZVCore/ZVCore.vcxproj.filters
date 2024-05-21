@@ -30,6 +30,9 @@
     <ClInclude Include="src\core\DataTypes.h">
       <Filter>core</Filter>
     </ClInclude>
+    <ClInclude Include="src\core\ZVLayerBuffer.h">
+      <Filter>core</Filter>
+    </ClInclude>
     <ClInclude Include="src\core\ZVMemory.h">
       <Filter>core</Filter>
     </ClInclude>
@@ -96,10 +99,25 @@
     <ClInclude Include="src\platform\imgui\export\ZVGuiConfig.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVHotKey.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVImage.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVImageButton.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVKeyMap.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVMenu.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVMenuBar.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVProfiler.h">
@@ -120,16 +138,12 @@
     <ClInclude Include="src\platform\windows\ZVwindow_win.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVMenubar.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h" />
-    <ClInclude Include="src\core\ZVLayerBuffer.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVKeyMap.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVHotKey.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVMenu.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVComboBox.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\core\ZVLayerBuffer.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
     <ClCompile Include="src\core\ZVsystem.cpp">
       <Filter>core</Filter>
     </ClCompile>
@@ -157,10 +171,22 @@
     <ClCompile Include="src\platform\imgui\export\ZVFileDialog.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVHotKey.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVImage.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVImageButton.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVKeyMap.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVMenuBar.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVMenuItem.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp">
@@ -181,12 +207,6 @@
     <ClCompile Include="src\platform\windows\ZVwindow_win.cpp">
       <Filter>platform\windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\platform\imgui\export\ZVMenubar.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVMenuItem.cpp" />
-    <ClCompile Include="src\core\ZVLayerBuffer.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\platform\imgui\export\ZVKeyMap.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVHotKey.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVComboBox.cpp" />
   </ItemGroup>
 </Project>

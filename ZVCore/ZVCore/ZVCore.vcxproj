@@ -142,11 +142,11 @@
   <ItemGroup>
     <ClInclude Include="src\core\Core.h" />
     <ClInclude Include="src\core\DataTypes.h" />
+    <ClInclude Include="src\core\ZVLayerBuffer.h" />
     <ClInclude Include="src\core\ZVMemory.h" />
     <ClInclude Include="src\core\ZVTimer.h" />
     <ClInclude Include="src\core\ZVassert.h" />
     <ClInclude Include="src\core\ZVlayer.h" />
-    <ClInclude Include="src\core\ZVLayerBuffer.h" />
     <ClInclude Include="src\core\ZVsystem.h" />
     <ClInclude Include="src\core\ZVwindow.h" />
     <ClInclude Include="src\events\ZVKeyCodes.h" />
@@ -156,11 +156,7 @@
     <ClInclude Include="src\events\ZVmouseEvent.h" />
     <ClInclude Include="src\export\EntryPoint.h" />
     <ClInclude Include="src\export\ZVCore.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVHotKey.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVKeyMap.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVMenu.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVMenubar.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVComboBox.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiManager.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
     <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h" />
@@ -170,8 +166,13 @@
     <ClInclude Include="src\platform\imgui\export\ZVDialog.h" />
     <ClInclude Include="src\platform\imgui\export\ZVFileDialog.h" />
     <ClInclude Include="src\platform\imgui\export\ZVGuiConfig.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVHotKey.h" />
     <ClInclude Include="src\platform\imgui\export\ZVImage.h" />
     <ClInclude Include="src\platform\imgui\export\ZVImageButton.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVKeyMap.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVMenu.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVMenuBar.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h" />
     <ClInclude Include="src\platform\imgui\export\ZVProfiler.h" />
     <ClInclude Include="src\platform\imgui\export\ZVTabBar.h" />
     <ClInclude Include="src\platform\imgui\export\ZVTabItem.h" />
@@ -183,10 +184,7 @@
     <ClCompile Include="src\core\ZVLayerBuffer.cpp" />
     <ClCompile Include="src\core\ZVsystem.cpp" />
     <ClCompile Include="src\core\ZVwindow.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVHotKey.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVKeyMap.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVMenubar.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVMenuItem.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVComboBox.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiManager.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp" />
     <ClCompile Include="src\platform\imgui\ZVProfiler_internal.cpp" />
@@ -194,8 +192,12 @@
     <ClCompile Include="src\platform\imgui\export\ZVButton.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVDialog.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVFileDialog.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVHotKey.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVImage.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVImageButton.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVKeyMap.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVMenuBar.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVMenuItem.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVTabBar.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVTabItem.cpp" />

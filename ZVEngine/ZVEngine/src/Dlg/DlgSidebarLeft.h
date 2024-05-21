@@ -50,7 +50,6 @@ public:
 			}
 			ImGui::EndMenu();
 		}
-		
 		CzvImage image;
 		DProfile_EndRecord;
 	};

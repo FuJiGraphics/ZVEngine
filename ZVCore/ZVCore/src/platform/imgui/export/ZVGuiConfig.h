@@ -30,7 +30,7 @@ struct ZV_API TzvWindowFocusedInfo
 
 //// Member Variables
 private:
-	WindowFocusedOptions	m_iWindowFocusedOptions = ImGuiFocusedFlags_None;
+	WindowFocusedOptions	m_iWindowFocusedOptions = ezvWindowFocusFlags_None;
 
 //// Member Functions
 public:
@@ -400,7 +400,7 @@ struct ZV_API TzvTabItemInfo
 
 //// Member Variables
 private:
-	TabItemOptions	m_iTabItemOptions = ImGuiTabItemFlags_None;
+	TabItemOptions	m_iTabItemOptions = ezvTabItemOptions_None;
 
 //// Member Functions
 public:
@@ -425,6 +425,60 @@ public:
 	inline void AddOptions(const EzvTabItemOptions& flags)					{ m_iTabItemOptions |= flags; }
 	inline void DelOptions(const EzvTabItemOptions& flags)					{ m_iTabItemOptions &= ~flags; }
 };
+#pragma endregion
+#pragma region ComboBox Options
+//----------------------------------------------------
+// enum ComboBox Options
+//----------------------------------------------------
+enum EzvComboBoxOptions
+{
+	ezvComboBoxFlags_None                   = ImGuiComboFlags_::ImGuiComboFlags_None,
+	ezvComboBoxFlags_PopupAlignLeft         = ImGuiComboFlags_::ImGuiComboFlags_PopupAlignLeft,
+	ezvComboBoxFlags_HeightSmall            = ImGuiComboFlags_::ImGuiComboFlags_HeightSmall,
+	ezvComboBoxFlags_HeightRegular          = ImGuiComboFlags_::ImGuiComboFlags_HeightRegular,
+	ezvComboBoxFlags_HeightLarge            = ImGuiComboFlags_::ImGuiComboFlags_HeightLarge,
+	ezvComboBoxFlags_HeightLargest          = ImGuiComboFlags_::ImGuiComboFlags_HeightLargest,
+	ezvComboBoxFlags_NoArrowButton          = ImGuiComboFlags_::ImGuiComboFlags_NoArrowButton,
+	ezvComboBoxFlags_NoPreview              = ImGuiComboFlags_::ImGuiComboFlags_NoPreview,
+	ezvComboBoxFlags_WidthFitPreview        = ImGuiComboFlags_::ImGuiComboFlags_WidthFitPreview,
+	ezvComboBoxFlags_HeightMask_            = ImGuiComboFlags_::ImGuiComboFlags_HeightMask_,
+};
+
+//----------------------------------------------------
+// struct ComboBox Info
+//----------------------------------------------------
+struct ZV_API TzvComboBoxInfo
+{
+	using ComboBoxOptions = int;
+
+	//// Member Variables
+private:
+	ComboBoxOptions	m_iComboBoxOptions = ImGuiTabItemFlags_None;
+
+	//// Member Functions
+public:
+	// Getter
+	inline ComboBoxOptions	GetOptions() { return (m_iComboBoxOptions); }
+
+	// Setter
+	inline void SetPopupAlignLeft(bool enabled)			{ this->FlagOptions(enabled, ezvComboBoxFlags_PopupAlignLeft  ); }
+	inline void SetHeightSmall(bool enabled)			{ this->FlagOptions(enabled, ezvComboBoxFlags_HeightSmall     ); }
+	inline void SetHeightRegular(bool enabled)			{ this->FlagOptions(enabled, ezvComboBoxFlags_HeightRegular   ); }
+	inline void SetHeightLarge(bool enabled)			{ this->FlagOptions(enabled, ezvComboBoxFlags_HeightLarge     ); }
+	inline void SetHeightLargest(bool enabled)			{ this->FlagOptions(enabled, ezvComboBoxFlags_HeightLargest   ); }
+	inline void SetNoArrowButton(bool enabled)			{ this->FlagOptions(enabled, ezvComboBoxFlags_NoArrowButton   ); }
+	inline void SetNoPreview(bool enabled)				{ this->FlagOptions(enabled, ezvComboBoxFlags_NoPreview       ); }
+	inline void SetWidthFitPreview(bool enabled)		{ this->FlagOptions(enabled, ezvComboBoxFlags_WidthFitPreview ); }
+	inline void SetHeightMask(bool enabled)				{ this->FlagOptions(enabled, ezvComboBoxFlags_HeightMask_     ); }
+
+	// Others
+	inline bool IsActivated(const EzvComboBoxOptions& flags) { return (m_iComboBoxOptions & flags); }
+	inline void FlagOptions(bool enabled, const EzvComboBoxOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void AddOptions(const EzvComboBoxOptions& flags) { m_iComboBoxOptions |= flags; }
+	inline void DelOptions(const EzvComboBoxOptions& flags) { m_iComboBoxOptions &= ~flags; }
+};
+
+
 #pragma endregion
 
 } // namespace ZVLab

@@ -8,7 +8,7 @@ void CDlgDisplayWindow::OnAttach()
 
 void CDlgDisplayWindow::OnGUI()
 {
-	DProfile_StartRecord(m_strLabel);
+	DProfile_StartRecord("Display FileDialog...");
 	CzvDialog dialog(m_strLabel, m_tDialogInfo);
 	
 	dialog.Image
@@ -33,7 +33,9 @@ void CDlgDisplayWindow::OnGUI()
 		}
 		ImGui::EndMenu();
 	}
+	DProfile_EndRecord;
 
+	DProfile_StartRecord("Load & Save Images...");
 	if (ifd::FileDialog::Instance().IsDone("TextureOpenDialog"))
 	{
 		if (ifd::FileDialog::Instance().HasResult()) {
@@ -51,6 +53,7 @@ void CDlgDisplayWindow::OnGUI()
 		ifd::FileDialog::Instance().Close();
 	}
 	DProfile_EndRecord;
+	
 };
 
 void CDlgDisplayWindow::OnMainMenuBar()

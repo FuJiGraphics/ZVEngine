@@ -1,9 +1,0 @@
-﻿  DlgDisplayWindow.cpp
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(38): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다.
-  d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(37): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오.
-DlgDisplayWindow.obj : error LNK2019: "public: bool __cdecl ZVLab::CzvDialog::ToggleButton(void)" (?ToggleButton@CzvDialog@ZVLab@@QEAA_NXZ) 외부 기호(참조 위치: "public: virtual void __cdecl CDlgSidebarLeft::OnGUI(void)" (?OnGUI@CDlgSidebarLeft@@UEAAXXZ) 함수)에서 확인하지 못했습니다.
-..\..\Dist\ZVEngine.exe : fatal error LNK1120: 1개의 확인할 수 없는 외부 참조입니다.
