@@ -6,6 +6,7 @@
 #include "ZVGuiConfig.h"
 
 // UI Defines
+#define DzvUI_SameLine				ImGui::SameLine();
 #define DzvUI_Bullet				ImGui::Bullet();
 #define DzvUI_Separator				ImGui::Separator();
 #define DzvUI_Text(...)				ImGui::Text(__VA_ARGS__);

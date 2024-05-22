@@ -40,44 +40,54 @@ public:
 		dlg.Button("rel2");
 		dlg.Button("rel3");
 
-		static ImGuiComboFlags flags = 0;
-		ImGui::CheckboxFlags("ImGuiComboFlags_PopupAlignLeft", &flags, ImGuiComboFlags_PopupAlignLeft);
-		ImGui::SameLine();
-		if (ImGui::CheckboxFlags("ImGuiComboFlags_NoArrowButton", &flags, ImGuiComboFlags_NoArrowButton))
-			flags &= ~ImGuiComboFlags_NoPreview;     // Clear incompatible flags
-		if (ImGui::CheckboxFlags("ImGuiComboFlags_NoPreview", &flags, ImGuiComboFlags_NoPreview))
-			flags &= ~(ImGuiComboFlags_NoArrowButton | ImGuiComboFlags_WidthFitPreview); // Clear incompatible flags
-		if (ImGui::CheckboxFlags("ImGuiComboFlags_WidthFitPreview", &flags, ImGuiComboFlags_WidthFitPreview))
-			flags &= ~ImGuiComboFlags_NoPreview;
+		//static ImGuiComboFlags flags = 0;
+		//ImGui::CheckboxFlags("ImGuiComboFlags_PopupAlignLeft", &flags, ImGuiComboFlags_PopupAlignLeft);
+		//ImGui::SameLine();
+		//if (ImGui::CheckboxFlags("ImGuiComboFlags_NoArrowButton", &flags, ImGuiComboFlags_NoArrowButton))
+		//	flags &= ~ImGuiComboFlags_NoPreview;     // Clear incompatible flags
+		//if (ImGui::CheckboxFlags("ImGuiComboFlags_NoPreview", &flags, ImGuiComboFlags_NoPreview))
+		//	flags &= ~(ImGuiComboFlags_NoArrowButton | ImGuiComboFlags_WidthFitPreview); // Clear incompatible flags
+		//if (ImGui::CheckboxFlags("ImGuiComboFlags_WidthFitPreview", &flags, ImGuiComboFlags_WidthFitPreview))
+		//	flags &= ~ImGuiComboFlags_NoPreview;
 
-		// Override default popup height
-		if (ImGui::CheckboxFlags("ImGuiComboFlags_HeightSmall", &flags, ImGuiComboFlags_HeightSmall))
-			flags &= ~(ImGuiComboFlags_HeightMask_ & ~ImGuiComboFlags_HeightSmall);
-		if (ImGui::CheckboxFlags("ImGuiComboFlags_HeightRegular", &flags, ImGuiComboFlags_HeightRegular))
-			flags &= ~(ImGuiComboFlags_HeightMask_ & ~ImGuiComboFlags_HeightRegular);
-		if (ImGui::CheckboxFlags("ImGuiComboFlags_HeightLargest", &flags, ImGuiComboFlags_HeightLargest))
+		//// Override default popup height
+		//if (ImGui::CheckboxFlags("ImGuiComboFlags_HeightSmall", &flags, ImGuiComboFlags_HeightSmall))
+		//	flags &= ~(ImGuiComboFlags_HeightMask_ & ~ImGuiComboFlags_HeightSmall);
+		//if (ImGui::CheckboxFlags("ImGuiComboFlags_HeightRegular", &flags, ImGuiComboFlags_HeightRegular))
+		//	flags &= ~(ImGuiComboFlags_HeightMask_ & ~ImGuiComboFlags_HeightRegular);
+		//if (ImGui::CheckboxFlags("ImGuiComboFlags_HeightLargest", &flags, ImGuiComboFlags_HeightLargest))
 
-			flags &= ~(ImGuiComboFlags_HeightMask_ & ~ImGuiComboFlags_HeightLargest);
-		const char* items[] = { "AAAA", "BBBB", "CCCC", "DDDD", "EEEE", "FFFF", "GGGG", "HHHH", "IIII", "JJJJ", "KKKK", "LLLLLLL", "MMMM", "OOOOOOO" };
-		static int item_current_idx = 0; // Here we store our selection data as an index.
+		//	flags &= ~(ImGuiComboFlags_HeightMask_ & ~ImGuiComboFlags_HeightLargest);
+		//const char* items[] = { "AAAA", "BBBB", "CCCC", "DDDD", "EEEE", "FFFF", "GGGG", "HHHH", "IIII", "JJJJ", "KKKK", "LLLLLLL", "MMMM", "OOOOOOO" };
+		//static int item_current_idx = 0; // Here we store our selection data as an index.
 
-		// Pass in the preview value visible before opening the combo (it could technically be different contents or not pulled from items[])
-		const char* combo_preview_value = items[item_current_idx];
+		//// Pass in the preview value visible before opening the combo (it could technically be different contents or not pulled from items[])
+		//const char* combo_preview_value = items[item_current_idx];
 
-		if (ImGui::BeginCombo("Separate", combo_preview_value, flags))
-		{
-			for (int n = 0; n < IM_ARRAYSIZE(items); n++)
-			{
-				const bool is_selected = (item_current_idx == n);
-				if (ImGui::Selectable(items[n], is_selected))
-					item_current_idx = n;
+		//if (ImGui::BeginCombo("Separate", combo_preview_value, flags))
+		//{
+		//	for (int n = 0; n < IM_ARRAYSIZE(items); n++)
+		//	{
+		//		const bool is_selected = (item_current_idx == n);
+		//		if (ImGui::Selectable(items[n], is_selected))
+		//			item_current_idx = n;
 
-				// Set the initial focus when opening the combo (scrolling + keyboard navigation focus)
-				if (is_selected)
-					ImGui::SetItemDefaultFocus();
-			}
-			ImGui::EndCombo();
-		}
+		//		// Set the initial focus when opening the combo (scrolling + keyboard navigation focus)
+		//		if (is_selected)
+		//			ImGui::SetItemDefaultFocus();
+		//	}
+		//	ImGui::EndCombo();
+		//}
+
+		TzvComboBoxInfo comboInfo;
+		comboInfo.SetHeightSmall(true);
+		comboInfo.SetWidthFitPreview(true);
+		CzvComboBox combo("Separate", comboInfo);
+		CzvComboBox combo2("index", comboInfo);
+		combo.SetItems({ "AAA", "BBB" });
+		combo2.SetItems({ "ALL", "0", "1" });
+		combo.Bind(); DzvUI_SameLine
+		combo2.Bind();
 
 		DProfile_EndRecord;
 	};

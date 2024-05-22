@@ -1,12 +1,45 @@
 #include "ZVComboBox.h"
 
 namespace { /// statics
-	static bool							s_bFirstEntryScope = true;
-	static ZVLab::CzvComboBox*			s_pCurrComboBox = nullptr;
-	static unsigned int					s_unComboBoxCount = 0;
-#define	DRegistRuntimeComboBox(ptr)		(s_pCurrComboBox = ptr);
-#define	DUnRegistRuntimeComboBox()		(s_pCurrComboBox = nullptr);
-#define	DIsCurrentRegistComboBox(ptr)	(s_pCurrComboBox == ptr)
+	static unsigned int	s_unComboBoxCount = 0;
+
+	static std::map<std::string, std::pair<const char*, int>>
+		s_mComboStatusMap;
+	static bool sRegistComboBoxStatus(const std::string& key, const std::string& str, int index)
+	{
+		bool result = false;
+		auto& f = s_mComboStatusMap.find(key);
+		if (f == s_mComboStatusMap.end())
+		{
+			s_mComboStatusMap.insert({ key, {str.c_str(), index} });
+			result = true;
+		}
+		else // 찾았을 시
+		{
+			auto& targetItem = f->second;
+			targetItem.first = str.c_str();
+			targetItem.second = index;
+		}
+		return (result);
+	}
+	static std::pair<const char*, int> sGetComboBoxStatus(const std::string& key)
+	{
+		auto& f = s_mComboStatusMap.find(key);
+		if (f == s_mComboStatusMap.end())
+			::sRegistComboBoxStatus(key, "", 0);
+		return (s_mComboStatusMap[key]);
+	}
+	static bool sReleaseComboBoxStatus(const std::string& key)
+	{
+		bool result = false;
+		auto& f = s_mComboStatusMap.find(key);
+		if (f != s_mComboStatusMap.end())
+		{
+			s_mComboStatusMap.erase(key);
+			result = true;
+		}
+		return (result);
+	}
 }
 
 
@@ -15,32 +48,45 @@ namespace ZVLab {
 	CzvComboBox::CzvComboBox(const std::string& label, const TzvComboBoxInfo& info)
 		: m_strLabel(label)
 		, m_tOptions(info)
+		, m_vItemList()
 	{
 	}
 
 	CzvComboBox::~CzvComboBox()
 	{
-
 	}
 
-	bool CzvComboBox::Synchronization()
+	void CzvComboBox::SetItems(const std::initializer_list<const char*>& item_list)
 	{
-		bool result = false;
-		if (!DIsCurrentRegistComboBox(this) || s_bFirstEntryScope)
-		{
-			if (s_bFirstEntryScope)
-				s_bFirstEntryScope = false;
-			else
-			{
-				ImGui::End();
-				DUnRegistRuntimeComboBox();
-			}
+		m_vItemList.clear();
+		m_vItemList.resize(item_list.size());
+		m_vItemList = std::vector<const char*>(item_list);
+	}
 
-			// 현재 Dialog 정보 등록
-			DRegistRuntimeComboBox(this);
-			result = ImGui::Begin(m_strLabel.c_str(), NULL, m_tOptions.GetOptions());
+	std::string	CzvComboBox::Bind()
+	{
+		auto& currItemData = ::sGetComboBoxStatus(m_strLabel);
+		if (m_vItemList.empty() == false)
+		{
+			int itemSize = m_vItemList.size();
+			auto& currItemIndex = currItemData.second;
+			if (ImGui::BeginCombo(m_strLabel.c_str(), m_vItemList[currItemIndex], m_tOptions.GetOptions()))
+			{
+				for (int i = 0; i < itemSize; ++i)
+				{
+					const bool is_selected = (currItemIndex == i);
+					if (ImGui::Selectable(m_vItemList[i], is_selected))
+					{
+						sRegistComboBoxStatus(m_strLabel, m_vItemList[i], i);
+					}
+					// Set the initial focus when opening the combo (scrolling + keyboard navigation focus)
+					if (is_selected)
+						ImGui::SetItemDefaultFocus();
+				}
+				ImGui::EndCombo();
+			}
 		}
-		return (result);
+		return (currItemData.first);
 	}
 
 } // namespace ZVLab

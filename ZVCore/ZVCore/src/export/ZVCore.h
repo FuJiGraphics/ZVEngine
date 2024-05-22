@@ -19,6 +19,7 @@
 #include "../platform/imgui/export/ZVMenuItem.h"
 #include "../platform/imgui/export/ZVFileDialog.h"
 #include "../platform/imgui/export/ZVImage.h"
+#include "../platform/imgui/export/ZVComboBox.h"
 // events
 #include "../events/ZVevent.h"
 #include "../events/ZVappEvent.h"

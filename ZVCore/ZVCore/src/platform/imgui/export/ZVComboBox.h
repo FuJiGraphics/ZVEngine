@@ -14,8 +14,9 @@ namespace ZVLab {
 	{
 	//// Member Variables
 	private:
-		std::string			m_strLabel;
-		TzvComboBoxInfo		m_tOptions;
+		std::string					m_strLabel;
+		TzvComboBoxInfo				m_tOptions;
+		std::vector<const char*>	m_vItemList;
 
 	//// Member Functions
 	public:
@@ -24,13 +25,13 @@ namespace ZVLab {
 		~CzvComboBox();
 
 		// Getter
-
+		void	SetItems(const std::initializer_list<const char*>& item_list);
 		
+		// Others
+		std::string	Bind();
+
 		// inline
 		inline std::string	GetLabel() const { return (m_strLabel); }
-
-	private:
-		bool	Synchronization();
 	};
 
 } // namespace ZVLab
