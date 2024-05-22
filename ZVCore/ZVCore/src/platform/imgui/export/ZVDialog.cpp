@@ -167,6 +167,26 @@ namespace ZVLab {
 	}
 
 	// interfaces
+	void CzvDialog::Text(const char* fmt, ...)
+	{
+		bool result;
+		this->Synchronization();
+		va_list args;
+		va_start(args, fmt);
+		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
+		{
+			m_MenuBar.UnBind();
+			ImGui::TextV(fmt, args);
+			m_MenuBar.Bind();
+		}
+		else
+		{
+			ImGui::TextV(fmt, args);
+		}
+		va_end(args);
+		DUnRegistStaticItemPos
+	}
+
 	bool CzvDialog::Button(const std::string& label)
 	{
 		bool result = false;

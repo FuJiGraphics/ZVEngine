@@ -2,6 +2,15 @@
 
 namespace ZVLab {
 
+	CzvFileDialog::CzvFileDialog(const EzvFileDialogType& type)
+		: m_strLabel("No Label")
+		, m_eType(type)
+		, m_strOpenLabel("Open a files")
+		, m_strSaveLabel("Save a file")
+		, m_bIsDone(false)
+		, m_bMultiSelectMode(false)
+	{/*Empty*/}
+
 	CzvFileDialog::CzvFileDialog(const std::string& label, const EzvFileDialogType& type)
 		: m_strLabel(label)
 		, m_eType(type)
@@ -22,6 +31,11 @@ namespace ZVLab {
 	bool CzvFileDialog::IsDone() const
 	{
 		return (m_bIsDone);
+	}
+
+	void CzvFileDialog::SetFileDialogLabel(const std::string& label)
+	{
+		m_strLabel = label;
 	}
 
 	void CzvFileDialog::SetOpenLabel(const std::string& label)

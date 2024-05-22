@@ -80,6 +80,12 @@ namespace ZVLab {
 		// interfaces
 		//----------------------------------------------------
 		/**
+		 * @brief		텍스트 출력
+		 * @details		현재 Dialog에 텍스트를 출력합니다.
+		 * @param[in]	str: 출력할 텍스트 내용
+		 */
+		void	Text(const char* fmt, ...);
+		/**
 		 * @brief		버튼 생성
 		 * @details		현재 Dialog에 버튼을 생성합니다.
 		 * @param[in]	label:	버튼의 라벨

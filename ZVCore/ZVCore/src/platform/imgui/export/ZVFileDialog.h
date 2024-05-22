@@ -26,6 +26,7 @@ namespace ZVLab {
 	//// Member Functions
 	public:
 		// Constructor, Destructor
+		CzvFileDialog(const EzvFileDialogType& type = EzvFileDialogType::eType_Common);
 		CzvFileDialog(const std::string& label, const EzvFileDialogType& type = EzvFileDialogType::eType_Common);
 		~CzvFileDialog();
 
@@ -34,6 +35,7 @@ namespace ZVLab {
 		bool				IsDone() const;
 
 		// Setter
+		void	SetFileDialogLabel(const std::string& label);
 		void	SetOpenLabel(const std::string& label);
 		void	SetSaveLabel(const std::string& label);
 		void	SetMultiSelectMode(bool enabled);

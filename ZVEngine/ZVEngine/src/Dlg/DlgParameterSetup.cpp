@@ -5,15 +5,31 @@
 
 void CDlgParameterSetup::OnAttach()
 {
+	m_FileDialog.SetFileDialogLabel("ParameterSetupFileDialog");
+	m_FileDialog.SetOpenLabel("Loading Path");
+	m_FileDialog.SetSaveLabel("Saving Path");
+	m_tParamChunk.strLoadingPath = " ";
+	m_tParamChunk.strSavingPath = " ";
 }
 
 void CDlgParameterSetup::OnGUI()
 {
+	DProfile_StartRecord("Parameter Setup Logic...");
+
 	CzvDialog dialog("ParameterSetup");
 	TzvParametersChunk tmp_param;
+	// Update
+	static char buf[64];
+	ImGui::InputText("Hello", buf, IM_ARRAYSIZE(buf));
 
-	DzvUI_Text("Loading Path");
+	// Render
+	TzvComboBoxInfo combo_info;
+	DzvUI_Bullet dialog.Text("Loading Path");
+	dialog.ComboBox(" ", { m_tParamChunk.strLoadingPath.c_str() }, combo_info);
+	DzvUI_Bullet dialog.Text("Saving Path");
+	dialog.ComboBox("  ", { m_tParamChunk.strSavingPath.c_str() }, combo_info);
 
+	DProfile_EndRecord
 }
 
 std::vector<std::string> CDlgParameterSetup::LoadImages(const std::string& path)

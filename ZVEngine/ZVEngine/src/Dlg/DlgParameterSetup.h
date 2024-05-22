@@ -20,6 +20,7 @@ private:
 	std::string			m_strLabel;
 	TzvDialogInfo		m_tDialogInfo;
 	TzvParametersChunk	m_tParamChunk;
+	CzvFileDialog		m_FileDialog;
 
 //// Member Functions
 public:
