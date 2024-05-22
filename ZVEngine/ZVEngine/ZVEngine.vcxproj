@@ -150,16 +150,19 @@
     <ClInclude Include="core\ZVapp.h" />
     <ClInclude Include="src\Dlg\DlgClassification.h" />
     <ClInclude Include="src\Dlg\DlgDisplayWindow.h" />
+    <ClInclude Include="src\Dlg\DlgParameterSetup.h" />
     <ClInclude Include="src\Dlg\DlgSidebarLeft.h" />
     <ClInclude Include="src\Environment.h" />
     <ClInclude Include="src\GUI.h" />
     <ClInclude Include="src\Layers\ZVWindowMenu.h" />
+    <ClInclude Include="src\Logic\ZVClassifie.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\EntryPoint.cpp" />
     <ClCompile Include="core\ZVapp.cpp" />
     <ClCompile Include="src\Dlg\DlgClassification.cpp" />
     <ClCompile Include="src\Dlg\DlgDisplayWindow.cpp" />
+    <ClCompile Include="src\Dlg\DlgParameterSetup.cpp" />
     <ClCompile Include="src\Dlg\DlgSidebarLeft.cpp" />
     <ClCompile Include="src\Layers\ZVWindowMenu.cpp" />
   </ItemGroup>

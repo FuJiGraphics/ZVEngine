@@ -12,12 +12,16 @@ namespace ZVLab {
 		eType_Windows,
 	};
 
-	class CzvFileDialog
+	class ZV_API CzvFileDialog
 	{
 	//// Member Variables
 	private:
 		std::string			m_strLabel;
 		EzvFileDialogType	m_eType;
+		std::string			m_strOpenLabel;
+		std::string			m_strSaveLabel;
+		bool				m_bIsDone;
+		bool				m_bMultiSelectMode;
 
 	//// Member Functions
 	public:
@@ -25,10 +29,20 @@ namespace ZVLab {
 		CzvFileDialog(const std::string& label, const EzvFileDialogType& type = EzvFileDialogType::eType_Common);
 		~CzvFileDialog();
 
-		// others
-		bool	Open(const std::string& label, const std::string& filter, bool isMultiselect = true, const std::string& startingDir = "");
-		bool	Save(const std::string& label, const std::string& filter, const std::string& startingDir = "");
+		// Getter
+		inline std::string	GetLabel() const;
+		bool				IsDone() const;
 
+		// Setter
+		void	SetOpenLabel(const std::string& label);
+		void	SetSaveLabel(const std::string& label);
+		void	SetMultiSelectMode(bool enabled);
+
+		// Others
+		bool		Open(const std::string& filter, const std::string& startingDir = "");
+		bool		Save(const std::string& filter, const std::string& startingDir = "");
+		bool		GetOpenFilePaths(std::string* out);
+		bool		GetSaveFilePaths(std::string* out);
 	};
 
 } // namespace ZVLab

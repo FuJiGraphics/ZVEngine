@@ -25,7 +25,7 @@ void CDlgClassification::OnGUI()
 	comboInfo.SetHeightSmall(true);
 	comboInfo.SetWidthFitPreview(true);
 	result = dlg.ComboBox("Separate", { "AAA", "BBB" }, comboInfo); DzvUI_SameLine
-		result = dlg.ComboBox("index", { "ALL", "0", "1" }, comboInfo);
+	result = dlg.ComboBox("index", { "ALL", "0", "1" }, comboInfo);
 
 	DProfile_EndRecord;
 };

@@ -1,10 +1,23 @@
 #include "Environment.h"
 #include "DlgDisplayWindow.h"
 
+CDlgDisplayWindow::CDlgDisplayWindow()
+	: m_strLabel(ZV_Setting::g_strLabelDisplayWindow)
+	, m_cImage()
+	, m_tDialogInfo()
+	, m_FileDialog("DisplayFileDialog")
+{
+}
+
 void CDlgDisplayWindow::OnAttach()
 {
 	m_strLabel = ZV_Setting::g_strLabelDisplayWindow;
 	m_tDialogInfo.SetMenuBar(true);
+	
+	// Setup File Dialog
+	m_FileDialog.SetMultiSelectMode(true);
+	m_FileDialog.SetOpenLabel("Open a Images");
+	m_FileDialog.SetSaveLabel("Save a Image");
 };
 
 void CDlgDisplayWindow::OnGUI()
@@ -12,49 +25,39 @@ void CDlgDisplayWindow::OnGUI()
 	DProfile_StartRecord("Display FileDialog...");
 	CzvDialog dialog(m_strLabel, m_tDialogInfo);
 	
-	dialog.Image
-	(
-		m_cImage, 
-		{ ZV_Setting::g_iDisplaySizeW, ZV_Setting::g_iDisplaySizeH }
-	);
+	// Display Image
+	const float iw = ZV_Setting::g_iDisplaySizeW;
+	const float ih = ZV_Setting::g_iDisplaySizeH;
+	dialog.Image(m_cImage, ImVec2(iw, ih));
 
+	// Get image file path with a CzvFileDialog
 	if (ImGui::BeginMenu("File"))
 	{
+		std::string path;
 		CzvMenuItem item_open("Image Open..");
 		if (item_open.Bind(KeyMaps::KEY_LEFT_CONTROL + KeyMaps::KEY_O))
 		{
-			FZLOG_INFO("Message: {0}", item_open.GetLabel().c_str());
-			ifd::FileDialog::Instance().Open("TextureOpenDialog", "Open a texture", "Image file (*.png;*.jpg;*.jpeg;*.bmp;){.png,.jpg,.jpeg,.bmp},.*", true);
+			m_FileDialog.Open("Image file (*.png;*.jpg;*.jpeg;*.bmp;){.png,.jpg,.jpeg,.bmp},.*");
 		}
 		CzvMenuItem item_save("Image Save");
 		if (item_save.Bind(KeyMaps::KEY_LEFT_CONTROL + KeyMaps::KEY_S))
 		{
-			FZLOG_INFO("Message: {0}", item_save.GetLabel().c_str());
-			ifd::FileDialog::Instance().Save("TextureSaveDialog", "Save a texture", "Image file (*.png;*.jpg;*.jpeg;*.bmp;){.png,.jpg,.jpeg,.bmp},.*");
+			m_FileDialog.Save("Image file (*.png;*.jpg;*.jpeg;*.bmp;){.png,.jpg,.jpeg,.bmp},.*");
 		}
 		ImGui::EndMenu();
 	}
-	DProfile_EndRecord;
 
-	DProfile_StartRecord("Load & Save Images...");
-	if (ifd::FileDialog::Instance().IsDone("TextureOpenDialog"))
+	// Open & Save Image Files
+	std::string path_open, path_save;
+	if (m_FileDialog.GetOpenFilePaths(&path_open))
 	{
-		if (ifd::FileDialog::Instance().HasResult()) {
-			std::string res = ifd::FileDialog::Instance().GetResult().u8string();
-			m_cImage.Load(res);
-		}
-		ifd::FileDialog::Instance().Close();
+		m_cImage.Load(path_open);
 	}
-	if (ifd::FileDialog::Instance().IsDone("TextureSaveDialog"))
+	if (m_FileDialog.GetOpenFilePaths(&path_save))
 	{
-		if (ifd::FileDialog::Instance().HasResult()) {
-			std::string res = ifd::FileDialog::Instance().GetResult().u8string();
-			m_cImage.Save(res, EzvImageFormat::ePNG);
-		}
-		ifd::FileDialog::Instance().Close();
+		m_cImage.Load(path_save);
 	}
 	DProfile_EndRecord;
-	
 };
 
 GENERATE_LAYER(CDlgDisplayWindow);
