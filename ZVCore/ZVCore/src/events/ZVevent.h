@@ -40,7 +40,7 @@ namespace ZVLab {
 
 	class ZV_API CzvEvent
 	{
-		friend class CZVeventDispatcher;
+		friend class CzvEventDispatcher;
 	public:
 		ZVbool bHandled = false;
 
@@ -56,7 +56,7 @@ namespace ZVLab {
 		}
 	};
 
-	class CZVeventDispatcher
+	class CzvEventDispatcher
 	{
 		template<typename T>
 		using EventFn = std::function<ZVbool(T&)>;
@@ -65,7 +65,7 @@ namespace ZVLab {
 		CzvEvent& m_Event;
 
 	public:
-		CZVeventDispatcher(CzvEvent& event)
+		CzvEventDispatcher(CzvEvent& event)
 			: m_Event(event)
 		{/*Empty*/}
 

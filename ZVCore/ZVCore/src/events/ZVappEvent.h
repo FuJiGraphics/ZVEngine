@@ -2,7 +2,7 @@
 #define __ZV_ZVWINDOWRESIZEEVENT_H__
 #pragma once
 
-#include "ZVevent.h"
+#include "ZVEvent.h"
 
 namespace ZVLab {
 

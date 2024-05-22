@@ -169,7 +169,7 @@ namespace ZVLab {
 
 	void CzvSystem::OnEvent(CzvEvent& event)
 	{
-		CZVeventDispatcher ed(event);
+		CzvEventDispatcher ed(event);
 		switch (event.GetEventType())
 		{
 		case EzvEventType::WindowResize:

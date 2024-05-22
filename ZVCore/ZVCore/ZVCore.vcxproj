@@ -146,17 +146,18 @@
     <ClInclude Include="src\core\ZVMemory.h" />
     <ClInclude Include="src\core\ZVTimer.h" />
     <ClInclude Include="src\core\ZVAssert.h" />
-    <ClInclude Include="src\core\ZVlayer.h" />
-    <ClInclude Include="src\core\ZVsystem.h" />
+    <ClInclude Include="src\core\ZVLayer.h" />
+    <ClInclude Include="src\core\ZVSystem.h" />
     <ClInclude Include="src\core\ZVwindow.h" />
     <ClInclude Include="src\events\ZVKeyCodes.h" />
-    <ClInclude Include="src\events\ZVappEvent.h" />
-    <ClInclude Include="src\events\ZVevent.h" />
-    <ClInclude Include="src\events\ZVkeyEvent.h" />
-    <ClInclude Include="src\events\ZVmouseEvent.h" />
+    <ClInclude Include="src\events\ZVAppEvent.h" />
+    <ClInclude Include="src\events\ZVEvent.h" />
+    <ClInclude Include="src\events\ZVKeyEvent.h" />
+    <ClInclude Include="src\events\ZVMouseEvent.h" />
     <ClInclude Include="src\export\EntryPoint.h" />
     <ClInclude Include="src\export\ZVCore.h" />
     <ClInclude Include="src\platform\imgui\export\ZVComboBox.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVInputText.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiManager.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
     <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h" />
@@ -182,9 +183,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVLayerBuffer.cpp" />
-    <ClCompile Include="src\core\ZVsystem.cpp" />
+    <ClCompile Include="src\core\ZVSystem.cpp" />
     <ClCompile Include="src\core\ZVwindow.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVComboBox.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVInputText.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiManager.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp" />
     <ClCompile Include="src\platform\imgui\ZVProfiler_internal.cpp" />

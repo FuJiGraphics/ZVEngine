@@ -8,7 +8,7 @@ void CDlgParameterSetup::OnAttach()
 	m_FileDialog.SetFileDialogLabel("ParameterSetupFileDialog");
 	m_FileDialog.SetOpenLabel("Loading Path");
 	m_FileDialog.SetSaveLabel("Saving Path");
-	m_tParamChunk.strLoadingPath = " ";
+	m_tParamChunk.strLoadingPath = "asdasf";
 	m_tParamChunk.strSavingPath = " ";
 }
 
@@ -17,17 +17,16 @@ void CDlgParameterSetup::OnGUI()
 	DProfile_StartRecord("Parameter Setup Logic...");
 
 	CzvDialog dialog("ParameterSetup");
-	TzvParametersChunk tmp_param;
+	static TzvParametersChunk tmp_param;
 	// Update
-	static char buf[64];
-	ImGui::InputText("Hello", buf, IM_ARRAYSIZE(buf));
+	dialog.InputText("input", &tmp_param.strLoadingPath);
 
 	// Render
 	TzvComboBoxInfo combo_info;
 	DzvUI_Bullet dialog.Text("Loading Path");
 	dialog.ComboBox(" ", { m_tParamChunk.strLoadingPath.c_str() }, combo_info);
 	DzvUI_Bullet dialog.Text("Saving Path");
-	dialog.ComboBox("  ", { m_tParamChunk.strSavingPath.c_str() }, combo_info);
+	dialog.ComboBox(" ", { m_tParamChunk.strSavingPath.c_str() }, combo_info);
 
 	DProfile_EndRecord
 }

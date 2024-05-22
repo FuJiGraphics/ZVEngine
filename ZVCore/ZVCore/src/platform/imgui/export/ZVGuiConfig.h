@@ -453,7 +453,7 @@ struct ZV_API TzvComboBoxInfo
 
 	//// Member Variables
 private:
-	ComboBoxOptions	m_iComboBoxOptions = ImGuiTabItemFlags_None;
+	ComboBoxOptions	m_iComboBoxOptions = ezvComboBoxFlags_None;
 
 	//// Member Functions
 public:
@@ -478,6 +478,84 @@ public:
 	inline void DelOptions(const EzvComboBoxOptions& flags) { m_iComboBoxOptions &= ~flags; }
 };
 
+
+#pragma endregion
+#pragma region Input Text
+//----------------------------------------------------
+// enum InputText Options
+//----------------------------------------------------
+enum EzvInputTextOptions 
+{
+	EzvInputTextOptions_None					= ImGuiInputTextFlags_::ImGuiInputTextFlags_None,
+	EzvInputTextOptions_CharsDecimal       		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsDecimal,		 // Allow 0123456789.+-*/
+	EzvInputTextOptions_CharsHexadecimal   		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsHexadecimal,	 // Allow 0123456789ABCDEFabcdef
+	EzvInputTextOptions_CharsUppercase     		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsUppercase,		 // Turn a..z into A..Z
+	EzvInputTextOptions_CharsNoBlank       		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsNoBlank,		 // Filter out spaces, tabs
+	EzvInputTextOptions_AutoSelectAll      		= ImGuiInputTextFlags_::ImGuiInputTextFlags_AutoSelectAll,		 // Select entire text when first taking mouse focus
+	EzvInputTextOptions_EnterReturnsTrue   		= ImGuiInputTextFlags_::ImGuiInputTextFlags_EnterReturnsTrue,	 // Return 'true' when Enter is pressed (as opposed to every time the value was modified). Consider looking at the IsItemDeactivatedAfterEdit() function.
+	EzvInputTextOptions_CallbackCompletion 		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackCompletion,  // Callback on pressing TAB (for completion handling)
+	EzvInputTextOptions_CallbackHistory    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackHistory,	 // Callback on pressing Up/Down arrows (for history handling)
+	EzvInputTextOptions_CallbackAlways     		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackAlways,		 // Callback on each iteration. User code may query cursor position, modify text buffer.
+	EzvInputTextOptions_CallbackCharFilter 		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackCharFilter,  // Callback on character inputs to replace or discard them. Modify 'EventChar' to replace or discard, or return 1 in callback to discard.
+	EzvInputTextOptions_AllowTabInput      		= ImGuiInputTextFlags_::ImGuiInputTextFlags_AllowTabInput,		 // Pressing TAB input a '\t' character into the text field
+	EzvInputTextOptions_CtrlEnterForNewLine		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CtrlEnterForNewLine, // In multi-line mode, unfocus with Enter, add new line with Ctrl+Enter (default is opposite: unfocus with Ctrl+Enter, add line with Enter).
+	EzvInputTextOptions_NoHorizontalScroll 		= ImGuiInputTextFlags_::ImGuiInputTextFlags_NoHorizontalScroll,  // Disable following the cursor horizontally
+	EzvInputTextOptions_AlwaysOverwrite    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_AlwaysOverwrite,	 // Overwrite mode
+	EzvInputTextOptions_ReadOnly           		= ImGuiInputTextFlags_::ImGuiInputTextFlags_ReadOnly,			 // Read-only mode
+	EzvInputTextOptions_Password           		= ImGuiInputTextFlags_::ImGuiInputTextFlags_Password,			 // Password mode, display all characters as '*'
+	EzvInputTextOptions_NoUndoRedo         		= ImGuiInputTextFlags_::ImGuiInputTextFlags_NoUndoRedo,			 // Disable undo/redo. Note that input text owns the text data while active, if you want to provide your own undo/redo stack you need e.g. to call ClearActiveID().
+	EzvInputTextOptions_CharsScientific    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsScientific,	 // Allow 0123456789.+-*/eE (Scientific notation input)
+	EzvInputTextOptions_CallbackResize     		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackResize,		 // Callback on buffer capacity changes request (beyond 'buf_size' parameter value), allowing the string to grow. Notify when the string wants to be resized (for string types which hold a cache of their Size). You will be provided a new BufSize in the callback and NEED to honor it. (see misc/cpp/imgui_stdlib.h for an example of using this)
+	EzvInputTextOptions_CallbackEdit       		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackEdit,		 // Callback on any edit (note that InputText() already returns true on edit, the callback is useful mainly to manipulate the underlying buffer while focus is active)
+	EzvInputTextOptions_EscapeClearsAll    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_EscapeClearsAll,	 // Escape key clears content if not empty, and deactivate otherwise (contrast to default behavior of Escape to revert)
+};
+
+//----------------------------------------------------
+// struct InputText Info
+//----------------------------------------------------
+struct ZV_API TzvInputTextInfo
+{
+	using InputTextOptions = int;
+
+	//// Member Variables
+private:
+	InputTextOptions	m_iInputTextOptions = EzvInputTextOptions_None;
+
+	//// Member Functions
+public:
+	// Getter
+	inline InputTextOptions	GetOptions() { return (m_iInputTextOptions); }
+	inline InputTextOptions	GetOptions() const { return (m_iInputTextOptions); }
+
+	// Setter
+	inline void	SetCharsDecimal(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CharsDecimal);}
+	inline void	SetCharsHexadecimal(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_CharsHexadecimal);}
+	inline void	SetCharsUppercase(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CharsUppercase);}
+	inline void	SetCharsNoBlank(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CharsNoBlank);}
+	inline void	SetAutoSelectAll(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_AutoSelectAll);}
+	inline void	SetEnterReturnsTrue(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_EnterReturnsTrue);}
+	inline void	SetCallbackCompletion(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackCompletion);}
+	inline void	SetCallbackHistory(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackHistory);}
+	inline void	SetCallbackAlways(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackAlways);}
+	inline void	SetCallbackCharFilter(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackCharFilter);}
+	inline void	SetAllowTabInput(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_AllowTabInput);}
+	inline void	SetCtrlEnterForNewLine(bool enabled)	{ this->FlagOptions(enabled, EzvInputTextOptions_CtrlEnterForNewLine);}
+	inline void	SetNoHorizontalScroll(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_NoHorizontalScroll);}
+	inline void	SetAlwaysOverwrite(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_AlwaysOverwrite);}
+	inline void	SetReadOnly(bool enabled)				{ this->FlagOptions(enabled, EzvInputTextOptions_ReadOnly);}
+	inline void	SetPassword(bool enabled)				{ this->FlagOptions(enabled, EzvInputTextOptions_Password);}
+	inline void	SetNoUndoRedo(bool enabled)				{ this->FlagOptions(enabled, EzvInputTextOptions_NoUndoRedo);}
+	inline void	SetCharsScientific(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_CharsScientific);}
+	inline void	SetCallbackResize(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackResize);}
+	inline void	SetCallbackEdit(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackEdit);}
+	inline void	SetEscapeClearsAll(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_EscapeClearsAll);}
+
+	// Others
+	inline bool IsActivated(const EzvInputTextOptions& flags) { return (m_iInputTextOptions & flags); }
+	inline void FlagOptions(bool enabled, const EzvInputTextOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void AddOptions(const EzvInputTextOptions& flags) { m_iInputTextOptions |= flags; }
+	inline void DelOptions(const EzvInputTextOptions& flags) { m_iInputTextOptions &= ~flags; }
+};
 
 #pragma endregion
 

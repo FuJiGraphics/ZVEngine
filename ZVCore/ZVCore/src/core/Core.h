@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <optional>
+#include <array>
 #include <map>
 
 // headers

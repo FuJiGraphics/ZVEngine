@@ -4,6 +4,7 @@
 #include "ZVImageButton.h"
 #include "ZVToggleButton.h"
 #include "ZVComboBox.h"
+#include "ZVInputText.h"
 #include "../ZVimguiManager.h"
 
 namespace { /// statics
@@ -187,6 +188,24 @@ namespace ZVLab {
 		DUnRegistStaticItemPos
 	}
 
+	void CzvDialog::InputText(const std::string& label, std::string* dst, const TzvInputTextInfo& info)
+	{
+		bool result;
+		this->Synchronization();
+		CzvInputText input(label, info);
+		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
+		{
+			m_MenuBar.UnBind();
+			input.Bind(dst);
+			m_MenuBar.Bind();
+		}
+		else
+		{
+			input.Bind(dst);
+		}
+		DUnRegistStaticItemPos
+	}
+
 	bool CzvDialog::Button(const std::string& label)
 	{
 		bool result = false;
@@ -344,7 +363,6 @@ namespace ZVLab {
 			{
 				ImGui::SetNextWindowSize(*m_optSize, ImGuiCond_Once);
 			}
-
 			// 현재 Dialog 정보 등록
 			DRegistRuntimeDialog(this);
 			CzvImguiManager::SetDockspaceOptionForNextDialog(m_tOptions.GetExtensionOptions());

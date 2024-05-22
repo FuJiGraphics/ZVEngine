@@ -39,28 +39,10 @@
     <ClInclude Include="src\core\ZVTimer.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ZVlayer.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\core\ZVsystem.h">
-      <Filter>core</Filter>
-    </ClInclude>
     <ClInclude Include="src\core\ZVwindow.h">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="src\events\ZVKeyCodes.h">
-      <Filter>events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\events\ZVappEvent.h">
-      <Filter>events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\events\ZVevent.h">
-      <Filter>events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\events\ZVkeyEvent.h">
-      <Filter>events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\events\ZVmouseEvent.h">
       <Filter>events</Filter>
     </ClInclude>
     <ClInclude Include="src\export\EntryPoint.h">
@@ -139,12 +121,28 @@
     <ClInclude Include="src\core\ZVAssert.h">
       <Filter>core</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVInputText.h" />
+    <ClInclude Include="src\core\ZVLayer.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\ZVSystem.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\ZVAppEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\ZVEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\ZVKeyEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\ZVMouseEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVLayerBuffer.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\core\ZVsystem.cpp">
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="src\core\ZVwindow.cpp">
@@ -208,5 +206,9 @@
       <Filter>platform\windows</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVComboBox.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVInputText.cpp" />
+    <ClCompile Include="src\core\ZVSystem.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

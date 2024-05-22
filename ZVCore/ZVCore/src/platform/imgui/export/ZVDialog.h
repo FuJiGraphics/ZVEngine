@@ -9,12 +9,14 @@
 
 namespace ZVLab {
 
-	// Forwards
+#pragma region Forwards
 	class ZV_API	CzvImage;
 	class ZV_API	CzvButton;
 	class ZV_API	CzvImageButton;
 	class ZV_API	CzvToggleButton;
 	class ZV_API	CzvComboBox;
+	class ZV_API	CzvInputText;
+#pragma endregion
 
 //----------------------------------------------------
 // Dialog
@@ -85,6 +87,13 @@ namespace ZVLab {
 		 * @param[in]	str: 출력할 텍스트 내용
 		 */
 		void	Text(const char* fmt, ...);
+		/**
+		 * @brief		텍스트를 입력받음
+		 * @details		현재 Dialog에 텍스트를 입력받습니다. 
+		 * @param[in]	label:
+		 * @param[in]	dst:
+		 */
+		void	InputText(const std::string& label, std::string* dst, const TzvInputTextInfo& info = TzvInputTextInfo());
 		/**
 		 * @brief		버튼 생성
 		 * @details		현재 Dialog에 버튼을 생성합니다.
