@@ -14,7 +14,12 @@ public:\
 		CzvApp::GetInstance()->AttachLayer(new ##(layer));\
 	}\
 };\
-inline ClassGenerate##layer CLASSGENERATE##layer;
+class ClassGenerateObject##layer\
+{\
+private:\
+	inline static ClassGenerate##layer CLASSGENERATE##layer; \
+};
+
 #define GENERATE_OVERLAY(layer)\
 class ClassGenerate##layer\
 {\
@@ -22,8 +27,7 @@ public:\
 	ClassGenerate##layer(){\
 		CzvApp::GetInstance()->AttachOverlay(new ##(layer));\
 	}\
-};\
-inline ClassGenerate##layer CLASSGENERATE##layer;
+};
 
 #define DESTROY_LAYER(layer) { ZVLab::CzvSystem::DetachLayer(layer); }
 #pragma endregion

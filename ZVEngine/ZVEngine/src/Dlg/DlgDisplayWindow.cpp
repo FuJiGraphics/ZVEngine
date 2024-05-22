@@ -1,3 +1,4 @@
+#include "Environment.h"
 #include "DlgDisplayWindow.h"
 
 void CDlgDisplayWindow::OnAttach()
@@ -56,6 +57,4 @@ void CDlgDisplayWindow::OnGUI()
 	
 };
 
-void CDlgDisplayWindow::OnMainMenuBar()
-{
-}
+GENERATE_LAYER(CDlgDisplayWindow);

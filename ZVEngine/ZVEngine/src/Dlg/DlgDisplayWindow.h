@@ -2,23 +2,19 @@
 
 #include "ZVCore.h"
 #include "GUI_Liberator.h"
-#include "Environment.h"
 
 using namespace ZVLab;
 
 class CDlgDisplayWindow final : public ZVLab::CzvLayer
 {
-	//// Member Variables
+//// Member Variables
 private:
 	std::string		m_strLabel;
 	CzvImage		m_cImage;
 	TzvDialogInfo	m_tDialogInfo;
 
-	//// Member Functions
+//// Member Functions
 public:
-	virtual void OnAttach();
-	virtual void OnGUI();
-	virtual void OnMainMenuBar();
+	virtual void OnAttach() override;
+	virtual void OnGUI() override;
 };
-
-GENERATE_LAYER(CDlgDisplayWindow);

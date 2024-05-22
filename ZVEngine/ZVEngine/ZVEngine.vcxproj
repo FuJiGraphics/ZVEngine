@@ -158,7 +158,10 @@
   <ItemGroup>
     <ClCompile Include="core\EntryPoint.cpp" />
     <ClCompile Include="core\ZVapp.cpp" />
+    <ClCompile Include="src\Dlg\DlgClassification.cpp" />
     <ClCompile Include="src\Dlg\DlgDisplayWindow.cpp" />
+    <ClCompile Include="src\Dlg\DlgSidebarLeft.cpp" />
+    <ClCompile Include="src\Layers\ZVWindowMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\ZVCore\ZVCore\ZVCore.vcxproj">

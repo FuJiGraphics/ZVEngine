@@ -2,62 +2,19 @@
 
 #include "ZVCore.h"
 #include "GUI_Liberator.h"
-#include "imgui/extensions/im_mvision/immvision.h"
 
 using namespace ZVLab;
 
-#include <opencv2/core.hpp>
-#include <opencv2/highgui.hpp>
-#include "opencv2/world.hpp"
-#include <opencv2/opencv.hpp>
-
 class CDlgSidebarLeft final : public ZVLab::CzvLayer
 {
+//// Member Variables
 private:
-	TzvDialogInfo info1;
-	CzvButton button1;
-	CzvButton button2;
+	TzvDialogInfo m_infoDialog;
+
+//// Member Functions
 public:
-
-	CDlgSidebarLeft()
-		: button1("button")
-		, button2("button2")
-	{
-		info1.SetMenuBar(true);
-	}
-	virtual void OnAttach() 
-	{
-
-	};
-	 
-	virtual void OnGUI()
-	{
-		DProfile_StartRecord("Sidebar1");
-		CzvDialog dialog1("Sidebar1", info1);
-		CzvToggleButton toggle("toggle");
-		CzvMenuItem item("item", "Custom HotKey");
-
-
-		dialog1.Button("name");
-		dialog1.ToggleButton(toggle);
-		dialog1.ToggleButton();
-
-		if (ImGui::BeginMenu("asd"))
-		{
-			if (item.Bind(KeyMaps::KEY_SPACE + KeyMaps::KEY_B, true))
-			{
-				FZLOG_INFO("item");
-			}
-			ImGui::EndMenu();
-		}
-		CzvImage image;
-		DProfile_EndRecord;
-	};
-
-	virtual void OnMainMenuBar() 
-	{
-	};
+	CDlgSidebarLeft();
+	virtual void OnAttach() override;
+	virtual void OnGUI() override;
 
 };
-
-GENERATE_OVERLAY(CDlgSidebarLeft);

@@ -50,5 +50,8 @@
     <ClCompile Include="src\Dlg\DlgDisplayWindow.cpp">
       <Filter>src\Dlg</Filter>
     </ClCompile>
+    <ClCompile Include="src\Dlg\DlgSidebarLeft.cpp" />
+    <ClCompile Include="src\Dlg\DlgClassification.cpp" />
+    <ClCompile Include="src\Layers\ZVWindowMenu.cpp" />
   </ItemGroup>
 </Project>
