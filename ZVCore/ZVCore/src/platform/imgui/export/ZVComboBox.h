@@ -25,7 +25,7 @@ namespace ZVLab {
 		~CzvComboBox();
 
 		// Getter
-		void	SetItems(const std::initializer_list<const char*>& item_list);
+		void	SetItems(const Args<const char *>& item_list);
 		
 		// Others
 		std::string	Bind();

@@ -39,9 +39,6 @@
     <ClInclude Include="src\core\ZVTimer.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ZVassert.h">
-      <Filter>core</Filter>
-    </ClInclude>
     <ClInclude Include="src\core\ZVlayer.h">
       <Filter>core</Filter>
     </ClInclude>
@@ -139,6 +136,9 @@
       <Filter>platform\windows</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVComboBox.h" />
+    <ClInclude Include="src\core\ZVAssert.h">
+      <Filter>core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVLayerBuffer.cpp">

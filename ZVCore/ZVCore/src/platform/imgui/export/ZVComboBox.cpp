@@ -3,7 +3,7 @@
 namespace { /// statics
 	static unsigned int	s_unComboBoxCount = 0;
 
-	static std::map<std::string, std::pair<const char*, int>>
+	static std::map<std::string, std::pair<std::string, int>>
 		s_mComboStatusMap;
 	static bool sRegistComboBoxStatus(const std::string& key, const std::string& str, int index)
 	{
@@ -11,13 +11,13 @@ namespace { /// statics
 		auto& f = s_mComboStatusMap.find(key);
 		if (f == s_mComboStatusMap.end())
 		{
-			s_mComboStatusMap.insert({ key, {str.c_str(), index} });
+			s_mComboStatusMap.insert({ key, {str, index} });
 			result = true;
 		}
 		else // 찾았을 시
 		{
 			auto& targetItem = f->second;
-			targetItem.first = str.c_str();
+			targetItem.first = str;
 			targetItem.second = index;
 		}
 		return (result);
@@ -27,7 +27,7 @@ namespace { /// statics
 		auto& f = s_mComboStatusMap.find(key);
 		if (f == s_mComboStatusMap.end())
 			::sRegistComboBoxStatus(key, "", 0);
-		return (s_mComboStatusMap[key]);
+		return (std::make_pair(s_mComboStatusMap[key].first.c_str(), s_mComboStatusMap[key].second));
 	}
 	static bool sReleaseComboBoxStatus(const std::string& key)
 	{
@@ -56,7 +56,7 @@ namespace ZVLab {
 	{
 	}
 
-	void CzvComboBox::SetItems(const std::initializer_list<const char*>& item_list)
+	void CzvComboBox::SetItems(const Args<const char *>& item_list)
 	{
 		m_vItemList.clear();
 		m_vItemList.resize(item_list.size());
@@ -66,6 +66,7 @@ namespace ZVLab {
 	std::string	CzvComboBox::Bind()
 	{
 		auto& currItemData = ::sGetComboBoxStatus(m_strLabel);
+		std::string resultItem = m_vItemList[currItemData.second];
 		if (m_vItemList.empty() == false)
 		{
 			int itemSize = m_vItemList.size();
@@ -78,6 +79,7 @@ namespace ZVLab {
 					if (ImGui::Selectable(m_vItemList[i], is_selected))
 					{
 						sRegistComboBoxStatus(m_strLabel, m_vItemList[i], i);
+						resultItem = m_vItemList[i];
 					}
 					// Set the initial focus when opening the combo (scrolling + keyboard navigation focus)
 					if (is_selected)
@@ -86,7 +88,7 @@ namespace ZVLab {
 				ImGui::EndCombo();
 			}
 		}
-		return (currItemData.first);
+		return (resultItem);
 	}
 
 } // namespace ZVLab

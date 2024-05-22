@@ -145,7 +145,7 @@
     <ClInclude Include="src\core\ZVLayerBuffer.h" />
     <ClInclude Include="src\core\ZVMemory.h" />
     <ClInclude Include="src\core\ZVTimer.h" />
-    <ClInclude Include="src\core\ZVassert.h" />
+    <ClInclude Include="src\core\ZVAssert.h" />
     <ClInclude Include="src\core\ZVlayer.h" />
     <ClInclude Include="src\core\ZVsystem.h" />
     <ClInclude Include="src\core\ZVwindow.h" />

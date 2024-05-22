@@ -24,6 +24,9 @@ namespace ZVLab {
 
 	template<typename T>
 	using Optional = std::optional<T>;
+
+	template<typename T>
+	using Args = const std::initializer_list<T>;
 	
 } // namespace ZVLab
 

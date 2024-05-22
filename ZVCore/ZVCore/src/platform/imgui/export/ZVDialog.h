@@ -14,6 +14,7 @@ namespace ZVLab {
 	class ZV_API	CzvButton;
 	class ZV_API	CzvImageButton;
 	class ZV_API	CzvToggleButton;
+	class ZV_API	CzvComboBox;
 
 //----------------------------------------------------
 // Dialog
@@ -164,16 +165,27 @@ namespace ZVLab {
 		 */
 		void	Image(const CzvImage& image, const ImVec2& size = { 0.0f, 0.0f });
 		/**
-		 * @brief 메뉴 아이템 생성
-		 * @details
-		 *	- 현재 Dialog에 MenuItem을 생성합니다.
+		 * @brief		메뉴 아이템 생성
+		 * @details		현재 Dialog에 MenuItem을 생성합니다.
 		 *  - TzvDialogInfo의 SetMenubar 설정에 영향을 받습니다.
 		 * @param[in]	label:	메뉴 아이템 라벨
 		 * @return		bool:	메뉴 아이템 활성화 여부 (true/false)
 		 */
 		bool	MenuItem(const std::string& label);
-
-	private: // Others
+		/**
+		 * @brief		콤보 박스 생성
+		 * @details		현재 Dialog에 ComboBox를 생성합니다.
+		 * @param[in]	label:			콤보 박스의 라벨
+		 * @param[in]	item_list:		콤보 박스의 아이템들 (Init ex. {"AAA", "BBB"})	
+		 * @param[in]	options:		콤보 박스의 설정
+		 * @return		std::string:	현재 선택중인 아이템 라벨
+		 */
+		std::string	ComboBox(const std::string& label, 
+							 const Args<const char *>& item_list, 
+							 const TzvComboBoxInfo& options = TzvComboBoxInfo());
+		// Others
+		void	SetNextPos(const ImVec2& pos);
+	private: 
 		bool	Synchronization();
 		bool	Binding(CzvButton* target);
 	};
