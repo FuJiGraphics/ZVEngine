@@ -16,6 +16,7 @@ namespace ZVLab {
 	class ZV_API	CzvToggleButton;
 	class ZV_API	CzvComboBox;
 	class ZV_API	CzvInputText;
+	class ZV_API	CzvTable;
 #pragma endregion
 
 //----------------------------------------------------
@@ -188,6 +189,12 @@ namespace ZVLab {
 		 */
 		bool	MenuItem(const std::string& label);
 		/**
+		 * @brief		테이블을 생성한다
+		 * @details		현재 Dialog에 Table을 생성합니다.
+		 * @param		table:	테이블 객체
+		 */
+		void	Table(CzvTable& table);
+		/**
 		 * @brief		콤보 박스 생성
 		 * @details		현재 Dialog에 ComboBox를 생성합니다.
 		 * @param[in]	label:			콤보 박스의 라벨
@@ -198,6 +205,7 @@ namespace ZVLab {
 		std::string	ComboBox(const std::string& label, 
 							 const Args<const char *>& item_list, 
 							 const TzvComboBoxInfo& options = TzvComboBoxInfo());
+
 		// Others
 		void	SetNextPos(const ImVec2& pos);
 	private: 

@@ -1,83 +1,13 @@
-﻿  EntryPoint.cpp
-  ZVapp.cpp
-  DlgClassification.cpp
-  DlgDisplayWindow.cpp
-  DlgParameterSetup.cpp
-  DlgSidebarLeft.cpp
-  ZVWindowMenu.cpp
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 core\ZVapp.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgDisplayWindow.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Layers\ZVWindowMenu.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgSidebarLeft.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgClassification.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 core\EntryPoint.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgDisplayWindow.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 core\ZVapp.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 core\ZVapp.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgDisplayWindow.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Layers\ZVWindowMenu.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgSidebarLeft.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgClassification.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Layers\ZVWindowMenu.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgSidebarLeft.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgClassification.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 core\EntryPoint.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 core\EntryPoint.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgParameterSetup.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgParameterSetup.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgParameterSetup.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgDisplayWindow.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 core\ZVapp.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgSidebarLeft.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Layers\ZVWindowMenu.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgClassification.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 core\EntryPoint.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\Dlg\DlgParameterSetup.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtableheader.h(36): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 core\ZVapp.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtableheader.h(36): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\Dlg\DlgParameterSetup.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtableheader.h(36): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\Layers\ZVWindowMenu.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtableheader.h(36): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 core\EntryPoint.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtableheader.h(36): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\Dlg\DlgClassification.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(38): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 core\ZVapp.cpp)
-  d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(37): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오. (소스 파일 컴파일 중 core\ZVapp.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtableheader.h(36): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\Dlg\DlgDisplayWindow.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(38): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\Dlg\DlgParameterSetup.cpp)
-  d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(37): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오. (소스 파일 컴파일 중 src\Dlg\DlgParameterSetup.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(38): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\Layers\ZVWindowMenu.cpp)
-  d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(37): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오. (소스 파일 컴파일 중 src\Layers\ZVWindowMenu.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(38): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 core\EntryPoint.cpp)
-  d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(37): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오. (소스 파일 컴파일 중 core\EntryPoint.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(38): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\Dlg\DlgClassification.cpp)
-  d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(37): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오. (소스 파일 컴파일 중 src\Dlg\DlgClassification.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtableheader.h(36): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\Dlg\DlgSidebarLeft.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(38): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\Dlg\DlgDisplayWindow.cpp)
-  d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(37): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오. (소스 파일 컴파일 중 src\Dlg\DlgDisplayWindow.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(38): warning C4099: 'ZVLab::TzvTimeStep': 처음에는 'class'을(를) 사용하여 형식 이름을 표시했는데 이제는 'struct'을(를) 사용하여 표시합니다. (소스 파일 컴파일 중 src\Dlg\DlgSidebarLeft.cpp)
-  d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvprofiler.h(37): note: 'ZVLab::TzvTimeStep' 선언을 참조하십시오. (소스 파일 컴파일 중 src\Dlg\DlgSidebarLeft.cpp)
-ImGui.lib(wfETC.obj) : warning LNK4099: 'soil2-static-lib.pdb' PDB를 'ImGui.lib(wfETC.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\soil2-static-lib.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ImGui.lib(image_helper.obj) : warning LNK4099: 'soil2-static-lib.pdb' PDB를 'ImGui.lib(image_helper.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\soil2-static-lib.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ImGui.lib(image_DXT.obj) : warning LNK4099: 'soil2-static-lib.pdb' PDB를 'ImGui.lib(image_DXT.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\soil2-static-lib.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ImGui.lib(SOIL2.obj) : warning LNK4099: 'soil2-static-lib.pdb' PDB를 'ImGui.lib(SOIL2.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\soil2-static-lib.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(wgl_context.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(wgl_context.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(win32_window.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_window.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(win32_monitor.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_monitor.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(win32_joystick.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_joystick.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(win32_init.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_init.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(win32_thread.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_thread.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(win32_time.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_time.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(win32_module.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(win32_module.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(null_joystick.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(null_joystick.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(null_window.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(null_window.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(null_monitor.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(null_monitor.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(null_init.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(null_init.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(osmesa_context.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(osmesa_context.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(egl_context.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(egl_context.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(window.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(window.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(vulkan.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(vulkan.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(platform.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(platform.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(monitor.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(monitor.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(input.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(input.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(init.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(init.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-ZVCore.lib(context.obj) : warning LNK4099: 'glfw.pdb' PDB를 'ZVCore.lib(context.obj)' 또는 'D:\Dev\ZVLab\ZScreen\Dist\glfw.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
-  ZVEngine.vcxproj -> D:\Dev\ZVLab\ZScreen\ZVEngine\ZVEngine\..\..\Dist\ZVEngine.exe
+﻿  DlgParameterSetup.cpp
+C:\Users\chyuy\Desktop\ZVScreen\Vendor\OpenCV2\include\opencv2\core.hpp(1743,1): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
+C:\Users\chyuy\Desktop\ZVScreen\Vendor\OpenCV2\include\opencv2\core.hpp(1743,1): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
+C:\Users\chyuy\Desktop\ZVScreen\Vendor\OpenCV2\include\opencv2\core.hpp(1743,1): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
+C:\Users\chyuy\Desktop\ZVScreen\Vendor\GLFW\include\GLFW\glfw3.h(3173,1): warning C4819: The file contains a character that cannot be represented in the current code page (949). Save the file in Unicode format to prevent data loss
+C:\Users\chyuy\Desktop\ZVScreen\ZVCore\ZVCore\src\platform\imgui\export\ZVTableHeader.h(36,64): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+C:\Users\chyuy\Desktop\ZVScreen\ZVCore\ZVCore\src\platform\imgui\export\ZVProfiler.h(38,2): warning C4099: 'ZVLab::TzvTimeStep': type name first seen using 'class' now seen using 'struct'
+C:\Users\chyuy\Desktop\ZVScreen\ZVCore\ZVCore\src\platform\imgui\export\ZVProfiler.h(37,16): message : see declaration of 'ZVLab::TzvTimeStep'
+C:\Users\chyuy\Desktop\ZVScreen\ZVEngine\ZVEngine\src\Dlg\DlgParameterSetup.cpp(64,26): warning C4018: '<': signed/unsigned mismatch
+  ZVEngine.vcxproj -> C:\Users\chyuy\Desktop\ZVScreen\Dist\ZVEngine.exe
+  'pwsh.exe'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는
+  배치 파일이 아닙니다.
   지정된 경로를 찾을 수 없습니다.

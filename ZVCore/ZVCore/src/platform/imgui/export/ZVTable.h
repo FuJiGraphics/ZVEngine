@@ -33,9 +33,9 @@ namespace ZVLab {
 		inline unsigned int	GetColSize() const;
 
 		// Setter
+		inline void			SetLabel(const std::string& label);
 		void				SetHeaders(const std::initializer_list<std::string>& header_labels);
 		void				AddHeader(const std::string& header_label, const TzvTableHeaderInfo& options = TzvTableHeaderInfo());
-		inline void			SetLabel(const std::string& label);
 
 		// Others
 		void				Bind();
@@ -43,6 +43,7 @@ namespace ZVLab {
 
 		// Operator
 		CzvTableHeader&	operator[](const std::string& str);
+		CzvTableHeader& operator[]( unsigned int index );
 
 	};
 

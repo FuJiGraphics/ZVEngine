@@ -38,50 +38,35 @@ void CDlgParameterSetup::OnGUI()
 	CzvImguiManager::SetDockspace(dialog, { 500, 500 });
 
 	// Options
-	static ImGuiTableFlags flags =
-		ImGuiTableFlags_Resizable | ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable | ImGuiTableFlags_Sortable | ImGuiTableFlags_SortMulti
-		| ImGuiTableFlags_RowBg | ImGuiTableFlags_BordersOuter | ImGuiTableFlags_BordersV | ImGuiTableFlags_NoBordersInBody
-		| ImGuiTableFlags_ScrollY;
-
-	TzvDialogInfo info_table1;
-	info_table1.SetDocsNoTabBar(true);
-	CzvDialog dlg_table1("Table1", info_table1);
+	TzvDialogInfo dlg_table_info;
+	dlg_table_info.SetDocsNoTabBar(true);
+	CzvDialog dlg_table1("Table1", dlg_table_info);
 	CzvTable table1("Table");
 	table1.SetHeaders({ "ID", "Name", "Class" });
 	table1["ID"].AddItem("Hello %d", 20);
-	table1.Bind();
+	dlg_table1.Table(table1);
 
-
-	TzvDialogInfo info_table2;
-	info_table2.SetDocsNoTabBar(true);
-	CzvDialog dlg_table2("Table2", info_table2);
-	if (ImGui::BeginTable("table_sorting", 4, flags, ImVec2(0.0f, 200), 0.0f))
+	TzvDialogInfo dlg_table_info2;
+	dlg_table_info2.SetDocsNoTabBar(true);
+	CzvDialog dlg_table2("Table2", dlg_table_info2 );
+	CzvTable table2( "table_sorting" );
+	TzvTableHeaderInfo info_ID, info_Name, info_Class;
+	info_ID.SetDefaultSort( true );
+	info_ID.SetWidthFixed( true );
+	table2.AddHeader( "ID", info_ID );
+	info_Name.SetWidthFixed( true );
+	table2.AddHeader( "Name", info_Name );
+	info_Class.SetPreferSortDescending( true );
+	info_Class.SetWidthStretch( true );
+	table2.AddHeader( "Class", info_Class );
+	for ( int row = 0; row < 4; ++row )
 	{
-		ImGui::TableSetupColumn("ID", ImGuiTableColumnFlags_DefaultSort | ImGuiTableColumnFlags_WidthFixed, 0.0f, 20);
-		ImGui::TableSetupColumn("Name", ImGuiTableColumnFlags_WidthFixed, 0.0f, 20);
-		ImGui::TableSetupColumn("Class", ImGuiTableColumnFlags_PreferSortDescending | ImGuiTableColumnFlags_WidthStretch, 0.0f, 20);
-		ImGui::TableSetupScrollFreeze(0, 1); // Make row always visible
-		ImGui::TableHeadersRow();
-
-		for (int row = 0; row < 4; row++)
+		for ( int col = 0; col < table2.GetColSize(); ++col )
 		{
-			ImGui::TableNextRow();
-			// ImGui::TableNextColumn();
-			// ImGui::Text("%d", row);
-			// ImGui::TableNextColumn();
-			// ImGui::Text("Some contents");
-			// ImGui::TableNextColumn();
-			// ImGui::Text("123.456");
-
-			for (int column = 0; column < 3; column++)
-			{
-				ImGui::TableSetColumnIndex(column);
-				ImGui::Text("Hello %d,%d", column, row);
-			}
+			table2[col].AddItem( "Hello %d %d", col, row );
 		}
-
-		ImGui::EndTable();
 	}
+	dlg_table2.Table( table2 );
 	DProfile_EndRecord
 }
 

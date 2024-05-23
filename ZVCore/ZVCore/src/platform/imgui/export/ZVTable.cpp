@@ -97,6 +97,11 @@ namespace ZVLab {
 		}
 	}
 
+	void CzvTable::Clear()
+	{
+		m_vHeaderList.clear();
+	}
+
 	CzvTableHeader&	CzvTable::operator[](const std::string& str)
 	{
 		for (auto& header : m_vHeaderList)
@@ -108,6 +113,11 @@ namespace ZVLab {
 		}
 		this->AddHeader(str);
 		return (m_vHeaderList[m_vHeaderList.size() - 1]);
+	}
+
+	CzvTableHeader& CzvTable::operator[]( unsigned int index )
+	{
+		return ( m_vHeaderList[index] );
 	}
 
 

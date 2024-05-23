@@ -5,6 +5,7 @@
 #include "ZVToggleButton.h"
 #include "ZVComboBox.h"
 #include "ZVInputText.h"
+#include "ZVTable.h"
 #include "../ZVimguiManager.h"
 
 namespace { /// statics
@@ -307,6 +308,24 @@ namespace ZVLab {
 		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
 			result = ImGui::MenuItem(label.c_str());
 		return (result);
+	}
+
+	void CzvDialog::Table(CzvTable& table)
+	{
+		DUnRegistStaticItemPos
+		bool result = false;
+		this->Synchronization();
+		if ( m_tOptions.IsActivated( ezvDialogFlags_MenuBar ) && this->IsUnFolded() )
+		{
+			m_MenuBar.UnBind();
+			table.Bind();
+			m_MenuBar.Bind();
+		}
+		else
+		{
+			table.Bind();
+		}
+		DUnRegistStaticItemPos
 	}
 
 	std::string CzvDialog::ComboBox(const std::string& label, 

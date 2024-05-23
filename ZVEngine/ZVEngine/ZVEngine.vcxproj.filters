@@ -13,6 +13,9 @@
     <Filter Include="src\Layers">
       <UniqueIdentifier>{4C4DA51D-3805-E76A-A10C-C0C68DE3815B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Logic">
+      <UniqueIdentifier>{EAF659B3-5661-0E2A-9F9F-BFCF0B49EC7E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core\GUI_Liberator.h">
@@ -27,6 +30,9 @@
     <ClInclude Include="src\Dlg\DlgDisplayWindow.h">
       <Filter>src\Dlg</Filter>
     </ClInclude>
+    <ClInclude Include="src\Dlg\DlgParameterSetup.h">
+      <Filter>src\Dlg</Filter>
+    </ClInclude>
     <ClInclude Include="src\Dlg\DlgSidebarLeft.h">
       <Filter>src\Dlg</Filter>
     </ClInclude>
@@ -39,8 +45,9 @@
     <ClInclude Include="src\Layers\ZVWindowMenu.h">
       <Filter>src\Layers</Filter>
     </ClInclude>
-    <ClInclude Include="src\Logic\ZVClassifie.h" />
-    <ClInclude Include="src\Dlg\DlgParameterSetup.h" />
+    <ClInclude Include="src\Logic\ZVClassifie.h">
+      <Filter>src\Logic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\EntryPoint.cpp">
@@ -49,12 +56,20 @@
     <ClCompile Include="core\ZVapp.cpp">
       <Filter>core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Dlg\DlgClassification.cpp">
+      <Filter>src\Dlg</Filter>
+    </ClCompile>
     <ClCompile Include="src\Dlg\DlgDisplayWindow.cpp">
       <Filter>src\Dlg</Filter>
     </ClCompile>
-    <ClCompile Include="src\Dlg\DlgSidebarLeft.cpp" />
-    <ClCompile Include="src\Dlg\DlgClassification.cpp" />
-    <ClCompile Include="src\Layers\ZVWindowMenu.cpp" />
-    <ClCompile Include="src\Dlg\DlgParameterSetup.cpp" />
+    <ClCompile Include="src\Dlg\DlgParameterSetup.cpp">
+      <Filter>src\Dlg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dlg\DlgSidebarLeft.cpp">
+      <Filter>src\Dlg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Layers\ZVWindowMenu.cpp">
+      <Filter>src\Layers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

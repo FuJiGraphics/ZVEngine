@@ -30,13 +30,22 @@
     <ClInclude Include="src\core\DataTypes.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ZVLayerBuffer.h">
-      <Filter>core</Filter>
-    </ClInclude>
     <ClInclude Include="src\core\ZVMemory.h">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="src\core\ZVTimer.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\ZVassert.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\ZVlayer.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\ZVlayerBuffer.h">
+      <Filter>core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\ZVsystem.h">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="src\core\ZVwindow.h">
@@ -45,14 +54,23 @@
     <ClInclude Include="src\events\ZVKeyCodes.h">
       <Filter>events</Filter>
     </ClInclude>
+    <ClInclude Include="src\events\ZVappEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\ZVevent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\ZVkeyEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\ZVmouseEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
     <ClInclude Include="src\export\EntryPoint.h">
       <Filter>export</Filter>
     </ClInclude>
     <ClInclude Include="src\export\ZVCore.h">
       <Filter>export</Filter>
-    </ClInclude>
-    <ClInclude Include="src\platform\imgui\ZVImguiManager.h">
-      <Filter>platform\imgui</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h">
       <Filter>platform\imgui</Filter>
@@ -63,7 +81,13 @@
     <ClInclude Include="src\platform\imgui\ZVTexture_internal.h">
       <Filter>platform\imgui</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\ZVimguiManager.h">
+      <Filter>platform\imgui</Filter>
+    </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVButton.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVComboBox.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVCommon.h">
@@ -87,16 +111,19 @@
     <ClInclude Include="src\platform\imgui\export\ZVImageButton.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVInputText.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVKeyMap.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVMenu.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVMenuBar.h">
+    <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h">
+    <ClInclude Include="src\platform\imgui\export\ZVMenubar.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVProfiler.h">
@@ -108,6 +135,12 @@
     <ClInclude Include="src\platform\imgui\export\ZVTabItem.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVTable.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVTableHeader.h">
+      <Filter>platform\imgui\export</Filter>
+    </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVTexture.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
@@ -117,41 +150,16 @@
     <ClInclude Include="src\platform\windows\ZVwindow_win.h">
       <Filter>platform\windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVComboBox.h" />
-    <ClInclude Include="src\core\ZVAssert.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVInputText.h" />
-    <ClInclude Include="src\core\ZVLayer.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\core\ZVSystem.h">
-      <Filter>core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\events\ZVAppEvent.h">
-      <Filter>events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\events\ZVEvent.h">
-      <Filter>events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\events\ZVKeyEvent.h">
-      <Filter>events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\events\ZVMouseEvent.h">
-      <Filter>events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVTable.h" />
-    <ClInclude Include="src\platform\imgui\export\ZVTableHeader.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\ZVLayerBuffer.cpp">
+    <ClCompile Include="src\core\ZVlayerBuffer.cpp">
+      <Filter>core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\ZVsystem.cpp">
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="src\core\ZVwindow.cpp">
       <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\platform\imgui\ZVImguiManager.cpp">
-      <Filter>platform\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp">
       <Filter>platform\imgui</Filter>
@@ -162,7 +170,13 @@
     <ClCompile Include="src\platform\imgui\ZVTexture_internal.cpp">
       <Filter>platform\imgui</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\imgui\ZVimguiManager.cpp">
+      <Filter>platform\imgui</Filter>
+    </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVButton.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVComboBox.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVDialog.cpp">
@@ -180,13 +194,16 @@
     <ClCompile Include="src\platform\imgui\export\ZVImageButton.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVInputText.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVKeyMap.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
-    <ClCompile Include="src\platform\imgui\export\ZVMenuBar.cpp">
+    <ClCompile Include="src\platform\imgui\export\ZVMenuItem.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
-    <ClCompile Include="src\platform\imgui\export\ZVMenuItem.cpp">
+    <ClCompile Include="src\platform\imgui\export\ZVMenubar.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp">
@@ -198,6 +215,12 @@
     <ClCompile Include="src\platform\imgui\export\ZVTabItem.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVTable.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVTableHeader.cpp">
+      <Filter>platform\imgui\export</Filter>
+    </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVTexture.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
@@ -207,12 +230,5 @@
     <ClCompile Include="src\platform\windows\ZVwindow_win.cpp">
       <Filter>platform\windows</Filter>
     </ClCompile>
-    <ClCompile Include="src\platform\imgui\export\ZVComboBox.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVInputText.cpp" />
-    <ClCompile Include="src\core\ZVSystem.cpp">
-      <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\platform\imgui\export\ZVTable.cpp" />
-    <ClCompile Include="src\platform\imgui\export\ZVTableHeader.cpp" />
   </ItemGroup>
 </Project>
