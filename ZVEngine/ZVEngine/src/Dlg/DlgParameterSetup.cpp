@@ -5,6 +5,8 @@
 
 void CDlgParameterSetup::OnAttach()
 {
+	// Dialog Info
+
 	m_FileDialog.SetFileDialogLabel("ParameterSetupFileDialog");
 	m_FileDialog.SetOpenLabel("Loading Path");
 	m_FileDialog.SetSaveLabel("Saving Path");
@@ -15,11 +17,7 @@ void CDlgParameterSetup::OnAttach()
 void CDlgParameterSetup::OnGUI()
 {
 	DProfile_StartRecord("Parameter Setup Logic...");
-
 	CzvDialog dialog("ParameterSetup");
-	static TzvParametersChunk tmp_param;
-	// Update
-	dialog.InputText("input", &tmp_param.strLoadingPath);
 
 	// Render
 	TzvComboBoxInfo combo_info;
@@ -28,6 +26,62 @@ void CDlgParameterSetup::OnGUI()
 	DzvUI_Bullet dialog.Text("Saving Path");
 	dialog.ComboBox(" ", { m_tParamChunk.strSavingPath.c_str() }, combo_info);
 
+
+	static TzvParametersChunk tmp_param;
+	// Update
+	dialog.InputText("input", &tmp_param.strLoadingPath);
+
+
+	
+	/*-----------------------------------------------------------------*/
+
+	CzvImguiManager::SetDockspace(dialog, { 500, 500 });
+
+	// Options
+	static ImGuiTableFlags flags =
+		ImGuiTableFlags_Resizable | ImGuiTableFlags_Reorderable | ImGuiTableFlags_Hideable | ImGuiTableFlags_Sortable | ImGuiTableFlags_SortMulti
+		| ImGuiTableFlags_RowBg | ImGuiTableFlags_BordersOuter | ImGuiTableFlags_BordersV | ImGuiTableFlags_NoBordersInBody
+		| ImGuiTableFlags_ScrollY;
+
+	TzvDialogInfo info_table1;
+	info_table1.SetDocsNoTabBar(true);
+	CzvDialog dlg_table1("Table1", info_table1);
+	CzvTable table1("Table");
+	table1.SetHeaders({ "ID", "Name", "Class" });
+	table1["ID"].AddItem("Hello %d", 20);
+	table1.Bind();
+
+
+	TzvDialogInfo info_table2;
+	info_table2.SetDocsNoTabBar(true);
+	CzvDialog dlg_table2("Table2", info_table2);
+	if (ImGui::BeginTable("table_sorting", 4, flags, ImVec2(0.0f, 200), 0.0f))
+	{
+		ImGui::TableSetupColumn("ID", ImGuiTableColumnFlags_DefaultSort | ImGuiTableColumnFlags_WidthFixed, 0.0f, 20);
+		ImGui::TableSetupColumn("Name", ImGuiTableColumnFlags_WidthFixed, 0.0f, 20);
+		ImGui::TableSetupColumn("Class", ImGuiTableColumnFlags_PreferSortDescending | ImGuiTableColumnFlags_WidthStretch, 0.0f, 20);
+		ImGui::TableSetupScrollFreeze(0, 1); // Make row always visible
+		ImGui::TableHeadersRow();
+
+		for (int row = 0; row < 4; row++)
+		{
+			ImGui::TableNextRow();
+			// ImGui::TableNextColumn();
+			// ImGui::Text("%d", row);
+			// ImGui::TableNextColumn();
+			// ImGui::Text("Some contents");
+			// ImGui::TableNextColumn();
+			// ImGui::Text("123.456");
+
+			for (int column = 0; column < 3; column++)
+			{
+				ImGui::TableSetColumnIndex(column);
+				ImGui::Text("Hello %d,%d", column, row);
+			}
+		}
+
+		ImGui::EndTable();
+	}
 	DProfile_EndRecord
 }
 

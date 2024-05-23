@@ -158,6 +158,8 @@
     <ClInclude Include="src\export\ZVCore.h" />
     <ClInclude Include="src\platform\imgui\export\ZVComboBox.h" />
     <ClInclude Include="src\platform\imgui\export\ZVInputText.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVTable.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVTableHeader.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiManager.h" />
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h" />
     <ClInclude Include="src\platform\imgui\ZVProfiler_internal.h" />
@@ -187,6 +189,8 @@
     <ClCompile Include="src\core\ZVwindow.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVComboBox.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVInputText.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVTable.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVTableHeader.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiManager.cpp" />
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp" />
     <ClCompile Include="src\platform\imgui\ZVProfiler_internal.cpp" />

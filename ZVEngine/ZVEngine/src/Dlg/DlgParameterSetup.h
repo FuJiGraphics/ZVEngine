@@ -7,10 +7,10 @@ using namespace ZVLab;
 
 struct TzvParametersChunk
 {
-	std::string		strLoadingPath;
-	std::string		strSavingPath;
-	EzvImageFormat	eImageFormal;
-	bool			bEditROI;
+	std::string		strLoadingPath	= "";
+	std::string		strSavingPath	= "";
+	EzvImageFormat	eImageFormal	= EzvImageFormat::eBMP;
+	bool			bEditROI		= false;
 };
 
 class CDlgParameterSetup final : public ZVLab::CzvLayer

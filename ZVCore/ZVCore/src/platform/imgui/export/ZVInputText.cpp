@@ -91,7 +91,6 @@ namespace ZVLab {
 			return;
 
 		auto& bIter = src.begin();
-		DZVLog_Failed((bIter != src.end()), "FAILED: bIter is Null!");
 		if (bIter != src.end())
 		{
 			for (auto& e : *dst)

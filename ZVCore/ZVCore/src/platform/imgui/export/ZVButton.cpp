@@ -44,6 +44,10 @@ namespace ZVLab {
 					 s_nuiButtonCount);
 	}
 
+	CzvButton::CzvButton(const CzvButton& src)
+	{
+	}
+
 	CzvButton::~CzvButton()
 	{
 		s_nuiButtonCount--;

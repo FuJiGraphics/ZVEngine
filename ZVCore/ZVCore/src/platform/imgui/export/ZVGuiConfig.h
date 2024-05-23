@@ -99,34 +99,34 @@ enum EzvDialogOptions
 
 enum EzvDialogExtensionOptions
 {
-	EzvDialogExtensionOptions_None							= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_None,
-	EzvDialogExtensionOptions_KeepAliveOnly					= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_KeepAliveOnly,
-	EzvDialogExtensionOptions_NoDockingOverCentralNode		= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingOverCentralNode,
-	EzvDialogExtensionOptions_PassthruCentralNode			= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_PassthruCentralNode,
-	EzvDialogExtensionOptions_NoDockingSplit				= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingSplit,
-	EzvDialogExtensionOptions_NoResize						= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoResize,
-	EzvDialogExtensionOptions_AutoHideTabBar				= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_AutoHideTabBar,
-	EzvDialogExtensionOptions_NoUndocking					= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoUndocking,
-	EzvDialogExtensionOptions_NoSplit						= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoSplit,
-	EzvDialogExtensionOptions_NoDockingInCentralNode		= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingInCentralNode,
-	EzvDialogExtensionOptions_DockSpace						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_DockSpace,
-	EzvDialogExtensionOptions_CentralNode					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_CentralNode,
-	EzvDialogExtensionOptions_NoTabBar						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoTabBar,
-	EzvDialogExtensionOptions_HiddenTabBar					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_HiddenTabBar,
-	EzvDialogExtensionOptions_NoWindowMenuButton			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoWindowMenuButton,
-	EzvDialogExtensionOptions_NoCloseButton					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoCloseButton,
-	EzvDialogExtensionOptions_NoResizeX						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeX,
-	EzvDialogExtensionOptions_NoResizeY						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeY,
-	EzvDialogExtensionOptions_DockedWindowsInFocusRoute		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_DockedWindowsInFocusRoute,
-	EzvDialogExtensionOptions_NoDockingSplitOther			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingSplitOther,
-	EzvDialogExtensionOptions_NoDockingOverMe				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverMe,
-	EzvDialogExtensionOptions_NoDockingOverOther			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverOther,
-	EzvDialogExtensionOptions_NoDockingOverEmpty			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverEmpty,
-	EzvDialogExtensionOptions_NoDocking						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDocking,
-	EzvDialogExtensionOptions_SharedFlagsInheritMask_		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_SharedFlagsInheritMask_,
-	EzvDialogExtensionOptions_NoResizeFlagsMask_			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeFlagsMask_,
-	EzvDialogExtensionOptions_LocalFlagsTransferMask_		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_LocalFlagsTransferMask_,
-	EzvDialogExtensionOptions_SavedFlagsMask_				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_SavedFlagsMask_,
+	ezvDialogExtensionFlags_None							= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_None,
+	ezvDialogExtensionFlags_KeepAliveOnly					= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_KeepAliveOnly,
+	ezvDialogExtensionFlags_NoDockingOverCentralNode		= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingOverCentralNode,
+	ezvDialogExtensionFlags_PassthruCentralNode				= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_PassthruCentralNode,
+	ezvDialogExtensionFlags_NoDockingSplit					= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingSplit,
+	ezvDialogExtensionFlags_NoResize						= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoResize,
+	ezvDialogExtensionFlags_AutoHideTabBar					= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_AutoHideTabBar,
+	ezvDialogExtensionFlags_NoUndocking						= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoUndocking,
+	ezvDialogExtensionFlags_NoSplit							= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoSplit,
+	ezvDialogExtensionFlags_NoDockingInCentralNode			= ImGuiDockNodeFlags_::ImGuiDockNodeFlags_NoDockingInCentralNode,
+	ezvDialogExtensionFlags_DockSpace						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_DockSpace,
+	ezvDialogExtensionFlags_CentralNode						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_CentralNode,
+	ezvDialogExtensionFlags_NoTabBar						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoTabBar,
+	ezvDialogExtensionFlags_HiddenTabBar					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_HiddenTabBar,
+	ezvDialogExtensionFlags_NoWindowMenuButton				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoWindowMenuButton,
+	ezvDialogExtensionFlags_NoCloseButton					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoCloseButton,
+	ezvDialogExtensionFlags_NoResizeX						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeX,
+	ezvDialogExtensionFlags_NoResizeY						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeY,
+	ezvDialogExtensionFlags_DockedWindowsInFocusRoute		= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_DockedWindowsInFocusRoute,
+	ezvDialogExtensionFlags_NoDockingSplitOther				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingSplitOther,
+	ezvDialogExtensionFlags_NoDockingOverMe					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverMe,
+	ezvDialogExtensionFlags_NoDockingOverOther				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverOther,
+	ezvDialogExtensionFlags_NoDockingOverEmpty				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDockingOverEmpty,
+	ezvDialogExtensionFlags_NoDocking						= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoDocking,
+	ezvDialogExtensionFlags_SharedFlagsInheritMask_			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_SharedFlagsInheritMask_,
+	ezvDialogExtensionFlags_NoResizeFlagsMask_				= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_NoResizeFlagsMask_,
+	ezvDialogExtensionFlags_LocalFlagsTransferMask_			= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_LocalFlagsTransferMask_,
+	ezvDialogExtensionFlags_SavedFlagsMask_					= ImGuiDockNodeFlagsPrivate_::ImGuiDockNodeFlags_SavedFlagsMask_,
 };
 
 //----------------------------------------------------
@@ -139,7 +139,7 @@ struct ZV_API TzvDialogInfo
 //// Member Variables
 private:
 	DialogOptions				m_iDialogOptions			= ezvDialogFlags_None;
-	DialogOptions				m_iDialogExtensionOptions	= EzvDialogExtensionOptions_None;
+	DialogOptions				m_iDialogExtensionOptions	= ezvDialogExtensionFlags_None;
 
 //// Member Functions
 public:
@@ -185,33 +185,33 @@ public:
 	inline void SetDockNodeHost(bool enabled)					{ this->FlagOptions(enabled, ezvDialogFlags_DockNodeHost); }
 
 	// [Dockspace Options]
-	inline void SetDocsKeepAliveOnly(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_KeepAliveOnly); }
-	inline void SetDocsNoDockingOverCentralNode(bool enabled)	{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingOverCentralNode); }
-	inline void SetDocsPassthruCentralNode(bool enabled)		{ this->FlagOptions(enabled,EzvDialogExtensionOptions_PassthruCentralNode); }
-	inline void SetDocsNoDockingSplit(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingSplit); }
-	inline void SetDocsNoResize(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoResize); }
-	inline void SetDocsAutoHideTabBar(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_AutoHideTabBar); }
-	inline void SetDocsNoUndocking(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoUndocking); }
-	inline void SetDocsNoSplit(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoSplit); }
-	inline void SetDocsNoDockingInCentralNode(bool enabled)		{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingInCentralNode); }
-	inline void SetDocsDockSpace(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_DockSpace); }
-	inline void SetDocsCentralNode(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_CentralNode); }
-	inline void SetDocsNoTabBar(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoTabBar); }
-	inline void SetDocsHiddenTabBar(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_HiddenTabBar); }
-	inline void SetDocsNoWindowMenuButton(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoWindowMenuButton); }
-	inline void SetDocsNoCloseButton(bool enabled)				{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoCloseButton); }
-	inline void SetDocsNoResizeX(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoResizeX); }
-	inline void SetDocsNoResizeY(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoResizeY); }
-	inline void SetDocsDockedWindowsInFocusRoute(bool enabled)	{ this->FlagOptions(enabled,EzvDialogExtensionOptions_DockedWindowsInFocusRoute); }
-	inline void SetDocsNoDockingSplitOther(bool enabled)		{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingSplitOther); }
-	inline void SetDocsNoDockingOverMe(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingOverMe); }
-	inline void SetDocsNoDockingOverOther(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingOverOther); }
-	inline void SetDocsNoDockingOverEmpty(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDockingOverEmpty); }
-	inline void SetDocsNoDocking(bool enabled)					{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoDocking); }
-	inline void SetDocsSharedFlagsInheritMask_(bool enabled)	{ this->FlagOptions(enabled,EzvDialogExtensionOptions_SharedFlagsInheritMask_); }
-	inline void SetDocsNoResizeFlagsMask_(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_NoResizeFlagsMask_); }
-	inline void SetDocsLocalFlagsTransferMask_(bool enabled)	{ this->FlagOptions(enabled,EzvDialogExtensionOptions_LocalFlagsTransferMask_); }
-	inline void SetDocsSavedFlagsMask_(bool enabled)			{ this->FlagOptions(enabled,EzvDialogExtensionOptions_SavedFlagsMask_); }
+	inline void SetDocsKeepAliveOnly(bool enabled)				{ this->FlagOptions(enabled,ezvDialogExtensionFlags_KeepAliveOnly); }
+	inline void SetDocsNoDockingOverCentralNode(bool enabled)	{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoDockingOverCentralNode); }
+	inline void SetDocsPassthruCentralNode(bool enabled)		{ this->FlagOptions(enabled,ezvDialogExtensionFlags_PassthruCentralNode); }
+	inline void SetDocsNoDockingSplit(bool enabled)				{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoDockingSplit); }
+	inline void SetDocsNoResize(bool enabled)					{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoResize); }
+	inline void SetDocsAutoHideTabBar(bool enabled)				{ this->FlagOptions(enabled,ezvDialogExtensionFlags_AutoHideTabBar); }
+	inline void SetDocsNoUndocking(bool enabled)				{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoUndocking); }
+	inline void SetDocsNoSplit(bool enabled)					{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoSplit); }
+	inline void SetDocsNoDockingInCentralNode(bool enabled)		{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoDockingInCentralNode); }
+	inline void SetDocsDockSpace(bool enabled)					{ this->FlagOptions(enabled,ezvDialogExtensionFlags_DockSpace); }
+	inline void SetDocsCentralNode(bool enabled)				{ this->FlagOptions(enabled,ezvDialogExtensionFlags_CentralNode); }
+	inline void SetDocsNoTabBar(bool enabled)					{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoTabBar); }
+	inline void SetDocsHiddenTabBar(bool enabled)				{ this->FlagOptions(enabled,ezvDialogExtensionFlags_HiddenTabBar); }
+	inline void SetDocsNoWindowMenuButton(bool enabled)			{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoWindowMenuButton); }
+	inline void SetDocsNoCloseButton(bool enabled)				{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoCloseButton); }
+	inline void SetDocsNoResizeX(bool enabled)					{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoResizeX); }
+	inline void SetDocsNoResizeY(bool enabled)					{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoResizeY); }
+	inline void SetDocsDockedWindowsInFocusRoute(bool enabled)	{ this->FlagOptions(enabled,ezvDialogExtensionFlags_DockedWindowsInFocusRoute); }
+	inline void SetDocsNoDockingSplitOther(bool enabled)		{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoDockingSplitOther); }
+	inline void SetDocsNoDockingOverMe(bool enabled)			{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoDockingOverMe); }
+	inline void SetDocsNoDockingOverOther(bool enabled)			{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoDockingOverOther); }
+	inline void SetDocsNoDockingOverEmpty(bool enabled)			{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoDockingOverEmpty); }
+	inline void SetDocsNoDocking(bool enabled)					{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoDocking); }
+	inline void SetDocsSharedFlagsInheritMask_(bool enabled)	{ this->FlagOptions(enabled,ezvDialogExtensionFlags_SharedFlagsInheritMask_); }
+	inline void SetDocsNoResizeFlagsMask_(bool enabled)			{ this->FlagOptions(enabled,ezvDialogExtensionFlags_NoResizeFlagsMask_); }
+	inline void SetDocsLocalFlagsTransferMask_(bool enabled)	{ this->FlagOptions(enabled,ezvDialogExtensionFlags_LocalFlagsTransferMask_); }
+	inline void SetDocsSavedFlagsMask_(bool enabled)			{ this->FlagOptions(enabled,ezvDialogExtensionFlags_SavedFlagsMask_); }
 
 	// others
 	inline bool IsActivated(const EzvDialogOptions& flags) const					{ return (m_iDialogOptions & flags); }
@@ -324,17 +324,17 @@ public:
 //----------------------------------------------------
 enum EzvTabBarOptions
 {
-	ezvTabBarOptions_None							= ImGuiTabBarFlags_::ImGuiTabBarFlags_None,
-	ezvTabBarOptions_Reorderable					= ImGuiTabBarFlags_::ImGuiTabBarFlags_Reorderable,
-	ezvTabBarOptions_AutoSelectNewTabs				= ImGuiTabBarFlags_::ImGuiTabBarFlags_AutoSelectNewTabs,
-	ezvTabBarOptions_TabListPopupButton				= ImGuiTabBarFlags_::ImGuiTabBarFlags_TabListPopupButton,
-	ezvTabBarOptions_NoCloseWithMiddleMouseButton	= ImGuiTabBarFlags_::ImGuiTabBarFlags_NoCloseWithMiddleMouseButton,
-	ezvTabBarOptions_NoTabListScrollingButtons		= ImGuiTabBarFlags_::ImGuiTabBarFlags_NoTabListScrollingButtons,
-	ezvTabBarOptions_NoTooltip						= ImGuiTabBarFlags_::ImGuiTabBarFlags_NoTooltip,
-	ezvTabBarOptions_FittingPolicyResizeDown		= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyResizeDown,
-	ezvTabBarOptions_FittingPolicyScroll			= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyScroll,
-	ezvTabBarOptions_FittingPolicyMask_				= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyMask_,
-	ezvTabBarOptions_FittingPolicyDefault_			= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyDefault_,
+	ezvTabBarFlags_None								= ImGuiTabBarFlags_::ImGuiTabBarFlags_None,
+	ezvTabBarFlags_Reorderable						= ImGuiTabBarFlags_::ImGuiTabBarFlags_Reorderable,
+	ezvTabBarFlags_AutoSelectNewTabs				= ImGuiTabBarFlags_::ImGuiTabBarFlags_AutoSelectNewTabs,
+	ezvTabBarFlags_TabListPopupButton				= ImGuiTabBarFlags_::ImGuiTabBarFlags_TabListPopupButton,
+	ezvTabBarFlags_NoCloseWithMiddleMouseButton		= ImGuiTabBarFlags_::ImGuiTabBarFlags_NoCloseWithMiddleMouseButton,
+	ezvTabBarFlags_NoTabListScrollingButtons		= ImGuiTabBarFlags_::ImGuiTabBarFlags_NoTabListScrollingButtons,
+	ezvTabBarFlags_NoTooltip						= ImGuiTabBarFlags_::ImGuiTabBarFlags_NoTooltip,
+	ezvTabBarFlags_FittingPolicyResizeDown			= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyResizeDown,
+	ezvTabBarFlags_FittingPolicyScroll				= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyScroll,
+	ezvTabBarFlags_FittingPolicyMask_				= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyMask_,
+	ezvTabBarFlags_FittingPolicyDefault_			= ImGuiTabBarFlags_::ImGuiTabBarFlags_FittingPolicyDefault_,
 };
 
 //----------------------------------------------------
@@ -346,7 +346,7 @@ struct ZV_API TzvTabBarInfo
 
 //// Member Variables
 private:
-	TabBarOptions	m_iTabBarOptions = ezvTabBarOptions_None;
+	TabBarOptions	m_iTabBarOptions = ezvTabBarFlags_None;
 
 //// Member Functions
 public:
@@ -355,16 +355,16 @@ public:
 
 	// Setter
 	inline void SetOptions(EzvTabBarOptions flags)				{ this->AddOptions(flags); }
-	inline void SetReorderable(bool enabled)					{ this->FlagOptions(enabled, ezvTabBarOptions_Reorderable);  }
-	inline void SetAutoSelectNewTabs(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarOptions_AutoSelectNewTabs); }
-	inline void SetTabListPopupButton(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarOptions_TabListPopupButton); }
-	inline void SetNoCloseWithMiddleMouseButton(bool enabled)	{ this->FlagOptions(enabled, ezvTabBarOptions_NoCloseWithMiddleMouseButton); }
-	inline void SetNoTabListScrollingButtons(bool enabled)		{ this->FlagOptions(enabled, ezvTabBarOptions_NoTabListScrollingButtons); }
-	inline void SetNoTooltip(bool enabled)						{ this->FlagOptions(enabled, ezvTabBarOptions_NoTooltip); }
-	inline void SetFittingPolicyResizeDown(bool enabled)		{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyResizeDown); }
-	inline void SetFittingPolicyScroll(bool enabled)			{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyScroll); }
-	inline void SetFittingPolicyMask_(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyMask_); }
-	inline void SetFittingPolicyDefault_(bool enabled)			{ this->FlagOptions(enabled, ezvTabBarOptions_FittingPolicyDefault_); }
+	inline void SetReorderable(bool enabled)					{ this->FlagOptions(enabled, ezvTabBarFlags_Reorderable);  }
+	inline void SetAutoSelectNewTabs(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarFlags_AutoSelectNewTabs); }
+	inline void SetTabListPopupButton(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarFlags_TabListPopupButton); }
+	inline void SetNoCloseWithMiddleMouseButton(bool enabled)	{ this->FlagOptions(enabled, ezvTabBarFlags_NoCloseWithMiddleMouseButton); }
+	inline void SetNoTabListScrollingButtons(bool enabled)		{ this->FlagOptions(enabled, ezvTabBarFlags_NoTabListScrollingButtons); }
+	inline void SetNoTooltip(bool enabled)						{ this->FlagOptions(enabled, ezvTabBarFlags_NoTooltip); }
+	inline void SetFittingPolicyResizeDown(bool enabled)		{ this->FlagOptions(enabled, ezvTabBarFlags_FittingPolicyResizeDown); }
+	inline void SetFittingPolicyScroll(bool enabled)			{ this->FlagOptions(enabled, ezvTabBarFlags_FittingPolicyScroll); }
+	inline void SetFittingPolicyMask_(bool enabled)				{ this->FlagOptions(enabled, ezvTabBarFlags_FittingPolicyMask_); }
+	inline void SetFittingPolicyDefault_(bool enabled)			{ this->FlagOptions(enabled, ezvTabBarFlags_FittingPolicyDefault_); }
 
 	// Others
 	inline bool IsActivated(const EzvTabBarOptions& flags)					{ return (m_iTabBarOptions & flags); }
@@ -379,16 +379,16 @@ public:
 //----------------------------------------------------
 enum EzvTabItemOptions
 {
-	ezvTabItemOptions_None								= ImGuiTabItemFlags_::ImGuiTabItemFlags_None,
-	ezvTabItemOptions_UnsavedDocument					= ImGuiTabItemFlags_::ImGuiTabItemFlags_UnsavedDocument,
-	ezvTabItemOptions_SetSelected						= ImGuiTabItemFlags_::ImGuiTabItemFlags_SetSelected,
-	ezvTabItemOptions_NoCloseWithMiddleMouseButton		= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoCloseWithMiddleMouseButton,
-	ezvTabItemOptions_NoPushId							= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoPushId,
-	ezvTabItemOptions_NoTooltip							= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoTooltip,
-	ezvTabItemOptions_NoReorder							= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoReorder,
-	ezvTabItemOptions_Leading							= ImGuiTabItemFlags_::ImGuiTabItemFlags_Leading,
-	ezvTabItemOptions_Trailing							= ImGuiTabItemFlags_::ImGuiTabItemFlags_Trailing,
-	ezvTabItemOptions_NoAssumedClosure					= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoAssumedClosure,
+	ezvTabItemFlags_None								= ImGuiTabItemFlags_::ImGuiTabItemFlags_None,
+	ezvTabItemFlags_UnsavedDocument						= ImGuiTabItemFlags_::ImGuiTabItemFlags_UnsavedDocument,
+	ezvTabItemFlags_SetSelected							= ImGuiTabItemFlags_::ImGuiTabItemFlags_SetSelected,
+	ezvTabItemFlags_NoCloseWithMiddleMouseButton		= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoCloseWithMiddleMouseButton,
+	ezvTabItemFlags_NoPushId							= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoPushId,
+	ezvTabItemFlags_NoTooltip							= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoTooltip,
+	ezvTabItemFlags_NoReorder							= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoReorder,
+	ezvTabItemFlags_Leading								= ImGuiTabItemFlags_::ImGuiTabItemFlags_Leading,
+	ezvTabItemFlags_Trailing							= ImGuiTabItemFlags_::ImGuiTabItemFlags_Trailing,
+	ezvTabItemFlags_NoAssumedClosure					= ImGuiTabItemFlags_::ImGuiTabItemFlags_NoAssumedClosure,
 };
 
 //----------------------------------------------------
@@ -400,7 +400,7 @@ struct ZV_API TzvTabItemInfo
 
 //// Member Variables
 private:
-	TabItemOptions	m_iTabItemOptions = ezvTabItemOptions_None;
+	TabItemOptions	m_iTabItemOptions = ezvTabItemFlags_None;
 
 //// Member Functions
 public:
@@ -409,15 +409,15 @@ public:
 
 	// Setter
 	inline void SetOptions(EzvTabItemOptions flags)				{ this->AddOptions(flags); }
-	inline void SetUnsavedDocument(bool enabled)				{ this->FlagOptions(enabled, ezvTabItemOptions_UnsavedDocument);  }
-	inline void SetSetSelected(bool enabled)					{ this->FlagOptions(enabled, ezvTabItemOptions_SetSelected); }
-	inline void SetNoCloseWithMiddleMouseButton(bool enabled)	{ this->FlagOptions(enabled, ezvTabItemOptions_NoCloseWithMiddleMouseButton); }
-	inline void SetNoPushId(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_NoPushId); }
-	inline void SetNoTooltip(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_NoTooltip); }
-	inline void SetNoReorder(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_NoReorder); }
-	inline void SetLeading(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_Leading); }
-	inline void SetTrailing(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemOptions_Trailing); }
-	inline void SetNoAssumedClosure(bool enabled)				{ this->FlagOptions(enabled, ezvTabItemOptions_NoAssumedClosure); }
+	inline void SetUnsavedDocument(bool enabled)				{ this->FlagOptions(enabled, ezvTabItemFlags_UnsavedDocument);  }
+	inline void SetSetSelected(bool enabled)					{ this->FlagOptions(enabled, ezvTabItemFlags_SetSelected); }
+	inline void SetNoCloseWithMiddleMouseButton(bool enabled)	{ this->FlagOptions(enabled, ezvTabItemFlags_NoCloseWithMiddleMouseButton); }
+	inline void SetNoPushId(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemFlags_NoPushId); }
+	inline void SetNoTooltip(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemFlags_NoTooltip); }
+	inline void SetNoReorder(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemFlags_NoReorder); }
+	inline void SetLeading(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemFlags_Leading); }
+	inline void SetTrailing(bool enabled)						{ this->FlagOptions(enabled, ezvTabItemFlags_Trailing); }
+	inline void SetNoAssumedClosure(bool enabled)				{ this->FlagOptions(enabled, ezvTabItemFlags_NoAssumedClosure); }
 	
 	// Others
 	inline bool IsActivated(const EzvTabItemOptions& flags)					{ return (m_iTabItemOptions & flags); }
@@ -486,28 +486,28 @@ public:
 //----------------------------------------------------
 enum EzvInputTextOptions 
 {
-	EzvInputTextOptions_None					= ImGuiInputTextFlags_::ImGuiInputTextFlags_None,
-	EzvInputTextOptions_CharsDecimal       		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsDecimal,		 // Allow 0123456789.+-*/
-	EzvInputTextOptions_CharsHexadecimal   		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsHexadecimal,	 // Allow 0123456789ABCDEFabcdef
-	EzvInputTextOptions_CharsUppercase     		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsUppercase,		 // Turn a..z into A..Z
-	EzvInputTextOptions_CharsNoBlank       		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsNoBlank,		 // Filter out spaces, tabs
-	EzvInputTextOptions_AutoSelectAll      		= ImGuiInputTextFlags_::ImGuiInputTextFlags_AutoSelectAll,		 // Select entire text when first taking mouse focus
-	EzvInputTextOptions_EnterReturnsTrue   		= ImGuiInputTextFlags_::ImGuiInputTextFlags_EnterReturnsTrue,	 // Return 'true' when Enter is pressed (as opposed to every time the value was modified). Consider looking at the IsItemDeactivatedAfterEdit() function.
-	EzvInputTextOptions_CallbackCompletion 		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackCompletion,  // Callback on pressing TAB (for completion handling)
-	EzvInputTextOptions_CallbackHistory    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackHistory,	 // Callback on pressing Up/Down arrows (for history handling)
-	EzvInputTextOptions_CallbackAlways     		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackAlways,		 // Callback on each iteration. User code may query cursor position, modify text buffer.
-	EzvInputTextOptions_CallbackCharFilter 		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackCharFilter,  // Callback on character inputs to replace or discard them. Modify 'EventChar' to replace or discard, or return 1 in callback to discard.
-	EzvInputTextOptions_AllowTabInput      		= ImGuiInputTextFlags_::ImGuiInputTextFlags_AllowTabInput,		 // Pressing TAB input a '\t' character into the text field
-	EzvInputTextOptions_CtrlEnterForNewLine		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CtrlEnterForNewLine, // In multi-line mode, unfocus with Enter, add new line with Ctrl+Enter (default is opposite: unfocus with Ctrl+Enter, add line with Enter).
-	EzvInputTextOptions_NoHorizontalScroll 		= ImGuiInputTextFlags_::ImGuiInputTextFlags_NoHorizontalScroll,  // Disable following the cursor horizontally
-	EzvInputTextOptions_AlwaysOverwrite    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_AlwaysOverwrite,	 // Overwrite mode
-	EzvInputTextOptions_ReadOnly           		= ImGuiInputTextFlags_::ImGuiInputTextFlags_ReadOnly,			 // Read-only mode
-	EzvInputTextOptions_Password           		= ImGuiInputTextFlags_::ImGuiInputTextFlags_Password,			 // Password mode, display all characters as '*'
-	EzvInputTextOptions_NoUndoRedo         		= ImGuiInputTextFlags_::ImGuiInputTextFlags_NoUndoRedo,			 // Disable undo/redo. Note that input text owns the text data while active, if you want to provide your own undo/redo stack you need e.g. to call ClearActiveID().
-	EzvInputTextOptions_CharsScientific    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsScientific,	 // Allow 0123456789.+-*/eE (Scientific notation input)
-	EzvInputTextOptions_CallbackResize     		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackResize,		 // Callback on buffer capacity changes request (beyond 'buf_size' parameter value), allowing the string to grow. Notify when the string wants to be resized (for string types which hold a cache of their Size). You will be provided a new BufSize in the callback and NEED to honor it. (see misc/cpp/imgui_stdlib.h for an example of using this)
-	EzvInputTextOptions_CallbackEdit       		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackEdit,		 // Callback on any edit (note that InputText() already returns true on edit, the callback is useful mainly to manipulate the underlying buffer while focus is active)
-	EzvInputTextOptions_EscapeClearsAll    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_EscapeClearsAll,	 // Escape key clears content if not empty, and deactivate otherwise (contrast to default behavior of Escape to revert)
+	ezvInputTextFlags_None						= ImGuiInputTextFlags_::ImGuiInputTextFlags_None,
+	ezvInputTextFlags_CharsDecimal       		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsDecimal,		 // Allow 0123456789.+-*/
+	ezvInputTextFlags_CharsHexadecimal   		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsHexadecimal,	 // Allow 0123456789ABCDEFabcdef
+	ezvInputTextFlags_CharsUppercase     		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsUppercase,		 // Turn a..z into A..Z
+	ezvInputTextFlags_CharsNoBlank       		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsNoBlank,		 // Filter out spaces, tabs
+	ezvInputTextFlags_AutoSelectAll      		= ImGuiInputTextFlags_::ImGuiInputTextFlags_AutoSelectAll,		 // Select entire text when first taking mouse focus
+	ezvInputTextFlags_EnterReturnsTrue   		= ImGuiInputTextFlags_::ImGuiInputTextFlags_EnterReturnsTrue,	 // Return 'true' when Enter is pressed (as opposed to every time the value was modified). Consider looking at the IsItemDeactivatedAfterEdit() function.
+	ezvInputTextFlags_CallbackCompletion 		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackCompletion,  // Callback on pressing TAB (for completion handling)
+	ezvInputTextFlags_CallbackHistory    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackHistory,	 // Callback on pressing Up/Down arrows (for history handling)
+	ezvInputTextFlags_CallbackAlways     		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackAlways,		 // Callback on each iteration. User code may query cursor position, modify text buffer.
+	ezvInputTextFlags_CallbackCharFilter 		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackCharFilter,  // Callback on character inputs to replace or discard them. Modify 'EventChar' to replace or discard, or return 1 in callback to discard.
+	ezvInputTextFlags_AllowTabInput      		= ImGuiInputTextFlags_::ImGuiInputTextFlags_AllowTabInput,		 // Pressing TAB input a '\t' character into the text field
+	ezvInputTextFlags_CtrlEnterForNewLine		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CtrlEnterForNewLine, // In multi-line mode, unfocus with Enter, add new line with Ctrl+Enter (default is opposite: unfocus with Ctrl+Enter, add line with Enter).
+	ezvInputTextFlags_NoHorizontalScroll 		= ImGuiInputTextFlags_::ImGuiInputTextFlags_NoHorizontalScroll,  // Disable following the cursor horizontally
+	ezvInputTextFlags_AlwaysOverwrite    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_AlwaysOverwrite,	 // Overwrite mode
+	ezvInputTextFlags_ReadOnly           		= ImGuiInputTextFlags_::ImGuiInputTextFlags_ReadOnly,			 // Read-only mode
+	ezvInputTextFlags_Password           		= ImGuiInputTextFlags_::ImGuiInputTextFlags_Password,			 // Password mode, display all characters as '*'
+	ezvInputTextFlags_NoUndoRedo         		= ImGuiInputTextFlags_::ImGuiInputTextFlags_NoUndoRedo,			 // Disable undo/redo. Note that input text owns the text data while active, if you want to provide your own undo/redo stack you need e.g. to call ClearActiveID().
+	ezvInputTextFlags_CharsScientific    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CharsScientific,	 // Allow 0123456789.+-*/eE (Scientific notation input)
+	ezvInputTextFlags_CallbackResize     		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackResize,		 // Callback on buffer capacity changes request (beyond 'buf_size' parameter value), allowing the string to grow. Notify when the string wants to be resized (for string types which hold a cache of their Size). You will be provided a new BufSize in the callback and NEED to honor it. (see misc/cpp/imgui_stdlib.h for an example of using this)
+	ezvInputTextFlags_CallbackEdit       		= ImGuiInputTextFlags_::ImGuiInputTextFlags_CallbackEdit,		 // Callback on any edit (note that InputText() already returns true on edit, the callback is useful mainly to manipulate the underlying buffer while focus is active)
+	ezvInputTextFlags_EscapeClearsAll    		= ImGuiInputTextFlags_::ImGuiInputTextFlags_EscapeClearsAll,	 // Escape key clears content if not empty, and deactivate otherwise (contrast to default behavior of Escape to revert)
 };
 
 //----------------------------------------------------
@@ -519,7 +519,7 @@ struct ZV_API TzvInputTextInfo
 
 	//// Member Variables
 private:
-	InputTextOptions	m_iInputTextOptions = EzvInputTextOptions_None;
+	InputTextOptions	m_iInputTextOptions = ezvInputTextFlags_None;
 
 	//// Member Functions
 public:
@@ -528,27 +528,27 @@ public:
 	inline InputTextOptions	GetOptions() const { return (m_iInputTextOptions); }
 
 	// Setter
-	inline void	SetCharsDecimal(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CharsDecimal);}
-	inline void	SetCharsHexadecimal(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_CharsHexadecimal);}
-	inline void	SetCharsUppercase(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CharsUppercase);}
-	inline void	SetCharsNoBlank(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CharsNoBlank);}
-	inline void	SetAutoSelectAll(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_AutoSelectAll);}
-	inline void	SetEnterReturnsTrue(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_EnterReturnsTrue);}
-	inline void	SetCallbackCompletion(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackCompletion);}
-	inline void	SetCallbackHistory(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackHistory);}
-	inline void	SetCallbackAlways(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackAlways);}
-	inline void	SetCallbackCharFilter(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackCharFilter);}
-	inline void	SetAllowTabInput(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_AllowTabInput);}
-	inline void	SetCtrlEnterForNewLine(bool enabled)	{ this->FlagOptions(enabled, EzvInputTextOptions_CtrlEnterForNewLine);}
-	inline void	SetNoHorizontalScroll(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_NoHorizontalScroll);}
-	inline void	SetAlwaysOverwrite(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_AlwaysOverwrite);}
-	inline void	SetReadOnly(bool enabled)				{ this->FlagOptions(enabled, EzvInputTextOptions_ReadOnly);}
-	inline void	SetPassword(bool enabled)				{ this->FlagOptions(enabled, EzvInputTextOptions_Password);}
-	inline void	SetNoUndoRedo(bool enabled)				{ this->FlagOptions(enabled, EzvInputTextOptions_NoUndoRedo);}
-	inline void	SetCharsScientific(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_CharsScientific);}
-	inline void	SetCallbackResize(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackResize);}
-	inline void	SetCallbackEdit(bool enabled)			{ this->FlagOptions(enabled, EzvInputTextOptions_CallbackEdit);}
-	inline void	SetEscapeClearsAll(bool enabled)		{ this->FlagOptions(enabled, EzvInputTextOptions_EscapeClearsAll);}
+	inline void	SetCharsDecimal(bool enabled)			{ this->FlagOptions(enabled, ezvInputTextFlags_CharsDecimal);}
+	inline void	SetCharsHexadecimal(bool enabled)		{ this->FlagOptions(enabled, ezvInputTextFlags_CharsHexadecimal);}
+	inline void	SetCharsUppercase(bool enabled)			{ this->FlagOptions(enabled, ezvInputTextFlags_CharsUppercase);}
+	inline void	SetCharsNoBlank(bool enabled)			{ this->FlagOptions(enabled, ezvInputTextFlags_CharsNoBlank);}
+	inline void	SetAutoSelectAll(bool enabled)			{ this->FlagOptions(enabled, ezvInputTextFlags_AutoSelectAll);}
+	inline void	SetEnterReturnsTrue(bool enabled)		{ this->FlagOptions(enabled, ezvInputTextFlags_EnterReturnsTrue);}
+	inline void	SetCallbackCompletion(bool enabled)		{ this->FlagOptions(enabled, ezvInputTextFlags_CallbackCompletion);}
+	inline void	SetCallbackHistory(bool enabled)		{ this->FlagOptions(enabled, ezvInputTextFlags_CallbackHistory);}
+	inline void	SetCallbackAlways(bool enabled)			{ this->FlagOptions(enabled, ezvInputTextFlags_CallbackAlways);}
+	inline void	SetCallbackCharFilter(bool enabled)		{ this->FlagOptions(enabled, ezvInputTextFlags_CallbackCharFilter);}
+	inline void	SetAllowTabInput(bool enabled)			{ this->FlagOptions(enabled, ezvInputTextFlags_AllowTabInput);}
+	inline void	SetCtrlEnterForNewLine(bool enabled)	{ this->FlagOptions(enabled, ezvInputTextFlags_CtrlEnterForNewLine);}
+	inline void	SetNoHorizontalScroll(bool enabled)		{ this->FlagOptions(enabled, ezvInputTextFlags_NoHorizontalScroll);}
+	inline void	SetAlwaysOverwrite(bool enabled)		{ this->FlagOptions(enabled, ezvInputTextFlags_AlwaysOverwrite);}
+	inline void	SetReadOnly(bool enabled)				{ this->FlagOptions(enabled, ezvInputTextFlags_ReadOnly);}
+	inline void	SetPassword(bool enabled)				{ this->FlagOptions(enabled, ezvInputTextFlags_Password);}
+	inline void	SetNoUndoRedo(bool enabled)				{ this->FlagOptions(enabled, ezvInputTextFlags_NoUndoRedo);}
+	inline void	SetCharsScientific(bool enabled)		{ this->FlagOptions(enabled, ezvInputTextFlags_CharsScientific);}
+	inline void	SetCallbackResize(bool enabled)			{ this->FlagOptions(enabled, ezvInputTextFlags_CallbackResize);}
+	inline void	SetCallbackEdit(bool enabled)			{ this->FlagOptions(enabled, ezvInputTextFlags_CallbackEdit);}
+	inline void	SetEscapeClearsAll(bool enabled)		{ this->FlagOptions(enabled, ezvInputTextFlags_EscapeClearsAll);}
 
 	// Others
 	inline bool IsActivated(const EzvInputTextOptions& flags) { return (m_iInputTextOptions & flags); }
@@ -557,6 +557,214 @@ public:
 	inline void DelOptions(const EzvInputTextOptions& flags) { m_iInputTextOptions &= ~flags; }
 };
 
+#pragma endregion
+#pragma region Table Options
+//----------------------------------------------------
+// enum Table Options
+//----------------------------------------------------
+enum EzvTableOptions
+{
+	// Features
+	ezvTableFlags_None                      	 = ImGuiTableFlags_::ImGuiTableFlags_None,
+	ezvTableFlags_Resizable                 	 = ImGuiTableFlags_::ImGuiTableFlags_Resizable,
+	ezvTableFlags_Reorderable               	 = ImGuiTableFlags_::ImGuiTableFlags_Reorderable,
+	ezvTableFlags_Hideable                  	 = ImGuiTableFlags_::ImGuiTableFlags_Hideable,
+	ezvTableFlags_Sortable                  	 = ImGuiTableFlags_::ImGuiTableFlags_Sortable,
+	ezvTableFlags_NoSavedSettings           	 = ImGuiTableFlags_::ImGuiTableFlags_NoSavedSettings,
+	ezvTableFlags_ContextMenuInBody         	 = ImGuiTableFlags_::ImGuiTableFlags_ContextMenuInBody,
+	// Decorations
+	ezvTableFlags_RowBg                     	 = ImGuiTableFlags_::ImGuiTableFlags_RowBg,
+	ezvTableFlags_BordersInnerH             	 = ImGuiTableFlags_::ImGuiTableFlags_BordersInnerH,
+	ezvTableFlags_BordersOuterH             	 = ImGuiTableFlags_::ImGuiTableFlags_BordersOuterH,
+	ezvTableFlags_BordersInnerV             	 = ImGuiTableFlags_::ImGuiTableFlags_BordersInnerV,
+	ezvTableFlags_BordersOuterV             	 = ImGuiTableFlags_::ImGuiTableFlags_BordersOuterV,
+	ezvTableFlags_BordersH                  	 = ImGuiTableFlags_::ImGuiTableFlags_BordersH,
+	ezvTableFlags_BordersV                  	 = ImGuiTableFlags_::ImGuiTableFlags_BordersV,
+	ezvTableFlags_BordersInner              	 = ImGuiTableFlags_::ImGuiTableFlags_BordersInner,
+	ezvTableFlags_BordersOuter              	 = ImGuiTableFlags_::ImGuiTableFlags_BordersOuter,
+	ezvTableFlags_Borders                   	 = ImGuiTableFlags_::ImGuiTableFlags_Borders,
+	ezvTableFlags_NoBordersInBody           	 = ImGuiTableFlags_::ImGuiTableFlags_NoBordersInBody,
+	ezvTableFlags_NoBordersInBodyUntilResize	 = ImGuiTableFlags_::ImGuiTableFlags_NoBordersInBodyUntilResize,
+	// Sizing Policy (read above for defaults)
+	ezvTableFlags_SizingFixedFit            	 = ImGuiTableFlags_::ImGuiTableFlags_SizingFixedFit,
+	ezvTableFlags_SizingFixedSame           	 = ImGuiTableFlags_::ImGuiTableFlags_SizingFixedSame,
+	ezvTableFlags_SizingStretchProp         	 = ImGuiTableFlags_::ImGuiTableFlags_SizingStretchProp,
+	ezvTableFlags_SizingStretchSame         	 = ImGuiTableFlags_::ImGuiTableFlags_SizingStretchSame,
+	// Sizing Extra Options
+	ezvTableFlags_NoHostExtendX             	 = ImGuiTableFlags_::ImGuiTableFlags_NoHostExtendX,
+	ezvTableFlags_NoHostExtendY             	 = ImGuiTableFlags_::ImGuiTableFlags_NoHostExtendY,
+	ezvTableFlags_NoKeepColumnsVisible      	 = ImGuiTableFlags_::ImGuiTableFlags_NoKeepColumnsVisible,
+	ezvTableFlags_PreciseWidths             	 = ImGuiTableFlags_::ImGuiTableFlags_PreciseWidths,
+	// Clipping
+	ezvTableFlags_NoClip                    	 = ImGuiTableFlags_::ImGuiTableFlags_NoClip,
+	// Padding
+	ezvTableFlags_PadOuterX                 	 = ImGuiTableFlags_::ImGuiTableFlags_PadOuterX,
+	ezvTableFlags_NoPadOuterX               	 = ImGuiTableFlags_::ImGuiTableFlags_NoPadOuterX,
+	ezvTableFlags_NoPadInnerX               	 = ImGuiTableFlags_::ImGuiTableFlags_NoPadInnerX,
+	// Scrolling
+	ezvTableFlags_ScrollX                   	 = ImGuiTableFlags_::ImGuiTableFlags_ScrollX,
+	ezvTableFlags_ScrollY                   	 = ImGuiTableFlags_::ImGuiTableFlags_ScrollY,
+	// Sorting
+	ezvTableFlags_SortMulti                 	 = ImGuiTableFlags_::ImGuiTableFlags_SortMulti,
+	ezvTableFlags_SortTristate              	 = ImGuiTableFlags_::ImGuiTableFlags_SortTristate,
+	// Miscellaneous
+	ezvTableFlags_HighlightHoveredColumn    	 = ImGuiTableFlags_::ImGuiTableFlags_HighlightHoveredColumn,
+	// [Internal] Combinations and masks
+	ezvTableFlags_SizingMask_               	 = ImGuiTableFlags_::ImGuiTableFlags_SizingMask_,
+};
+
+
+//----------------------------------------------------
+// struct Table Info
+//----------------------------------------------------
+struct ZV_API TzvTableInfo
+{
+	using TableOptions = int;
+
+	//// Member Variables
+private:
+	TableOptions	m_iTableOptions = ezvTableFlags_None;
+
+	//// Member Functions
+public:
+	// Getter
+	inline TableOptions	GetOptions() { return (m_iTableOptions); }
+	inline TableOptions	GetOptions() const { return (m_iTableOptions); }
+
+	// Setter
+	inline void SetNone(bool enabled)							{ this->FlagOptions(enabled, ezvTableFlags_None); }
+	inline void SetResizable(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_Resizable); }
+	inline void SetReorderable(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_Reorderable); }
+	inline void SetHideable(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_Hideable); }
+	inline void SetSortable(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_Sortable); }
+	inline void SetNoSavedSettings(bool enabled)				{ this->FlagOptions(enabled, ezvTableFlags_NoSavedSettings); }
+	inline void SetContextMenuInBody(bool enabled)				{ this->FlagOptions(enabled, ezvTableFlags_ContextMenuInBody); }
+	inline void SetRowBg(bool enabled)							{ this->FlagOptions(enabled, ezvTableFlags_RowBg); }
+	inline void SetBordersInnerH(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_BordersInnerH); }
+	inline void SetBordersOuterH(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_BordersOuterH); }
+	inline void SetBordersInnerV(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_BordersInnerV); }
+	inline void SetBordersOuterV(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_BordersOuterV); }
+	inline void SetBordersH(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_BordersH); }
+	inline void SetBordersV(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_BordersV); }
+	inline void SetBordersInner(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_BordersInner); }
+	inline void SetBordersOuter(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_BordersOuter); }
+	inline void SetBorders(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_Borders); }
+	inline void SetNoBordersInBody(bool enabled)				{ this->FlagOptions(enabled, ezvTableFlags_NoBordersInBody); }
+	inline void SetNoBordersInBodyUntilResize(bool enabled)		{ this->FlagOptions(enabled, ezvTableFlags_NoBordersInBodyUntilResize); }
+	inline void SetSizingFixedFit(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_SizingFixedFit); }
+	inline void SetSizingFixedSame(bool enabled)				{ this->FlagOptions(enabled, ezvTableFlags_SizingFixedSame); }
+	inline void SetSizingStretchProp(bool enabled)				{ this->FlagOptions(enabled, ezvTableFlags_SizingStretchProp); }
+	inline void SetSizingStretchSame(bool enabled)				{ this->FlagOptions(enabled, ezvTableFlags_SizingStretchSame); }
+	inline void SetNoHostExtendX(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_NoHostExtendX); }
+	inline void SetNoHostExtendY(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_NoHostExtendY); }
+	inline void SetNoKeepColumnsVisible(bool enabled)			{ this->FlagOptions(enabled, ezvTableFlags_NoKeepColumnsVisible); }
+	inline void SetPreciseWidths(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_PreciseWidths); }
+	inline void SetNoClip(bool enabled)							{ this->FlagOptions(enabled, ezvTableFlags_NoClip); }
+	inline void SetPadOuterX(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_PadOuterX); }
+	inline void SetNoPadOuterX(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_NoPadOuterX); }
+	inline void SetNoPadInnerX(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_NoPadInnerX); }
+	inline void SetScrollX(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_ScrollX); }
+	inline void SetScrollY(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_ScrollY); }
+	inline void SetSortMulti(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_SortMulti); }
+	inline void SetSortTristate(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_SortTristate); }
+	inline void SetHighlightHoveredColumn(bool enabled)			{ this->FlagOptions(enabled, ezvTableFlags_HighlightHoveredColumn); }
+	inline void SetSizingMask_(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_SizingMask_); }
+
+	// Others
+	inline bool IsActivated(const EzvTableOptions& flags) { return (m_iTableOptions & flags); }
+	inline void FlagOptions(bool enabled, const EzvTableOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void AddOptions(const EzvTableOptions& flags) { m_iTableOptions |= flags; }
+	inline void DelOptions(const EzvTableOptions& flags) { m_iTableOptions &= ~flags; }
+};
+#pragma endregion
+#pragma region Table Header Options
+//----------------------------------------------------
+// enum TableHeader Options
+//----------------------------------------------------
+enum EzvTableHeaderOptions
+{
+	ezvTableHeaderFlags_None					= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_None,
+	ezvTableHeaderFlags_Disabled				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_Disabled,
+	ezvTableHeaderFlags_DefaultHide				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_DefaultHide,
+	ezvTableHeaderFlags_DefaultSort				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_DefaultSort,
+	ezvTableHeaderFlags_WidthStretch			= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_WidthStretch,
+	ezvTableHeaderFlags_WidthFixed				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_WidthFixed,
+	ezvTableHeaderFlags_NoResize				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_NoResize,
+	ezvTableHeaderFlags_NoReorder				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_NoReorder,
+	ezvTableHeaderFlags_NoHide					= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_NoHide,
+	ezvTableHeaderFlags_NoClip					= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_NoClip,
+	ezvTableHeaderFlags_NoSort					= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_NoSort,
+	ezvTableHeaderFlags_NoSortAscending			= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_NoSortAscending,
+	ezvTableHeaderFlags_NoSortDescending		= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_NoSortDescending,
+	ezvTableHeaderFlags_NoHeaderLabel			= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_NoHeaderLabel,
+	ezvTableHeaderFlags_NoHeaderWidth			= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_NoHeaderWidth,
+	ezvTableHeaderFlags_PreferSortAscending		= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_PreferSortAscending,
+	ezvTableHeaderFlags_PreferSortDescending	= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_PreferSortDescending,
+	ezvTableHeaderFlags_IndentEnable			= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IndentEnable,
+	ezvTableHeaderFlags_IndentDisable			= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IndentDisable,
+	ezvTableHeaderFlags_AngledHeader			= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_AngledHeader,
+	ezvTableHeaderFlags_IsEnabled				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IsEnabled,
+	ezvTableHeaderFlags_IsVisible				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IsVisible,
+	ezvTableHeaderFlags_IsSorted				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IsSorted,
+	ezvTableHeaderFlags_IsHovered				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IsHovered,
+	ezvTableHeaderFlags_WidthMask_				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_WidthMask_,
+	ezvTableHeaderFlags_IndentMask_				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_IndentMask_,
+	ezvTableHeaderFlags_StatusMask_				= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_StatusMask_,
+	ezvTableHeaderFlags_NoDirectResize_			= ImGuiTableColumnFlags_::ImGuiTableColumnFlags_NoDirectResize_,
+};
+//----------------------------------------------------
+// struct TableHeader Info
+//----------------------------------------------------
+struct ZV_API TzvTableHeaderInfo
+{
+	using TableHeaderOptions = int;
+
+	//// Member Variables
+private:
+	TableHeaderOptions	m_iTableHeaderOptions = ezvTableHeaderFlags_None;
+
+	//// Member Functions
+public:
+	// Getter
+	inline TableHeaderOptions	GetOptions() { return (m_iTableHeaderOptions); }
+	inline TableHeaderOptions	GetOptions() const { return (m_iTableHeaderOptions); }
+
+	// Setter
+	inline void SetNone(bool enabled)					{ this->FlagOptions(enabled, ezvTableHeaderFlags_None); }
+	inline void SetDisabled(bool enabled)				{ this->FlagOptions(enabled, ezvTableHeaderFlags_Disabled); }
+	inline void SetDefaultHide(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_DefaultHide); }
+	inline void SetDefaultSort(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_DefaultSort); }
+	inline void SetWidthStretch(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_WidthStretch); }
+	inline void SetWidthFixed(bool enabled)				{ this->FlagOptions(enabled, ezvTableHeaderFlags_WidthFixed); }
+	inline void SetNoResize(bool enabled)				{ this->FlagOptions(enabled, ezvTableHeaderFlags_NoResize); }
+	inline void SetNoReorder(bool enabled)				{ this->FlagOptions(enabled, ezvTableHeaderFlags_NoReorder); }
+	inline void SetNoHide(bool enabled)					{ this->FlagOptions(enabled, ezvTableHeaderFlags_NoHide); }
+	inline void SetNoClip(bool enabled)					{ this->FlagOptions(enabled, ezvTableHeaderFlags_NoClip); }
+	inline void SetNoSort(bool enabled)					{ this->FlagOptions(enabled, ezvTableHeaderFlags_NoSort); }
+	inline void SetNoSortAscending(bool enabled)		{ this->FlagOptions(enabled, ezvTableHeaderFlags_NoSortAscending); }
+	inline void SetNoSortDescending(bool enabled)		{ this->FlagOptions(enabled, ezvTableHeaderFlags_NoSortDescending); }
+	inline void SetNoHeaderLabel(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_NoHeaderLabel); }
+	inline void SetNoHeaderWidth(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_NoHeaderWidth); }
+	inline void SetPreferSortAscending(bool enabled)	{ this->FlagOptions(enabled, ezvTableHeaderFlags_PreferSortAscending); }
+	inline void SetPreferSortDescending(bool enabled)	{ this->FlagOptions(enabled, ezvTableHeaderFlags_PreferSortDescending); }
+	inline void SetIndentEnable(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_IndentEnable); }
+	inline void SetIndentDisable(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_IndentDisable); }
+	inline void SetAngledHeader(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_AngledHeader); }
+	inline void SetIsEnabled(bool enabled)				{ this->FlagOptions(enabled, ezvTableHeaderFlags_IsEnabled); }
+	inline void SetIsVisible(bool enabled)				{ this->FlagOptions(enabled, ezvTableHeaderFlags_IsVisible); }
+	inline void SetIsSorted(bool enabled)				{ this->FlagOptions(enabled, ezvTableHeaderFlags_IsSorted); }
+	inline void SetIsHovered(bool enabled)				{ this->FlagOptions(enabled, ezvTableHeaderFlags_IsHovered); }
+	inline void SetWidthMask_(bool enabled)				{ this->FlagOptions(enabled, ezvTableHeaderFlags_WidthMask_); }
+	inline void SetIndentMask_(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_IndentMask_); }
+	inline void SetStatusMask_(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_StatusMask_); }
+	inline void SetNoDirectResize_(bool enabled)		{ this->FlagOptions(enabled, ezvTableHeaderFlags_NoDirectResize_); }
+
+	// Others
+	inline bool IsActivated(const EzvTableHeaderOptions& flags) { return (m_iTableHeaderOptions & flags); }
+	inline void FlagOptions(bool enabled, const EzvTableHeaderOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void AddOptions(const EzvTableHeaderOptions& flags) { m_iTableHeaderOptions |= flags; }
+	inline void DelOptions(const EzvTableHeaderOptions& flags) { m_iTableHeaderOptions &= ~flags; }
+};
 #pragma endregion
 
 } // namespace ZVLab

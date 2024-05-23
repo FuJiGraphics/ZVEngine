@@ -20,7 +20,6 @@ namespace ZVLab {
 		unsigned int		m_uiChannels;
 		bool				m_bInitialized;
 		
-
 	public:
 		// Constructor, Destructor
 		CzvTexture_internal(const std::string& path);

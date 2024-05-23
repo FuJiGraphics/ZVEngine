@@ -140,6 +140,8 @@
     <ClInclude Include="src\events\ZVMouseEvent.h">
       <Filter>events</Filter>
     </ClInclude>
+    <ClInclude Include="src\platform\imgui\export\ZVTable.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVTableHeader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\ZVLayerBuffer.cpp">
@@ -210,5 +212,7 @@
     <ClCompile Include="src\core\ZVSystem.cpp">
       <Filter>core</Filter>
     </ClCompile>
+    <ClCompile Include="src\platform\imgui\export\ZVTable.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVTableHeader.cpp" />
   </ItemGroup>
 </Project>

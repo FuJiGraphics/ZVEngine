@@ -21,6 +21,8 @@
 #include "../platform/imgui/export/ZVImage.h"
 #include "../platform/imgui/export/ZVComboBox.h"
 #include "../platform/imgui/export/ZVInputText.h"
+#include "../platform/imgui/export/ZVTableHeader.h"
+#include "../platform/imgui/export/ZVTable.h"
 // events
 #include "../events/ZVEvent.h"
 #include "../events/ZVAppEvent.h"

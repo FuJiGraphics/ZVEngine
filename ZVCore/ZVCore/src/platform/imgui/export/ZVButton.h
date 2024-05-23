@@ -33,15 +33,17 @@ namespace ZVLab {
 		CzvButton(const std::string& label);
 		CzvButton(const std::string& label, const ImVec2& size);
 		CzvButton(const std::string& label, const ImVec2& size, const ImVec2& position);
+		CzvButton(const CzvButton& src);
 		virtual ~CzvButton();
 
 	public: // inline Getter
-		inline std::string	GetLabel() const	{ return (m_strButtonLabel); }
-		inline float		GetWidth() const	{ return (m_optSize.has_value() ? m_optSize->x : 0); }
-		inline float		GetHeight() const	{ return (m_optSize.has_value() ? m_optSize->y : 0); }
-		inline float		GetPosX() const		{ return (m_optPosition.has_value() ? m_optPosition->x : -999); }
-		inline float		GetPosY() const		{ return (m_optPosition.has_value() ? m_optPosition->y : 0); }
-		
+		inline std::string				GetLabel() const		{ return (m_strButtonLabel); }
+		inline float					GetWidth() const		{ return (m_optSize.has_value() ? m_optSize->x : 0); }
+		inline float					GetHeight() const		{ return (m_optSize.has_value() ? m_optSize->y : 0); }
+		inline float					GetPosX() const			{ return (m_optPosition.has_value() ? m_optPosition->x : -999); }
+		inline float					GetPosY() const			{ return (m_optPosition.has_value() ? m_optPosition->y : 0); }
+		inline FuncEventCallback 		GetCallback() const		{ return (m_fpCallbackFn); }
+
 	public: // inline Setter
 		inline void			SetLabel(const std::string& label)	{ m_strButtonLabel = label; }
 		inline void			SetSize(float width, float height)	{ m_optSize = { width, height }; }
