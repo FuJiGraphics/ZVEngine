@@ -41,7 +41,8 @@ namespace ZVLab {
 		void	SetMultiSelectMode(bool enabled);
 
 		// Others
-		bool		Open(const std::string& filter, const std::string& startingDir = "");
+		bool		OpenFolder(const std::string& label);
+		bool		Open(const std::string& filter, const std::string& startingDir = "", bool enabledOpenFolder = false);
 		bool		Save(const std::string& filter, const std::string& startingDir = "");
 		bool		GetOpenFilePaths(std::string* out);
 		bool		GetSaveFilePaths(std::string* out);

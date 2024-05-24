@@ -24,24 +24,27 @@ namespace ZVLab {
 
 	//// Member Variables
 	private:
-		static bool s_bEnabledImplot;
-		static bool s_bEnableOverviewDockspace;
+		static bool						s_bEnabledImplot;
+		static bool						s_bEnableOverviewDockspace;
+		static unsigned long			s_ulItemStackIDs;
 		static std::unordered_map<std::string, ImFont*> s_mapFonts;
 
 	//// Member Functions
 	public:
-		static void		Initialize(const Unique<CzvWindow>& window, UsageExtensionsFlags flags);
-		static void		Shutdown();
-		static void		Begin(const Unique<CzvWindow>& window);
-		static void		End();
-		static bool		BeginMainMenu();
-		static void		EndMainMenu();
-		static void		ShowDemo();
-		static void		SetOverviewDockspace(bool enabled, const TzvDockspaceInfo& options = TzvDockspaceInfo());
-		static void		SetDockspace(const CzvDialog& dialog, const ImVec2& size = { 0, 0 }, const TzvDockspaceInfo& options = TzvDockspaceInfo());
-		static void		SetDockspaceOptionForNextDialog(ImGuiDockNodeFlags options = 0);
-		static bool		UploadFont(const std::string& path, const std::string& fontName, float size_pixels, ImFontConfig* config = nullptr, const ImWchar* glyph_ranges = nullptr);
-		static ImFont*	GetFont(const std::string& fontName);
+		static void				Initialize(const Unique<CzvWindow>& window, UsageExtensionsFlags flags);
+		static void				Shutdown();
+		static void				Begin(const Unique<CzvWindow>& window);
+		static void				End();
+		static bool				BeginMainMenu();
+		static void				EndMainMenu();
+		static void				ShowDemo();
+		static void				SetOverviewDockspace(bool enabled, const TzvDockspaceInfo& options = TzvDockspaceInfo());
+		static void				SetDockspace(const CzvDialog& dialog, const ImVec2& size = { 0, 0 }, const TzvDockspaceInfo& options = TzvDockspaceInfo());
+		static void				SetDockspaceOptionForNextDialog(ImGuiDockNodeFlags options = 0);
+		static bool				UploadFont(const std::string& path, const std::string& fontName, float size_pixels, ImFontConfig* config = nullptr, const ImWchar* glyph_ranges = nullptr);
+		static ImFont*			GetFont(const std::string& fontName);
+		static void				PushID();
+		static void				PopID();
 
 	};
 

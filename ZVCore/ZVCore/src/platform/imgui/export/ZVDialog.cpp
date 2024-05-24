@@ -189,10 +189,31 @@ namespace ZVLab {
 		DUnRegistStaticItemPos
 	}
 
-	void CzvDialog::InputText(const std::string& label, std::string* dst, const TzvInputTextInfo& info)
+	void CzvDialog::InputText(std::string* dst, const TzvInputTextInfo & info)
 	{
+		DZVLog_Failed(dst, "Failed: std::string* dst is Null!");
 		bool result;
 		this->Synchronization();
+		CzvInputText input(info);
+		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
+		{
+			m_MenuBar.UnBind();
+			input.Bind(dst);
+			m_MenuBar.Bind();
+		}
+		else
+		{
+			input.Bind(dst);
+		}
+		DUnRegistStaticItemPos
+	}
+
+	void CzvDialog::InputText(const std::string& label, std::string* dst, const TzvInputTextInfo& info)
+	{
+		DZVLog_Failed(dst, "Failed: std::string* dst is Null!");
+		bool result;
+		this->Synchronization();
+		CzvImguiManager::PushID();
 		CzvInputText input(label, info);
 		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
 		{
@@ -204,6 +225,7 @@ namespace ZVLab {
 		{
 			input.Bind(dst);
 		}
+		CzvImguiManager::PopID();
 		DUnRegistStaticItemPos
 	}
 
@@ -234,14 +256,6 @@ namespace ZVLab {
 	bool CzvDialog::Button(CzvButton& button)
 	{
 		bool result = false;
-		result = this->Binding(&button);
-		return (result);
-	}
-
-	bool CzvDialog::ToggleButton()
-	{
-		bool result = false;
-		CzvToggleButton button;
 		result = this->Binding(&button);
 		return (result);
 	}
@@ -399,6 +413,7 @@ namespace ZVLab {
 	{
 		bool result = false;
 		this->Synchronization();
+		CzvImguiManager::PushID();
 		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
 		{
 			m_MenuBar.UnBind();
@@ -408,7 +423,8 @@ namespace ZVLab {
 		else
 		{
 			result = target->Bind();
-		}
+		}	
+		CzvImguiManager::PopID();
 		DUnRegistStaticItemPos
 		return (result);
 	}

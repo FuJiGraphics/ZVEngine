@@ -25,7 +25,6 @@ namespace ZVLab {
 		bool					m_bIsClicked;
 
 	public: // Constructors, Destructors
-		CzvImageButton();
 		CzvImageButton(const std::string& label);
 		CzvImageButton(const std::string& label, const ImVec2& position);
 		CzvImageButton(const ImVec2& position);

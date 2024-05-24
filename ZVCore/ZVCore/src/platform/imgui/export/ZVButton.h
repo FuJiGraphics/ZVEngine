@@ -3,6 +3,7 @@
 #pragma once
 
 #include "../../../core/Core.h"
+#include "../ZVImguiManager.h"
 #include "ZVGuiConfig.h"
 #include <string>
 

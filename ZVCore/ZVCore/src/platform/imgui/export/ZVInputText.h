@@ -7,13 +7,15 @@
 
 namespace ZVLab {
 
+#define DzvDef_InputTextMaxSize 500
+
 	class ZV_API CzvInputText
 	{
 	//// Member Variables
 	private:
-		std::string				m_strLabel;
-		std::array<char, 64>	m_arrText;
-		TzvInputTextInfo		m_tOptions;
+		std::string									m_strLabel;
+		std::array<char, DzvDef_InputTextMaxSize>	m_arrText;
+		TzvInputTextInfo							m_tOptions;
 
 		// Static Member Variables
 		static unsigned int		s_uniInputTextCount;
@@ -26,7 +28,7 @@ namespace ZVLab {
 		bool	Bind(std::string* out);
 
 	private:
-		void	Copy(std::array<char, 64>* dst, const std::string& src);
+		void	Copy(std::array<char, DzvDef_InputTextMaxSize>* dst, const std::string& src);
 	};
 
 

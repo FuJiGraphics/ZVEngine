@@ -53,11 +53,22 @@ namespace ZVLab {
 		m_bMultiSelectMode = enabled;
 	}
 
-	bool CzvFileDialog::Open(const std::string& filter, const std::string& startingDir)
+	bool CzvFileDialog::OpenFolder(const std::string& label)
+	{
+		bool result = false;		
+		auto& fd = ifd::FileDialog::Instance();
+		result = fd.Open(IFD_DIALOG_DIRECTORY, m_strLabel, label, "", m_bMultiSelectMode, std::string(""));
+		return (result);
+	}
+
+	bool CzvFileDialog::Open(const std::string& filter, const std::string& startingDir, bool enabledOpenFolder)
 	{
 		bool result = false;
 		auto& fd = ifd::FileDialog::Instance();
-		result = fd.Open(m_strLabel, m_strOpenLabel, filter, m_bMultiSelectMode, startingDir);
+		if (enabledOpenFolder)
+			result = fd.Open(IFD_DIALOG_DIRECTORY, m_strLabel, m_strOpenLabel, filter, m_bMultiSelectMode, startingDir);
+		else
+			result = fd.Open(m_strLabel, m_strOpenLabel, filter, m_bMultiSelectMode, startingDir);
 		return (result);
 	}
 
@@ -73,14 +84,13 @@ namespace ZVLab {
 	{
 		DZVLog_Failed(out, "FAILED: std::string* out is Null!");
 		bool result = false;
-		if (result = ifd::FileDialog::Instance().IsDone(m_strLabel))
+		if (ifd::FileDialog::Instance().IsDone(m_strLabel))
 		{
 			if (ifd::FileDialog::Instance().HasResult()) 
 			{
 				if (out != nullptr)
 					*out = ifd::FileDialog::Instance().GetResult().u8string();
-				else
-					out = nullptr;
+				result = true;
 			}
 			ifd::FileDialog::Instance().Close();
 		}

@@ -37,6 +37,10 @@ namespace ZVLab {
 
 	bool CzvImage::Load(const std::string& path)
 	{
+		if (path.size() <= 0)
+		{
+			return (false);
+		}
 		if (this->Empty() == false)
 		{
 			FZLOG_WARN("WARN: Already loaded image data. = {0}", m_strLabel);

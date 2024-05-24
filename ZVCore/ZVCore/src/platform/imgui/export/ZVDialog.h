@@ -90,9 +90,17 @@ namespace ZVLab {
 		void	Text(const char* fmt, ...);
 		/**
 		 * @brief		텍스트를 입력받음
-		 * @details		현재 Dialog에 텍스트를 입력받습니다. 
+		 * @details		현재 Dialog에 텍스트를 입력받습니다.
+		 * @param[out]	dst:
+		 * @param[in]	info:
+		 */
+		void	InputText(std::string* dst, const TzvInputTextInfo& info = TzvInputTextInfo());
+		/**
+		 * @brief		텍스트를 입력받음
+		 * @details		현재 Dialog에 텍스트를 입력받습니다.
 		 * @param[in]	label:
-		 * @param[in]	dst:
+		 * @param[out]	dst:
+		 * @param[in]	info:
 		 */
 		void	InputText(const std::string& label, std::string* dst, const TzvInputTextInfo& info = TzvInputTextInfo());
 		/**
@@ -126,15 +134,6 @@ namespace ZVLab {
 		 * @return		bool:	클릭 여부 (true/false)
 		 */
 		bool	Button(CzvButton& button);
-		/**
-		 * @brief		토글 버튼 생성
-		 * @details		현재 Dialog에 토글 버튼을 생성합니다.
-		 * - 토글 버튼 라벨은 자체적으로 생성 개수를 통해 식별 부여됩니다.
-		 * - 반복 호출 시, 토글의 객체는 개별적으로 동작합니다.
-		 * - 식별되는 라벨명은 외부에서 확인할 수 없습니다.
-		 * @return		bool:	활성화 여부 (true/false)
-		 */
-		bool	ToggleButton();
 		/**
 		 * @brief		토글 버튼 생성
 		 * @details		현재 Dialog에 토글 버튼을 생성합니다.

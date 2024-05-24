@@ -6,8 +6,6 @@
 void StyleColorsSpectrum() {
 	ImGuiStyle* style = &ImGui::GetStyle();
 	style->GrabRounding = 4.0f;
-
-
 }
 
 void glfw_error_callback(int error, const char * description) {
@@ -18,6 +16,7 @@ namespace ZVLab {
 
 	bool CzvImguiManager::s_bEnabledImplot = false;
 	bool CzvImguiManager::s_bEnableOverviewDockspace = true;
+	unsigned long CzvImguiManager::s_ulItemStackIDs = 0;
 	std::unordered_map<std::string, ImFont*> CzvImguiManager::s_mapFonts;
 
 	void CzvImguiManager::Initialize(const Unique<CzvWindow>& window, UsageExtensionsFlags flags)
@@ -90,6 +89,7 @@ namespace ZVLab {
 				ImGui::DockSpaceOverViewport((const ImGuiViewport*)0);
 			}
 		}
+		s_ulItemStackIDs = 0;
 	}
 
 	void CzvImguiManager::End()
@@ -104,6 +104,7 @@ namespace ZVLab {
 			ImGui::RenderPlatformWindowsDefault();
 			glfwMakeContextCurrent(backup_current_context);
 		}
+		s_ulItemStackIDs = 0;
 	}
 
 	bool CzvImguiManager::BeginMainMenu()
@@ -204,6 +205,17 @@ namespace ZVLab {
 		ImFont* font = s_mapFonts[fontName];
 		DZVLog_Failed(font, "FAILED: ImFont* font is null!");
 		return (font);
+	}
+
+	void CzvImguiManager::PushID()
+	{
+		ImGui::PushID(s_ulItemStackIDs);
+		s_ulItemStackIDs++;
+	}
+
+	void CzvImguiManager::PopID()
+	{
+		ImGui::PopID();
 	}
 
 } // namespace ZVLab

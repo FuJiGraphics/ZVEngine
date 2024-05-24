@@ -17,10 +17,12 @@ class CDlgParameterSetup final : public ZVLab::CzvLayer
 {
 //// Member Variables
 private:
-	std::string			m_strLabel;
-	TzvDialogInfo		m_tDialogInfo;
-	TzvParametersChunk	m_tParamChunk;
-	CzvFileDialog		m_FileDialog;
+	std::string					m_strLabel;
+	TzvDialogInfo				m_tDialogInfo;
+	TzvParametersChunk			m_tParamChunk;
+	CzvFileDialog				m_LoadFileDialog;
+	CzvFileDialog				m_SaveFileDialog;
+	std::vector<std::string>	m_vLoadPaths;
 
 //// Member Functions
 public:

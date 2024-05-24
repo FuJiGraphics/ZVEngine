@@ -28,6 +28,7 @@ namespace ifd {
 
 		bool Save(const std::string& key, const std::string& title, const std::string& filter, const std::string& startingDir = "");
 
+        bool Open(int type, const std::string& key, const std::string& title, const std::string& filter, bool isMultiselect = false, const std::string& startingDir = "");
 		bool Open(const std::string& key, const std::string& title, const std::string& filter, bool isMultiselect = false, const std::string& startingDir = "");
 
 		bool IsDone(const std::string& key);

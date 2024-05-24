@@ -53,6 +53,7 @@ namespace ZVLab {
 		, m_arrText()
 		, m_tOptions(info)
 	{
+		// TODO: Key System으로 변경
 		s_uniInputTextCount++;
 		DZVLog_Failed((s_uniInputTextCount > 0),
 					  "FAILED: Unexpected Error! InputText Count is not greater than 0 \"s_uniInputTextCount = {0}\"",
@@ -61,7 +62,6 @@ namespace ZVLab {
 
 	CzvInputText::~CzvInputText()
 	{
-		s_uniInputTextCount--;
 		DZVLog_Failed((s_uniInputTextCount >= 0),
 					  "FAILED: Unexpected Error! InputText Count is less than 0 \"s_uniInputTextCount = {0}\"",
 					  s_uniInputTextCount);
@@ -80,11 +80,11 @@ namespace ZVLab {
 			m_tOptions.GetOptions()
 		);
 		(*out) = m_arrText.data();
-		sRegistInputTextStatus(DBindLabelNumbering(m_strLabel, s_uniInputTextCount));
+		sRegistInputTextStatus(m_strLabel);
 		return (result);
 	}
 
-	void CzvInputText::Copy(std::array<char, 64>* dst, const std::string& src)
+	void CzvInputText::Copy(std::array<char, DzvDef_InputTextMaxSize>* dst, const std::string& src)
 	{
 		DZVLog_Failed(dst, "FAILED: std::string* out is Null!");
 		if (dst == nullptr)

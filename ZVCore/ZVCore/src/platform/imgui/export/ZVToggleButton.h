@@ -13,7 +13,6 @@ namespace ZVLab {
 	//// Member Functions
 	public: 
 		// Constructor, Destructors
-		CzvToggleButton();
 		CzvToggleButton(const std::string& label);
 		CzvToggleButton(const std::string& label, const ImVec2& size);
 		CzvToggleButton(const std::string& label, const ImVec2& size, const ImVec2& position);

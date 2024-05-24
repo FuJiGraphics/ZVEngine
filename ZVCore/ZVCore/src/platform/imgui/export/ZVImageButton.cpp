@@ -5,16 +5,6 @@
 namespace ZVLab {
 
 // constructors, destructors
-	CzvImageButton::CzvImageButton()
-		: CzvButton(DBindLabelNumbering("ImageButton", CzvButton::GetButtonCount()))
-		, m_spTexIdle(nullptr)
-		, m_spTexClick(nullptr)
-		, m_optPosition()
-		, m_optWeight({ 1.0f, 1.0f })
-		, m_optRectMin()
-		, m_optRectMax()
-		, m_bIsClicked(false)
-	{/*Empty*/}
 
 	CzvImageButton::CzvImageButton(const std::string& label)
 		: CzvButton(label)

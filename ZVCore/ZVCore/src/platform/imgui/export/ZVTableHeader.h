@@ -38,6 +38,7 @@ namespace ZVLab {
 		bool					HasValue() const;
 
 		// Setter
+		void					AddItem(const std::vector<std::string>& vItems);
 		void					AddItem(const char* fmt, ...);
 		inline void				SetLabel(const std::string& label);
 		inline void				SetOptions(const TzvTableHeaderInfo& options);

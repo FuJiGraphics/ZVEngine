@@ -6,10 +6,10 @@
 void CDlgParameterSetup::OnAttach()
 {
 	// Dialog Info
-
-	m_FileDialog.SetFileDialogLabel("ParameterSetupFileDialog");
-	m_FileDialog.SetOpenLabel("Loading Path");
-	m_FileDialog.SetSaveLabel("Saving Path");
+	m_LoadFileDialog.SetFileDialogLabel("ParameterSetup_LFD");
+	m_LoadFileDialog.SetOpenLabel("Loading Path");
+	m_SaveFileDialog.SetFileDialogLabel("ParameterSetup_SFD");
+	m_SaveFileDialog.SetOpenLabel("Saving Path");
 	m_tParamChunk.strLoadingPath = "asdasf";
 	m_tParamChunk.strSavingPath = " ";
 }
@@ -19,54 +19,108 @@ void CDlgParameterSetup::OnGUI()
 	DProfile_StartRecord("Parameter Setup Logic...");
 	CzvDialog dialog("ParameterSetup");
 
-	// Render
-	TzvComboBoxInfo combo_info;
-	DzvUI_Bullet dialog.Text("Loading Path");
-	dialog.ComboBox(" ", { m_tParamChunk.strLoadingPath.c_str() }, combo_info);
-	DzvUI_Bullet dialog.Text("Saving Path");
-	dialog.ComboBox(" ", { m_tParamChunk.strSavingPath.c_str() }, combo_info);
-
-
 	static TzvParametersChunk tmp_param;
+	DzvUI_Bullet dialog.Text("Loading Path");
+	TzvInputTextInfo input_info;
+	input_info.SetReadOnly(true);
+	dialog.InputText("##input1", &tmp_param.strLoadingPath, input_info);
+	DzvUI_SameLine if (dialog.Button("..."))
+	{
+		m_LoadFileDialog.OpenFolder("Open Folder");
+	}
+	DzvUI_Bullet dialog.Text("Saving Path");
+	dialog.InputText("##input1", &tmp_param.strSavingPath, input_info);
+	DzvUI_SameLine if (dialog.Button("..."))
+	{
+		m_SaveFileDialog.OpenFolder("Save Folder");
+	}
+
+	if (m_LoadFileDialog.GetOpenFilePaths(&tmp_param.strLoadingPath))
+	{
+		this->LoadImages(tmp_param.strLoadingPath);
+	}
+	if (m_SaveFileDialog.GetOpenFilePaths(&tmp_param.strSavingPath))
+	{
+		this->LoadImages(tmp_param.strSavingPath);
+	}
 	// Update
-	dialog.InputText("input", &tmp_param.strLoadingPath);
+	if (dialog.Button("Save"))
+	{
+		m_vLoadPaths = this->LoadImages(tmp_param.strLoadingPath);
+	}
 
-
-	
 	/*-----------------------------------------------------------------*/
-
-	CzvImguiManager::SetDockspace(dialog, { 500, 500 });
-
-	// Options
-	TzvDialogInfo dlg_table_info;
+	CzvImguiManager::SetDockspace(dialog, { 800, 500 });
+	// Set Dialog Options
+	TzvDialogInfo dlg_table_info, dlg_table_info2;
 	dlg_table_info.SetDocsNoTabBar(true);
+	dlg_table_info2.SetDocsNoTabBar(true);
+
+	// Generate Dialog, table
 	CzvDialog dlg_table1("Table1", dlg_table_info);
 	CzvTable table1("Table");
 	table1.SetHeaders({ "ID", "Name", "Class" });
 	table1["ID"].AddItem("Hello %d", 20);
 	dlg_table1.Table(table1);
 
-	TzvDialogInfo dlg_table_info2;
-	dlg_table_info2.SetDocsNoTabBar(true);
 	CzvDialog dlg_table2("Table2", dlg_table_info2 );
-	CzvTable table2( "table_sorting" );
-	TzvTableHeaderInfo info_ID, info_Name, info_Class;
-	info_ID.SetDefaultSort( true );
-	info_ID.SetWidthFixed( true );
-	table2.AddHeader( "ID", info_ID );
-	info_Name.SetWidthFixed( true );
-	table2.AddHeader( "Name", info_Name );
-	info_Class.SetPreferSortDescending( true );
-	info_Class.SetWidthStretch( true );
-	table2.AddHeader( "Class", info_Class );
-	for ( int row = 0; row < 4; ++row )
+
+	TzvTableInfo info_table2;
+	info_table2.SetResizable(true);
+	info_table2.SetSizingFixedSame(true);
+	info_table2.SetHighlightHoveredColumn(true);
+	info_table2.SetBorders(true);
+	CzvTable table2( "table_sorting", info_table2);
+
+	//// Set Header Info
+	//TzvTableHeaderInfo info_ID, info_Name, info_Class;
+	//info_ID.SetDefaultSort( true );
+	//info_ID.SetWidthFixed( true );
+	//table2.AddHeader( "ID", info_ID );
+	//info_Name.SetDefaultHide(true);
+	//table2.AddHeader( "Name", info_Name );
+	//info_Class.SetPreferSortDescending( true );
+	//info_Class.SetWidthStretch( true );
+	//table2.AddHeader( "Class", info_Class );
+	//table2["Name"].AddItem(m_vLoadPaths);
+	//dlg_table2.Table( table2 );
+
+	int i = 0;
+	static int selectItem = 0;
+	if (ImGui::BeginTable("fasf", 3))
 	{
-		for ( int col = 0; col < table2.GetColSize(); ++col )
+		CzvTableHeader h1("ID");
+		CzvTableHeader h2("Name");
+		CzvTableHeader h3("Class");
+		h1.Bind();
+		h2.Bind();
+		h3.Bind();
+		ImGui::TableSetupScrollFreeze(0, 1);
+		ImGui::TableHeadersRow();
+		for (auto iter = m_vLoadPaths.begin(); iter != m_vLoadPaths.end(); ++iter)
 		{
-			table2[col].AddItem( "Hello %d %d", col, row );
+			ImGui::TableNextRow();
+
+			for (int j = 0; j < 3; ++j)
+			{
+				ImGui::TableSetColumnIndex(j);
+				if (j == 0)
+				{
+					std::string itemid = "ID_ " + std::to_string(i);
+					ImGuiSelectableFlags selectable_flags = ImGuiSelectableFlags_SpanAllColumns | ImGuiSelectableFlags_AllowOverlap;
+					if (ImGui::Selectable(itemid.c_str(), i == selectItem, selectable_flags))
+					{
+						selectItem = i;
+					}
+				}
+				else
+					ImGui::Text(iter->c_str());
+			}
+			i++;
 		}
+		ImGui::EndTable();
 	}
-	dlg_table2.Table( table2 );
+
 	DProfile_EndRecord
 }
 
@@ -86,7 +140,7 @@ std::vector<std::string> CDlgParameterSetup::LoadImages(const std::string& path)
 				&& (dir_iter->path().filename().generic_string().substr(dir_iter->path().filename().generic_string().length() - 3, 3) != "png")
 				&& (dir_iter->path().filename().generic_string().substr(dir_iter->path().filename().generic_string().length() - 3, 3) != "bmp"))
 				continue;
-			//printf("%s\n", dir_iter->path().filename().generic_string().c_str());
+			//printf("%s\n", dir_ite6r->path().filename().generic_string().c_str());
 			imageList.push_back(dir_iter->path().filename().generic_string());
 		}
 	}

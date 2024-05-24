@@ -42,6 +42,17 @@ namespace ZVLab {
 		return (!m_vItems.empty());
 	}
 
+	void CzvTableHeader::AddItem(const std::vector<std::string>& vItems)
+	{
+		if (vItems.empty())
+			return;
+
+		for (const auto& item : vItems)
+		{
+			m_vItems.push_back({ item });
+		}
+	}
+
 	void CzvTableHeader::AddItem(const char* fmt, ...)
 	{
 		va_list args;

@@ -35,11 +35,6 @@ namespace {
 }
 
 namespace ZVLab {
-	CzvToggleButton::CzvToggleButton()
-		: CzvButton(DBindLabelNumbering("ToggleButton", CzvButton::GetButtonCount()))
-	{
-		::sRegistToggleStatus(m_strButtonLabel);
-	}
 
 	CzvToggleButton::CzvToggleButton(const std::string& label)
 		: CzvButton(label)

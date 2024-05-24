@@ -7,7 +7,7 @@ namespace ZVLab {
 /// static variable
 	unsigned int CzvButton::s_nuiButtonCount = 0;
 
-// Constructors, Destructors
+	// Constructors, Destructors
 	CzvButton::CzvButton(const std::string& label)
 		: m_strButtonLabel(label)
 		, m_optSize()
@@ -63,7 +63,7 @@ namespace ZVLab {
 		// Set Position
 		if (m_optPosition.has_value())
 			ImGui::SetCursorPos(m_optPosition.value());
-
+		
 		if (m_optSize.has_value()) // Bind size
 			result = ImGui::Button(m_strButtonLabel.c_str(), m_optSize.value());
 		else // UnBind size
