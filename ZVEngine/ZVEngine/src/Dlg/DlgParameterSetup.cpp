@@ -71,6 +71,14 @@ void CDlgParameterSetup::OnGUI()
 	info_table2.SetHighlightHoveredColumn(true);
 	info_table2.SetBorders(true);
 	CzvTable table2( "table_sorting", info_table2);
+	TzvSelectableInfo sel_info;
+	sel_info.SetSpanAllColumns(true);
+	sel_info.SetAllowOverlap(true);
+	table2.SetHeaders({"ID", "Name", "Class"});
+	table2["ID"].SetSelectable(true, sel_info);
+	table2["ID"].AddItem(m_vLoadPaths);
+	table2["Name"].AddItem(m_vLoadPaths);
+	table2.Bind();
 
 	//// Set Header Info
 	//TzvTableHeaderInfo info_ID, info_Name, info_Class;
@@ -85,41 +93,41 @@ void CDlgParameterSetup::OnGUI()
 	//table2["Name"].AddItem(m_vLoadPaths);
 	//dlg_table2.Table( table2 );
 
-	int i = 0;
-	static int selectItem = 0;
-	if (ImGui::BeginTable("fasf", 3))
-	{
-		CzvTableHeader h1("ID");
-		CzvTableHeader h2("Name");
-		CzvTableHeader h3("Class");
-		h1.Bind();
-		h2.Bind();
-		h3.Bind();
-		ImGui::TableSetupScrollFreeze(0, 1);
-		ImGui::TableHeadersRow();
-		for (auto iter = m_vLoadPaths.begin(); iter != m_vLoadPaths.end(); ++iter)
-		{
-			ImGui::TableNextRow();
+	//int i = 0;
+	//static int selectItem = 0;
+	//if (ImGui::BeginTable("fasf", 3))
+	//{
+	//	CzvTableHeader h1("ID");
+	//	CzvTableHeader h2("Name");
+	//	CzvTableHeader h3("Class");
+	//	h1.Bind();
+	//	h2.Bind();
+	//	h3.Bind();
+	//	ImGui::TableSetupScrollFreeze(0, 1);
+	//	ImGui::TableHeadersRow();
+	//	for (auto iter = m_vLoadPaths.begin(); iter != m_vLoadPaths.end(); ++iter)
+	//	{
+	//		ImGui::TableNextRow();
 
-			for (int j = 0; j < 3; ++j)
-			{
-				ImGui::TableSetColumnIndex(j);
-				if (j == 0)
-				{
-					std::string itemid = "ID_ " + std::to_string(i);
-					ImGuiSelectableFlags selectable_flags = ImGuiSelectableFlags_SpanAllColumns | ImGuiSelectableFlags_AllowOverlap;
-					if (ImGui::Selectable(itemid.c_str(), i == selectItem, selectable_flags))
-					{
-						selectItem = i;
-					}
-				}
-				else
-					ImGui::Text(iter->c_str());
-			}
-			i++;
-		}
-		ImGui::EndTable();
-	}
+	//		for (int j = 0; j < 3; ++j)
+	//		{
+	//			ImGui::TableSetColumnIndex(j);
+	//			if (j == 0)
+	//			{
+	//				std::string itemid = "ID_ " + std::to_string(i);
+	//				ImGuiSelectableFlags selectable_flags = ImGuiSelectableFlags_SpanAllColumns | ImGuiSelectableFlags_AllowOverlap;
+	//				if (ImGui::Selectable(itemid.c_str(), i == selectItem, selectable_flags))
+	//				{
+	//					selectItem = i;
+	//				}
+	//			}
+	//			else
+	//				ImGui::Text(iter->c_str());
+	//		}
+	//		i++;
+	//	}
+	//	ImGui::EndTable(); 
+	// }
 
 	DProfile_EndRecord
 }

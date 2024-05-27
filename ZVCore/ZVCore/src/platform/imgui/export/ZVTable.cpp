@@ -46,6 +46,15 @@ namespace ZVLab {
 		return (m_vHeaderList.size());
 	}
 
+	inline int CzvTable::GetSelectIndex() const
+	{
+		if (m_vHeaderList[0].IsSelectableMode())
+		{
+			return (m_vHeaderList[0].GetSelectIndex());
+		}
+		return (-1);
+	}
+
 	void CzvTable::SetHeaders(const std::initializer_list<std::string>& header_labels)
 	{
 		m_vHeaderList.clear();
@@ -64,6 +73,7 @@ namespace ZVLab {
 	{
 		m_strLabel = label;
 	}
+
 
 	void CzvTable::Bind()
 	{
@@ -88,8 +98,7 @@ namespace ZVLab {
 					for (int x = 0; x < col; ++x)
 					{
 						auto& header = m_vHeaderList[x];
-						auto& item = header.GetItem(y);
-						item.Bind();
+						header.ItemBind(y);
 					}
 				}
 			}
@@ -115,10 +124,9 @@ namespace ZVLab {
 		return (m_vHeaderList[m_vHeaderList.size() - 1]);
 	}
 
-	CzvTableHeader& CzvTable::operator[]( unsigned int index )
+	CzvTableHeader& CzvTable::operator[](int index)
 	{
-		return ( m_vHeaderList[index] );
+		return (m_vHeaderList[index]);
 	}
-
 
 } // namespace ZVLab

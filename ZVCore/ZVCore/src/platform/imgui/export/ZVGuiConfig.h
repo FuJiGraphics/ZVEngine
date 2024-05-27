@@ -528,6 +528,7 @@ public:
 	inline InputTextOptions	GetOptions() const { return (m_iInputTextOptions); }
 
 	// Setter
+	inline void SetNone(bool enabled)					{ m_iInputTextOptions = ezvInputTextFlags_None; }
 	inline void	SetCharsDecimal(bool enabled)			{ this->FlagOptions(enabled, ezvInputTextFlags_CharsDecimal);}
 	inline void	SetCharsHexadecimal(bool enabled)		{ this->FlagOptions(enabled, ezvInputTextFlags_CharsHexadecimal);}
 	inline void	SetCharsUppercase(bool enabled)			{ this->FlagOptions(enabled, ezvInputTextFlags_CharsUppercase);}
@@ -632,7 +633,7 @@ public:
 	inline TableOptions	GetOptions() const { return (m_iTableOptions); }
 
 	// Setter
-	inline void SetNone(bool enabled)							{ this->FlagOptions(enabled, ezvTableFlags_None); }
+	inline void SetNone(bool enabled)							{ m_iTableOptions = ezvTableFlags_None; }
 	inline void SetResizable(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_Resizable); }
 	inline void SetReorderable(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_Reorderable); }
 	inline void SetHideable(bool enabled)						{ this->FlagOptions(enabled, ezvTableFlags_Hideable); }
@@ -730,7 +731,7 @@ public:
 	inline TableHeaderOptions	GetOptions() const { return (m_iTableHeaderOptions); }
 
 	// Setter
-	inline void SetNone(bool enabled)					{ this->FlagOptions(enabled, ezvTableHeaderFlags_None); }
+	inline void SetNone(bool enabled)					{ m_iTableHeaderOptions =  ezvTableHeaderFlags_None; }
 	inline void SetDisabled(bool enabled)				{ this->FlagOptions(enabled, ezvTableHeaderFlags_Disabled); }
 	inline void SetDefaultHide(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_DefaultHide); }
 	inline void SetDefaultSort(bool enabled)			{ this->FlagOptions(enabled, ezvTableHeaderFlags_DefaultSort); }
@@ -766,6 +767,60 @@ public:
 	inline void DelOptions(const EzvTableHeaderOptions& flags) { m_iTableHeaderOptions &= ~flags; }
 };
 #pragma endregion
+#pragma region Selectable Options
+//----------------------------------------------------
+// enum Selectable Options
+//----------------------------------------------------
+enum ZV_API EzvSelectableOptions
+{
+	ezvSelectableFlags_None				= ImGuiSelectableFlags_::ImGuiSelectableFlags_None,
+	ezvSelectableFlags_DontClosePopups 	= ImGuiSelectableFlags_::ImGuiSelectableFlags_DontClosePopups,
+	ezvSelectableFlags_SpanAllColumns  	= ImGuiSelectableFlags_::ImGuiSelectableFlags_SpanAllColumns,
+	ezvSelectableFlags_AllowDoubleClick	= ImGuiSelectableFlags_::ImGuiSelectableFlags_AllowDoubleClick,
+	ezvSelectableFlags_Disabled        	= ImGuiSelectableFlags_::ImGuiSelectableFlags_Disabled,
+	ezvSelectableFlags_AllowOverlap    	= ImGuiSelectableFlags_::ImGuiSelectableFlags_AllowOverlap     ,
+
+#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS,
+	ezvSelectableFlags_AllowItemOverlap = ImGuiSelectableFlags_::ImGuiSelectableFlags_AllowItemOverlap ,
+#endif
+
+};
+//----------------------------------------------------
+// struct Selectable Info
+//----------------------------------------------------
+struct ZV_API TzvSelectableInfo
+{
+	using SelectableOptions = int;
+
+	//// Member Variables
+private:
+	SelectableOptions	m_iSelectableOptions = ezvSelectableFlags_None;
+
+	//// Member Functions
+public:
+	// Getter
+	inline SelectableOptions	GetOptions() { return (m_iSelectableOptions); }
+	inline SelectableOptions	GetOptions() const { return (m_iSelectableOptions); }
+
+	// Setter
+	inline void SetNone(bool enabled)				{ m_iSelectableOptions = ezvTableHeaderFlags_None; }
+	inline void	SetDontClosePopups(bool enabled)	{ this->FlagOptions(enabled, ezvSelectableFlags_DontClosePopups); }
+	inline void	SetSpanAllColumns(bool enabled)		{ this->FlagOptions(enabled, ezvSelectableFlags_SpanAllColumns); }
+	inline void	SetAllowDoubleClick(bool enabled)	{ this->FlagOptions(enabled, ezvSelectableFlags_AllowDoubleClick); }
+	inline void	SetDisabled(bool enabled)			{ this->FlagOptions(enabled, ezvSelectableFlags_Disabled); }
+	inline void	SetAllowOverlap(bool enabled)		{ this->FlagOptions(enabled, ezvSelectableFlags_AllowOverlap); }
+#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS,
+	inline void	SetAllowItemOverlap(bool enabled)	{ this->FlagOptions(enabled, ezvSelectableFlags_AllowItemOverlap); }
+#endif
+
+	// Others
+	inline bool IsActivated(const EzvSelectableOptions& flags) { return (m_iSelectableOptions & flags); }
+	inline void FlagOptions(bool enabled, const EzvSelectableOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
+	inline void AddOptions(const EzvSelectableOptions& flags) { m_iSelectableOptions |= flags; }
+	inline void DelOptions(const EzvSelectableOptions& flags) { m_iSelectableOptions &= ~flags; }
+};
+#pragma endregion
+
 
 } // namespace ZVLab
 #endif /*__ZV_ZVGUICONFIG_H__*/

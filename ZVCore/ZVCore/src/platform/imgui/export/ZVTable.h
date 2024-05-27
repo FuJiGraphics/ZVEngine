@@ -31,19 +31,21 @@ namespace ZVLab {
 		inline std::string	GetLabel() const;
 		inline unsigned int	GetRowSize() const;
 		inline unsigned int	GetColSize() const;
+		inline int			GetSelectIndex() const;
 
 		// Setter
 		inline void			SetLabel(const std::string& label);
 		void				SetHeaders(const std::initializer_list<std::string>& header_labels);
+		bool				SetSelecteMode(bool enabled, const TzvSelectableInfo& sel_info);
 		void				AddHeader(const std::string& header_label, const TzvTableHeaderInfo& options = TzvTableHeaderInfo());
-
+		
 		// Others
 		void				Bind();
 		void				Clear();
 
 		// Operator
 		CzvTableHeader&	operator[](const std::string& str);
-		CzvTableHeader& operator[]( unsigned int index );
+		CzvTableHeader& operator[](int index);
 
 	};
 
