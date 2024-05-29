@@ -33,7 +33,6 @@ project "ZVEngine"
 	{
 		"%{LibraryDir.SOIL2}",
 		"%{LibraryDir.OpenCV}",
-
 	}
 
 	links

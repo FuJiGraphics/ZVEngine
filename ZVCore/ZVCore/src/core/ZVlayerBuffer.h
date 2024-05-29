@@ -31,12 +31,14 @@ namespace ZVLab {
 		void operator= (CzvLayerBuffer&) = delete;
 
 	public:
-		void	Shutdown();
+		void		Shutdown();
 
-		ZVbool	InsertLayer(CzvLayer* pLevel);
-		ZVbool	InsertOverlay(CzvLayer* pOverlay);
-		ZVbool	RemoveLayer(CzvLayer* pLevel);
-		ZVbool	RemoveOverlay(CzvLayer* pOverlay);
+		ZVbool		InsertLayer(CzvLayer* pLevel);
+		ZVbool		InsertOverlay(CzvLayer* pOverlay);
+		ZVbool		RemoveLayer(CzvLayer* pLevel);
+		ZVbool		RemoveOverlay(CzvLayer* pOverlay);
+
+		CzvLayer*	FindLayer(const std::string& label);
 
 	protected:
 		iter FindLayer(CzvLayer* pLevel);

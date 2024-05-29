@@ -12,6 +12,8 @@ private:
 
 //// Member Functions
 public:
+	ZVWindowMenu();
+
 	virtual void OnAttach() override;
 	virtual void OnMainMenuBar() override;
 };

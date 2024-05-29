@@ -48,6 +48,7 @@ namespace ZVLab {
 	public:
 		void Run();
 
+		CzvLayer* GetLayer(const std::string& label) const;
 		void AttachLayer(CzvLayer* layer);
 		void DetachLayer(CzvLayer* layer);
 		void AttachOverlay(CzvLayer* layer);

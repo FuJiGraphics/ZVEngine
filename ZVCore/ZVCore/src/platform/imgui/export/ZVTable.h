@@ -7,6 +7,12 @@
 #include "ZVTableHeader.h"
 
 namespace ZVLab {
+	
+	struct TzvTableCoord
+	{
+		int x = 0;
+		int y = 0;
+	};
 
 	class ZV_API CzvTable
 	{
@@ -19,6 +25,7 @@ namespace ZVLab {
 		TzvTableInfo				m_tOptions;
 		// Table Data
 		std::vector<CzvTableHeader>	m_vHeaderList;
+		CzvTableHeader				m_czvIndexList;
 
 	//// Member Functions
 	public:
@@ -31,12 +38,14 @@ namespace ZVLab {
 		inline std::string	GetLabel() const;
 		inline unsigned int	GetRowSize() const;
 		inline unsigned int	GetColSize() const;
-		inline int			GetSelectIndex() const;
+		TzvTableCoord		GetSelectAllIndex() const;
+		int					GetSelectYaxisIndex() const;
 
 		// Setter
 		inline void			SetLabel(const std::string& label);
+		void				SetIndexLabel(const std::string& label);
+		void				SetSelectable(bool enabled, const TzvSelectableInfo& info = TzvSelectableInfo());
 		void				SetHeaders(const std::initializer_list<std::string>& header_labels);
-		bool				SetSelecteMode(bool enabled, const TzvSelectableInfo& sel_info);
 		void				AddHeader(const std::string& header_label, const TzvTableHeaderInfo& options = TzvTableHeaderInfo());
 		
 		// Others

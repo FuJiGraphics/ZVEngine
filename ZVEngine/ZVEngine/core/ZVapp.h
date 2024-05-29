@@ -18,6 +18,7 @@ public:
 
 	// Getter
 	static ZVLab::Unique<ZVLab::CzvSystem>& GetInstance();
+
 };
 
 #endif /*__ZV_ZVAPPLICATION_H__*/

@@ -2,6 +2,7 @@
 
 
 CDlgSidebarLeft::CDlgSidebarLeft()
+	: CzvLayer("CDlgSidebarLeft")
 {
 }
 

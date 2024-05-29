@@ -1,1 +1,47 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(456,5): error MSB8020: The build tools for Visual Studio 2017 (Platform Toolset = 'v141') cannot be found. To build using the v141 build tools, please install Visual Studio 2017 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+﻿  ZVDialog.cpp
+  ZVImage.cpp
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVImage.cpp)
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVImage.cpp)
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVImage.cpp)
+d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
+d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVImage.cpp)
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvguiconfig.h(785): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvguiconfig.h(814): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.h(74): warning C4244: 'return': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.h(80): warning C4244: 'return': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvguiconfig.h(785): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVImage.cpp)
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvguiconfig.h(814): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVImage.cpp)
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvimage.cpp(92): warning C4002: 함수 같은 매크로 호출 'DDrawTextureImage'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtableheader.h(41): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(39): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(39): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(44): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(56): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(56): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(61): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(73): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(73): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(78): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(90): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(90): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(95): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(107): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(107): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(112): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(124): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(124): warning C4834: 'nodiscard' 특성이 포함된 함수의 반환 값을 버리는 중
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(129): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(149): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(174): warning C4101: 'result' :참조되지 않은 지역 변수입니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(194): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(195): warning C4101: 'result' :참조되지 않은 지역 변수입니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(213): warning C4002: 함수 같은 매크로 호출 'FZLOG_FAILED'에 대해 인수가 너무 많습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(214): warning C4101: 'result' :참조되지 않은 지역 변수입니다.
+FZLib.lib(bundled_fmtlib_format.obj) : warning LNK4006: "bool __cdecl fmt::v9::detail::is_printable(unsigned int)" (?is_printable@detail@v9@fmt@@YA_NI@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+FZLib.lib(spdlog.obj) : warning LNK4006: "void __cdecl spdlog::throw_spdlog_ex(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?throw_spdlog_ex@spdlog@@YAXV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)이(가) FZLib.lib(LogHelper.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+Opengl32.lib(OPENGL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR이(가) opencv.lib(opencv_world490.dll)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
+Opengl32.lib(OPENGL32.dll) : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+  ZVCore.vcxproj -> D:\Dev\ZVLab\ZScreen\ZVCore\ZVCore\bin\Release\ZVCore.lib

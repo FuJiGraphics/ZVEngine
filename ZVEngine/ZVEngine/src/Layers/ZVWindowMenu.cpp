@@ -1,5 +1,10 @@
 #include "ZVWindowMenu.h"
 
+ZVWindowMenu::ZVWindowMenu()
+	: CzvLayer("ZVWindowMenu")
+{
+}
+
 void ZVWindowMenu::OnAttach()
 {
 }

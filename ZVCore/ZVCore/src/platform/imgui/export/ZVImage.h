@@ -35,7 +35,7 @@ namespace ZVLab {
 
 		bool	Empty() const;
 		bool	Load(const std::string& path);
-		bool	Save(const std::string& path, const EzvImageFormat& format);
+		bool	Save(const std::string& path);
 		void	Release();
 		void	Bind(const ImVec2& size = { 0.0f, 0.0f }) const;
 	};

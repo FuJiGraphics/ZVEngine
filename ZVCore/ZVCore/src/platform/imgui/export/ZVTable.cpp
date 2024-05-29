@@ -8,6 +8,7 @@ namespace ZVLab {
 		, m_fInnerWidth(0.0f)
 		, m_tOptions(info)
 		, m_vHeaderList()
+		, m_czvIndexList("ID")
 	{/*Empty*/}
 
 	CzvTable::CzvTable(const std::string& label, const ImVec2& size, const TzvTableInfo& info)
@@ -16,6 +17,7 @@ namespace ZVLab {
 		, m_fInnerWidth(0.0f)
 		, m_tOptions(info)
 		, m_vHeaderList()
+		, m_czvIndexList("ID")
 	{/*Empty*/}
 
 	CzvTable::~CzvTable()
@@ -46,12 +48,60 @@ namespace ZVLab {
 		return (m_vHeaderList.size());
 	}
 
-	inline int CzvTable::GetSelectIndex() const
+	TzvTableCoord CzvTable::GetSelectAllIndex() const
 	{
-		if (m_vHeaderList[0].IsSelectableMode())
+		TzvTableCoord coord;
+
+		if (m_czvIndexList.IsSelectableMode())
 		{
-			return (m_vHeaderList[0].GetSelectIndex());
+			int ySel = m_czvIndexList.GetSelectIndex();
+			if (ySel > -1)
+			{
+				coord.x = 0;
+				coord.y = ySel;
+			}
 		}
+		else 
+		{
+			for (int i = 0; i < m_vHeaderList.size(); ++i)
+			{
+				if (m_vHeaderList[i].IsSelectableMode())
+				{
+					int ySel = m_vHeaderList[i].GetSelectIndex();
+					if (ySel > -1)
+					{
+						coord.x = i;
+						coord.y = ySel;
+						break;
+					} // if
+				} // if
+			} // for
+		} // else
+		return (coord);
+	}
+
+	int CzvTable::GetSelectYaxisIndex() const
+	{
+		int ySel;
+		if (m_czvIndexList.IsSelectableMode())
+		{
+			ySel = m_czvIndexList.GetSelectIndex();
+			if (ySel > -1)
+				return (ySel);
+		}
+		else 
+		{
+			for (int i = 0; i < m_vHeaderList.size(); ++i)
+			{
+				if (m_vHeaderList[i].IsSelectableMode())
+				{
+					int ySel = m_vHeaderList[i].GetSelectIndex();
+					if (ySel > -1)
+						return (ySel);
+				} // if
+			} // for
+		} // else
+
 		return (-1);
 	}
 
@@ -74,15 +124,41 @@ namespace ZVLab {
 		m_strLabel = label;
 	}
 
+	void CzvTable::SetIndexLabel(const std::string& label)
+	{
+		m_czvIndexList.SetLabel(label);
+	}
+
+	void CzvTable::SetSelectable(bool enabled, const TzvSelectableInfo& info)
+	{
+		if (info.IsEmpty())
+		{
+			TzvSelectableInfo tzvDefInfo;
+			tzvDefInfo.SetSpanAllColumns(true);
+			tzvDefInfo.SetAllowOverlap(true);
+			m_czvIndexList.SetSelectable(enabled, tzvDefInfo);
+		}
+		else
+		{
+			m_czvIndexList.SetSelectable(enabled, info);
+		}
+	}
 
 	void CzvTable::Bind()
 	{
-		if (ImGui::BeginTable(m_strLabel.c_str(), m_vHeaderList.size(), 
+		bool bIndexedMode = m_tOptions.IsActivated(EzvTableOptions::ezvTableFlags_ArrangeIndexed);
+		int iColSize = m_vHeaderList.size() + ((bIndexedMode) ? 1 : 0);
+		if (ImGui::BeginTable(m_strLabel.c_str(), 
+							  iColSize,
 							  m_tOptions.GetOptions(), m_ivSize, m_fInnerWidth))
 		{
 			// Draw Headers
 			if (!m_vHeaderList.empty())
 			{
+				if (bIndexedMode)
+				{
+					m_czvIndexList.Bind();
+				}
 				for (auto& header : m_vHeaderList)
 				{
 					header.Bind();
@@ -95,12 +171,18 @@ namespace ZVLab {
 				for (int y = 0; y < row; ++y)
 				{
 					ImGui::TableNextRow();
-					for (int x = 0; x < col; ++x)
+					if (bIndexedMode)
+					{
+						m_czvIndexList.AddItem(std::to_string(y).c_str());
+						m_czvIndexList.ItemBind(y);
+					}
+					for (int x = 0; x < iColSize - 1; ++x)
 					{
 						auto& header = m_vHeaderList[x];
 						header.ItemBind(y);
 					}
 				}
+				m_czvIndexList.Clear();
 			}
 			ImGui::EndTable();
 		}

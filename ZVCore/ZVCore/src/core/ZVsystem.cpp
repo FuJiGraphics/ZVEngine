@@ -143,6 +143,13 @@ namespace ZVLab {
 		}
 	}
 
+	CzvLayer* CzvSystem::GetLayer(const std::string& label) const
+	{
+		CzvLayer* find_layer = nullptr; 
+		find_layer = m_upLayerBuffer->FindLayer(label);
+		return (find_layer);
+	}
+
 	void CzvSystem::AttachLayer(CzvLayer* layer)
 	{
 		DZVLog_Failed(layer, "FAILED: Layer pointer is NULL!");

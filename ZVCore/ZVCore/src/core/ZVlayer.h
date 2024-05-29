@@ -9,14 +9,18 @@ namespace ZVLab {
 
 	class ZV_API CzvLayer
 	{
+	private:
+		std::string m_strLabel;
+
 	public:
-		CzvLayer() = default;
+		CzvLayer(const std::string& label)
+			: m_strLabel(label) {}
 		virtual ~CzvLayer() = default;
 
-	public:
+		inline std::string GetLabel() const { return (m_strLabel); }
+
 		virtual void OnAttach() {};
 		virtual void OnDetach() {};
-
 		virtual void OnEvent(CzvEvent& event) {};
 		virtual void OnUpdate(const float& dt) {};
 		virtual void OnGUI() {};

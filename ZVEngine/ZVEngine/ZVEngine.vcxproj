@@ -152,7 +152,6 @@
     <ClInclude Include="src\Dlg\DlgDisplayWindow.h" />
     <ClInclude Include="src\Dlg\DlgParameterSetup.h" />
     <ClInclude Include="src\Dlg\DlgSidebarLeft.h" />
-    <ClInclude Include="src\Dlg\DlgTestDialog.h" />
     <ClInclude Include="src\Environment.h" />
     <ClInclude Include="src\GUI.h" />
     <ClInclude Include="src\Layers\ZVWindowMenu.h" />
@@ -165,7 +164,6 @@
     <ClCompile Include="src\Dlg\DlgDisplayWindow.cpp" />
     <ClCompile Include="src\Dlg\DlgParameterSetup.cpp" />
     <ClCompile Include="src\Dlg\DlgSidebarLeft.cpp" />
-    <ClCompile Include="src\Dlg\DlgTestDialog.cpp" />
     <ClCompile Include="src\Layers\ZVWindowMenu.cpp" />
   </ItemGroup>
   <ItemGroup>

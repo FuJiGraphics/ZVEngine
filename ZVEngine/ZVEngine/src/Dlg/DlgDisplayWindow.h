@@ -9,7 +9,6 @@ class CDlgDisplayWindow final : public ZVLab::CzvLayer
 {
 //// Member Variables
 private:
-	std::string		m_strLabel;
 	CzvImage		m_cImage;
 	TzvDialogInfo	m_tDialogInfo;
 	CzvFileDialog	m_FileDialog;
@@ -17,6 +16,9 @@ private:
 //// Member Functions
 public:
 	CDlgDisplayWindow();
+
 	virtual void OnAttach() override;
 	virtual void OnGUI() override;
+
+	void Display(const std::string& path, int w, int h);
 };

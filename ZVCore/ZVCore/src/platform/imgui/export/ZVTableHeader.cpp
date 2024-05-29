@@ -2,27 +2,28 @@
 
 namespace ZVLab {
 
+	int	CzvTableHeader::s_iSelectItem = 0;
+
 	CzvTableHeader::CzvTableHeader(const std::string& label, const TzvTableHeaderInfo& options)
 		: m_strLabel(label)
 		, m_vItems()
 		, m_tOptions(options)
 		, m_tSelInfo()
 		, m_bIsSelMode(false)
-		, m_iSelectItem(0)
 	{/*Empty*/}
 
 	CzvTableHeader::~CzvTableHeader()
 	{/*Empty*/}
 
-	inline int CzvTableHeader::GetSelectIndex() const
+	int CzvTableHeader::GetSelectIndex() const
 	{
 		if (this->IsSelectableMode())
-			return (m_iSelectItem);
+			return (s_iSelectItem);
 		else
 			return (-1);
 	}
 
-	inline bool CzvTableHeader::IsSelectableMode() const
+	bool CzvTableHeader::IsSelectableMode() const
 	{
 		return (m_bIsSelMode);
 	}
@@ -61,7 +62,7 @@ namespace ZVLab {
 		va_end(args);
 	}
 
-	inline void CzvTableHeader::SetLabel(const std::string& label)
+	void CzvTableHeader::SetLabel(const std::string& label)
 	{
 		m_strLabel = label;
 	}
@@ -85,7 +86,7 @@ namespace ZVLab {
 		m_tSelInfo = info;
 		m_bIsSelMode = enabled;
 		if (m_bIsSelMode == false)
-			m_iSelectItem = false;
+			s_iSelectItem = 0;
 	}
 
 	void CzvTableHeader::Bind()
@@ -100,9 +101,10 @@ namespace ZVLab {
 		{
 			if (m_bIsSelMode)
 			{
-				if (ImGui::Selectable(m_vItems.at(index).GetLabel(), index == m_iSelectItem, m_tSelInfo.GetOptions()))
+				if (ImGui::Selectable(m_vItems.at(index).GetLabel(), 
+									  index == s_iSelectItem, m_tSelInfo.GetOptions()))
 				{
-					m_iSelectItem = index;
+					s_iSelectItem = index;
 				}
 			}
 			else
@@ -112,6 +114,11 @@ namespace ZVLab {
 		{
 			TzvItem().Bind();
 		}
+	}
+
+	void CzvTableHeader::Clear()
+	{
+		m_vItems.clear();
 	}
 
 	TzvItem CzvTableHeader::operator[](int index)

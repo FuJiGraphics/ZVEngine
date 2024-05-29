@@ -48,7 +48,6 @@
     <ClInclude Include="src\Logic\ZVClassifie.h">
       <Filter>src\Logic</Filter>
     </ClInclude>
-    <ClInclude Include="src\Dlg\DlgTestDialog.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="core\EntryPoint.cpp">
@@ -72,6 +71,5 @@
     <ClCompile Include="src\Layers\ZVWindowMenu.cpp">
       <Filter>src\Layers</Filter>
     </ClCompile>
-    <ClCompile Include="src\Dlg\DlgTestDialog.cpp" />
   </ItemGroup>
 </Project>

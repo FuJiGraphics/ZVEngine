@@ -612,6 +612,7 @@ enum EzvTableOptions
 	ezvTableFlags_HighlightHoveredColumn    	 = ImGuiTableFlags_::ImGuiTableFlags_HighlightHoveredColumn,
 	// [Internal] Combinations and masks
 	ezvTableFlags_SizingMask_               	 = ImGuiTableFlags_::ImGuiTableFlags_SizingMask_,
+	ezvTableFlags_ArrangeIndexed				 = 1 << 29,
 };
 
 
@@ -670,6 +671,7 @@ public:
 	inline void SetSortTristate(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_SortTristate); }
 	inline void SetHighlightHoveredColumn(bool enabled)			{ this->FlagOptions(enabled, ezvTableFlags_HighlightHoveredColumn); }
 	inline void SetSizingMask_(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_SizingMask_); }
+	inline void SetArrangeIndexed(bool enabled)					{ this->FlagOptions(enabled, ezvTableFlags_ArrangeIndexed); }
 
 	// Others
 	inline bool IsActivated(const EzvTableOptions& flags) { return (m_iTableOptions & flags); }
@@ -814,6 +816,7 @@ public:
 #endif
 
 	// Others
+	inline bool IsEmpty() const { return (m_iSelectableOptions == ezvSelectableFlags_None); }
 	inline bool IsActivated(const EzvSelectableOptions& flags) { return (m_iSelectableOptions & flags); }
 	inline void FlagOptions(bool enabled, const EzvSelectableOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
 	inline void AddOptions(const EzvSelectableOptions& flags) { m_iSelectableOptions |= flags; }

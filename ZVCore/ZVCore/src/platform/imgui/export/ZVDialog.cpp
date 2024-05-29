@@ -405,6 +405,9 @@ namespace ZVLab {
 			// Menubar 활성화
 			if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && m_bIsUnFolded)
 				m_MenuBar.Bind();
+
+			// 크기 저장
+			m_optSize = ImGui::GetWindowSize();
 		}
 		return (result);
 	}

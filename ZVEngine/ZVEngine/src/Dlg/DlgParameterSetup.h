@@ -17,7 +17,6 @@ class CDlgParameterSetup final : public ZVLab::CzvLayer
 {
 //// Member Variables
 private:
-	std::string					m_strLabel;
 	TzvDialogInfo				m_tDialogInfo;
 	TzvParametersChunk			m_tParamChunk;
 	CzvFileDialog				m_LoadFileDialog;
@@ -26,10 +25,16 @@ private:
 
 //// Member Functions
 public:
+	CDlgParameterSetup();
+
 	// Layer Virtual Features
 	virtual void OnAttach() override;
 	virtual void OnGUI() override;
 
 	// Others
+	std::vector<std::string>&	GetImagePaths();
+	TzvParametersChunk&			GetParamChunk();
+
+private:
 	std::vector<std::string> LoadImages(const std::string& path);
 };

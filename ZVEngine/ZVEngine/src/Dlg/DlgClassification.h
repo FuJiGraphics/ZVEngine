@@ -9,7 +9,6 @@ class CDlgClassification final : public ZVLab::CzvLayer
 {
 //// Member Variables
 private:
-	std::string		m_strLabel;
 	TzvDialogInfo	m_tDialogInfo;
 	int				m_iTotal;
 	int				m_iClassified;
@@ -17,6 +16,8 @@ private:
 
 //// Member Functions
 public:
+	CDlgClassification();
+
 	virtual void OnAttach() override;
 	virtual void OnGUI() override;
 };

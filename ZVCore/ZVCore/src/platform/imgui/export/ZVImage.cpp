@@ -37,15 +37,15 @@ namespace ZVLab {
 
 	bool CzvImage::Load(const std::string& path)
 	{
-		if (path.size() <= 0)
+		if (path.size() <= 2)
 		{
 			return (false);
 		}
-		if (this->Empty() == false)
-		{
-			FZLOG_WARN("WARN: Already loaded image data. = {0}", m_strLabel);
-			FZLOG_WARN("-> The requested data is used to overwrite the image.");
-		}
+		//if (this->Empty() == false)
+		//{
+		//	FZLOG_WARN("WARN: Already loaded image data. = {0}", m_strLabel);
+		//	FZLOG_WARN("-> The requested data is used to overwrite the image.");
+		//}
 		this->Release();
 
 		// Load Image from path
@@ -57,10 +57,17 @@ namespace ZVLab {
 		return (m_bInitialized);
 	}
 
-	bool CzvImage::Save(const std::string& path, const EzvImageFormat& format)
+	bool CzvImage::Save(const std::string& path)
 	{
-		// TODO: Save 기능 개발
-		return true;
+		if (path.size() <= 2)
+			return (false);
+
+		if (m_bInitialized)
+			cv::imwrite(path, m_matImageData);
+		else
+			return (false);
+
+		return (true);
 	}
 
 	void CzvImage::Release()

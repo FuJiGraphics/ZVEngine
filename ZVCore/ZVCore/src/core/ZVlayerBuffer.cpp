@@ -101,6 +101,16 @@ namespace ZVLab {
 		return (false);
 	}
 
+	CzvLayer* CzvLayerBuffer::FindLayer(const std::string& label)
+	{
+		for (auto& layer : m_vContainer)
+		{
+			if (label == layer->GetLabel())
+				return (layer);
+		}
+		return (nullptr);
+	}
+
 	CzvLayerBuffer::iter CzvLayerBuffer::FindLayer(CzvLayer* pLayer)
 	{
 		return std::find_if(m_vContainer.begin(), m_vContainer.end(),

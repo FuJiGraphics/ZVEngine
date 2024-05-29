@@ -28,7 +28,7 @@ namespace ZVLab {
 		TzvTableHeaderInfo			m_tOptions;
 		TzvSelectableInfo			m_tSelInfo;
 		bool						m_bIsSelMode;
-		int							m_iSelectItem;
+		static int					s_iSelectItem;
 
 	//// Member Functions
 	public:
@@ -45,15 +45,15 @@ namespace ZVLab {
 		 * - 실패 시, (int)-1를 반환합니다.
 		 * @return		int: 현재 선택된 인덱스 값 
 		 */
-		inline int				GetSelectIndex() const;
-		inline bool				IsSelectableMode() const;
+		int						GetSelectIndex() const;
+		bool					IsSelectableMode() const;
 		TzvItem					GetItem(unsigned int index) const;
 		bool					HasValue() const;
 
 		// Setter
 		void					AddItem(const std::vector<std::string>& vItems);
 		void					AddItem(const char* fmt, ...);
-		inline void				SetLabel(const std::string& label);
+		void					SetLabel(const std::string& label);
 		inline void				SetOptions(const TzvTableHeaderInfo& options);
 		inline void				SetItem(const std::initializer_list<std::string>& item_labels);
 		void					SetSelectable(bool enabled, const TzvSelectableInfo& info = TzvSelectableInfo());
@@ -61,6 +61,7 @@ namespace ZVLab {
 		// Others
 		void					Bind();
 		void					ItemBind(int index);
+		void					Clear();
 
 		// Operator
 		TzvItem					operator[](int index);

@@ -67,6 +67,18 @@ namespace ZVLab {
 		 */
 		inline std::string	GetLabel() const	{ return (m_strLabel); }
 		/**
+		 * @brief		Dialog의 Width Size를 반환
+		 * @details		현재 Dialog의 Width Size를 반환합니다.
+		 * @return		int: Width Size 값
+		 */
+		inline int			GetWidth() const	{ return (m_optSize->x); }
+		/**
+		 * @brief		Dialog의 Height Size를 반환
+		 * @details		현재 Dialog의 Height Size를 반환합니다.
+		 * @return		int: Height Size 값
+		 */
+		inline int			GetHeight() const	{ return (m_optSize->y); }
+		/**
 		 * @brief		Dialog가 접힌 상태인지 여부
 		 * @details		Dialog가 접혀있는지 상태 여부를 반환합니다. 
 		 * @return		bool:	Dialog가 접혀있는지 여부 (true/false) 

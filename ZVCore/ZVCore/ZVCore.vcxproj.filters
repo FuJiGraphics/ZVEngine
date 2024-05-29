@@ -42,28 +42,28 @@
     <ClInclude Include="src\core\ZVMemory.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ZVSystem.h">
+    <ClInclude Include="src\core\ZVTimer.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\ZVTimer.h">
+    <ClInclude Include="src\core\ZVsystem.h">
       <Filter>core</Filter>
     </ClInclude>
     <ClInclude Include="src\core\ZVwindow.h">
       <Filter>core</Filter>
     </ClInclude>
-    <ClInclude Include="src\events\ZVAppEvent.h">
-      <Filter>events</Filter>
-    </ClInclude>
-    <ClInclude Include="src\events\ZVEvent.h">
-      <Filter>events</Filter>
-    </ClInclude>
     <ClInclude Include="src\events\ZVKeyCodes.h">
       <Filter>events</Filter>
     </ClInclude>
-    <ClInclude Include="src\events\ZVKeyEvent.h">
+    <ClInclude Include="src\events\ZVappEvent.h">
       <Filter>events</Filter>
     </ClInclude>
-    <ClInclude Include="src\events\ZVMouseEvent.h">
+    <ClInclude Include="src\events\ZVevent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\ZVkeyEvent.h">
+      <Filter>events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\events\ZVmouseEvent.h">
       <Filter>events</Filter>
     </ClInclude>
     <ClInclude Include="src\export\EntryPoint.h">
@@ -72,9 +72,6 @@
     <ClInclude Include="src\export\ZVCore.h">
       <Filter>export</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\ZVImguiManager.h">
-      <Filter>platform\imgui</Filter>
-    </ClInclude>
     <ClInclude Include="src\platform\imgui\ZVImguiTheme.h">
       <Filter>platform\imgui</Filter>
     </ClInclude>
@@ -82,6 +79,9 @@
       <Filter>platform\imgui</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\ZVTexture_internal.h">
+      <Filter>platform\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\platform\imgui\ZVimguiManager.h">
       <Filter>platform\imgui</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVButton.h">
@@ -120,10 +120,10 @@
     <ClInclude Include="src\platform\imgui\export\ZVMenu.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVMenuBar.h">
+    <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
-    <ClInclude Include="src\platform\imgui\export\ZVMenuItem.h">
+    <ClInclude Include="src\platform\imgui\export\ZVMenubar.h">
       <Filter>platform\imgui\export</Filter>
     </ClInclude>
     <ClInclude Include="src\platform\imgui\export\ZVProfiler.h">
@@ -152,17 +152,14 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\core\ZVLayerBuffer.cpp">
+    <ClCompile Include="src\core\ZVlayerBuffer.cpp">
       <Filter>core</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\ZVSystem.cpp">
+    <ClCompile Include="src\core\ZVsystem.cpp">
       <Filter>core</Filter>
     </ClCompile>
     <ClCompile Include="src\core\ZVwindow.cpp">
       <Filter>core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\platform\imgui\ZVImguiManager.cpp">
-      <Filter>platform\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\ZVImguiTheme.cpp">
       <Filter>platform\imgui</Filter>
@@ -171,6 +168,9 @@
       <Filter>platform\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\ZVTexture_internal.cpp">
+      <Filter>platform\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\platform\imgui\ZVimguiManager.cpp">
       <Filter>platform\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVButton.cpp">
@@ -200,10 +200,10 @@
     <ClCompile Include="src\platform\imgui\export\ZVKeyMap.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
-    <ClCompile Include="src\platform\imgui\export\ZVMenuBar.cpp">
+    <ClCompile Include="src\platform\imgui\export\ZVMenuItem.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
-    <ClCompile Include="src\platform\imgui\export\ZVMenuItem.cpp">
+    <ClCompile Include="src\platform\imgui\export\ZVMenubar.cpp">
       <Filter>platform\imgui\export</Filter>
     </ClCompile>
     <ClCompile Include="src\platform\imgui\export\ZVProfiler.cpp">
