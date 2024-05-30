@@ -49,8 +49,8 @@ namespace ZVLab {
 	void CzvImageButton::SetTexture(const Shared<CzvTexture>& idle, 
 									const Shared<CzvTexture>& click)
 	{
-		DZVLog_Failed(idle, "FAILED: idle texture is null!!");
-		DZVLog_Failed(click, "FAILED: click texture is null!!");
+		DZVLog_Failed((idle != nullptr), "FAILED: idle texture is null!!");
+		DZVLog_Failed((click != nullptr), "FAILED: click texture is null!!");
 		m_spTexIdle = idle;
 		m_spTexClick = click;
 	}

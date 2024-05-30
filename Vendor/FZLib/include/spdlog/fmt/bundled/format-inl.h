@@ -5,10 +5,6 @@
 //
 // For the license information refer to format.h.
 
-// Custom ZVLab Cheoljin
-#pragma warning(disable:4305)
-#pragma warning(disable:4307)
-
 #ifndef FMT_FORMAT_INL_H_
 #define FMT_FORMAT_INL_H_
 
