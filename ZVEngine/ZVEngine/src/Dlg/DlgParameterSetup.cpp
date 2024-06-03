@@ -49,6 +49,7 @@ void CDlgParameterSetup::OnGUI()
 	{
 		this->LoadImages(tmp_param.strSavingPath);
 	}
+
 	// Update
 	if (dialog.Button("Save"))
 	{

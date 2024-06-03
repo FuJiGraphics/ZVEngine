@@ -32,6 +32,7 @@
 #include "imgui/backends/imgui_impl_glfw.h"
 #include "imgui/extensions/im_plot/implot.h"
 #include "imgui/extensions/im_file_dialog/ImFileDialog.h"
+#include "imgui/extensions/im_mvision/immvision.h"
 
 #ifdef ZV_USAGE_DLL
 	#ifdef ZV_EXPORT_DLL

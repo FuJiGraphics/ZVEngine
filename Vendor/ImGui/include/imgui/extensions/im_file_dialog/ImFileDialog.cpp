@@ -441,6 +441,32 @@ namespace ifd {
 			m_clearTree(fn);
 		m_treeCache.clear();
 	}
+
+    bool FileDialog::Save(int type, const std::string& key, const std::string& title, const std::string& filter, const std::string& startingDir)
+    {
+        if (!m_currentKey.empty())
+            return false;
+
+        m_currentKey = key;
+        m_currentTitle = title + "###" + key;
+        m_isOpen = true;
+        m_calledOpenPopup = false;
+        m_result.clear();
+        m_inputTextbox[0] = 0;
+        m_selections.clear();
+        m_selectedFileItem = -1;
+        m_isMultiselect = false;
+        m_type = IFD_DIALOG_SAVE;
+
+        m_parseFilter(filter);
+        if (!startingDir.empty())
+            m_setDirectory(std::filesystem::u8path(startingDir), false);
+        else
+            m_setDirectory(m_currentDirectory, false); // refresh contents
+
+        return true;
+    }
+
 	bool FileDialog::Save(const std::string& key, const std::string& title, const std::string& filter, const std::string& startingDir)
 	{
 		if (!m_currentKey.empty())
@@ -465,6 +491,7 @@ namespace ifd {
 
 		return true;
 	}
+
     bool FileDialog::Open(int type, const std::string& key, const std::string& title, const std::string & filter, bool isMultiselect, const std::string & startingDir)
     {
         if (!m_currentKey.empty())

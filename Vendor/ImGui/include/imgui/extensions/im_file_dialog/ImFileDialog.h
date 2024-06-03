@@ -26,6 +26,7 @@ namespace ifd {
 		FileDialog();
 		~FileDialog();
 
+        bool Save(int type, const std::string& key, const std::string& title, const std::string& filter, const std::string& startingDir = "");
 		bool Save(const std::string& key, const std::string& title, const std::string& filter, const std::string& startingDir = "");
 
         bool Open(int type, const std::string& key, const std::string& title, const std::string& filter, bool isMultiselect = false, const std::string& startingDir = "");

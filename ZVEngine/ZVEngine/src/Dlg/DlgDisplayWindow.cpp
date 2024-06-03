@@ -65,10 +65,6 @@ void CDlgDisplayWindow::OnGUI()
 		m_cImage.Save(path_save);
 	}
 	
-	if (DZVLog_Failed(false, "asdasfa {0}", 1))
-	{
-		FZLOG_INFO("false");
-	}
 	DProfile_EndRecord;
 }
 

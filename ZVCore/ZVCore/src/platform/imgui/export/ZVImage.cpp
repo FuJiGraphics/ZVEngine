@@ -41,11 +41,9 @@ namespace ZVLab {
 		{
 			return (false);
 		}
-		//if (this->Empty() == false)
-		//{
-		//	FZLOG_WARN("WARN: Already loaded image data. = {0}", m_strLabel);
-		//	FZLOG_WARN("-> The requested data is used to overwrite the image.");
-		//}
+		if (m_strPath == path)
+			return (false);
+
 		this->Release();
 
 		// Load Image from path
@@ -84,9 +82,10 @@ namespace ZVLab {
 	{
 		if (this->Empty() == false)
 		{
+			static ImVec2 s_Size;
 			DDrawTextureImage
 			(
-				m_spTexture->GetID(), 
+				m_spTexture->GetID(),
 				(size.x > 0) ? size.x : m_spTexture->GetWidth(),
 				(size.y > 0) ? size.y : m_spTexture->GetHeight(),
 			);

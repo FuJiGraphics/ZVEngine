@@ -190,7 +190,7 @@ namespace ZVLab {
 		 * @param[in]	image:	이미지 객체
 		 * @param[in]	size:	이미지 출력 크기 (초기값: 기본 크기)
 		 */
-		void	Image(const CzvImage& image, const ImVec2& size = { 0.0f, 0.0f });
+		void	Image(const CzvImage& image, const ImVec2& size = { 0.0f, 0.0f });		
 		/**
 		 * @brief		메뉴 아이템 생성
 		 * @details		현재 Dialog에 MenuItem을 생성합니다.

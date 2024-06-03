@@ -22,8 +22,8 @@ project "ZVEngine"
         "%{prj.name}/src",
 		"%{IncludeDir.ZVCore}/export/",
 		"%{IncludeDir.FZLib}",
-		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.GLAD}",
 		"%{IncludeDir.SOIL2}",
 		"%{IncludeDir.OpenCV}",
@@ -31,6 +31,10 @@ project "ZVEngine"
 
 	libdirs 
 	{
+		"%{LibraryDir.FZLib}",
+		"%{LibraryDir.GLFW}",
+		"%{LibraryDir.ImGui}",
+		"%{LibraryDir.GLAD}",
 		"%{LibraryDir.SOIL2}",
 		"%{LibraryDir.OpenCV}",
 	}
@@ -40,10 +44,10 @@ project "ZVEngine"
 		"ZVCore",
 		"%{Library.FZLib}",
 		"%{Library.GLFW}",
+		"%{Library.ImGui}",
+		"%{Library.GLAD}",
 		"%{Library.SOIL2}",
 		"%{Library.OpenCV}",
-		"GLAD",
-		"ImGui",
 		"Opengl32.lib", 
 	}
 
