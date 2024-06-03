@@ -216,6 +216,29 @@ namespace ZVLab {
 		std::string	ComboBox(const std::string& label, 
 							 const Args<const char *>& item_list, 
 							 const TzvComboBoxInfo& options = TzvComboBoxInfo());
+		/**
+		 * @brief		콤보 박스 생성
+		 * @details		현재 Dialog에 ComboBox를 생성합니다.
+		 * @param[in]	label:			콤보 박스의 라벨
+		 * @param[in]	item_list:		아이템 배열
+		 * @param[in]	options:		콤보 박스의 설정
+		 * @return		std::string:	현재 선택중인 아이템 라벨
+		 */
+		std::string	ComboBox(const std::string& label,
+							 const std::vector<const char*>& item_list,
+							 const TzvComboBoxInfo& options = TzvComboBoxInfo());
+		/**
+		 * @brief		콤보 박스 생성
+		 * @details		현재 Dialog에 ComboBox를 생성합니다.
+		 * @param[in]	label:			콤보 박스의 라벨
+		 * @param[in]	item_list:		아이템 배열
+		 * @param[in]	options:		콤보 박스의 설정
+		 * @return		std::string:	현재 선택중인 아이템 라벨
+		 */
+		std::string	ComboBox(const std::string& label,
+							 const std::vector<std::string>& item_list,
+							 const TzvComboBoxInfo& options = TzvComboBoxInfo());
+
 
 		// Others
 		void	SetNextPos(const ImVec2& pos);

@@ -21,17 +21,28 @@ namespace ZVLab {
 	//// Member Functions
 	public:
 		// Constructor, Destructors
-		CzvComboBox(const std::string& label, const TzvComboBoxInfo& info = TzvComboBoxInfo());
+		CzvComboBox(const std::string& label = "##", const TzvComboBoxInfo& info = TzvComboBoxInfo());
+		CzvComboBox(const std::vector<const char*>& item_list, const TzvComboBoxInfo& info = TzvComboBoxInfo());
+		CzvComboBox(const std::vector<std::string>& item_list, const TzvComboBoxInfo& info = TzvComboBoxInfo());
+		CzvComboBox(const Args<const char *>& item_list, const TzvComboBoxInfo& info = TzvComboBoxInfo());
 		~CzvComboBox();
 
 		// Getter
-		void	SetItems(const Args<const char *>& item_list);
+		std::string		GetLabel() const;
+		int				GetSize() const;
+
+		// Setter
+		void			AddItems(const char* item);
+		void			AddItems(const std::string& item);
+		void			SetItems(const std::vector<const char*>& item_list);
+		void			SetItems(const std::vector<std::string>& item_list);
+		void			SetItems(const Args<const char *>& item_list);
 		
 		// Others
-		std::string	Bind();
+		std::string		Bind();
 
-		// inline
-		inline std::string	GetLabel() const { return (m_strLabel); }
+		std::string		operator[](int index);
+		std::string		operator[](int index) const;
 	};
 
 } // namespace ZVLab

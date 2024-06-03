@@ -364,6 +364,50 @@ namespace ZVLab {
 		return (select_item);
 	}
 
+	std::string CzvDialog::ComboBox(const std::string & label, 
+									const std::vector<const char*>& item_list, 
+									const TzvComboBoxInfo & options)
+	{
+		std::string select_item;
+		CzvComboBox combo(label, options);
+		combo.SetItems(item_list);
+		this->Synchronization();
+		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
+		{
+			m_MenuBar.UnBind();
+			select_item = combo.Bind();
+			m_MenuBar.Bind();
+		}
+		else
+		{
+			select_item = combo.Bind();
+		}
+		DUnRegistStaticItemPos
+		return (select_item);
+	}
+
+	std::string CzvDialog::ComboBox(const std::string & label,
+									const std::vector<std::string>& item_list,
+									const TzvComboBoxInfo & options)
+	{
+		std::string select_item;
+		CzvComboBox combo(label, options);
+		combo.SetItems(item_list);
+		this->Synchronization();
+		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
+		{
+			m_MenuBar.UnBind();
+			select_item = combo.Bind();
+			m_MenuBar.Bind();
+		}
+		else
+		{
+			select_item = combo.Bind();
+		}
+		DUnRegistStaticItemPos
+		return (select_item);
+	}
+
 	void CzvDialog::SetNextPos(const ImVec2& pos)
 	{
 		this->Synchronization();

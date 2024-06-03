@@ -48,7 +48,7 @@ namespace ZVLab {
 
 		for (const auto& item : vItems)
 		{
-			m_vItems.push_back({ item });
+			m_vItems.push_back({ item.c_str() });
 		}
 	}
 
@@ -67,12 +67,30 @@ namespace ZVLab {
 		m_strLabel = label;
 	}
 
-	inline void CzvTableHeader::SetOptions(const TzvTableHeaderInfo& options)
+	void CzvTableHeader::SetOptions(const TzvTableHeaderInfo& options)
 	{
 		m_tOptions = options;
 	}
 
-	inline void CzvTableHeader::SetItem(const std::initializer_list<std::string>& item_labels)
+	void CzvTableHeader::SetItem(const std::vector<CzvComboBox>& vItems)
+	{
+		m_vItems.clear();
+		for (const auto& item : vItems)
+		{
+			m_vItems.push_back(item);
+		}
+	}
+
+	void CzvTableHeader::SetItem(const std::vector<std::string>& vItems)
+	{
+		m_vItems.clear();
+		for (const auto& item : vItems)
+		{
+			m_vItems.push_back({ item.c_str() });
+		}
+	}
+
+	void CzvTableHeader::SetItem(const std::initializer_list<std::string>& item_labels)
 	{
 		m_vItems.clear();
 		for (const auto& label : item_labels)
@@ -139,6 +157,22 @@ namespace ZVLab {
 
 	TzvItem::TzvItem(const std::string& text)
 		: strText(text)
+		, ComboBox()
+		, eType(EzvItemType::eText)
+	{/*Empty*/}
+
+	TzvItem::TzvItem(const CzvComboBox& comboItems)
+	{
+		int size = comboItems.GetSize();
+		std::vector<std::string> vTempItems;
+		for (int i = 0; i < size; ++i)
+		{
+			vTempItems.push_back({ comboItems[i] });
+		}
+		ComboBox.SetItems(vTempItems);
+	}
+
+	TzvItem::~TzvItem()
 	{/*Empty*/}
 
 	const char* TzvItem::GetLabel()
@@ -153,7 +187,15 @@ namespace ZVLab {
 
 	void TzvItem::Bind()
 	{
-		ImGui::Text(strText.c_str());
+		switch (this->eType)
+		{
+			case EzvItemType::eText:
+				ImGui::Text(strText.c_str());
+				return;
+			case EzvItemType::eComboBox:
+				ComboBox.Bind();
+				return;
+		}
 	}
 
 } // namespace ZVLab

@@ -35,14 +35,15 @@ namespace ZVLab {
 		~CzvTable();
 
 		// Getter
-		inline std::string	GetLabel() const;
-		inline unsigned int	GetRowSize() const;
-		inline unsigned int	GetColSize() const;
+		std::string			GetLabel() const;
+		unsigned int		GetRowSize() const;
+		unsigned int		GetColSize() const;
 		TzvTableCoord		GetSelectAllIndex() const;
 		int					GetSelectYaxisIndex() const;
 
 		// Setter
-		inline void			SetLabel(const std::string& label);
+		void				SetLabel(const std::string& label);
+		void				SetOptions(const TzvTableInfo& options);
 		void				SetIndexLabel(const std::string& label);
 		void				SetSelectable(bool enabled, const TzvSelectableInfo& info = TzvSelectableInfo());
 		void				SetHeaders(const std::initializer_list<std::string>& header_labels);

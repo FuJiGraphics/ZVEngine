@@ -4,16 +4,26 @@
 
 #include "../../../core/Core.h"
 #include "ZVGuiConfig.h"
+#include "ZVComboBox.h"
 
 namespace ZVLab {
+
+	enum class EzvItemType
+	{
+		eText, eComboBox,
+	};
 
 	struct ZV_API TzvItem
 	{
 	private:
-		std::string	strText;
+		std::string		strText;
+		CzvComboBox		ComboBox;
+		EzvItemType		eType;
 
 	public:
 		TzvItem(const std::string& text = " ");
+		TzvItem(const CzvComboBox& comboItems);
+		~TzvItem();
 		const char*		GetLabel();
 		const char*		GetLabel() const;
 		void			Bind();
@@ -54,8 +64,10 @@ namespace ZVLab {
 		void					AddItem(const std::vector<std::string>& vItems);
 		void					AddItem(const char* fmt, ...);
 		void					SetLabel(const std::string& label);
-		inline void				SetOptions(const TzvTableHeaderInfo& options);
-		inline void				SetItem(const std::initializer_list<std::string>& item_labels);
+		void					SetOptions(const TzvTableHeaderInfo& options);
+		void					SetItem(const std::vector<CzvComboBox>& vItems);
+		void					SetItem(const std::vector<std::string>& vItems);
+		void					SetItem(const std::initializer_list<std::string>& item_labels);
 		void					SetSelectable(bool enabled, const TzvSelectableInfo& info = TzvSelectableInfo());
 
 		// Others

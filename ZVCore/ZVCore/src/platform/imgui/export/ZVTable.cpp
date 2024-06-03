@@ -25,12 +25,12 @@ namespace ZVLab {
 
 	}
 
-	inline std::string CzvTable::GetLabel() const
+	std::string CzvTable::GetLabel() const
 	{
 		return (m_strLabel);
 	}
 
-	inline unsigned int CzvTable::GetRowSize() const
+	unsigned int CzvTable::GetRowSize() const
 	{
 		unsigned int max_row = 0;
 		unsigned int curr_row = 0;
@@ -43,7 +43,7 @@ namespace ZVLab {
 		return (max_row);
 	}
 
-	inline unsigned int CzvTable::GetColSize() const
+	unsigned int CzvTable::GetColSize() const
 	{
 		return (m_vHeaderList.size());
 	}
@@ -119,9 +119,14 @@ namespace ZVLab {
 		m_vHeaderList.push_back({header_label, options});
 	}
 
-	inline void CzvTable::SetLabel(const std::string& label)
+	void CzvTable::SetLabel(const std::string& label)
 	{
 		m_strLabel = label;
+	}
+
+	void CzvTable::SetOptions(const TzvTableInfo& options)
+	{
+		m_tOptions = options;
 	}
 
 	void CzvTable::SetIndexLabel(const std::string& label)
