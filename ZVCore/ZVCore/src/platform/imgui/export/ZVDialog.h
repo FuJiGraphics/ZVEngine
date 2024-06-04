@@ -110,11 +110,28 @@ namespace ZVLab {
 		/**
 		 * @brief		텍스트를 입력받음
 		 * @details		현재 Dialog에 텍스트를 입력받습니다.
+		 * @param[out]	dst:
+		 * @param[in]	size:
+		 * @param[in]	info:
+		 */
+		void	InputText(std::string* dst, const ImVec2& size, const TzvInputTextInfo& info = TzvInputTextInfo());
+		/**
+		 * @brief		텍스트를 입력받음
+		 * @details		현재 Dialog에 텍스트를 입력받습니다.
 		 * @param[in]	label:
 		 * @param[out]	dst:
 		 * @param[in]	info:
 		 */
 		void	InputText(const std::string& label, std::string* dst, const TzvInputTextInfo& info = TzvInputTextInfo());
+		/**
+		 * @brief		텍스트를 입력받음
+		 * @details		현재 Dialog에 텍스트를 입력받습니다.
+		 * @param[in]	label:
+		 * @param[out]	dst:
+		 * @param[in]	size:
+		 * @param[in]	info:
+		 */
+		void	InputText(const std::string& label, std::string* dst, const ImVec2& size, const TzvInputTextInfo& info = TzvInputTextInfo());
 		/**
 		 * @brief		버튼 생성
 		 * @details		현재 Dialog에 버튼을 생성합니다.

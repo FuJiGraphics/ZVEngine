@@ -459,6 +459,7 @@ private:
 public:
 	// Getter
 	inline ComboBoxOptions	GetOptions() { return (m_iComboBoxOptions); }
+	inline ComboBoxOptions	GetOptions() const { return (m_iComboBoxOptions); }
 
 	// Setter
 	inline void SetPopupAlignLeft(bool enabled)			{ this->FlagOptions(enabled, ezvComboBoxFlags_PopupAlignLeft  ); }
@@ -472,6 +473,7 @@ public:
 	inline void SetHeightMask(bool enabled)				{ this->FlagOptions(enabled, ezvComboBoxFlags_HeightMask_     ); }
 
 	// Others
+	inline bool	IsNone() const { return (m_iComboBoxOptions == ezvComboBoxFlags_None); }
 	inline bool IsActivated(const EzvComboBoxOptions& flags) { return (m_iComboBoxOptions & flags); }
 	inline void FlagOptions(bool enabled, const EzvComboBoxOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
 	inline void AddOptions(const EzvComboBoxOptions& flags) { m_iComboBoxOptions |= flags; }
@@ -780,12 +782,7 @@ enum ZV_API EzvSelectableOptions
 	ezvSelectableFlags_SpanAllColumns  	= ImGuiSelectableFlags_::ImGuiSelectableFlags_SpanAllColumns,
 	ezvSelectableFlags_AllowDoubleClick	= ImGuiSelectableFlags_::ImGuiSelectableFlags_AllowDoubleClick,
 	ezvSelectableFlags_Disabled        	= ImGuiSelectableFlags_::ImGuiSelectableFlags_Disabled,
-	ezvSelectableFlags_AllowOverlap    	= ImGuiSelectableFlags_::ImGuiSelectableFlags_AllowOverlap     ,
-
-#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS,
-	ezvSelectableFlags_AllowItemOverlap = ImGuiSelectableFlags_::ImGuiSelectableFlags_AllowItemOverlap ,
-#endif
-
+	ezvSelectableFlags_AllowOverlap    	= ImGuiSelectableFlags_::ImGuiSelectableFlags_AllowOverlap,
 };
 //----------------------------------------------------
 // struct Selectable Info
@@ -811,13 +808,11 @@ public:
 	inline void	SetAllowDoubleClick(bool enabled)	{ this->FlagOptions(enabled, ezvSelectableFlags_AllowDoubleClick); }
 	inline void	SetDisabled(bool enabled)			{ this->FlagOptions(enabled, ezvSelectableFlags_Disabled); }
 	inline void	SetAllowOverlap(bool enabled)		{ this->FlagOptions(enabled, ezvSelectableFlags_AllowOverlap); }
-#ifndef IMGUI_DISABLE_OBSOLETE_FUNCTIONS,
-	inline void	SetAllowItemOverlap(bool enabled)	{ this->FlagOptions(enabled, ezvSelectableFlags_AllowItemOverlap); }
-#endif
 
 	// Others
 	inline bool IsEmpty() const { return (m_iSelectableOptions == ezvSelectableFlags_None); }
 	inline bool IsActivated(const EzvSelectableOptions& flags) { return (m_iSelectableOptions & flags); }
+
 	inline void FlagOptions(bool enabled, const EzvSelectableOptions& flags) { (enabled) ? this->AddOptions(flags) : this->DelOptions(flags); }
 	inline void AddOptions(const EzvSelectableOptions& flags) { m_iSelectableOptions |= flags; }
 	inline void DelOptions(const EzvSelectableOptions& flags) { m_iSelectableOptions &= ~flags; }

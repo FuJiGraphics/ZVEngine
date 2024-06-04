@@ -17,11 +17,11 @@ void ZVWindowMenu::OnMainMenuBar()
 	{
 		if (ImGui::MenuItem("Open..", "Ctrl+O"))
 		{
-			ifd::FileDialog::Instance().Open("TextureOpenDialog", "Open a texture", "Image file (*.png;*.jpg;*.jpeg;*.bmp;){.png,.jpg,.jpeg,.bmp},.*", true);
+			// ifd::FileDialog::Instance().Open("TextureOpenDialog", "Open a texture", "Image file (*.png;*.jpg;*.jpeg;*.bmp;){.png,.jpg,.jpeg,.bmp},.*", true);
 		}
 		if (ImGui::MenuItem("Save", "Ctrl+S"))
 		{
-			ifd::FileDialog::Instance().Save("TextureSaveDialog", "Save a texture", "Image file (*.png;*.jpg;*.jpeg;*.bmp;){.png,.jpg,.jpeg,.bmp},.*");
+			// ifd::FileDialog::Instance().Save("TextureSaveDialog", "Save a texture", "Image file (*.png;*.jpg;*.jpeg;*.bmp;){.png,.jpg,.jpeg,.bmp},.*");
 		}
 		if (ImGui::MenuItem("Close", "Ctrl+W"))
 		{

@@ -78,7 +78,9 @@ namespace ZVLab {
 					 s_unDialogCount);
 	}
 
-	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const TzvDialogInfo& options)
+	CzvDialog::CzvDialog(const std::string& label, 
+						 const ImVec2& size, 
+						 const TzvDialogInfo& options)
 		: m_strLabel(label)
 		, m_optSize(size)
 		, m_optPosition()
@@ -95,7 +97,9 @@ namespace ZVLab {
 					 s_unDialogCount);
 	}
 
-	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position)
+	CzvDialog::CzvDialog(const std::string& label, 
+						 const ImVec2& size, 
+						 const ImVec2& position)
 		: m_strLabel(label)
 		, m_optSize(size)
 		, m_optPosition(position)
@@ -112,7 +116,10 @@ namespace ZVLab {
 					 s_unDialogCount);
 	}
 
-	CzvDialog::CzvDialog(const std::string& label, const ImVec2& size, const ImVec2& position, const TzvDialogInfo& options)
+	CzvDialog::CzvDialog(const std::string& label, 
+						 const ImVec2& size, 
+						 const ImVec2& position, 
+						 const TzvDialogInfo& options)
 		: m_strLabel(label)
 		, m_optSize(size)
 		, m_optPosition(position)
@@ -189,7 +196,28 @@ namespace ZVLab {
 		DUnRegistStaticItemPos
 	}
 
-	void CzvDialog::InputText(std::string* dst, const TzvInputTextInfo & info)
+	void CzvDialog::InputText(std::string* dst, 
+							  const ImVec2& size, 
+							  const TzvInputTextInfo& info)
+	{
+		DZVLog_Failed(dst, "Failed: std::string* dst is Null!");
+		bool result;
+		this->Synchronization();
+		CzvInputText input(info);
+		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
+		{
+			m_MenuBar.UnBind();
+			input.Bind(dst, size);
+			m_MenuBar.Bind();
+		}
+		else
+		{
+			input.Bind(dst, size);
+		}
+		DUnRegistStaticItemPos
+	}
+
+	void CzvDialog::InputText(std::string* dst, const TzvInputTextInfo& info)
 	{
 		DZVLog_Failed(dst, "Failed: std::string* dst is Null!");
 		bool result;
@@ -208,7 +236,9 @@ namespace ZVLab {
 		DUnRegistStaticItemPos
 	}
 
-	void CzvDialog::InputText(const std::string& label, std::string* dst, const TzvInputTextInfo& info)
+	void CzvDialog::InputText(const std::string& label, 
+							  std::string* dst, 
+							  const TzvInputTextInfo& info)
 	{
 		DZVLog_Failed(dst, "Failed: std::string* dst is Null!");
 		bool result;
@@ -224,6 +254,30 @@ namespace ZVLab {
 		else
 		{
 			input.Bind(dst);
+		}
+		CzvImguiManager::PopID();
+		DUnRegistStaticItemPos
+	}
+
+	void CzvDialog::InputText(const std::string& label, 
+							  std::string* dst, 
+							  const ImVec2& size, 
+							  const TzvInputTextInfo& info)
+	{
+		DZVLog_Failed(dst, "Failed: std::string* dst is Null!");
+		bool result;
+		this->Synchronization();
+		CzvImguiManager::PushID();
+		CzvInputText input(label, info);
+		if (m_tOptions.IsActivated(ezvDialogFlags_MenuBar) && this->IsUnFolded())
+		{
+			m_MenuBar.UnBind();
+			input.Bind(dst, size);
+			m_MenuBar.Bind();
+		}
+		else
+		{
+			input.Bind(dst, size);
 		}
 		CzvImguiManager::PopID();
 		DUnRegistStaticItemPos
@@ -245,7 +299,9 @@ namespace ZVLab {
 		return (result);
 	}
 
-	bool CzvDialog::Button(const std::string& label, const ImVec2& size, const ImVec2& position)
+	bool CzvDialog::Button(const std::string& label, 
+						   const ImVec2& size, 
+						   const ImVec2& position)
 	{
 		bool result = false;
 		CzvButton button(label, size, position);
@@ -276,7 +332,9 @@ namespace ZVLab {
 		return (result);
 	}
 
-	bool CzvDialog::ToggleButton(const std::string& label, const ImVec2& size, const ImVec2& position)
+	bool CzvDialog::ToggleButton(const std::string& label, 
+								 const ImVec2& size, 
+								 const ImVec2& position)
 	{
 		bool result = false;
 		CzvToggleButton button(label, size, position);
@@ -326,7 +384,6 @@ namespace ZVLab {
 
 	void CzvDialog::Table(CzvTable& table)
 	{
-		DUnRegistStaticItemPos
 		bool result = false;
 		this->Synchronization();
 		if ( m_tOptions.IsActivated( ezvDialogFlags_MenuBar ) && this->IsUnFolded() )

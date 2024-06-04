@@ -46,7 +46,7 @@ namespace ZVLab {
 		void				SetOptions(const TzvTableInfo& options);
 		void				SetIndexLabel(const std::string& label);
 		void				SetSelectable(bool enabled, const TzvSelectableInfo& info = TzvSelectableInfo());
-		void				SetHeaders(const std::initializer_list<std::string>& header_labels);
+		void				SetHeaders(const std::initializer_list<CzvTableHeader>& header_labels);
 		void				AddHeader(const std::string& header_label, const TzvTableHeaderInfo& options = TzvTableHeaderInfo());
 		
 		// Others

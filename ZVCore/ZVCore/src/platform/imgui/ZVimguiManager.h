@@ -45,6 +45,9 @@ namespace ZVLab {
 		static ImFont*			GetFont(const std::string& fontName);
 		static void				PushID();
 		static void				PopID();
+		static void				BeginGroupPanel(const char* name, const ImVec2& size);
+		static void				EndGroupPanel();
+
 
 	};
 

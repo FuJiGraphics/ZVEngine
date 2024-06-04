@@ -26,6 +26,7 @@ namespace ZVLab {
 		~CzvInputText();
 
 		bool	Bind(std::string* out);
+		bool	Bind(std::string* out, const ImVec2& size);
 
 	private:
 		void	Copy(std::array<char, DzvDef_InputTextMaxSize>* dst, const std::string& src);

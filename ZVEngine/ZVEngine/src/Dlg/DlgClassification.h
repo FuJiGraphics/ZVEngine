@@ -5,14 +5,20 @@
 
 using namespace ZVLab;
 
+struct TzvTableData
+{
+	CzvTable			Table;
+	TzvTableInfo		tTableInfo;
+	TzvSelectableInfo	tSelectableInfo;
+};
+
 class CDlgClassification final : public ZVLab::CzvLayer
 {
 //// Member Variables
 private:
 	TzvDialogInfo		m_tDialogInfo;
-	TzvTableInfo		m_tClassTableInfo;
-	TzvSelectableInfo	m_tSelectableInfo;
-	CzvTable			m_ClassTable;
+	TzvTableData		m_tFilesTable;
+	TzvTableData		m_tClassTable;
 	int					m_iTotal;
 	int					m_iClassified;
 	int					m_iIndex;

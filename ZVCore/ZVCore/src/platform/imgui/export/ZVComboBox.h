@@ -16,7 +16,7 @@ namespace ZVLab {
 	private:
 		std::string					m_strLabel;
 		TzvComboBoxInfo				m_tOptions;
-		std::vector<const char*>	m_vItemList;
+		std::vector<std::string>	m_vItemList;
 
 	//// Member Functions
 	public:
@@ -24,7 +24,7 @@ namespace ZVLab {
 		CzvComboBox(const std::string& label = "##", const TzvComboBoxInfo& info = TzvComboBoxInfo());
 		CzvComboBox(const std::vector<const char*>& item_list, const TzvComboBoxInfo& info = TzvComboBoxInfo());
 		CzvComboBox(const std::vector<std::string>& item_list, const TzvComboBoxInfo& info = TzvComboBoxInfo());
-		CzvComboBox(const Args<const char *>& item_list, const TzvComboBoxInfo& info = TzvComboBoxInfo());
+		CzvComboBox(const Args<std::string>& item_list, const TzvComboBoxInfo& info = TzvComboBoxInfo());
 		~CzvComboBox();
 
 		// Getter
@@ -36,10 +36,11 @@ namespace ZVLab {
 		void			AddItems(const std::string& item);
 		void			SetItems(const std::vector<const char*>& item_list);
 		void			SetItems(const std::vector<std::string>& item_list);
-		void			SetItems(const Args<const char *>& item_list);
+		void			SetItems(const Args<std::string>& item_list);
 		
 		// Others
 		std::string		Bind();
+		std::string		Bind(const TzvComboBoxInfo& info, bool showText = false);
 
 		std::string		operator[](int index);
 		std::string		operator[](int index) const;

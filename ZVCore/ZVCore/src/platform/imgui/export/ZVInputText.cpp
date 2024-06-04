@@ -84,6 +84,25 @@ namespace ZVLab {
 		return (result);
 	}
 
+	bool CzvInputText::Bind(std::string* out, const ImVec2& size)
+	{
+		DZVLog_Failed(out, "FAILED: std::string* out is Null!");
+		this->Copy(&m_arrText, *out);
+		bool result = false;
+		result = ImGui::InputTextEx
+		(
+			m_strLabel.c_str(),
+			NULL,
+			m_arrText.data(),
+			m_arrText.size(),
+			size,
+			m_tOptions.GetOptions()
+		);
+		(*out) = m_arrText.data();
+		sRegistInputTextStatus(m_strLabel);
+		return (result);
+	}
+
 	void CzvInputText::Copy(std::array<char, DzvDef_InputTextMaxSize>* dst, const std::string& src)
 	{
 		DZVLog_Failed(dst, "FAILED: std::string* out is Null!");

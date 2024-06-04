@@ -44,6 +44,7 @@ namespace ZVLab {
 	public:
 		// Constructor, Destructors
 		CzvTableHeader(const std::string& label, const TzvTableHeaderInfo& options = TzvTableHeaderInfo());
+		CzvTableHeader(const std::string& label, const TzvSelectableInfo& sel_info);
 		~CzvTableHeader();
 
 		// Getter
@@ -61,6 +62,7 @@ namespace ZVLab {
 		bool					HasValue() const;
 
 		// Setter
+		void					AddItem(const CzvComboBox& item);
 		void					AddItem(const std::vector<std::string>& vItems);
 		void					AddItem(const char* fmt, ...);
 		void					SetLabel(const std::string& label);

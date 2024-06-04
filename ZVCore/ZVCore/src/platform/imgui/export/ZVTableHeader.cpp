@@ -12,6 +12,14 @@ namespace ZVLab {
 		, m_bIsSelMode(false)
 	{/*Empty*/}
 
+	CzvTableHeader::CzvTableHeader(const std::string& label, const TzvSelectableInfo& sel_info)
+		: m_strLabel(label)
+		, m_vItems()
+		, m_tOptions()
+		, m_tSelInfo(sel_info)
+		, m_bIsSelMode(true)
+	{/*Empty*/}
+
 	CzvTableHeader::~CzvTableHeader()
 	{/*Empty*/}
 
@@ -39,6 +47,11 @@ namespace ZVLab {
 	bool CzvTableHeader::HasValue() const
 	{
 		return (!m_vItems.empty());
+	}
+
+	void CzvTableHeader::AddItem(const CzvComboBox& item)
+	{
+		m_vItems.push_back({ item });
 	}
 
 	void CzvTableHeader::AddItem(const std::vector<std::string>& vItems)
@@ -115,7 +128,7 @@ namespace ZVLab {
 	void CzvTableHeader::ItemBind(int index)
 	{
 		ImGui::TableNextColumn();
-		if (this->HasValue())
+		if (this->HasValue() && index < m_vItems.size())
 		{
 			if (m_bIsSelMode)
 			{
@@ -162,6 +175,9 @@ namespace ZVLab {
 	{/*Empty*/}
 
 	TzvItem::TzvItem(const CzvComboBox& comboItems)
+		: strText("##")
+		, ComboBox()
+		, eType(EzvItemType::eComboBox)
 	{
 		int size = comboItems.GetSize();
 		std::vector<std::string> vTempItems;
@@ -193,7 +209,9 @@ namespace ZVLab {
 				ImGui::Text(strText.c_str());
 				return;
 			case EzvItemType::eComboBox:
-				ComboBox.Bind();
+				TzvComboBoxInfo info;
+				info.SetNoPreview(true);
+				ComboBox.Bind(info, true);
 				return;
 		}
 	}

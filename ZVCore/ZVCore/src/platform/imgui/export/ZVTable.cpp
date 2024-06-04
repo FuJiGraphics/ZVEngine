@@ -105,12 +105,12 @@ namespace ZVLab {
 		return (-1);
 	}
 
-	void CzvTable::SetHeaders(const std::initializer_list<std::string>& header_labels)
+	void CzvTable::SetHeaders(const std::initializer_list<CzvTableHeader>& header_labels)
 	{
 		m_vHeaderList.clear();
-		for (const auto& label : header_labels)
+		for (const auto& header : header_labels)
 		{
-			m_vHeaderList.push_back(label);
+			m_vHeaderList.push_back({ header });
 		}
 	}
 
@@ -153,7 +153,7 @@ namespace ZVLab {
 	{
 		bool bIndexedMode = m_tOptions.IsActivated(EzvTableOptions::ezvTableFlags_ArrangeIndexed);
 		int iColSize = m_vHeaderList.size() + ((bIndexedMode) ? 1 : 0);
-		if (ImGui::BeginTable(m_strLabel.c_str(), 
+		if (iColSize && ImGui::BeginTable(m_strLabel.c_str(),
 							  iColSize,
 							  m_tOptions.GetOptions(), m_ivSize, m_fInnerWidth))
 		{

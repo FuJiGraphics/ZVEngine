@@ -70,7 +70,7 @@ namespace ZVLab {
 		this->SetItems(item_list);
 	}
 
-	CzvComboBox::CzvComboBox(const Args<const char*>& item_list, 
+	CzvComboBox::CzvComboBox(const Args<std::string>& item_list, 
 							 const TzvComboBoxInfo& info)
 		: m_strLabel("##")
 		, m_tOptions(info)
@@ -130,14 +130,14 @@ namespace ZVLab {
 		}
 	}
 
-	void CzvComboBox::SetItems(const Args<const char *>& item_list)
+	void CzvComboBox::SetItems(const Args<std::string>& item_list)
 	{
 		m_vItemList.clear();
 		m_vItemList.resize(item_list.size());
-		m_vItemList = std::vector<const char*>(item_list);
+		m_vItemList = std::vector<std::string>(item_list);
 	}
 
-	std::string	CzvComboBox::Bind()
+	std::string CzvComboBox::Bind()
 	{
 		auto& currItemData = ::sGetComboBoxStatus(m_strLabel);
 		std::string resultItem = m_vItemList[currItemData.second];
@@ -146,12 +146,47 @@ namespace ZVLab {
 			int itemSize = m_vItemList.size();
 			auto& currItemIndex = currItemData.second;
 			CzvImguiManager::PushID();
-			if (ImGui::BeginCombo(m_strLabel.c_str(), m_vItemList[currItemIndex], m_tOptions.GetOptions()))
+			if (ImGui::BeginCombo(m_strLabel.c_str(), m_vItemList[currItemIndex].c_str(), m_tOptions.GetOptions()))
 			{
 				for (int i = 0; i < itemSize; ++i)
 				{
 					const bool is_selected = (currItemIndex == i);
-					if (ImGui::Selectable(m_vItemList[i], is_selected))
+					if (ImGui::Selectable(m_vItemList[i].c_str(), is_selected))
+					{
+						sRegistComboBoxStatus(m_strLabel, m_vItemList[i], i);
+						resultItem = m_vItemList[i];
+					}
+					// Set the initial focus when opening the combo (scrolling + keyboard navigation focus)
+					if (is_selected)
+						ImGui::SetItemDefaultFocus();
+				}
+				ImGui::EndCombo();
+			}
+			CzvImguiManager::PopID();
+		}
+		return (resultItem);
+	}
+
+	std::string	CzvComboBox::Bind(const TzvComboBoxInfo& info, bool showText)
+	{
+		auto& currItemData = ::sGetComboBoxStatus(m_strLabel);
+		std::string resultItem = m_vItemList[currItemData.second];
+		if (m_vItemList.empty() == false)
+		{
+			int itemSize = m_vItemList.size();
+			auto& currItemIndex = currItemData.second;
+			CzvImguiManager::PushID();
+			if (showText)
+			{
+				ImGui::Text(resultItem.c_str());
+				ImGui::SameLine();
+			}
+			if (ImGui::BeginCombo(m_strLabel.c_str(), m_vItemList[currItemIndex].c_str(), 0.6f, info.GetOptions()))
+			{
+				for (int i = 0; i < itemSize; ++i)
+				{
+					const bool is_selected = (currItemIndex == i);
+					if (ImGui::Selectable(m_vItemList[i].c_str(), is_selected))
 					{
 						sRegistComboBoxStatus(m_strLabel, m_vItemList[i], i);
 						resultItem = m_vItemList[i];

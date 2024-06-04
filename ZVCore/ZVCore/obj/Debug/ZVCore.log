@@ -1,46 +1,15 @@
-﻿  ZVDialog.cpp
-  ZVTable.cpp
-  ZVTableHeader.cpp
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTable.cpp)
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTable.cpp)
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTable.cpp)
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTableHeader.cpp)
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTableHeader.cpp)
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTableHeader.cpp)
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTable.cpp)
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTableHeader.cpp)
-d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTable.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTableHeader.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTable.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTableHeader.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTable.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTableHeader.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTable.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTableHeader.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvguiconfig.h(785): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTable.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvguiconfig.h(814): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTable.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvguiconfig.h(785): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTableHeader.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvguiconfig.h(814): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTableHeader.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtableheader.h(51): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTable.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvguiconfig.h(785): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvguiconfig.h(814): warning C4067: 전처리기 지시문 다음에 예기치 않은 토큰이 있습니다. 줄 바꿈 문자가 필요합니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtable.cpp(48): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtableheader.h(51): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVTableHeader.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtable.cpp(155): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.h(74): warning C4244: 'return': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.h(80): warning C4244: 'return': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvtableheader.h(51): warning C4267: 'return': 'size_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다. (소스 파일 컴파일 중 src\platform\imgui\export\ZVDialog.cpp)
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(174): warning C4101: 'result' :참조되지 않은 지역 변수입니다.
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(195): warning C4101: 'result' :참조되지 않은 지역 변수입니다.
-d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.cpp(214): warning C4101: 'result' :참조되지 않은 지역 변수입니다.
+﻿  ZVimguiManager.cpp
+d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1154): warning C4307: '*': 정수 계열 상수 오버플로입니다.
+d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1186): warning C4307: '*': 정수 계열 상수 오버플로입니다.
+d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\fmt\bundled\format-inl.h(1207): warning C4307: '*': 정수 계열 상수 오버플로입니다.
+d:\dev\zvlab\zscreen\vendor\fzlib\include\spdlog\details\circular_q.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+d:\dev\zvlab\zscreen\vendor\opencv2\include\opencv2\core.hpp(1742): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+d:\dev\zvlab\zscreen\vendor\glfw\include\glfw\glfw3.h(3172): warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.h(74): warning C4244: 'return': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\export\zvdialog.h(80): warning C4244: 'return': 'const float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+d:\dev\zvlab\zscreen\zvcore\zvcore\src\platform\imgui\zvimguimanager.cpp(62): warning C4312: '형식 캐스트': 'GLuint'에서 더 큰 'void *'(으)로의 변환입니다.
 FZLib.lib(Device.obj) : warning LNK4006: "bool __cdecl FZLib::LOG_SWITCHING__(void *,char const *,...)" (?LOG_SWITCHING__@FZLib@@YA_NPEAXPEBDZZ)이(가) FZLib.lib(Buffer.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
 FZLib.lib(Device.obj) : warning LNK4006: "bool __cdecl FZLib::LOG_SWITCHING__(bool,char const *,...)" (?LOG_SWITCHING__@FZLib@@YA_N_NPEBDZZ)이(가) FZLib.lib(Buffer.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
 FZLib.lib(DeviceManager.obj) : warning LNK4006: "bool __cdecl FZLib::LOG_SWITCHING__(void *,char const *,...)" (?LOG_SWITCHING__@FZLib@@YA_NPEAXPEBDZZ)이(가) FZLib.lib(Buffer.obj)에 이미 정의되어 있습니다. 초 정의가 무시됩니다.
