@@ -74,6 +74,5 @@ void CDlgDisplayWindow::Display(const std::string& path, int w, int h)
 	ZV_Setting::g_iDisplaySizeW = w;
 	ZV_Setting::g_iDisplaySizeH = h;
 }
-;
 
 GENERATE_LAYER(CDlgDisplayWindow);
