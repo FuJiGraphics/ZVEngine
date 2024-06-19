@@ -1,3 +1,6 @@
+.Dist/
 .vs/
+.ZVCore/obj/
+.ZVCore/bin/
 *.sln
 opencv_world490d.dll

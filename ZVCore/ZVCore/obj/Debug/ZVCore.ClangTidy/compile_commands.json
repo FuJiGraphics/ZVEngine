@@ -1,0 +1,137 @@
+[
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\core\\ZVlayerBuffer.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\core\\ZVlayerBuffer.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\core\\ZVsystem.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\core\\ZVsystem.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\core\\ZVwindow.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\core\\ZVwindow.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\ZVImguiTheme.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\ZVImguiTheme.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\ZVProfiler_internal.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\ZVProfiler_internal.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\ZVTexture_internal.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\ZVTexture_internal.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\ZVimguiManager.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\ZVimguiManager.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVButton.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVButton.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVComboBox.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVComboBox.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVDialog.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVDialog.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVFileDialog.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVFileDialog.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVFont.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVFont.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVHotKey.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVHotKey.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVImage.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVImage.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVImageButton.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVImageButton.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVInputText.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVInputText.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVKeyMap.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVKeyMap.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVMenuItem.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVMenuItem.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVMenubar.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVMenubar.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVProfiler.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVProfiler.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVTabBar.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVTabBar.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVTabItem.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVTabItem.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVTable.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVTable.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVTableHeader.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVTableHeader.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVTexture.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVTexture.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVToggleButton.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\imgui\\export\\ZVToggleButton.cpp"
+  },
+  {
+    "directory": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore",
+    "command": "\"C:\\WINDOWS\\system32\\CL.exe\" \/c \/I. \/Isrc \/I..\\..\\Vendor\\FZLib\\include \/I..\\..\\Vendor\\GLFW\\include \/I..\\..\\Vendor\\ImGui\\include \/I..\\..\\Vendor\\glad\\include \/I..\\..\\Vendor\\SOIL2\\include \/I..\\..\\Vendor\\OpenCV2\\include \/nologo \/W3 \/WX- \/diagnostics:column \/Od \/D CODE_ANALYSIS \/D ZV_PLATFORM_WINDOWS \/D ZV_DEBUG \/D _UNICODE \/D UNICODE \/EHsc \/RTC1 \/MTd \/GS \/fp:precise \/std:c++17 \/Fo\"obj\\Debug\\\\\" \/Gd \/TP --target=amd64-pc-windows-msvc;  \"D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\windows\\ZVwindow_win.cpp\"",
+    "file": "D:\\Dev\\ZVLab\\ZScreen\\ZVCore\\ZVCore\\src\\platform\\windows\\ZVwindow_win.cpp"
+  }
+]

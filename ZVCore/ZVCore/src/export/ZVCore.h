@@ -5,6 +5,9 @@
 #include "../core/ZVMemory.h"
 #include "FZLib/Helpers/LogHelper.h"
 // imgui interfaces
+#include "../platform/imgui/export/ZVProfiler.h"
+#include "../platform/imgui/export/ZVIcon.h"
+#include "../platform/imgui/export/ZVFont.h"
 #include "../platform/imgui/export/ZVCommon.h"
 #include "../platform/imgui/export/ZVFileDialog.h"
 #include "../platform/imgui/export/ZVKeyMap.h"

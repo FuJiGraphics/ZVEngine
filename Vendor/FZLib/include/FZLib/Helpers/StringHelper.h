@@ -23,10 +23,17 @@ extern "C" {
 		public:
 			/**
 			 * @brief	std::string을 LPCWSTR로 변환
-			 * @param[in]	str	: 변환시킬 파라미터
-			 * @return	std::wstring	: 변환된 LPCWSTR 타입의 wstring
+			 * @param[in]	str:			변환할 std::string 문자열
+			 * @return		std::wstring:	변환된 LPCWSTR 타입의 문자열
 			 */
 			static std::wstring StringToWString(const std::string& str);
+
+			/**
+			 * @brief		LPCWSTR을 std::string으로 변환
+			 * @param[in]	wstr:			변환할 wstring 문자열
+			 * @return		std::string:	변환된 std::string타입의 문자열	
+			 */
+			static std::string WStringToString(const std::wstring& wstr);
 		};
 
 	} // namespace FZLib

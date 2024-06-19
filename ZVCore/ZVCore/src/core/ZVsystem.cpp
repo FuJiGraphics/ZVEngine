@@ -2,6 +2,11 @@
 #include "ZVwindow.h"
 #include "ZVTimer.h"
 
+// imgui
+#include "../platform/imgui/ZVimguiManager.h"
+#include "../platform/imgui/export/ZVProfiler.h"
+#include "../platform/imgui/export/ZVFont.h"
+
 namespace ZVLab {
 
 	bool CzvSystem::s_bIsRunApplication = true;
@@ -31,17 +36,15 @@ namespace ZVLab {
 		// Generated a Window
 		m_upWindow = CzvWindow::Create(spec.strName, spec.uiWidth, spec.uiHeight);
 		m_upWindow->Initialize();
+
 		// Generated a LayerBuffer
 		m_upLayerBuffer = CzvLayerBuffer::Create();
+
 		// Init ImGui
 		CzvImguiManager::Initialize(m_upWindow, true);
+
 		// Set Callback
 		m_upWindow->SetEventCallback(DBindEventFunction(CzvSystem::OnEvent));
-
-
-		// TODO: 폰트 기능 리팩토링 및 수정 필요
-		// Set Font
-		// CzvImguiManager::UploadFont("..\\..\\Resources\\Fonts\\OpenSans_Condensed-Regular.ttf", "OpenSans-Regular", 20);
 
 		// Graphic icon
 		ImGuiIO& io = ImGui::GetIO();
@@ -50,7 +53,6 @@ namespace ZVLab {
 		// test dialog
 		ifd::FileDialog::Instance().CreateTexture = [](uint8_t* data, int w, int h, char fmt) -> void* {
 			GLuint tex;
-
 			glGenTextures(1, &tex);
 			glBindTexture(GL_TEXTURE_2D, tex);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -106,9 +108,23 @@ namespace ZVLab {
 				}
 			}
 
+			// Init Icon Font
+			auto& refFont = CzvFont::GetInstance();
+			CzvFontData* s_pFont = nullptr;
+			s_pFont = &refFont.GetIcon(11);
+
+			DProfile_StartRecord("Font Update")
+			// Update Icon Font
+			refFont.Update();
+			DProfile_EndRecord
+
+			// Begin ImGui
 			CzvImguiManager::Begin(m_upWindow);
-			// ImFont* font = CzvImguiManager::GetFont("OpenSans-Regular");
-			// ImGui::PushFont(font);
+
+			// Icon Font Begin
+			(s_pFont != nullptr) ?
+				s_pFont->Begin(true) : s_pFont;
+
 			{ // ImGui_Layer
 				if (CzvImguiManager::BeginMainMenu())
 				{
@@ -118,6 +134,7 @@ namespace ZVLab {
 					}
 					CzvImguiManager::EndMainMenu();
 				}
+
 				if (s_bIsRunApplication == false)
 				{
 					break;
@@ -127,6 +144,7 @@ namespace ZVLab {
 				{
 					layer->OnGUI();
 				}
+
 				if (s_bIsRunApplication == false)
 				{
 					CzvImguiManager::End();
@@ -134,10 +152,13 @@ namespace ZVLab {
 				}
 				// CZVimguiManager::ShowDemo();
 			}
+			// Icon Font End
+			(s_pFont != nullptr) ?
+				s_pFont->End() : s_pFont;
 
-			// ImGui::PopFont();
 			DProfile_Execute
-				CzvImguiManager::End();
+			// End ImGui
+			CzvImguiManager::End();
 
 			m_upWindow->Clear();
 		}

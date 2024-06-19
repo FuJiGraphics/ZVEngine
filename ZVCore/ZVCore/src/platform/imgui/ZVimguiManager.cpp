@@ -17,7 +17,6 @@ namespace ZVLab {
 	bool CzvImguiManager::s_bEnabledImplot = false;
 	bool CzvImguiManager::s_bEnableOverviewDockspace = true;
 	unsigned long CzvImguiManager::s_ulItemStackIDs = 0;
-	std::unordered_map<std::string, ImFont*> CzvImguiManager::s_mapFonts;
 
 	void CzvImguiManager::Initialize(const Unique<CzvWindow>& window, UsageExtensionsFlags flags)
 	{
@@ -35,8 +34,8 @@ namespace ZVLab {
 		io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // Enable Docking
 		io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
 		// Setup Dear ImGui style
-		// ImGui::StyleColorsDark();
-		ImGui::StyleColorsLight();
+		ImGui::StyleColorsDark();
+		// ImGui::StyleColorsLight();
 
 		//ImGui::Spectrum::StyleColorsSpectrum();
 		//io.Fonts->AddFontDefault();
@@ -167,44 +166,6 @@ namespace ZVLab {
 		ImGuiWindowClass window_class;
 		window_class.DockNodeFlagsOverrideSet = options;
 		ImGui::SetNextWindowClass(&window_class);
-	}
-
-	bool CzvImguiManager::UploadFont(const std::string& path, const std::string& fontName, float size_pixels, ImFontConfig* config, const ImWchar* glyph_ranges)
-	{
-		if (s_mapFonts.find(fontName) != s_mapFonts.end())
-		{
-			DZVLog_Failed(false, "FAILED: Already uploaded font!");
-			return (false);
-		}
-		auto io = ImGui::GetIO();
-
-		ImFont* font = nullptr;
-		if (config == nullptr && glyph_ranges == nullptr)
-			font = io.Fonts->AddFontFromFileTTF(path.c_str(), size_pixels);
-		else if (config != nullptr && glyph_ranges == nullptr)
-			font = io.Fonts->AddFontFromFileTTF(path.c_str(), size_pixels, config);
-		else if (config != nullptr && glyph_ranges != nullptr)
-			font = io.Fonts->AddFontFromFileTTF(path.c_str(), size_pixels, config, glyph_ranges);
-
-		if (font == nullptr)
-		{
-			DZVLog_Failed(font, "FAILED: Unexpected Error! font is null!!");
-			return (false);
-		}
-		s_mapFonts.insert({ fontName, font });
-		return (true);
-	}
-
-	ImFont* CzvImguiManager::GetFont(const std::string& fontName)
-	{
-		if (s_mapFonts.find(fontName) == s_mapFonts.end())
-		{
-			DZVLog_Failed(false, "FAILED: Did not found font!");
-			return (false);
-		}
-		ImFont* font = s_mapFonts[fontName];
-		DZVLog_Failed(font, "FAILED: ImFont* font is null!");
-		return (font);
 	}
 
 	void CzvImguiManager::PushID()

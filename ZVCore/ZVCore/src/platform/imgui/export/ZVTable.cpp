@@ -8,7 +8,8 @@ namespace ZVLab {
 		, m_fInnerWidth(0.0f)
 		, m_tOptions(info)
 		, m_vHeaderList()
-		, m_czvIndexList("ID")
+		, m_czvIndexList("ID", m_iSelectIndex)
+		, m_iSelectIndex(0)
 	{/*Empty*/}
 
 	CzvTable::CzvTable(const std::string& label, const ImVec2& size, const TzvTableInfo& info)
@@ -17,7 +18,8 @@ namespace ZVLab {
 		, m_fInnerWidth(0.0f)
 		, m_tOptions(info)
 		, m_vHeaderList()
-		, m_czvIndexList("ID")
+		, m_czvIndexList("ID", m_iSelectIndex)
+		, m_iSelectIndex(0)
 	{/*Empty*/}
 
 	CzvTable::~CzvTable()
@@ -82,41 +84,37 @@ namespace ZVLab {
 
 	int CzvTable::GetSelectYaxisIndex() const
 	{
-		int ySel;
-		if (m_czvIndexList.IsSelectableMode())
-		{
-			ySel = m_czvIndexList.GetSelectIndex();
-			if (ySel > -1)
-				return (ySel);
-		}
-		else 
-		{
-			for (int i = 0; i < m_vHeaderList.size(); ++i)
-			{
-				if (m_vHeaderList[i].IsSelectableMode())
-				{
-					int ySel = m_vHeaderList[i].GetSelectIndex();
-					if (ySel > -1)
-						return (ySel);
-				} // if
-			} // for
-		} // else
-
-		return (-1);
+		return (m_iSelectIndex);
 	}
 
-	void CzvTable::SetHeaders(const std::initializer_list<CzvTableHeader>& header_labels)
+	CzvTableHeader& CzvTable::GetSelectHeader()
+	{
+		int selIndex = this->GetSelectYaxisIndex();
+		return (m_vHeaderList[selIndex]);
+	}
+
+	void CzvTable::SetHeaders(const std::initializer_list<HeaderChunk>& header_labels)
 	{
 		m_vHeaderList.clear();
 		for (const auto& header : header_labels)
 		{
-			m_vHeaderList.push_back({ header });
+			m_vHeaderList.push_back({ header.first, m_iSelectIndex, header.second });
 		}
 	}
 
 	void CzvTable::AddHeader(const std::string& header_label, const TzvTableHeaderInfo& options)
 	{
-		m_vHeaderList.push_back({header_label, options});
+		m_vHeaderList.push_back({header_label, m_iSelectIndex, options});
+	}
+
+	void CzvTable::SetNextSelectableIndex()
+	{
+		m_vHeaderList.begin()->SetNextSelectableIndex(m_vHeaderList.begin()->GetSize());
+	}
+
+	void CzvTable::ResetSelectableIndex()
+	{
+		m_vHeaderList.begin()->ResetSelectableIndex();
 	}
 
 	void CzvTable::SetLabel(const std::string& label)
@@ -200,14 +198,21 @@ namespace ZVLab {
 
 	CzvTableHeader&	CzvTable::operator[](const std::string& str)
 	{
+		bool bFind = false;
 		for (auto& header : m_vHeaderList)
 		{
 			if (header.GetLabel() == str)
 			{
+				bFind = true;
 				return (header);
 			}
 		}
-		this->AddHeader(str);
+		if (DZVLog_Failed(bFind, "Error: Did not found table index \"input = {0}\"", str))
+		{
+			__debugbreak();
+			return (m_vHeaderList[m_vHeaderList.size()]);
+		}
+
 		return (m_vHeaderList[m_vHeaderList.size() - 1]);
 	}
 

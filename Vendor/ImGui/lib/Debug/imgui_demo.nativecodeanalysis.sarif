@@ -1,0 +1,494 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6011",
+          "message": {
+            "text": "NULL 포인터 'p_open'을(를) 역참조하고 있습니다. "
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                },
+                "region": {
+                  "startLine": 8492,
+                  "startColumn": 18,
+                  "endLine": 8492,
+                  "endColumn": 27
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ShowExampleAppDockSpace",
+                  "decoratedName": "?ShowExampleAppDockSpace@@YAXPEA_N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8419,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8420,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8421,
+                            "startColumn": 31
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8425,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8426,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8439,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8444,
+                            "startColumn": 25
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8452,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8454,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8455,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8458,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8462,
+                            "startColumn": 14
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8463,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8470,
+                            "startColumn": 35
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8473,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8475,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8479,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8480,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8481,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8483,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8484,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8485,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8486,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8487,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8488,
+                            "startColumn": 32
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8489,
+                            "startColumn": 29
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8491,
+                            "startColumn": 32
+                          }
+                        },
+                        "message": {
+                          "text": "'p_open'은(는) NULL일 수 있습니다. (이 분기 시작)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+                          },
+                          "region": {
+                            "startLine": 8492,
+                            "startColumn": 25
+                          }
+                        },
+                        "message": {
+                          "text": "'p_open'이(가) 역참조되었지만 여전히 NULL일 수 있습니다."
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.40.33811.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/imgui_demo.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "eed5c7420b0088d0ae0dd7c06ca7a8fd7605aed5d6f0bcaf1981a299071c589b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imgui.h"
+          },
+          "hashes": {
+            "sha-256": "135843942522e8ee085d8ead50f5e9270e1ac7fb0496dce5cf877238998be3ff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imconfig.h"
+          },
+          "hashes": {
+            "sha-256": "07428116edfc8ac1a32ca64ab0f4c04ce831f4b4f7e4b95531d7306dcc4d2323"
+          }
+        }
+      ]
+    }
+  ]
+}

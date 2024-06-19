@@ -1,0 +1,965 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'cv::MatStep::buf' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/mat.inl.hpp"
+                },
+                "region": {
+                  "startLine": 1239,
+                  "startColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::MatStep::{ctor}",
+                  "decoratedName": "??0MatStep@cv@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cv::MatStep::buf"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'cv::MatStep::buf' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/mat.inl.hpp"
+                },
+                "region": {
+                  "startLine": 1245,
+                  "startColumn": 10
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::MatStep::{ctor}",
+                  "decoratedName": "??0MatStep@cv@@QEAA@_K@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cv::MatStep::buf"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImmVision::ColormapScaleFromStatsData::ColorMapStatsType' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_mvision/immvision.cpp"
+                },
+                "region": {
+                  "startLine": 53,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImmVision::ColormapScaleFromStatsData::{ctor}",
+                  "decoratedName": "??0ColormapScaleFromStatsData@ImmVision@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImmVision::ColormapScaleFromStatsData::ColorMapStatsType"
+          }
+        },
+        {
+          "ruleId": "C26444",
+          "message": {
+            "text": "이름이 없는 지역 변수는 선언하지 마세요(es.84)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_mvision/immvision.cpp"
+                },
+                "region": {
+                  "startLine": 9671,
+                  "startColumn": 41
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImmVision::Image::<lambda_8870143c537d7c600a9ad178368dc122>::()::<lambda_69db80e2c8d281157be4c8859b58125e>::()",
+                  "decoratedName": "??R<lambda_69db80e2c8d281157be4c8859b58125e>@@QEBA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVMat@cv@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "for 루프가 잘못 정의되었습니다.  Loop 본문이 실행되지 않습니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 578,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,3,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$02$00@cv@@QEAA@NNN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "스택에 할당되었을 가능성이 있는 버퍼 'this->val'에 대해 인덱스 '3'이(가) 유효한 인덱스 범위 '0' - '2'을(를) 벗어납니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 578,
+                  "startColumn": 39,
+                  "endLine": 578,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,3,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$02$00@cv@@QEAA@NNN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "for 루프가 잘못 정의되었습니다.  Loop 본문이 실행되지 않습니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 578,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,3,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$02$00@cv@@QEAA@MMM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "스택에 할당되었을 가능성이 있는 버퍼 'this->val'에 대해 인덱스 '3'이(가) 유효한 인덱스 범위 '0' - '2'을(를) 벗어납니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 578,
+                  "startColumn": 39,
+                  "endLine": 578,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,3,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$02$00@cv@@QEAA@MMM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26439",
+          "message": {
+            "text": "이 종류의 함수는 throw하지 않아야 없습니다. 'noexcept'로 선언합니다(f.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/mat.inl.hpp"
+                },
+                "region": {
+                  "startLine": 1809,
+                  "startColumn": 12
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Mat_<cv::Vec<unsigned char,4> >::{ctor}",
+                  "decoratedName": "??0?$Mat_@V?$Vec@E$03@cv@@@cv@@QEAA@$$QEAV01@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "for 루프가 잘못 정의되었습니다.  Loop 본문이 실행되지 않습니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 578,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<unsigned char,3,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@E$02$00@cv@@QEAA@EEE@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "스택에 할당되었을 가능성이 있는 버퍼 'this->val'에 대해 인덱스 '3'이(가) 유효한 인덱스 범위 '0' - '2'을(를) 벗어납니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 578,
+                  "startColumn": 39,
+                  "endLine": 578,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<unsigned char,3,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@E$02$00@cv@@QEAA@EEE@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "for 루프가 잘못 정의되었습니다.  Loop 본문이 실행되지 않습니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 586,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<unsigned char,4,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@E$03$00@cv@@QEAA@EEEE@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "스택에 할당되었을 가능성이 있는 버퍼 'this->val'에 대해 인덱스 '4'이(가) 유효한 인덱스 범위 '0' - '3'을(를) 벗어납니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 586,
+                  "startColumn": 39,
+                  "endLine": 586,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<unsigned char,4,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@E$03$00@cv@@QEAA@EEEE@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'pfd::internal::executor::m_tid' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_mvision/immvision.cpp"
+                },
+                "region": {
+                  "startLine": 7657,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "pfd::internal::executor::{ctor}",
+                  "decoratedName": "??0executor@internal@pfd@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "pfd::internal::executor::m_tid"
+          }
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "for 루프가 잘못 정의되었습니다.  Loop 본문이 실행되지 않습니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 570,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,2,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$01$00@cv@@QEAA@MM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "스택에 할당되었을 가능성이 있는 버퍼 'this->val'에 대해 인덱스 '2'이(가) 유효한 인덱스 범위 '0' - '1'을(를) 벗어납니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 570,
+                  "startColumn": 39,
+                  "endLine": 570,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,2,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$01$00@cv@@QEAA@MM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "for 루프가 잘못 정의되었습니다.  Loop 본문이 실행되지 않습니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 570,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,2,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$01$00@cv@@QEAA@NN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "스택에 할당되었을 가능성이 있는 버퍼 'this->val'에 대해 인덱스 '2'이(가) 유효한 인덱스 범위 '0' - '1'을(를) 벗어납니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 570,
+                  "startColumn": 39,
+                  "endLine": 570,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,2,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$01$00@cv@@QEAA@NN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "for 루프가 잘못 정의되었습니다.  Loop 본문이 실행되지 않습니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 586,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,4,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$03$00@cv@@QEAA@MMMM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "스택에 할당되었을 가능성이 있는 버퍼 'this->val'에 대해 인덱스 '4'이(가) 유효한 인덱스 범위 '0' - '3'을(를) 벗어납니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 586,
+                  "startColumn": 39,
+                  "endLine": 586,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<float,4,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@M$03$00@cv@@QEAA@MMMM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "message": {
+            "text": "for 루프가 잘못 정의되었습니다.  Loop 본문이 실행되지 않습니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 586,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,4,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$03$00@cv@@QEAA@NNNN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6201",
+          "message": {
+            "text": "스택에 할당되었을 가능성이 있는 버퍼 'this->val'에 대해 인덱스 '4'이(가) 유효한 인덱스 범위 '0' - '3'을(를) 벗어납니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 586,
+                  "startColumn": 39,
+                  "endLine": 586,
+                  "endColumn": 44
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<double,4,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@N$03$00@cv@@QEAA@NNNN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26813",
+          "message": {
+            "text": "'bitwise and'를 사용하여 플래그가 설정되었는지 확인합니다."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+                },
+                "region": {
+                  "startLine": 695,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cv::Matx<unsigned char,4,1>::{ctor}",
+                  "decoratedName": "??0?$Matx@E$03$00@cv@@QEAA@V?$initializer_list@E@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.40.33811.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/mat.inl.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "f8254f4044a1f7ab1277a21563c505b5daebe3de9b1640625db71892a41c3184"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_mvision/immvision.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "43d3cf8c4523ed1c96bf0d03fea269232d2b6d41528539cf5fc4334de1471818"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/core/matx.hpp"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "3d45d0d9a073b0e65d5c1cf4605986147c4f2f7b46e4e0598be75024da179858"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imgui.h"
+          },
+          "hashes": {
+            "sha-256": "135843942522e8ee085d8ead50f5e9270e1ac7fb0496dce5cf877238998be3ff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imconfig.h"
+          },
+          "hashes": {
+            "sha-256": "07428116edfc8ac1a32ca64ab0f4c04ce831f4b4f7e4b95531d7306dcc4d2323"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core.hpp"
+          },
+          "hashes": {
+            "sha-256": "e3f22550e3d0f1dd1c7a42a4db9c7fe258167a64f77fed52e277b157cae5b979"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/cvdef.h"
+          },
+          "hashes": {
+            "sha-256": "8a82bb0b01178c97e5da15209d6556810497ac82d2df5e84a94d5e36dd9c469d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/version.hpp"
+          },
+          "hashes": {
+            "sha-256": "6bbfa008b6e96953e8c87b5c94daefffb5de1967851b0fdfeef0dcc0765a3753"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/hal/interface.h"
+          },
+          "hashes": {
+            "sha-256": "d0d876a5d4c3082ad71541aa6b366ef4dd5efe2d7b9d109d517d6928e181b83e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/cv_cpu_dispatch.h"
+          },
+          "hashes": {
+            "sha-256": "b22aaaf9e1099102be5582a9960b3a22c8adefd5c20f2ac7d552547f08225046"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/base.hpp"
+          },
+          "hashes": {
+            "sha-256": "5a3c5081f4f83132da06064fea5d81e648d0b251eafc2d4016c83f7f59559867"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/opencv_modules.hpp"
+          },
+          "hashes": {
+            "sha-256": "f3a63585c90a75bd166460e03ff28ccff73f38a52b04eb8a6f72d02d3b971aa5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/cvstd.hpp"
+          },
+          "hashes": {
+            "sha-256": "9ba9df62de1fb7719cb81291dbd8448efa8c7d92a75b0c4873af5268beb64b1f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/cvstd_wrapper.hpp"
+          },
+          "hashes": {
+            "sha-256": "109f1e19060f7ec1e573953aa40f2592cfd00b6b96f7816cbb2f9b08d0b2c0ca"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/neon_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "ce0436e0cc3e236e317b03a9859ed31f10d56979391252c754f75dfbeaa4ebd4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/vsx_utils.hpp"
+          },
+          "hashes": {
+            "sha-256": "6a96833b8a4241bd28962bf3c300bddd7280936d3020d328de63cfd3228728f5"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/check.hpp"
+          },
+          "hashes": {
+            "sha-256": "0cd7925226201e4652c2a10942d2c93b26dcb354e5c479fead547f3563d8523f"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/traits.hpp"
+          },
+          "hashes": {
+            "sha-256": "2ee21d68861633bfa835d21e40bc381f63f3e05f3467bff8f4be2931436746ed"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/saturate.hpp"
+          },
+          "hashes": {
+            "sha-256": "80735771ea6ca685243457e0a6b6dc7224795c7568ff8715e35a394f59f8bbc8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/fast_math.hpp"
+          },
+          "hashes": {
+            "sha-256": "00754bb93c4f751ba03b8e43da9987dd1ea89cc7575f8ebcba48c02603aee608"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/types.hpp"
+          },
+          "hashes": {
+            "sha-256": "918a6484c9df8cb02ab30fa632bffeb66f5ef091bc895ad04a0c61827ed15102"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/mat.hpp"
+          },
+          "hashes": {
+            "sha-256": "3db36ca62ebeb5fb08694b80c6f04b59c6ec2827dff6f4878cf9c904f49a9ad6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/bufferpool.hpp"
+          },
+          "hashes": {
+            "sha-256": "7b81257f13fcc5011f489b6cab29f0a8b4496ab6158b8cf5c254bbc5ea55ce7a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/persistence.hpp"
+          },
+          "hashes": {
+            "sha-256": "507496faf3d066a75f00de4acae180c51c1847aa3d2c2f94acb41bb25c1d6af0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/operations.hpp"
+          },
+          "hashes": {
+            "sha-256": "f0055c41fe9ab048f5c78fabefaebebe06f4f80808088f24e27b3f3677bc98df"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/cvstd.inl.hpp"
+          },
+          "hashes": {
+            "sha-256": "340a651e83315e23a5af89caf95affae0b5cf19691a25eef3cbb43e9d01a9753"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/utility.hpp"
+          },
+          "hashes": {
+            "sha-256": "db11607dfa0aaaaa6772f4ef3078f7854b68a964625f074c62e4f635feac418a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/optim.hpp"
+          },
+          "hashes": {
+            "sha-256": "83c2b6408c5d3fb87d65ff67b8750faa5207f4c3fab79938cc7a284a15a38dd9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/ovx.hpp"
+          },
+          "hashes": {
+            "sha-256": "21a2d7b931f406636958ec299cdd076110e0bf51c5a09004bd2ccd84e9993e3a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imgui_internal.h"
+          },
+          "hashes": {
+            "sha-256": "5c03044c437cb1054428460d055ca7327c779cfe4130e624d38efcffdbd87e96"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imstb_textedit.h"
+          },
+          "hashes": {
+            "sha-256": "7ddff4ecb710e321b8f966417a6dc72f3e2242165f68cc78c5275b5653224bba"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/core/core.hpp"
+          },
+          "hashes": {
+            "sha-256": "c94c793dc0b6f1cc9bc9819f92e11a5c21a15d5739d6489faac7b5f6e6ebef4c"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/imgproc/imgproc.hpp"
+          },
+          "hashes": {
+            "sha-256": "31999a28f254a924d62ab1345894fa1660d7b5e439f3eea07cab2c327b6e0a9b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/imgproc.hpp"
+          },
+          "hashes": {
+            "sha-256": "1b7e5bed4f32ebd0100faacf68857496be8f7aa5500314e372267243791d3677"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/imgproc/segmentation.hpp"
+          },
+          "hashes": {
+            "sha-256": "45c324942f9b3e11450f12d7726b13a31eccea558e256ea26c19fbb74f1da67e"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/opencv2/include/opencv2/imgcodecs.hpp"
+          },
+          "hashes": {
+            "sha-256": "92539954c9e76435b62c66c379ced7f9b77099475eb5f703e9f26fcd06e6ebd3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/glad/include/glad/glad.h"
+          },
+          "hashes": {
+            "sha-256": "3b1b5e53ab7e9cd7ef78850b846675f9e4cdfb29520e285de61ec44c03aa0477"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/glad/include/khr/khrplatform.h"
+          },
+          "hashes": {
+            "sha-256": "5ee5d5c2c6b2abd028cec8dc1a24e995bb47b075654a6fc55f3a1293de36943f"
+          }
+        }
+      ]
+    }
+  ]
+}

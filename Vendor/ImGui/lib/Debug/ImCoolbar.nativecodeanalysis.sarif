@@ -1,0 +1,75 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.40.33811.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/extensions/im_coolbar/imcoolbar.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "ae75ed9cd40b3edaf762eb1babfc27a77ff4278b5fca68250d97c37bc11543d8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/extensions/im_coolbar/imcoolbar.h"
+          },
+          "hashes": {
+            "sha-256": "bf794b01ef8328308b0a458e23eb224dfed4998fea775fe693219b8a3e3980df"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imgui.h"
+          },
+          "hashes": {
+            "sha-256": "135843942522e8ee085d8ead50f5e9270e1ac7fb0496dce5cf877238998be3ff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imconfig.h"
+          },
+          "hashes": {
+            "sha-256": "07428116edfc8ac1a32ca64ab0f4c04ce831f4b4f7e4b95531d7306dcc4d2323"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imgui_internal.h"
+          },
+          "hashes": {
+            "sha-256": "5c03044c437cb1054428460d055ca7327c779cfe4130e624d38efcffdbd87e96"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imstb_textedit.h"
+          },
+          "hashes": {
+            "sha-256": "7ddff4ecb710e321b8f966417a6dc72f3e2242165f68cc78c5275b5653224bba"
+          }
+        }
+      ]
+    }
+  ]
+}

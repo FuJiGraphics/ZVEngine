@@ -1,1 +1,2 @@
 C:\Users\chyuy\Desktop\ZVScreen\Vendor\ImGui\lib\Debug\ImGui.lib
+D:\Dev\ZVLab\ZScreen\Vendor\ImGui\lib\Debug\ImGui.lib

@@ -31,8 +31,6 @@ namespace ZVLab {
 
 		// Operators
 		std::ostream& operator<< (std::ostream& os);
-
-		
 	};
 
 } // namespace ZVLab

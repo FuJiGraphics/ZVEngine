@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
       <Configuration>Debug</Configuration>
@@ -19,27 +19,26 @@
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ZVCore</RootNamespace>
-    <LatestTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</LatestTargetPlatformVersion>
-    <WindowsTargetPlatformVersion>$(LatestTargetPlatformVersion)</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -84,6 +83,7 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -108,6 +108,7 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -130,6 +131,7 @@
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -142,11 +144,11 @@
   <ItemGroup>
     <ClInclude Include="src\core\Core.h" />
     <ClInclude Include="src\core\DataTypes.h" />
-    <ClInclude Include="src\core\ZVAssert.h" />
-    <ClInclude Include="src\core\ZVLayer.h" />
-    <ClInclude Include="src\core\ZVLayerBuffer.h" />
     <ClInclude Include="src\core\ZVMemory.h" />
     <ClInclude Include="src\core\ZVTimer.h" />
+    <ClInclude Include="src\core\ZVassert.h" />
+    <ClInclude Include="src\core\ZVlayer.h" />
+    <ClInclude Include="src\core\ZVlayerBuffer.h" />
     <ClInclude Include="src\core\ZVsystem.h" />
     <ClInclude Include="src\core\ZVwindow.h" />
     <ClInclude Include="src\events\ZVKeyCodes.h" />
@@ -165,8 +167,11 @@
     <ClInclude Include="src\platform\imgui\export\ZVCommon.h" />
     <ClInclude Include="src\platform\imgui\export\ZVDialog.h" />
     <ClInclude Include="src\platform\imgui\export\ZVFileDialog.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVFont.h" />
     <ClInclude Include="src\platform\imgui\export\ZVGuiConfig.h" />
     <ClInclude Include="src\platform\imgui\export\ZVHotKey.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVIcon.h" />
+    <ClInclude Include="src\platform\imgui\export\ZVIconButton.h" />
     <ClInclude Include="src\platform\imgui\export\ZVImage.h" />
     <ClInclude Include="src\platform\imgui\export\ZVImageButton.h" />
     <ClInclude Include="src\platform\imgui\export\ZVInputText.h" />
@@ -195,7 +200,9 @@
     <ClCompile Include="src\platform\imgui\export\ZVComboBox.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVDialog.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVFileDialog.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVFont.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVHotKey.cpp" />
+    <ClCompile Include="src\platform\imgui\export\ZVIconButton.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVImage.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVImageButton.cpp" />
     <ClCompile Include="src\platform\imgui\export\ZVInputText.cpp" />

@@ -31,6 +31,9 @@ namespace ZVLab {
 
 	class ZV_API CzvTableHeader
 	{
+		using iter = std::vector<TzvItem>::iterator;
+		using const_iter = std::vector<TzvItem>::const_iterator;
+
 	//// Member Function
 	private:
 		std::string					m_strLabel;
@@ -38,13 +41,13 @@ namespace ZVLab {
 		TzvTableHeaderInfo			m_tOptions;
 		TzvSelectableInfo			m_tSelInfo;
 		bool						m_bIsSelMode;
-		static int					s_iSelectItem;
+		int&						m_refParentIndex;
 
 	//// Member Functions
 	public:
 		// Constructor, Destructors
-		CzvTableHeader(const std::string& label, const TzvTableHeaderInfo& options = TzvTableHeaderInfo());
-		CzvTableHeader(const std::string& label, const TzvSelectableInfo& sel_info);
+		CzvTableHeader(const std::string& label, int& parentIndex, const TzvTableHeaderInfo& options = TzvTableHeaderInfo());
+		CzvTableHeader(const std::string& label, int& parentIndex, const TzvSelectableInfo& sel_info);
 		~CzvTableHeader();
 
 		// Getter
@@ -62,7 +65,8 @@ namespace ZVLab {
 		bool					HasValue() const;
 
 		// Setter
-		void					AddItem(const CzvComboBox& item);
+		// void					AddItem(const CzvComboBox& item); // TODO: 비율 문제, 파라미터 중복 문제
+		void					AddItem(const std::string& str);
 		void					AddItem(const std::vector<std::string>& vItems);
 		void					AddItem(const char* fmt, ...);
 		void					SetLabel(const std::string& label);
@@ -71,13 +75,20 @@ namespace ZVLab {
 		void					SetItem(const std::vector<std::string>& vItems);
 		void					SetItem(const std::initializer_list<std::string>& item_labels);
 		void					SetSelectable(bool enabled, const TzvSelectableInfo& info = TzvSelectableInfo());
+		void					SetNextSelectableIndex(int maxSize);
+		void					ResetSelectableIndex();
 
 		// Others
 		void					Bind();
 		void					ItemBind(int index);
+		iter					Find(const std::string& str);
 		void					Clear();
 
 		// Operator
+		iter					begin();
+		iter					end();
+		const_iter				begin() const;
+		const_iter				end() const;
 		TzvItem					operator[](int index);
 		TzvItem					operator[](int index) const;
 	};

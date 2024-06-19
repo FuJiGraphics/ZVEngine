@@ -16,6 +16,8 @@ namespace ZVLab {
 
 	class ZV_API CzvTable
 	{
+		using HeaderChunk = std::pair<const std::string, const TzvSelectableInfo>;
+
 	//// Member Variables
 	private:
 		// Table Info
@@ -26,6 +28,7 @@ namespace ZVLab {
 		// Table Data
 		std::vector<CzvTableHeader>	m_vHeaderList;
 		CzvTableHeader				m_czvIndexList;
+		int							m_iSelectIndex;
 
 	//// Member Functions
 	public:
@@ -40,14 +43,18 @@ namespace ZVLab {
 		unsigned int		GetColSize() const;
 		TzvTableCoord		GetSelectAllIndex() const;
 		int					GetSelectYaxisIndex() const;
+		CzvTableHeader&		GetSelectHeader();
 
+		
 		// Setter
 		void				SetLabel(const std::string& label);
 		void				SetOptions(const TzvTableInfo& options);
 		void				SetIndexLabel(const std::string& label);
 		void				SetSelectable(bool enabled, const TzvSelectableInfo& info = TzvSelectableInfo());
-		void				SetHeaders(const std::initializer_list<CzvTableHeader>& header_labels);
+		void				SetHeaders(const std::initializer_list<HeaderChunk>& header_labels);
 		void				AddHeader(const std::string& header_label, const TzvTableHeaderInfo& options = TzvTableHeaderInfo());
+		void				SetNextSelectableIndex();
+		void				ResetSelectableIndex();
 		
 		// Others
 		void				Bind();

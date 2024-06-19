@@ -1,0 +1,436 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlotDateTimeSpec::Time' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+                },
+                "region": {
+                  "startLine": 279,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlotDateTimeSpec::{ctor}",
+                  "decoratedName": "??0ImPlotDateTimeSpec@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlotDateTimeSpec::Time"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlotDateTimeSpec::UseISO8601' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+                },
+                "region": {
+                  "startLine": 279,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlotDateTimeSpec::{ctor}",
+                  "decoratedName": "??0ImPlotDateTimeSpec@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlotDateTimeSpec::UseISO8601"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlotDateTimeSpec::Date' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+                },
+                "region": {
+                  "startLine": 279,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlotDateTimeSpec::{ctor}",
+                  "decoratedName": "??0ImPlotDateTimeSpec@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlotDateTimeSpec::Date"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlotDateTimeSpec::Use24HourClock' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+                },
+                "region": {
+                  "startLine": 279,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlotDateTimeSpec::{ctor}",
+                  "decoratedName": "??0ImPlotDateTimeSpec@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlotDateTimeSpec::Use24HourClock"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlotTick::Idx' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+                },
+                "region": {
+                  "startLine": 543,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlotTick::{ctor}",
+                  "decoratedName": "??0ImPlotTick@@QEAA@N_NH0@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlotTick::Idx"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlotAxis::Vertical' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+                },
+                "region": {
+                  "startLine": 670,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlotAxis::{ctor}",
+                  "decoratedName": "??0ImPlotAxis@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlotAxis::Vertical"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlotAxis::FormatSpec' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+                },
+                "region": {
+                  "startLine": 670,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlotAxis::{ctor}",
+                  "decoratedName": "??0ImPlotAxis@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlotAxis::FormatSpec"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlotAxis::ScaleMax' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+                },
+                "region": {
+                  "startLine": 670,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlotAxis::{ctor}",
+                  "decoratedName": "??0ImPlotAxis@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlotAxis::ScaleMax"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlotAxis::ScaleMin' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+                },
+                "region": {
+                  "startLine": 670,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlotAxis::{ctor}",
+                  "decoratedName": "??0ImPlotAxis@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlotAxis::ScaleMin"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlotAxis::ScaleToPixel' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+                },
+                "region": {
+                  "startLine": 670,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlotAxis::{ctor}",
+                  "decoratedName": "??0ImPlotAxis@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlotAxis::ScaleToPixel"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlotAxis::RangeCond' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+                },
+                "region": {
+                  "startLine": 670,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlotAxis::{ctor}",
+                  "decoratedName": "??0ImPlotAxis@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlotAxis::RangeCond"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'ImPlot::RectC::Color' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_items.cpp"
+                },
+                "region": {
+                  "startLine": 1331,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "ImPlot::RectC::{ctor}",
+                  "decoratedName": "??0RectC@ImPlot@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "ImPlot::RectC::Color"
+          }
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.40.33811.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_internal.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "b6b34e18c013fcb96667d8533d2776a10cbaa9b0386741acc1e3ad05f9354573"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/ImGui/include/imgui/extensions/im_plot/implot_items.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "99edfc965291a5801569509be56278038c726cc61508ff58d6025e1e65909857"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/extensions/im_plot/implot.h"
+          },
+          "hashes": {
+            "sha-256": "b80d02e6b47682422d5b6ec5f40270688e44825836596ea7b924ef74d916bef4"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imgui.h"
+          },
+          "hashes": {
+            "sha-256": "135843942522e8ee085d8ead50f5e9270e1ac7fb0496dce5cf877238998be3ff"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imconfig.h"
+          },
+          "hashes": {
+            "sha-256": "07428116edfc8ac1a32ca64ab0f4c04ce831f4b4f7e4b95531d7306dcc4d2323"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imgui_internal.h"
+          },
+          "hashes": {
+            "sha-256": "5c03044c437cb1054428460d055ca7327c779cfe4130e624d38efcffdbd87e96"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/vendor/imgui/include/imgui/imstb_textedit.h"
+          },
+          "hashes": {
+            "sha-256": "7ddff4ecb710e321b8f966417a6dc72f3e2242165f68cc78c5275b5653224bba"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 #include "ZVButton.h"
 #include "ZVImageButton.h"
 #include "ZVToggleButton.h"
+#include "ZVIconButton.h"
 #include "ZVComboBox.h"
 #include "ZVInputText.h"
 #include "ZVTable.h"
@@ -352,6 +353,23 @@ namespace ZVLab {
 	bool CzvDialog::ImageButton(CzvImageButton& button)
 	{
 		bool result = false;
+		result = this->Binding(&button);
+		return (result);
+	}
+
+	bool CzvDialog::IconButton(const std::string& icon, float mag)
+	{
+		bool result = false;
+		CzvIconButton button(icon, mag);
+		result = this->Binding(&button);
+		return (result);
+	}
+
+	bool CzvDialog::IconButton(const std::string& icon, const ImVec2& pos, float mag)
+	{
+		bool result = false;
+		CzvIconButton button(icon, mag);
+		this->SetNextPos(pos);
 		result = this->Binding(&button);
 		return (result);
 	}

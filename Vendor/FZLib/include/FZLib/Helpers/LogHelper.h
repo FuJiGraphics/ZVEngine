@@ -3,13 +3,13 @@
 #define __FZ_LIBRARY_LOG_HELPER__
 
 #ifdef FZLIB_USAGE_DLL
-	#ifdef FZLIB_EXPORTS
-		#define FZLIB_API __declspec(dllexport)
-	#else
-		#define FZLIB_API __declspec(dllimport)
-	#endif
+#ifdef FZLIB_EXPORTS
+#define FZLIB_API __declspec(dllexport)
 #else
-	#define FZLIB_API
+#define FZLIB_API __declspec(dllimport)
+#endif
+#else
+#define FZLIB_API
 #endif
 
 #include "spdlog/spdlog.h"
@@ -61,9 +61,9 @@ namespace FZLib {
 											   spdlog::level::info,
 											   fmt, std::forward<Args>(args)...);
 			FZLib::LogSystem::RevertFormat();
-			return (false);
-}
-		return (true);
+			return (true);
+		}
+		return (false);
 	}
 
 	#define FZLOG_SUCCEEDED(boolean_value, ...)	FZLib::LOG_SWITCHING__(!boolean_value, __VA_ARGS__)
@@ -72,7 +72,7 @@ namespace FZLib {
 	#define FZLOG_SUCCEEDED(boolean_value)	boolean_value;
 	#define FZLOG_FAILED(boolean_value)		boolean_value;
 #endif
-#pragma endregion 
 
+#pragma endregion 
 } // namespace FZLib
 #endif

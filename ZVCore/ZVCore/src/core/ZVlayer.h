@@ -19,12 +19,12 @@ namespace ZVLab {
 
 		inline std::string GetLabel() const { return (m_strLabel); }
 
-		virtual void OnAttach() {};
-		virtual void OnDetach() {};
-		virtual void OnEvent(CzvEvent& event) {};
-		virtual void OnUpdate(const float& dt) {};
-		virtual void OnGUI() {};
-		virtual void OnMainMenuBar() {};
+		virtual void OnAttach()						{};
+		virtual void OnDetach()						{};
+		virtual void OnEvent(CzvEvent& event)		{};
+		virtual void OnUpdate(const float& dt)		{};
+		virtual void OnGUI()						{};
+		virtual void OnMainMenuBar()				{};
 	};
 
 } 

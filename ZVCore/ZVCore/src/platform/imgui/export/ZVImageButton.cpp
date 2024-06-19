@@ -1,6 +1,7 @@
 #include "ZVImageButton.h"
 #include "ZVDialog.h"
 #include "ZVHotKey.h"
+#include "ZVFont.h"
 
 namespace ZVLab {
 
@@ -29,7 +30,7 @@ namespace ZVLab {
 	{/*Empty*/}
 
 	CzvImageButton::CzvImageButton(const ImVec2& position)
-		: CzvButton(DBindLabelNumbering("ImageButton", CzvButton::GetButtonCount()))
+		: CzvButton("##label")
 		, m_spTexIdle(nullptr)
 		, m_spTexClick(nullptr)
 		, m_optPosition(position)
@@ -94,10 +95,13 @@ namespace ZVLab {
 		float width = static_cast<float>(tex->GetWidth()) * m_optWeight->x;
 		float height = static_cast<float>(tex->GetHeight()) * m_optWeight->y;
 
+		CzvImguiManager::PushID();
 		if (m_optPosition.has_value()) // 위치 설정 시
 			ImGui::Image(targetID, { width, height }, { m_optPosition->x, m_optPosition->y });
 		else
-			ImGui::Image(targetID, { width, height }); 
+			ImGui::Image(targetID, { width, height });
+
+		CzvImguiManager::PopID();
 
 		m_optRectMin = ImGui::GetItemRectMin();
 		m_optRectMax = ImGui::GetItemRectMax();

@@ -201,13 +201,30 @@ namespace ZVLab {
 		 * @return		bool:	클릭 여부 (true/false)
 		 */
 		bool	ImageButton(CzvImageButton& button);
+		/**
+		 * @brief		아이콘 버튼 출력
+		 * @details		현재 Dialog에 Icon Button을 출력합니다.
+		 * @param[in]	icon:	아이콘 버튼 객체
+		 * @param[in]	mag:	아이콘 배율
+		 * @return		bool:	클릭 여부 (true/false)
+		 */
+		bool	IconButton(const std::string& icon, float mag = 20.0f);
+		/**
+		 * @brief		아이콘 버튼 출력
+		 * @details		현재 Dialog에 Icon Button을 출력합니다.
+		 * @param[in]	icon:	아이콘 버튼 객체
+		 * @param[in]	pos:	아이콘 위치
+		 * @param[in]	mag:	아이콘 배율
+		 * @return		bool:	클릭 여부 (true/false)
+		 */
+		bool	IconButton(const std::string& icon, const ImVec2& pos, float mag = 20.0f);
 		/**	
 		 * @brief		이미지 출력
 		 * @details		현재 Dialog에 이미지를 출력합니다.
 		 * @param[in]	image:	이미지 객체
 		 * @param[in]	size:	이미지 출력 크기 (초기값: 기본 크기)
 		 */
-		void	Image(const CzvImage& image, const ImVec2& size = { 0.0f, 0.0f });		
+		void	Image(const CzvImage& image, const ImVec2& size = { 0.0f, 0.0f });
 		/**
 		 * @brief		메뉴 아이템 생성
 		 * @details		현재 Dialog에 MenuItem을 생성합니다.

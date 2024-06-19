@@ -15,29 +15,28 @@ namespace ZVLab {
 
 	class CzvButton
 	{
-	protected: /// using 
 		using FuncEventCallback = std::function<void(void)>;
 
-	protected: /// static member variables
+	//// Member Variables
+	protected:
 		static unsigned int		s_nuiButtonCount;
-
-	protected: /// member variables
 		std::string				m_strButtonLabel;
 		std::optional<ImVec2>	m_optSize;
 		std::optional<ImVec2>	m_optPosition;
 		std::function<void()>	m_fpCallbackFn;
 
-	public: // static member functions
+	//// Member Functions
+	public: 
 		inline static unsigned int	GetButtonCount() { return (s_nuiButtonCount); }
 
-	public: // Constructors, Destructors
+	// Constructors, Destructors
 		CzvButton(const std::string& label);
 		CzvButton(const std::string& label, const ImVec2& size);
 		CzvButton(const std::string& label, const ImVec2& size, const ImVec2& position);
 		CzvButton(const CzvButton& src);
 		virtual ~CzvButton();
 
-	public: // inline Getter
+	// inline Getter
 		inline std::string				GetLabel() const		{ return (m_strButtonLabel); }
 		inline float					GetWidth() const		{ return (m_optSize.has_value() ? m_optSize->x : 0); }
 		inline float					GetHeight() const		{ return (m_optSize.has_value() ? m_optSize->y : 0); }
@@ -45,13 +44,13 @@ namespace ZVLab {
 		inline float					GetPosY() const			{ return (m_optPosition.has_value() ? m_optPosition->y : 0); }
 		inline FuncEventCallback 		GetCallback() const		{ return (m_fpCallbackFn); }
 
-	public: // inline Setter
-		inline void			SetLabel(const std::string& label)	{ m_strButtonLabel = label; }
-		inline void			SetSize(float width, float height)	{ m_optSize = { width, height }; }
-		inline void			SetPosition(float x, float y)		{ m_optPosition = { x, y }; }
-		inline void			SetCallbackFunc(FuncEventCallback fn) { m_fpCallbackFn = fn; }
+	// inline Setter
+		inline void						SetLabel(const std::string& label)	{ m_strButtonLabel = label; }
+		inline void						SetSize(float width, float height)	{ m_optSize = { width, height }; }
+		inline void						SetPosition(float x, float y)		{ m_optPosition = { x, y }; }
+		inline void						SetCallbackFunc(FuncEventCallback fn) { m_fpCallbackFn = fn; }
 
-	public: // others
+	// others
 		virtual bool Bind();
 		virtual bool Bind(const CzvHotKey& keyMap);
 	};
