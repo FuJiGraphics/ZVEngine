@@ -1886,7 +1886,7 @@
             "analysisTarget"
           ],
           "hashes": {
-            "sha-256": "339fe09f111d2c40a7759d125f6d429a0846dfcd462d6cd66358fc8d30a4d091"
+            "sha-256": "eacf14d5cf0254de791f50b3431cbb0c38047dfa6a7fd04129b8a1c825e8d41a"
           }
         },
         {
@@ -3142,7 +3142,7 @@
             "uri": "file:///d:/dev/zvlab/zscreen/zvcore/zvcore/src/platform/imgui/export/zvbutton.h"
           },
           "hashes": {
-            "sha-256": "14a34dec40e0edb1ac1ca98427a7e71d69f9f1f6714bb13d47eaeb8feeef3328"
+            "sha-256": "af4d40b4b6bd682fe6b3e28323f6d16812585b5f434f9b1703807cc2b97081a5"
           }
         },
         {
@@ -3182,7 +3182,7 @@
             "uri": "file:///d:/dev/zvlab/zscreen/zvcore/zvcore/src/platform/imgui/export/zvdialog.h"
           },
           "hashes": {
-            "sha-256": "fbe2c77ca897cebb884f4a390840449ea37e48ac0f61c380c252293d5a1e7fa7"
+            "sha-256": "738b419237a95928381622d3f26f45ced88733933f86ffa6ba07976d88f47df4"
           }
         },
         {
@@ -3214,7 +3214,7 @@
             "uri": "file:///d:/dev/zvlab/zscreen/zvcore/zvcore/src/platform/imgui/export/zvkeymap.h"
           },
           "hashes": {
-            "sha-256": "663059bc31a6e48d617452ec3663b00eda5eb9c584c2598c4812e67635305cd8"
+            "sha-256": "00a4e266e47a78750544b701268708691ed933ce7a180b60568f751bb5f6ef8b"
           }
         },
         {
@@ -3223,6 +3223,22 @@
           },
           "hashes": {
             "sha-256": "3daa20ff9100ef865a3b3f1ce4d0461ab0f3e59f6cb873c492c90b228166946b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/zvcore/zvcore/src/platform/imgui/export/zvfont.h"
+          },
+          "hashes": {
+            "sha-256": "4bc567a103eefcef80e849d9722d124c2ab2e8f0ddbd65b678ca285765fd4491"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///d:/dev/zvlab/zscreen/zvcore/zvcore/src/platform/imgui/export/zvicon.h"
+          },
+          "hashes": {
+            "sha-256": "fc4091f5abea19444727ba3587e5c868e3661d46cfdf8765855a0172bf7f47c8"
           }
         }
       ]

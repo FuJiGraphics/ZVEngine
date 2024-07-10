@@ -6,8 +6,7 @@ CDlgDisplayWindow::CDlgDisplayWindow()
 	, m_cImage()
 	, m_tDialogInfo()
 	, m_FileDialog("DisplayFileDialog")
-{
-}
+{/*Empty*/}
 
 void CDlgDisplayWindow::OnAttach()
 {

@@ -960,7 +960,7 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "'ZVLab::CzvWindow::TzvWindowChunk::uiHeight' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+            "text": "'ZVLab::CzvWindow::TzvWindowChunk::bVSync' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
           },
           "locations": [
             {
@@ -983,7 +983,7 @@
             }
           ],
           "properties": {
-            "targetSymbol": "ZVLab::CzvWindow::TzvWindowChunk::uiHeight"
+            "targetSymbol": "ZVLab::CzvWindow::TzvWindowChunk::bVSync"
           }
         },
         {
@@ -1018,7 +1018,7 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "'ZVLab::CzvWindow::TzvWindowChunk::bVSync' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+            "text": "'ZVLab::CzvWindow::TzvWindowChunk::uiHeight' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
           },
           "locations": [
             {
@@ -1041,7 +1041,7 @@
             }
           ],
           "properties": {
-            "targetSymbol": "ZVLab::CzvWindow::TzvWindowChunk::bVSync"
+            "targetSymbol": "ZVLab::CzvWindow::TzvWindowChunk::uiHeight"
           }
         },
         {

@@ -157,10 +157,19 @@ namespace ZVLab {
 	void CzvTableHeader::ItemBind(int index)
 	{
 		ImGui::TableNextColumn();
+		
+		// TODO: Table Item Popup ±â´É
+		// ImGui::OpenPopupOnItemClick("test0", ImGuiPopupFlags_MouseButtonRight);
 		if (this->HasValue() && index < m_vItems.size())
 		{
+			if (ImGui::BeginPopup("test0"))
+			{
+				ImGui::Text("Contents");
+				ImGui::EndPopup();
+			}
 			if (m_bIsSelMode)
 			{
+
 				if (ImGui::Selectable(m_vItems.at(index).GetLabel(), 
 									  index == m_refParentIndex, m_tSelInfo.GetOptions()))
 				{

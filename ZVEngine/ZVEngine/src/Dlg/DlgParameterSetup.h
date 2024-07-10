@@ -11,6 +11,7 @@ struct TzvParametersChunk
 	std::string		strSavingPath	= "";
 	EzvImageFormat	eImageFormal	= EzvImageFormat::eBMP;
 	bool			bEditROI		= false;
+	bool			bIsChanged		= false;
 };
 
 class CDlgParameterSetup final : public ZVLab::CzvLayer

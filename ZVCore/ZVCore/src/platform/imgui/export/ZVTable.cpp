@@ -151,6 +151,11 @@ namespace ZVLab {
 	{
 		bool bIndexedMode = m_tOptions.IsActivated(EzvTableOptions::ezvTableFlags_ArrangeIndexed);
 		int iColSize = m_vHeaderList.size() + ((bIndexedMode) ? 1 : 0);
+		if (ImGui::BeginPopup("test0"))
+		{
+			ImGui::Text("Contents");
+			ImGui::EndPopup();
+		}
 		if (iColSize && ImGui::BeginTable(m_strLabel.c_str(),
 							  iColSize,
 							  m_tOptions.GetOptions(), m_ivSize, m_fInnerWidth))

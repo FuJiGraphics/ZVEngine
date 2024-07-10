@@ -509,12 +509,12 @@
       <COLUMN>2</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ZVLab::CzvWindow::TzvWindowChunk::uiHeight' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ZVLab::CzvWindow::TzvWindowChunk::bVSync' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ZVLab::CzvWindow::TzvWindowChunk::{ctor}</FUNCTION>
     <DECORATED>??0TzvWindowChunk@CzvWindow@ZVLab@@QEAA@XZ</DECORATED>
     <FUNCLINE>24</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ZVLab::CzvWindow::TzvWindowChunk::uiHeight</targetSymbol>
+      <targetSymbol>ZVLab::CzvWindow::TzvWindowChunk::bVSync</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -543,12 +543,12 @@
       <COLUMN>2</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ZVLab::CzvWindow::TzvWindowChunk::bVSync' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ZVLab::CzvWindow::TzvWindowChunk::uiHeight' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ZVLab::CzvWindow::TzvWindowChunk::{ctor}</FUNCTION>
     <DECORATED>??0TzvWindowChunk@CzvWindow@ZVLab@@QEAA@XZ</DECORATED>
     <FUNCLINE>24</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ZVLab::CzvWindow::TzvWindowChunk::bVSync</targetSymbol>
+      <targetSymbol>ZVLab::CzvWindow::TzvWindowChunk::uiHeight</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>

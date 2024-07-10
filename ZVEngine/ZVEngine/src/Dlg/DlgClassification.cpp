@@ -93,6 +93,16 @@ void CDlgClassification::OnGUI()
 	static std::vector<int>			s_vClassesCount;
 	static std::string				s_prevNewPath;
 
+	// 만약 새로운 폴더가 로딩될 경우 설정 초기화
+	if (tParamChunk.bIsChanged)
+	{
+		tParamChunk.bIsChanged = false;
+		m_tFilesTable.Table["Class"].Clear();
+		m_tClassTable.Table.ResetSelectableIndex();
+		s_vClassesTable.clear();
+		s_vClassesCount.clear();
+	}
+
 	// Render Files Table
 	TzvDialogInfo dlg_FilesTable_info;
 	dlg_FilesTable_info.SetDocsNoTabBar(true);
@@ -194,11 +204,14 @@ void CDlgClassification::OnGUI()
 		{
 			int iSel = filesTable.GetSelectYaxisIndex();
 			std::string strPath = filesTable["Name"][iSel].GetLabel();
-			auto layer = (CDlgDisplayWindow*)CzvApp::GetInstance()->GetLayer("CDlgDisplayWindow");
-			char cCheckBackSlash = *(tParamChunk.strLoadingPath.end() - 1);
-			if (cCheckBackSlash != '\\')
-				tParamChunk.strLoadingPath.push_back('\\');
-			layer->Display(tParamChunk.strLoadingPath + strPath, 500, 500);
+			if (strPath != " ")
+			{
+				auto layer = (CDlgDisplayWindow*)CzvApp::GetInstance()->GetLayer("CDlgDisplayWindow");
+				char cCheckBackSlash = *(tParamChunk.strLoadingPath.end() - 1);
+				if (cCheckBackSlash != '\\')
+					tParamChunk.strLoadingPath.push_back('\\');
+				layer->Display(tParamChunk.strLoadingPath + strPath, 500, 500);
+			}
 		}
 		m_iTotal = vImagePaths.size();
 		m_iIndex = vImagePaths.size();
@@ -242,6 +255,7 @@ void CDlgClassification::OnGUI()
 		CzvImguiManager::EndGroupPanel();
 		dlg_classTable.Table(classTable);
 	}
+
 	DProfile_EndRecord;
 }
 

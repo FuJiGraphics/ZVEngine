@@ -3,9 +3,7 @@
 
 CDlgIconBar::CDlgIconBar()
 	: CzvLayer("CDlgIconBar")
-{
-
-}
+{/*Empty*/}
 
 void CDlgIconBar::OnAttach()
 {

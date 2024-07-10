@@ -1,2 +1,4 @@
 C:\Users\chyuy\Desktop\ZVScreen\Vendor\glad\lib\Debug\glad.lib
 D:\Dev\ZVLab\ZScreen\Vendor\glad\lib\Debug\glad.lib
+D:\Dev\ZVLab\ZScreen\Vendor\glad\lib\Debug\glad.lib.lastcodeanalysissucceeded
+D:\Dev\ZVLab\ZScreen\Vendor\glad\lib\Debug\NativeCodeAnalysis.read.1.tlog

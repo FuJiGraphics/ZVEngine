@@ -3,8 +3,7 @@
 
 CDlgSidebarLeft::CDlgSidebarLeft()
 	: CzvLayer("CDlgSidebarLeft")
-{
-}
+{/*Empty*/}
 
 void CDlgSidebarLeft::OnAttach()
 {

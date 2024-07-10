@@ -6,8 +6,7 @@
 
 CDlgParameterSetup::CDlgParameterSetup()
 	: CzvLayer("CDlgParameterSetup")
-{
-}
+{/*Empty*/}
 
 void CDlgParameterSetup::OnAttach()
 {
@@ -54,6 +53,11 @@ void CDlgParameterSetup::OnGUI()
 	if (dialog.Button("Save"))
 	{
 		m_vLoadPaths = this->LoadImages(tmp_param.strLoadingPath);
+		// 파일 경로가 바뀌었을 경우 기록 
+		if (m_tParamChunk.strLoadingPath != tmp_param.strLoadingPath)
+			m_tParamChunk.bIsChanged = true;
+		else
+			m_tParamChunk.bIsChanged = false;
 		m_tParamChunk.strLoadingPath = tmp_param.strLoadingPath;
 		m_tParamChunk.strSavingPath = tmp_param.strSavingPath;
 	}

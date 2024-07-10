@@ -728,35 +728,6 @@
         {
           "ruleId": "C26495",
           "message": {
-            "text": "'cvflann::lsh::LshStats::bucket_size_mean_' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
-          },
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/flann/lsh_table.h"
-                },
-                "region": {
-                  "startLine": 102,
-                  "startColumn": 1
-                }
-              },
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "cvflann::lsh::LshStats::{ctor}",
-                  "decoratedName": "??0LshStats@lsh@cvflann@@QEAA@XZ",
-                  "kind": "function"
-                }
-              ]
-            }
-          ],
-          "properties": {
-            "targetSymbol": "cvflann::lsh::LshStats::bucket_size_mean_"
-          }
-        },
-        {
-          "ruleId": "C26495",
-          "message": {
             "text": "'cvflann::lsh::LshStats::n_buckets_' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
           },
           "locations": [
@@ -810,6 +781,35 @@
           ],
           "properties": {
             "targetSymbol": "cvflann::lsh::LshStats::bucket_size_median_"
+          }
+        },
+        {
+          "ruleId": "C26495",
+          "message": {
+            "text": "'cvflann::lsh::LshStats::bucket_size_mean_' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///D:/Dev/ZVLab/ZScreen/Vendor/OpenCV2/include/opencv2/flann/lsh_table.h"
+                },
+                "region": {
+                  "startLine": 102,
+                  "startColumn": 1
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "cvflann::lsh::LshStats::{ctor}",
+                  "decoratedName": "??0LshStats@lsh@cvflann@@QEAA@XZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "cvflann::lsh::LshStats::bucket_size_mean_"
           }
         },
         {

@@ -373,23 +373,6 @@
       <COLUMN>0</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'cvflann::lsh::LshStats::bucket_size_mean_' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>cvflann::lsh::LshStats::{ctor}</FUNCTION>
-    <DECORATED>??0LshStats@lsh@cvflann@@QEAA@XZ</DECORATED>
-    <FUNCLINE>102</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>cvflann::lsh::LshStats::bucket_size_mean_</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\OpenCV2\include\opencv2\flann\</FILEPATH>
-      <FILENAME>lsh_table.h</FILENAME>
-      <LINE>102</LINE>
-      <COLUMN>0</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>'cvflann::lsh::LshStats::n_buckets_' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>cvflann::lsh::LshStats::{ctor}</FUNCTION>
     <DECORATED>??0LshStats@lsh@cvflann@@QEAA@XZ</DECORATED>
@@ -413,6 +396,23 @@
     <FUNCLINE>102</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>cvflann::lsh::LshStats::bucket_size_median_</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\OpenCV2\include\opencv2\flann\</FILEPATH>
+      <FILENAME>lsh_table.h</FILENAME>
+      <LINE>102</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'cvflann::lsh::LshStats::bucket_size_mean_' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>cvflann::lsh::LshStats::{ctor}</FUNCTION>
+    <DECORATED>??0LshStats@lsh@cvflann@@QEAA@XZ</DECORATED>
+    <FUNCLINE>102</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>cvflann::lsh::LshStats::bucket_size_mean_</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>

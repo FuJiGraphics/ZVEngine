@@ -8,40 +8,6 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotDateTimeSpec::Time' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>ImPlotDateTimeSpec::{ctor}</FUNCTION>
-    <DECORATED>??0ImPlotDateTimeSpec@@QEAA@XZ</DECORATED>
-    <FUNCLINE>279</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>ImPlotDateTimeSpec::Time</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
-      <FILENAME>implot_internal.h</FILENAME>
-      <LINE>279</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotDateTimeSpec::UseISO8601' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>ImPlotDateTimeSpec::{ctor}</FUNCTION>
-    <DECORATED>??0ImPlotDateTimeSpec@@QEAA@XZ</DECORATED>
-    <FUNCLINE>279</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>ImPlotDateTimeSpec::UseISO8601</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
-      <FILENAME>implot_internal.h</FILENAME>
-      <LINE>279</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>'ImPlotDateTimeSpec::Date' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotDateTimeSpec::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotDateTimeSpec@@QEAA@XZ</DECORATED>
@@ -59,12 +25,46 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'ImPlotDateTimeSpec::Time' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>ImPlotDateTimeSpec::{ctor}</FUNCTION>
+    <DECORATED>??0ImPlotDateTimeSpec@@QEAA@XZ</DECORATED>
+    <FUNCLINE>279</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>ImPlotDateTimeSpec::Time</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
+      <FILENAME>implot_internal.h</FILENAME>
+      <LINE>279</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>'ImPlotDateTimeSpec::Use24HourClock' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotDateTimeSpec::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotDateTimeSpec@@QEAA@XZ</DECORATED>
     <FUNCLINE>279</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>ImPlotDateTimeSpec::Use24HourClock</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
+      <FILENAME>implot_internal.h</FILENAME>
+      <LINE>279</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'ImPlotDateTimeSpec::UseISO8601' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>ImPlotDateTimeSpec::{ctor}</FUNCTION>
+    <DECORATED>??0ImPlotDateTimeSpec@@QEAA@XZ</DECORATED>
+    <FUNCLINE>279</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>ImPlotDateTimeSpec::UseISO8601</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -127,12 +127,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotAxis::ScaleMax' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotAxis::RangeCond' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotAxis::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotAxis@@QEAA@XZ</DECORATED>
     <FUNCLINE>670</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotAxis::ScaleMax</targetSymbol>
+      <targetSymbol>ImPlotAxis::RangeCond</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -178,12 +178,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotAxis::RangeCond' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotAxis::ScaleMax' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotAxis::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotAxis@@QEAA@XZ</DECORATED>
     <FUNCLINE>670</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotAxis::RangeCond</targetSymbol>
+      <targetSymbol>ImPlotAxis::ScaleMax</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>

@@ -1886,7 +1886,7 @@
             "analysisTarget"
           ],
           "hashes": {
-            "sha-256": "8574adedf59d87bff4c95ad714443c89a162a6a63037bdb9219e78e2dc565daa"
+            "sha-256": "3636fe5de1b70f5829bb344c8e3ec4cef6ec7c34cc4f1ced8fd690fef80d1df6"
           }
         },
         {
@@ -1894,7 +1894,7 @@
             "uri": "file:///d:/dev/zvlab/zscreen/zvcore/zvcore/src/platform/imgui/export/zvtableheader.h"
           },
           "hashes": {
-            "sha-256": "5c78b28ab98ed6756d3a5efb3aa866fe8480f23d31f21ed2212fc44d7a5a3e3a"
+            "sha-256": "a49706eaa9109129129cdf767400e8a08775a612f5a231988290ab42af61d7c4"
           }
         },
         {

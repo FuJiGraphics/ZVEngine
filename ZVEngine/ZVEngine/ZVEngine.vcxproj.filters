@@ -36,6 +36,9 @@
     <ClInclude Include="src\Dlg\DlgSidebarLeft.h">
       <Filter>src\Dlg</Filter>
     </ClInclude>
+    <ClInclude Include="src\Dlg\DlgTest.h">
+      <Filter>src\Dlg</Filter>
+    </ClInclude>
     <ClInclude Include="src\Environment.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -69,6 +72,9 @@
       <Filter>src\Dlg</Filter>
     </ClCompile>
     <ClCompile Include="src\Dlg\DlgSidebarLeft.cpp">
+      <Filter>src\Dlg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dlg\DlgTest.cpp">
       <Filter>src\Dlg</Filter>
     </ClCompile>
     <ClCompile Include="src\ImageManager.cpp">

@@ -155,6 +155,7 @@
     <ClInclude Include="src\Dlg\DlgIconBar.h" />
     <ClInclude Include="src\Dlg\DlgParameterSetup.h" />
     <ClInclude Include="src\Dlg\DlgSidebarLeft.h" />
+    <ClInclude Include="src\Dlg\DlgTest.h" />
     <ClInclude Include="src\Environment.h" />
     <ClInclude Include="src\GUI.h" />
     <ClInclude Include="src\ImageManager.h" />
@@ -168,6 +169,7 @@
     <ClCompile Include="src\Dlg\DlgIconBar.cpp" />
     <ClCompile Include="src\Dlg\DlgParameterSetup.cpp" />
     <ClCompile Include="src\Dlg\DlgSidebarLeft.cpp" />
+    <ClCompile Include="src\Dlg\DlgTest.cpp" />
     <ClCompile Include="src\ImageManager.cpp" />
     <ClCompile Include="src\Layers\ZVWindowMenu.cpp" />
   </ItemGroup>

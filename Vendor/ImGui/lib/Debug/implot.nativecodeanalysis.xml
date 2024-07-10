@@ -8,12 +8,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotDateTimeSpec::Time' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotDateTimeSpec::UseISO8601' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotDateTimeSpec::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotDateTimeSpec@@QEAA@XZ</DECORATED>
     <FUNCLINE>279</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotDateTimeSpec::Time</targetSymbol>
+      <targetSymbol>ImPlotDateTimeSpec::UseISO8601</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -42,12 +42,12 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotDateTimeSpec::UseISO8601' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotDateTimeSpec::Time' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotDateTimeSpec::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotDateTimeSpec@@QEAA@XZ</DECORATED>
     <FUNCLINE>279</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotDateTimeSpec::UseISO8601</targetSymbol>
+      <targetSymbol>ImPlotDateTimeSpec::Time</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -93,63 +93,29 @@
       <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotAxis::Vertical' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>ImPlotAxis::{ctor}</FUNCTION>
-    <DECORATED>??0ImPlotAxis@@QEAA@XZ</DECORATED>
-    <FUNCLINE>670</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>ImPlotAxis::Vertical</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
-      <FILENAME>implot_internal.h</FILENAME>
-      <LINE>670</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotAxis::RangeCond' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>ImPlotAxis::{ctor}</FUNCTION>
-    <DECORATED>??0ImPlotAxis@@QEAA@XZ</DECORATED>
-    <FUNCLINE>670</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>ImPlotAxis::RangeCond</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
-      <FILENAME>implot_internal.h</FILENAME>
-      <LINE>670</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotAxis::ScaleMax' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>ImPlotAxis::{ctor}</FUNCTION>
-    <DECORATED>??0ImPlotAxis@@QEAA@XZ</DECORATED>
-    <FUNCLINE>670</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>ImPlotAxis::ScaleMax</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
-      <FILENAME>implot_internal.h</FILENAME>
-      <LINE>670</LINE>
-      <COLUMN>4</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
     <DESCRIPTION>'ImPlotAxis::ScaleMin' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotAxis::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotAxis@@QEAA@XZ</DECORATED>
     <FUNCLINE>670</FUNCLINE>
     <ADDITIONALINFO>
       <targetSymbol>ImPlotAxis::ScaleMin</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
+      <FILENAME>implot_internal.h</FILENAME>
+      <LINE>670</LINE>
+      <COLUMN>4</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'ImPlotAxis::Vertical' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>ImPlotAxis::{ctor}</FUNCTION>
+    <DECORATED>??0ImPlotAxis@@QEAA@XZ</DECORATED>
+    <FUNCLINE>670</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>ImPlotAxis::Vertical</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -190,51 +156,34 @@
   <DEFECT>
     <SFA>
       <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
-      <FILENAME>implot.cpp</FILENAME>
-      <LINE>165</LINE>
-      <COLUMN>16</COLUMN>
+      <FILENAME>implot_internal.h</FILENAME>
+      <LINE>670</LINE>
+      <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotInputMap::OverrideMod' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
-    <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
-    <FUNCLINE>165</FUNCLINE>
+    <DESCRIPTION>'ImPlotAxis::RangeCond' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>ImPlotAxis::{ctor}</FUNCTION>
+    <DECORATED>??0ImPlotAxis@@QEAA@XZ</DECORATED>
+    <FUNCLINE>670</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotInputMap::OverrideMod</targetSymbol>
+      <targetSymbol>ImPlotAxis::RangeCond</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
-      <FILENAME>implot.cpp</FILENAME>
-      <LINE>165</LINE>
-      <COLUMN>16</COLUMN>
+      <FILENAME>implot_internal.h</FILENAME>
+      <LINE>670</LINE>
+      <COLUMN>4</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotInputMap::SelectMod' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
-    <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
-    <FUNCLINE>165</FUNCLINE>
+    <DESCRIPTION>'ImPlotAxis::ScaleMax' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>ImPlotAxis::{ctor}</FUNCTION>
+    <DECORATED>??0ImPlotAxis@@QEAA@XZ</DECORATED>
+    <FUNCLINE>670</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotInputMap::SelectMod</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
-      <FILENAME>implot.cpp</FILENAME>
-      <LINE>165</LINE>
-      <COLUMN>16</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotInputMap::Select' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
-    <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
-    <FUNCLINE>165</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>ImPlotInputMap::Select</targetSymbol>
+      <targetSymbol>ImPlotAxis::ScaleMax</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -263,29 +212,12 @@
       <COLUMN>16</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotInputMap::SelectHorzMod' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotInputMap::Fit' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
     <FUNCLINE>165</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotInputMap::SelectHorzMod</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
-      <FILENAME>implot.cpp</FILENAME>
-      <LINE>165</LINE>
-      <COLUMN>16</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotInputMap::PanMod' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
-    <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
-    <FUNCLINE>165</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>ImPlotInputMap::PanMod</targetSymbol>
+      <targetSymbol>ImPlotInputMap::Fit</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -314,12 +246,12 @@
       <COLUMN>16</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotInputMap::Pan' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotInputMap::PanMod' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
     <FUNCLINE>165</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotInputMap::Pan</targetSymbol>
+      <targetSymbol>ImPlotInputMap::PanMod</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -331,12 +263,46 @@
       <COLUMN>16</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotInputMap::Fit' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotInputMap::SelectVertMod' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
     <FUNCLINE>165</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotInputMap::Fit</targetSymbol>
+      <targetSymbol>ImPlotInputMap::SelectVertMod</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
+      <FILENAME>implot.cpp</FILENAME>
+      <LINE>165</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'ImPlotInputMap::SelectHorzMod' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
+    <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
+    <FUNCLINE>165</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>ImPlotInputMap::SelectHorzMod</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
+      <FILENAME>implot.cpp</FILENAME>
+      <LINE>165</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'ImPlotInputMap::SelectMod' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
+    <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
+    <FUNCLINE>165</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>ImPlotInputMap::SelectMod</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -382,12 +348,46 @@
       <COLUMN>16</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotInputMap::SelectVertMod' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotInputMap::Select' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
     <FUNCLINE>165</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotInputMap::SelectVertMod</targetSymbol>
+      <targetSymbol>ImPlotInputMap::Select</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
+      <FILENAME>implot.cpp</FILENAME>
+      <LINE>165</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'ImPlotInputMap::OverrideMod' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
+    <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
+    <FUNCLINE>165</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>ImPlotInputMap::OverrideMod</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
+      <FILENAME>implot.cpp</FILENAME>
+      <LINE>165</LINE>
+      <COLUMN>16</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'ImPlotInputMap::Pan' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>ImPlotInputMap::{ctor}</FUNCTION>
+    <DECORATED>??0ImPlotInputMap@@QEAA@XZ</DECORATED>
+    <FUNCLINE>165</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>ImPlotInputMap::Pan</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -433,12 +433,12 @@
       <COLUMN>0</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotContext::CurrentAlignmentH' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotContext::CurrentPlot' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotContext::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotContext@@QEAA@XZ</DECORATED>
     <FUNCLINE>1249</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotContext::CurrentAlignmentH</targetSymbol>
+      <targetSymbol>ImPlotContext::CurrentPlot</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -484,46 +484,12 @@
       <COLUMN>0</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotContext::CurrentSubplot' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotContext::CurrentAlignmentH' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotContext::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotContext@@QEAA@XZ</DECORATED>
     <FUNCLINE>1249</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotContext::CurrentSubplot</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
-      <FILENAME>implot_internal.h</FILENAME>
-      <LINE>1249</LINE>
-      <COLUMN>0</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotContext::PreviousItem' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>ImPlotContext::{ctor}</FUNCTION>
-    <DECORATED>??0ImPlotContext@@QEAA@XZ</DECORATED>
-    <FUNCLINE>1249</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>ImPlotContext::PreviousItem</targetSymbol>
-    </ADDITIONALINFO>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
-      <FILENAME>implot_internal.h</FILENAME>
-      <LINE>1249</LINE>
-      <COLUMN>0</COLUMN>
-    </SFA>
-    <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotContext::CurrentItems' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
-    <FUNCTION>ImPlotContext::{ctor}</FUNCTION>
-    <DECORATED>??0ImPlotContext@@QEAA@XZ</DECORATED>
-    <FUNCLINE>1249</FUNCLINE>
-    <ADDITIONALINFO>
-      <targetSymbol>ImPlotContext::CurrentItems</targetSymbol>
+      <targetSymbol>ImPlotContext::CurrentAlignmentH</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -552,12 +518,29 @@
       <COLUMN>0</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotContext::Tm' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotContext::PreviousItem' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotContext::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotContext@@QEAA@XZ</DECORATED>
     <FUNCLINE>1249</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotContext::Tm</targetSymbol>
+      <targetSymbol>ImPlotContext::PreviousItem</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
+      <FILENAME>implot_internal.h</FILENAME>
+      <LINE>1249</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'ImPlotContext::CurrentSubplot' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>ImPlotContext::{ctor}</FUNCTION>
+    <DECORATED>??0ImPlotContext@@QEAA@XZ</DECORATED>
+    <FUNCLINE>1249</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>ImPlotContext::CurrentSubplot</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -586,12 +569,29 @@
       <COLUMN>0</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlotContext::CurrentPlot' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlotContext::Tm' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlotContext::{ctor}</FUNCTION>
     <DECORATED>??0ImPlotContext@@QEAA@XZ</DECORATED>
     <FUNCLINE>1249</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlotContext::CurrentPlot</targetSymbol>
+      <targetSymbol>ImPlotContext::Tm</targetSymbol>
+    </ADDITIONALINFO>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>D:\Dev\ZVLab\ZScreen\Vendor\ImGui\include\imgui\extensions\im_plot\</FILEPATH>
+      <FILENAME>implot_internal.h</FILENAME>
+      <LINE>1249</LINE>
+      <COLUMN>0</COLUMN>
+    </SFA>
+    <DEFECTCODE>26495</DEFECTCODE>
+    <DESCRIPTION>'ImPlotContext::CurrentItems' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <FUNCTION>ImPlotContext::{ctor}</FUNCTION>
+    <DECORATED>??0ImPlotContext@@QEAA@XZ</DECORATED>
+    <FUNCLINE>1249</FUNCLINE>
+    <ADDITIONALINFO>
+      <targetSymbol>ImPlotContext::CurrentItems</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -659,12 +659,12 @@
       <COLUMN>0</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlot::Formatter_Time_Data::UserFormatterData' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlot::Formatter_Time_Data::UserFormatter' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlot::Formatter_Time_Data::{ctor}</FUNCTION>
     <DECORATED>??0Formatter_Time_Data@ImPlot@@QEAA@XZ</DECORATED>
     <FUNCLINE>1653</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlot::Formatter_Time_Data::UserFormatterData</targetSymbol>
+      <targetSymbol>ImPlot::Formatter_Time_Data::UserFormatter</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
@@ -676,12 +676,12 @@
       <COLUMN>0</COLUMN>
     </SFA>
     <DEFECTCODE>26495</DEFECTCODE>
-    <DESCRIPTION>'ImPlot::Formatter_Time_Data::UserFormatter' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
+    <DESCRIPTION>'ImPlot::Formatter_Time_Data::UserFormatterData' 변수가 초기화되지 않았습니다. 항상 멤버 변수를 초기화하세요(type.6).</DESCRIPTION>
     <FUNCTION>ImPlot::Formatter_Time_Data::{ctor}</FUNCTION>
     <DECORATED>??0Formatter_Time_Data@ImPlot@@QEAA@XZ</DECORATED>
     <FUNCLINE>1653</FUNCLINE>
     <ADDITIONALINFO>
-      <targetSymbol>ImPlot::Formatter_Time_Data::UserFormatter</targetSymbol>
+      <targetSymbol>ImPlot::Formatter_Time_Data::UserFormatterData</targetSymbol>
     </ADDITIONALINFO>
     <PATH></PATH>
   </DEFECT>
