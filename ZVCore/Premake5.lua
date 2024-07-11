@@ -40,7 +40,6 @@ links
 	"%{Library.OpenCV}",
 	"GLAD",
 	"ImGui",
-	"Opengl32.lib",
 }
 
 filter "system:Windows"
@@ -53,8 +52,17 @@ filter "configurations:Debug"
     defines "ZV_DEBUG"
     runtime "Debug"
     symbols "On"
+	postbuildcommands 
+	{ 
+		"{COPYFILE} %[%{LibraryDir.OpenCV}/opencv_world490d.dll] %[../Dist/]"
+	}
+
 
 filter "configurations:Release"
     defines "ZV_RELEASE"
     runtime "Release"
     optimize "On"
+	postbuildcommands 
+	{ 
+		"{COPYFILE} %[%{LibraryDir.OpenCV}/opencv_world490.dll] %[../Dist/]"
+	}

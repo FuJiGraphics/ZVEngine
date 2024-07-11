@@ -18,6 +18,7 @@ LibraryDir["ImGui"]		= "%{wks.location}/Vendor/ImGui/lib/%{cfg.buildcfg}"
 LibraryDir["GLAD"]		= "%{wks.location}/Vendor/glad/lib/%{cfg.buildcfg}"
 LibraryDir["SOIL2"]		= "%{wks.location}/Vendor/SOIL2/lib/"..os.target().."/%{cfg.buildcfg}"
 LibraryDir["OpenCV"]	= "%{wks.location}/Vendor/OpenCV2/lib/%{cfg.buildcfg}"
+LibraryDir["OpenGL"]	= "%{wks.location}/Vendor/OpenGL/lib"
 
 Library = {}
 Library["FZLib"]		= "%{wks.location}/Vendor/FZLib/lib/%{cfg.buildcfg}/%{cfg.architecture}/FZLib.lib"
@@ -26,4 +27,5 @@ Library["ImGui"]		= "%{wks.location}/Vendor/ImGui/lib/%{cfg.buildcfg}/ImGui.lib"
 Library["GLAD"]			= "%{wks.location}/Vendor/glad/lib/%{cfg.buildcfg}/glad.lib"
 Library["SOIL2"]		= "%{wks.location}/Vendor/SOIL2/lib/"..os.target().."/%{cfg.buildcfg}/soil2.lib"
 Library["OpenCV"]		= "%{wks.location}/Vendor/OpenCV2/lib/%{cfg.buildcfg}/opencv.lib"
+LibraryDir["OpenGL"]	= "%{wks.location}/Vendor/OpenGL/opengl32.lib"
 

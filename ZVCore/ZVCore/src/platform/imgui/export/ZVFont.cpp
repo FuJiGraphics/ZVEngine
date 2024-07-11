@@ -18,7 +18,8 @@ namespace {
 			s_Config_solid.MergeMode = true;
 			s_Config_solid.GlyphMinAdvanceX = 5.0f; // Use if you want to make the icon monospaced
 			static std::vector<ImWchar> vIconRanges_solid = { ICON_MIN_FA, ICON_MAX_FA, 0 };
-			ZVLab::CzvFont::GetInstance().Load(label, strPath_solid, pixel_size, vIconRanges_solid, s_Config_solid);
+			auto& font = ZVLab::CzvFont::GetInstance();
+			font.Load(label, strPath_solid, pixel_size, vIconRanges_solid, s_Config_solid);
 		}
 		else
 		{
@@ -41,8 +42,8 @@ namespace ZVLab {
 		if (s_spInstance == nullptr)
 		{
 			s_spInstance = CreateShared<CzvFont>();
+			s_spInstance->Init();
 		}
-		s_spInstance->Init();
 		return (*s_spInstance);
 	}
 
@@ -91,7 +92,8 @@ namespace ZVLab {
 				io.Fonts->AddFontDefault();
 				first = false;
 			}
-			s_mFontStack.top()->Init();
+			auto& stack = s_mFontStack.top();
+			stack->Init();
 			s_mFontStack.pop();
 			if (s_mFontStack.empty() && bIsDestroyed)
 			{
@@ -106,7 +108,6 @@ namespace ZVLab {
 	{
 		if (DZVLog_Failed((s_mFontData.find(label) == s_mFontData.end()), "Warning: Font file already exists."))
 			return (false);
-
 		s_mFontData.insert({ label, { path, pixel_size } });
 		return (true);
 	}
@@ -118,7 +119,6 @@ namespace ZVLab {
 	{
 		if (DZVLog_Failed((s_mFontData.find(label) == s_mFontData.end()), "Warning: Font file already exists."))
 			return (false);
-
 		s_mFontData.insert({ label, { path, pixel_size, glyph_ranges } });
 		return (true);
 	}
@@ -131,7 +131,6 @@ namespace ZVLab {
 	{
 		if (DZVLog_Failed((s_mFontData.find(label) == s_mFontData.end()), "Warning: Font file already exists."))
 			return (false);
-
 		s_mFontData.insert({ label, { path, pixel_size, glyph_ranges, config } });
 		return (true);
 	}
@@ -198,6 +197,8 @@ namespace ZVLab {
 
 	bool CzvFontData::Init()
 	{
+		if (m_strPath.empty()) 
+			return (false);
 		auto& io = ImGui::GetIO();
 		const char* font_path = m_strPath.c_str();
 		float font_size = (m_fPixelSize > 0.0f) ? m_fPixelSize : 13.0f;

@@ -13,9 +13,6 @@
     <Filter Include="extensions\im_file_dialog">
       <UniqueIdentifier>{48CB4366-B48D-77F0-FD3D-067D693F50CE}</UniqueIdentifier>
     </Filter>
-    <Filter Include="extensions\im_mvision">
-      <UniqueIdentifier>{1E9FB6BF-8A0B-72BA-53FF-0918BF2A9422}</UniqueIdentifier>
-    </Filter>
     <Filter Include="extensions\im_plot">
       <UniqueIdentifier>{18E87823-04CC-3979-6D2C-34CC592F24FB}</UniqueIdentifier>
     </Filter>
@@ -35,9 +32,6 @@
     </ClInclude>
     <ClInclude Include="include\imgui\extensions\im_file_dialog\ImFileDialog.h">
       <Filter>extensions\im_file_dialog</Filter>
-    </ClInclude>
-    <ClInclude Include="include\imgui\extensions\im_mvision\immvision.h">
-      <Filter>extensions\im_mvision</Filter>
     </ClInclude>
     <ClInclude Include="include\imgui\extensions\im_plot\implot.h">
       <Filter>extensions\im_plot</Filter>
@@ -64,9 +58,6 @@
     </ClCompile>
     <ClCompile Include="include\imgui\extensions\im_file_dialog\ImFileDialog.cpp">
       <Filter>extensions\im_file_dialog</Filter>
-    </ClCompile>
-    <ClCompile Include="include\imgui\extensions\im_mvision\immvision.cpp">
-      <Filter>extensions\im_mvision</Filter>
     </ClCompile>
     <ClCompile Include="include\imgui\extensions\im_plot\implot.cpp">
       <Filter>extensions\im_plot</Filter>

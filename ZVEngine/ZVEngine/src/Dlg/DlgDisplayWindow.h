@@ -12,7 +12,6 @@ private:
 	CzvImage		m_cImage;
 	TzvDialogInfo	m_tDialogInfo;
 	CzvFileDialog	m_FileDialog;
-	ImmVision::ImageParams param;
 
 //// Member Functions
 public:

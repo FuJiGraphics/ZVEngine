@@ -18,6 +18,6 @@
 			FZLOG_FAILED(boolean, __VA_ARGS__)
 			// if(!boolean) ZV_DEBUG_BREAK;
 #else
-	#define DZVLog_Failed(boolean, ...) boolean
+	#define DZVLog_Failed(boolean, ...) !boolean
 #endif	
 	

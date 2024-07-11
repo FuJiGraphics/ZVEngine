@@ -54,9 +54,9 @@ namespace ZVLab {
 
 		void						Init();
 		void						Update();
-		bool						Load(const std::string& label, const std::string& path, float pixel_size);
-		bool						Load(const std::string& label, const std::string& path, float pixel_size, const std::vector<unsigned short>& glyph_ranges);
-		bool						Load(const std::string& label, const std::string& path, float pixel_size, const std::vector<unsigned short>& glyph_ranges, ImFontConfig& config);
+		static bool					Load(const std::string& label, const std::string& path, float pixel_size);
+		static bool					Load(const std::string& label, const std::string& path, float pixel_size, const std::vector<unsigned short>& glyph_ranges);
+		static bool					Load(const std::string& label, const std::string& path, float pixel_size, const std::vector<unsigned short>& glyph_ranges, ImFontConfig& config);
 		CzvFontData&				GetIcon(unsigned int pixel_size);
 
 		CzvFontData&				operator[] (const std::string& key);
